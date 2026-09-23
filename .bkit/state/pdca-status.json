@@ -163,7 +163,7 @@
       "completedAt": "2026-09-17T03:44:09.221Z"
     },
     "multiuser-cloud-deployment": {
-      "phase": "check",
+      "phase": "report",
       "matchRate": 100,
       "iterationCount": 1,
       "startedAt": "2026-09-23T12:19:53.013Z",
@@ -172,7 +172,8 @@
         "pm": "docs/00-pm/multiuser-cloud-deployment.prd.md",
         "plan": "docs/01-plan/multiuser-cloud-deployment.plan.md",
         "design": "docs/02-design/multiuser-cloud-deployment.design.md",
-        "analysis": "docs/03-analysis/multiuser-cloud-deployment.analysis.md"
+        "analysis": "docs/03-analysis/multiuser-cloud-deployment.analysis.md",
+        "report": "docs/04-report/multiuser-cloud-deployment.report.md"
       },
       "note": "PRD v4.0 delta cycle — Option C (pragmatic) selected, author pre-approved 2026-09-23",
       "axes": {
