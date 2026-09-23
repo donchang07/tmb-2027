@@ -1,0 +1,20 @@
+project_id = "tmb-2027"
+
+[auth]
+enabled = true
+site_url = "https://utmb2027.vercel.app"
+additional_redirect_urls = [
+  "http://localhost:3000/**",
+  "https://utmb2027.vercel.app/**",
+  "https://*-don-changs-projects.vercel.app/**",
+]
+enable_signup = true
+minimum_password_length = 8
+
+[auth.email]
+enable_signup = true
+enable_confirmations = false
+
+[auth.hook.before_user_created]
+enabled = true
+uri = "pg-functions://postgres/public/hook_before_user_created"

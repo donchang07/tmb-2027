@@ -1,0 +1,188 @@
+[
+  {
+    "dayId": "d2027-08-04",
+    "trekDayNumber": 1,
+    "file": "/gpx/tmb2027-day-01.gpx",
+    "lengthKm": 15.4,
+    "ascendM": 1012,
+    "trackPoints": 1040,
+    "viaNodeIds": [
+      "les-houches",
+      "col-de-voza",
+      "les-contamines"
+    ],
+    "generatedAt": "2026-09-18",
+    "source": "OpenStreetMap (ODbL) · BRouter hiking-mountain"
+  },
+  {
+    "dayId": "d2027-08-05",
+    "trekDayNumber": 2,
+    "file": "/gpx/tmb2027-day-02.gpx",
+    "lengthKm": 10.9,
+    "ascendM": 1000,
+    "trackPoints": 604,
+    "viaNodeIds": [
+      "les-contamines",
+      "nd-de-la-gorge",
+      "nant-borrant",
+      "la-balme"
+    ],
+    "generatedAt": "2026-09-18",
+    "source": "OpenStreetMap (ODbL) · BRouter hiking-mountain"
+  },
+  {
+    "dayId": "d2027-08-06",
+    "trekDayNumber": 3,
+    "file": "/gpx/tmb2027-day-03.gpx",
+    "lengthKm": 14.6,
+    "ascendM": 1118,
+    "trackPoints": 1095,
+    "viaNodeIds": [
+      "la-balme",
+      "col-du-bonhomme",
+      "mottets"
+    ],
+    "generatedAt": "2026-09-18",
+    "source": "OpenStreetMap (ODbL) · BRouter hiking-mountain"
+  },
+  {
+    "dayId": "d2027-08-07",
+    "trekDayNumber": 4,
+    "file": "/gpx/tmb2027-day-04.gpx",
+    "lengthKm": 18.5,
+    "ascendM": 980,
+    "trackPoints": 1038,
+    "viaNodeIds": [
+      "mottets",
+      "col-de-la-seigne",
+      "maison-vieille"
+    ],
+    "generatedAt": "2026-09-18",
+    "source": "OpenStreetMap (ODbL) · BRouter hiking-mountain"
+  },
+  {
+    "dayId": "d2027-08-08",
+    "trekDayNumber": 5,
+    "file": "/gpx/tmb2027-day-05.gpx",
+    "lengthKm": 10.5,
+    "ascendM": 850,
+    "trackPoints": 793,
+    "viaNodeIds": [
+      "maison-vieille",
+      "courmayeur",
+      "bertone"
+    ],
+    "generatedAt": "2026-09-18",
+    "source": "OpenStreetMap (ODbL) · BRouter hiking-mountain"
+  },
+  {
+    "dayId": "d2027-08-09",
+    "trekDayNumber": 6,
+    "file": "/gpx/tmb2027-day-06.gpx",
+    "lengthKm": 16.8,
+    "ascendM": 852,
+    "trackPoints": 1030,
+    "viaNodeIds": [
+      "bertone",
+      "bonatti",
+      "arnouvaz",
+      "elena"
+    ],
+    "generatedAt": "2026-09-18",
+    "source": "OpenStreetMap (ODbL) · BRouter hiking-mountain"
+  },
+  {
+    "dayId": "d2027-08-10",
+    "trekDayNumber": 7,
+    "file": "/gpx/tmb2027-day-07.gpx",
+    "lengthKm": 10.2,
+    "ascendM": 610,
+    "trackPoints": 964,
+    "viaNodeIds": [
+      "elena",
+      "grand-col-ferret",
+      "la-fouly"
+    ],
+    "generatedAt": "2026-09-18",
+    "source": "OpenStreetMap (ODbL) · BRouter hiking-mountain"
+  },
+  {
+    "dayId": "d2027-08-11",
+    "trekDayNumber": 8,
+    "file": "/gpx/tmb2027-day-08.gpx",
+    "lengthKm": 15.7,
+    "ascendM": 773,
+    "trackPoints": 1015,
+    "viaNodeIds": [
+      "la-fouly",
+      "praz-de-fort",
+      "issert",
+      "champex-lac"
+    ],
+    "generatedAt": "2026-09-18",
+    "source": "OpenStreetMap (ODbL) · BRouter hiking-mountain"
+  },
+  {
+    "dayId": "d2027-08-12",
+    "trekDayNumber": 9,
+    "file": "/gpx/tmb2027-day-09.gpx",
+    "lengthKm": 15.5,
+    "ascendM": 828,
+    "trackPoints": 1109,
+    "viaNodeIds": [
+      "champex-lac",
+      "bovine",
+      "col-de-la-forclaz",
+      "trient"
+    ],
+    "generatedAt": "2026-09-18",
+    "source": "OpenStreetMap (ODbL) · BRouter hiking-mountain"
+  },
+  {
+    "dayId": "d2027-08-13",
+    "trekDayNumber": 10,
+    "file": "/gpx/tmb2027-day-10.gpx",
+    "lengthKm": 12.9,
+    "ascendM": 974,
+    "trackPoints": 1040,
+    "viaNodeIds": [
+      "trient",
+      "col-de-balme",
+      "col-des-posettes",
+      "posettes",
+      "tre-le-champ"
+    ],
+    "generatedAt": "2026-09-18",
+    "source": "OpenStreetMap (ODbL) · BRouter hiking-mountain"
+  },
+  {
+    "dayId": "d2027-08-14",
+    "trekDayNumber": 11,
+    "file": "/gpx/tmb2027-day-11.gpx",
+    "lengthKm": 11.4,
+    "ascendM": 1101,
+    "trackPoints": 1436,
+    "viaNodeIds": [
+      "tre-le-champ",
+      "lac-blanc",
+      "la-flegere"
+    ],
+    "generatedAt": "2026-09-18",
+    "source": "OpenStreetMap (ODbL) · BRouter hiking-mountain"
+  },
+  {
+    "dayId": "d2027-08-15",
+    "trekDayNumber": 12,
+    "file": "/gpx/tmb2027-day-12.gpx",
+    "lengthKm": 14.8,
+    "ascendM": 1085,
+    "trackPoints": 1215,
+    "viaNodeIds": [
+      "la-flegere",
+      "le-brevent",
+      "chamonix"
+    ],
+    "generatedAt": "2026-09-18",
+    "source": "OpenStreetMap (ODbL) · BRouter hiking-mountain"
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "pdca": {
+    "matchRateThreshold": 95,
+    "maxIterations": 5,
+    "autoIterate": true,
+    "requireDesignDoc": true,
+    "docPaths": {
+      "pm": "docs/00-pm/{feature}.prd.md",
+      "plan": "docs/01-plan/{feature}.plan.md",
+      "design": "docs/02-design/{feature}.design.md",
+      "analysis": "docs/03-analysis/{feature}.analysis.md",
+      "report": "docs/04-report/{feature}.report.md"
+    }
+  },
+  "sprint": {
+    "trustLevel": "L4",
+    "autoRun": true
+  }
+}

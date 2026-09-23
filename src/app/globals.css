@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+  --color-alpine: #0f5d7a;
+  --color-alpine-dark: #0a4359;
+  --color-snow: #f7f8f5;
+  --color-rock: #56616a;
+  --color-safety: #c84a36;
+  --color-ink: #1d2428;
+  --radius-card: 16px;
+}
+
+html {
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-snow);
+  color: var(--color-ink);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  font-variant-numeric: tabular-nums;
+  overflow-x: hidden;
+  min-width: 320px;
+}
+
+@layer base {
+  img,
+  svg,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  table {
+    width: 100%;
+  }
+}
+
+h1,
+h2,
+h3 {
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--color-alpine);
+  outline-offset: 2px;
+}
+
+.card {
+  min-width: 0;
+  background: #fff;
+  border-radius: var(--radius-card);
+  border: 1px solid rgba(86, 97, 106, 0.18);
+  box-shadow: 0 1px 2px rgba(29, 36, 40, 0.06);
+}
+
+.tap {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.hero-gradient {
+  background: linear-gradient(160deg, #0f5d7a 0%, #2b7f9b 55%, #f7f8f5 140%);
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #e6e9e6 25%, #f2f4f1 50%, #e6e9e6 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.2s infinite;
+  border-radius: 8px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

@@ -1,0 +1,452 @@
+{
+  "version": "3.0",
+  "lastUpdated": "2026-09-23T13:28:54.555Z",
+  "activeFeatures": [
+    "itinerary-core",
+    "booking-tracker",
+    "budget-view",
+    "multiuser-cloud-deployment"
+  ],
+  "primaryFeature": "multiuser-cloud-deployment",
+  "features": {
+    "itinerary-core": {
+      "phase": "completed",
+      "matchRate": 100,
+      "iterationCount": 1,
+      "startedAt": "2026-09-18T04:21:15.475Z",
+      "updatedAt": "2026-09-18T04:35:22.652Z",
+      "documents": {
+        "plan": "docs/01-plan/itinerary-core.plan.md",
+        "design": "docs/02-design/itinerary-core.design.md",
+        "analysis": "docs/03-analysis/itinerary-core.analysis.md",
+        "report": "docs/04-report/itinerary-core.report.md",
+        "qa": "docs/05-qa/tmb2027-v2.0.qa-report.md"
+      },
+      "note": "PRD v3.1 delta cycle",
+      "qaStatus": "PASS",
+      "completedAt": "2026-09-18T04:35:22.652Z"
+    },
+    "day-detail": {
+      "phase": "completed",
+      "matchRate": 100,
+      "iterationCount": 1,
+      "startedAt": "2026-09-18T03:46:05.746Z",
+      "updatedAt": "2026-09-18T04:05:44.863Z",
+      "documents": {
+        "plan": "docs/01-plan/day-detail.plan.md",
+        "design": "docs/02-design/day-detail.design.md",
+        "analysis": "docs/03-analysis/day-detail.analysis.md",
+        "report": "docs/04-report/day-detail.report.md",
+        "qa": "docs/05-qa/tmb2027-v2.0.qa-report.md"
+      },
+      "note": "PRD v3.0 delta cycle",
+      "qaStatus": "PASS",
+      "completedAt": "2026-09-18T04:05:44.863Z"
+    },
+    "budget-view": {
+      "phase": "completed",
+      "matchRate": 98.1,
+      "iterationCount": 0,
+      "startedAt": "2026-09-18T04:21:15.475Z",
+      "updatedAt": "2026-09-18T04:35:22.652Z",
+      "documents": {
+        "plan": "docs/01-plan/budget-view.plan.md",
+        "design": "docs/02-design/budget-view.design.md",
+        "analysis": "docs/03-analysis/budget-view.analysis.md",
+        "report": "docs/04-report/budget-view.report.md",
+        "qa": "docs/05-qa/tmb2027-v2.0.qa-report.md"
+      },
+      "note": "PRD v3.1 delta cycle",
+      "qaStatus": "PASS",
+      "completedAt": "2026-09-18T04:35:22.652Z"
+    },
+    "today-and-safety": {
+      "phase": "completed",
+      "matchRate": 100,
+      "iterationCount": 1,
+      "startedAt": "2026-09-17T01:56:46.238Z",
+      "updatedAt": "2026-09-17T03:44:09.221Z",
+      "documents": {
+        "plan": "docs/01-plan/today-and-safety.plan.md",
+        "design": "docs/02-design/today-and-safety.design.md",
+        "analysis": "docs/03-analysis/today-and-safety.analysis.md",
+        "report": "docs/04-report/today-and-safety.report.md",
+        "qa": "docs/05-qa/tmb2027-v2.0.qa-report.md"
+      },
+      "note": "PRD v2.0 delta cycle",
+      "qaStatus": "PASS",
+      "completedAt": "2026-09-17T03:44:09.221Z"
+    },
+    "booking-tracker": {
+      "phase": "completed",
+      "matchRate": 96.9,
+      "iterationCount": 0,
+      "startedAt": "2026-09-18T04:21:15.475Z",
+      "updatedAt": "2026-09-18T04:35:22.652Z",
+      "documents": {
+        "plan": "docs/01-plan/booking-tracker.plan.md",
+        "design": "docs/02-design/booking-tracker.design.md",
+        "analysis": "docs/03-analysis/booking-tracker.analysis.md",
+        "report": "docs/04-report/booking-tracker.report.md",
+        "qa": "docs/05-qa/tmb2027-v2.0.qa-report.md"
+      },
+      "note": "PRD v3.1 delta cycle",
+      "qaStatus": "PASS",
+      "completedAt": "2026-09-18T04:35:22.652Z"
+    },
+    "offline-pwa": {
+      "phase": "completed",
+      "matchRate": 100,
+      "iterationCount": 2,
+      "startedAt": "2026-09-17T01:56:46.238Z",
+      "updatedAt": "2026-09-18T02:33:50.529Z",
+      "documents": {
+        "plan": "docs/01-plan/offline-pwa.plan.md",
+        "design": "docs/02-design/offline-pwa.design.md",
+        "analysis": "docs/03-analysis/offline-pwa.analysis.md",
+        "report": "docs/04-report/offline-pwa.report.md",
+        "qa": "docs/05-qa/tmb2027-v2.0.qa-report.md"
+      },
+      "note": "PRD v2.0 delta cycle",
+      "qaStatus": "PASS",
+      "completedAt": "2026-09-17T03:44:09.221Z"
+    },
+    "route-visuals": {
+      "phase": "completed",
+      "matchRate": 97,
+      "iterationCount": 1,
+      "startedAt": "2026-09-17T01:56:46.238Z",
+      "updatedAt": "2026-09-17T03:44:09.221Z",
+      "documents": {
+        "plan": "docs/01-plan/route-visuals.plan.md",
+        "design": "docs/02-design/route-visuals.design.md",
+        "analysis": "docs/03-analysis/route-visuals.analysis.md",
+        "report": "docs/04-report/route-visuals.report.md",
+        "qa": "docs/05-qa/tmb2027-v2.0.qa-report.md"
+      },
+      "note": "PRD v2.0 delta cycle",
+      "qaStatus": "PASS",
+      "completedAt": "2026-09-17T03:44:09.221Z"
+    },
+    "packing-checklist": {
+      "phase": "completed",
+      "matchRate": 99,
+      "iterationCount": 0,
+      "startedAt": "2026-09-17T01:56:46.238Z",
+      "updatedAt": "2026-09-17T03:44:09.221Z",
+      "documents": {
+        "plan": "docs/01-plan/packing-checklist.plan.md",
+        "design": "docs/02-design/packing-checklist.design.md",
+        "analysis": "docs/03-analysis/packing-checklist.analysis.md",
+        "report": "docs/04-report/packing-checklist.report.md",
+        "qa": "docs/05-qa/tmb2027-v2.0.qa-report.md"
+      },
+      "note": "PRD v2.0 delta cycle",
+      "qaStatus": "PASS",
+      "completedAt": "2026-09-17T03:44:09.221Z"
+    },
+    "trip-journal": {
+      "phase": "completed",
+      "matchRate": 98,
+      "iterationCount": 1,
+      "startedAt": "2026-09-17T01:56:46.238Z",
+      "updatedAt": "2026-09-17T03:44:09.221Z",
+      "documents": {
+        "plan": "docs/01-plan/trip-journal.plan.md",
+        "design": "docs/02-design/trip-journal.design.md",
+        "analysis": "docs/03-analysis/trip-journal.analysis.md",
+        "report": "docs/04-report/trip-journal.report.md",
+        "qa": "docs/05-qa/tmb2027-v2.0.qa-report.md"
+      },
+      "note": "PRD v2.0 delta cycle",
+      "qaStatus": "PASS",
+      "completedAt": "2026-09-17T03:44:09.221Z"
+    },
+    "multiuser-cloud-deployment": {
+      "phase": "check",
+      "matchRate": 100,
+      "iterationCount": 1,
+      "startedAt": "2026-09-23T12:19:53.013Z",
+      "updatedAt": "2026-09-23T13:28:54.555Z",
+      "documents": {
+        "pm": "docs/00-pm/multiuser-cloud-deployment.prd.md",
+        "plan": "docs/01-plan/multiuser-cloud-deployment.plan.md",
+        "design": "docs/02-design/multiuser-cloud-deployment.design.md",
+        "analysis": "docs/03-analysis/multiuser-cloud-deployment.analysis.md"
+      },
+      "note": "PRD v4.0 delta cycle — Option C (pragmatic) selected, author pre-approved 2026-09-23",
+      "axes": {
+        "structural": 100,
+        "functional": 100,
+        "contract": 100,
+        "runtime": 100
+      },
+      "iterations": [
+        {
+          "label": "check-0",
+          "matchRate": 86.9
+        },
+        {
+          "label": "act-1",
+          "matchRate": 100
+        }
+      ],
+      "externalPending": [
+        "FR-025 GitHub push",
+        "FR-026 Vercel deploy",
+        "SC-023 git history scan",
+        "SC-024 production smoke"
+      ]
+    }
+  },
+  "pipeline": {
+    "currentPhase": 1,
+    "level": "Dynamic",
+    "phaseHistory": []
+  },
+  "session": {
+    "startedAt": "2026-09-16T09:43:30.331Z",
+    "onboardingCompleted": false,
+    "lastActivity": "2026-09-23T13:28:54.555Z"
+  },
+  "history": [
+    {
+      "at": "2026-09-17T01:56:46.238Z",
+      "event": "prd_v2.0_cycle_started",
+      "features": [
+        "itinerary-core",
+        "day-detail",
+        "budget-view",
+        "today-and-safety",
+        "booking-tracker",
+        "offline-pwa",
+        "route-visuals",
+        "packing-checklist",
+        "trip-journal"
+      ]
+    },
+    {
+      "timestamp": "2026-09-17T01:57:30.920Z",
+      "feature": "itinerary-core",
+      "event": "DESIGN_DONE",
+      "from": "design",
+      "to": "do",
+      "action": "state_transition",
+      "automationLevel": 2
+    },
+    {
+      "timestamp": "2026-09-17T01:59:23.296Z",
+      "feature": "itinerary-core",
+      "event": "DESIGN_DONE",
+      "from": "design",
+      "to": "do",
+      "action": "state_transition",
+      "automationLevel": 2
+    },
+    {
+      "timestamp": "2026-09-17T01:59:35.744Z",
+      "feature": "itinerary-core",
+      "event": "DESIGN_DONE",
+      "from": "design",
+      "to": "do",
+      "action": "state_transition",
+      "automationLevel": 2
+    },
+    {
+      "timestamp": "2026-09-17T02:00:59.458Z",
+      "feature": "itinerary-core",
+      "event": "DESIGN_DONE",
+      "from": "design",
+      "to": "do",
+      "action": "state_transition",
+      "automationLevel": 2
+    },
+    {
+      "timestamp": "2026-09-17T02:01:38.063Z",
+      "feature": "itinerary-core",
+      "event": "DESIGN_DONE",
+      "from": "design",
+      "to": "do",
+      "action": "state_transition",
+      "automationLevel": 2
+    },
+    {
+      "timestamp": "2026-09-17T02:04:30.107Z",
+      "feature": "itinerary-core",
+      "event": "DESIGN_DONE",
+      "from": "design",
+      "to": "do",
+      "action": "state_transition",
+      "automationLevel": 2
+    },
+    {
+      "timestamp": "2026-09-17T02:08:27.588Z",
+      "feature": "itinerary-core",
+      "event": "DESIGN_DONE",
+      "from": "design",
+      "to": "do",
+      "action": "state_transition",
+      "automationLevel": 2
+    },
+    {
+      "timestamp": "2026-09-17T02:09:57.445Z",
+      "feature": "itinerary-core",
+      "event": "DESIGN_DONE",
+      "from": "design",
+      "to": "do",
+      "action": "state_transition",
+      "automationLevel": 2
+    },
+    {
+      "timestamp": "2026-09-17T02:10:53.375Z",
+      "feature": "itinerary-core",
+      "event": "DESIGN_DONE",
+      "from": "design",
+      "to": "do",
+      "action": "state_transition",
+      "automationLevel": 2
+    },
+    {
+      "at": "2026-09-17T03:44:09.221Z",
+      "event": "prd_v2.0_cycle_completed",
+      "gate": 95,
+      "e2e": "99/99",
+      "unit": "113/113",
+      "build": "ok"
+    },
+    {
+      "at": "2026-09-18T02:33:50.529Z",
+      "event": "offline-pwa_act2_root_cause_sw_prod_only",
+      "e2e": "99/99 (production build)",
+      "unit": "115/115"
+    },
+    {
+      "at": "2026-09-18T03:46:05.746Z",
+      "event": "prd_v3.0_delta_cycle_started"
+    },
+    {
+      "timestamp": "2026-09-18T03:48:46.773Z",
+      "feature": "itinerary-core",
+      "event": "DESIGN_DONE",
+      "from": "design",
+      "to": "do",
+      "action": "state_transition",
+      "automationLevel": 2
+    },
+    {
+      "timestamp": "2026-09-18T03:51:27.614Z",
+      "feature": "itinerary-core",
+      "event": "DESIGN_DONE",
+      "from": "design",
+      "to": "do",
+      "action": "state_transition",
+      "automationLevel": 2
+    },
+    {
+      "timestamp": "2026-09-18T03:52:28.833Z",
+      "feature": "itinerary-core",
+      "event": "DESIGN_DONE",
+      "from": "design",
+      "to": "do",
+      "action": "state_transition",
+      "automationLevel": 2
+    },
+    {
+      "timestamp": "2026-09-18T03:53:26.367Z",
+      "feature": "itinerary-core",
+      "event": "DESIGN_DONE",
+      "from": "design",
+      "to": "do",
+      "action": "state_transition",
+      "automationLevel": 2
+    },
+    {
+      "at": "2026-09-18T04:05:44.863Z",
+      "event": "prd_v3.0_delta_cycle_completed",
+      "gate": 95,
+      "e2e": "108/108",
+      "unit": "124/124"
+    },
+    {
+      "at": "2026-09-18T04:21:15.475Z",
+      "event": "prd_v3.1_delta_cycle_started"
+    },
+    {
+      "at": "2026-09-18T04:35:22.652Z",
+      "event": "prd_v3.1_delta_cycle_completed",
+      "gate": 95,
+      "e2e": "111/111",
+      "unit": "126/126"
+    },
+    {
+      "at": "2026-09-23T12:19:53.013Z",
+      "event": "prd_v4.0_delta_cycle_started",
+      "features": [
+        "multiuser-cloud-deployment"
+      ]
+    },
+    {
+      "timestamp": "2026-09-23T12:19:53.013Z",
+      "feature": "multiuser-cloud-deployment",
+      "event": "PLAN_DONE",
+      "from": "plan",
+      "to": "design",
+      "action": "state_transition",
+      "automationLevel": 2
+    },
+    {
+      "timestamp": "2026-09-23T12:22:10.175Z",
+      "feature": "multiuser-cloud-deployment",
+      "event": "DESIGN_DONE",
+      "from": "design",
+      "to": "do",
+      "action": "state_transition",
+      "automationLevel": 2
+    },
+    {
+      "timestamp": "2026-09-23T12:52:02.560Z",
+      "feature": "multiuser-cloud-deployment",
+      "event": "DESIGN_DONE",
+      "from": "design",
+      "to": "do",
+      "action": "state_transition",
+      "automationLevel": 2
+    },
+    {
+      "timestamp": "2026-09-23T13:07:40.891Z",
+      "feature": "multiuser-cloud-deployment",
+      "event": "DESIGN_DONE",
+      "from": "design",
+      "to": "do",
+      "action": "state_transition",
+      "automationLevel": 2
+    },
+    {
+      "timestamp": "2026-09-23T13:28:54.555Z",
+      "feature": "multiuser-cloud-deployment",
+      "event": "CHECK_DONE",
+      "from": "do",
+      "to": "check",
+      "action": "state_transition",
+      "matchRate": 100,
+      "iterationCount": 1,
+      "automationLevel": 2
+    }
+  ],
+  "stateMachine": {
+    "defaultWorkflow": "default",
+    "activeWorkflows": {},
+    "totalTransitions": 0
+  },
+  "automation": {
+    "globalLevel": 2,
+    "trustScore": 38,
+    "pendingApprovals": 0,
+    "lastGateResult": null
+  },
+  "team": {
+    "enabled": true,
+    "stateFile": ".bkit/runtime/agent-state.json",
+    "eventsFile": ".bkit/runtime/agent-events.jsonl"
+  }
+}
