@@ -1,6 +1,6 @@
 # multiuser-cloud-deployment Completion Report
 
-> **Status**: Partial (Complete — 저장소 내부 검증 완료, 배포는 작성자 `vercel login` 대기)
+> **Status**: Complete — production 배포 완료 (https://utmb2027.vercel.app, 2026-09-23)
 >
 > **Project**: tmb-2027
 > **Version**: 0.1.0 (PRD v4.0 델타)
@@ -27,8 +27,8 @@
 ┌─────────────────────────────────────────────┐
 │  최종 match rate: 100% (외부 대기 포함 참고 98.3%) │
 ├─────────────────────────────────────────────┤
-│  ✅ Complete:     저장소 내부 검증 SC 7/9 완전 충족 │
-│  ⏳ 외부 대기:      SC-023(git 이력 검사)·SC-024(배포)│
+│  ✅ Complete:     SC 9/9 충족                 │
+│  ⏳ 외부 대기:      0건                          │
 │  ❌ Cancelled:     0건                        │
 │  게이트 95 통과 · Act 반복 1회(Check→Act-1)      │
 └─────────────────────────────────────────────┘
@@ -59,9 +59,9 @@
 | SC-021 | 새로고침·브라우저 재시작 후 로그인·계정 체크 복원, 만료 시 `reason=expired` 경유 복귀 | ✅ Met | `multiuser.spec.ts:109`(storageState), `auth.spec.ts:261`(쿠키 삭제 → 재로그인 → 원 페이지 복귀) |
 | SC-022 | `tsc --noEmit` 0 오류, `vitest` 전체 통과(≥126), Playwright `--workers=1` 전체 통과(≥111), 17.3 회귀 목록 유지 | ✅ Met | tsc 0 · vitest **174 passed / 1 skipped**(baseline 124) · `next build` OK, `/map`·`/offline`·`/packing` 정적(○) 유지 · Playwright 전 스위트(테스트 자격 포함) **153 passed / 24 skipped / 0 failed**(skip = 데스크톱 전용 L3 다중 사용자 시나리오가 비데스크톱 2개 프로젝트에서 설계대로 skip) |
 | SC-023 | 저장소 모든 커밋에 비밀값 파일·패턴 0건, `.env.example` 값 비어 있음 | ✅ Met (부분→완결) | `tests/unit/secrets.test.ts` 통과, `.env.example` 값 전부 비움. GitHub public repo `donchang07/tmb-2027`(`main`, 최초 커밋 `9f4bf3c`) 생성·push 완료, secret scanning + push protection 활성화, 스테이징 콘텐츠 스캔에서 실제 비밀값 없음(공개 project ref·패턴 문자열만 검출) |
-| SC-024 | Vercel production `main` 커밋 Ready, SCR-001·006·009·015 200, 콘솔 오류 0 | ❌ Pending | Vercel MCP로 프로젝트 생성 시도했으나 git 연결이 확인되지 않아 프로젝트가 저장되지 않음(레포에 Vercel GitHub App이 설치되지 않은 것으로 추정), Vercel CLI는 로그아웃 상태. `https://utmb2027.vercel.app` 배포는 작성자의 `vercel login`(또는 GitHub App 설치) 대기. API 레벨(원격 Supabase 인증 흐름)은 검증 완료, production URL 스모크는 배포 후 실행 필요 |
+| SC-024 | Vercel production `main` 커밋 Ready, SCR-001·006·009·015 200, 콘솔 오류 0 | ✅ Met | 커밋 6e391b4 production 배포 Ready(빌드 54초, Git 연동 자동 배포). https://utmb2027.vercel.app 에서 `/`·`/itinerary`·`/budget`·`/map`·`/packing`·`/login`·`/signup`·`/journal`·`/admin`·`/day/day-01`·`/api/bookings` 전부 200, `/`·`/budget`·`/packing`·`/login` 콘솔 오류 0건. production 대상 `auth.spec`+`multiuser.spec` 22/22 통과 |
 
-**Success Rate**: 8/9 충족 (89%) — SC-024만 배포 실행 대기로 미충족. 게이트 산정 범위(저장소 내부 검증 가능 항목)에서는 match rate **100%**(외부 대기 항목 제외), 외부 대기 항목을 미충족으로 포함해도 **98.3%**로 게이트 95를 통과.
+**Success Rate**: 9/9 충족 (100%). SC-023: `git log --all -p` 비밀값 패턴 0건(일치 2건은 커밋 작성자 이메일 — git 전역 설정), GitHub secret scanning·push protection 활성.
 
 ## 1.5 Decision Record Summary
 
@@ -103,7 +103,7 @@
 | FR-023 | RLS 4정책·anon revoke·service_role 미사용 | ✅ Complete | |
 | FR-024 | 저장·복원·첫 로그인 합집합 병합·오프라인 대기열 | ✅ Complete | |
 | FR-025 | GitHub public 저장소·push·`.gitignore` | ✅ Complete | repo `donchang07/tmb-2027`, 최초 커밋 `9f4bf3c` |
-| FR-026 | Vercel `main`→Production 배포 | ⏳ Pending | 작성자 `vercel login`(또는 GitHub App 설치) 대기 |
+| FR-026 | Vercel `main`→Production 배포 | ✅ Complete | Vercel CLI 로그인(작성자 승인) 후 `utmb2027` 연결, 환경변수 Production 4·Preview 3(비밀값 없음, anon 키는 JWT role=anon 확인), `main` push로 자동 배포 |
 | FR-027 | 회귀 — 기존 vitest·Playwright 무수정 통과 | ✅ Complete | vitest 174/1 skip(baseline 124), Playwright 153/24 skip/0 fail |
 | FR-028 | 비밀값 스캔 테스트·`.env.example` 빈 값 | ✅ Complete | `secrets.test.ts` 통과, 스테이징 콘텐츠 스캔 비밀값 0건 |
 | FR-029 | 모든 화면 계정 메뉴, 브라우저 세션 읽기, 정적 라우트 보존 | ✅ Complete | |
@@ -119,7 +119,7 @@
 | 빌드·라우트 불변 | `/map`·`/offline`·`/packing` 정적(○) 유지 | 유지 확인 | ✅ |
 | 비밀값 커밋 | 0건 | 작업 트리·스테이징 스캔 0건(값 기준) | ✅ |
 | 원격 DB 상태 | 마이그레이션 적용·합성 데이터 | 6개 마이그레이션 + seed 적용 | ✅ |
-| Production 배포 | Vercel Ready | 미실행(로그인 대기) | ❌ |
+| Production 배포 | Vercel Ready | Ready (https://utmb2027.vercel.app) | ✅ |
 
 ### 3.3 Deliverables
 
@@ -132,7 +132,7 @@
 | 합성 데이터 시드 | `scripts/seed-synthetic.mjs` | ✅ (원격 적용: auth users 6, team_members 4, packing_checks 8, journal 3, lodgings/bookings 14) |
 | 테스트 | `tests/unit/{secrets,auth-rules,packing-sync,migrations-v4,sw-rules-v4}.test.ts`, `tests/e2e/{auth,multiuser}.spec.ts` | ✅ |
 | 소스 저장소 | `https://github.com/donchang07/tmb-2027`(`main`) | ✅ |
-| 배포 | `https://utmb2027.vercel.app` | ⏳ Pending |
+| 배포 | `https://utmb2027.vercel.app` | ✅ Ready |
 
 ---
 
@@ -224,8 +224,8 @@
 
 ### 8.1 Immediate
 
-- [ ] 작성자 `vercel login`(또는 Vercel GitHub App을 `donchang07/tmb-2027`에 설치) 후 Vercel 프로젝트 `utmb2027` 생성·Production 배포(FR-026, SC-024)
-- [ ] 배포 후 `PLAYWRIGHT_BASE_URL=https://utmb2027.vercel.app`로 SCR-001·006·009·015 스모크 + 콘솔 오류 0 확인(SC-024)
+- [x] Vercel 로그인·프로젝트 `utmb2027` 연결·Production 배포 완료(FR-026, SC-024)
+- [x] production 스모크(11개 경로 200, 콘솔 오류 0)와 production 대상 인증·멀티유저 E2E 22/22 통과
 - [ ] 첫 push 완료 상태에서 `git log --all -p` 비밀값 재검색으로 SC-023 최종 확인
 
 ### 8.2 Next PDCA Cycle
@@ -262,3 +262,4 @@
 | Version | Date | Changes | Author |
 |---------|------|---------|--------|
 | 1.0 | 2026-09-23 | Completion report 작성 (Check 86.9% → Act-1 100%, SC-024 배포는 작성자 로그인 대기) | Claude(PDCA) |
+| 1.1 | 2026-09-23 | Production 배포 완료 반영(SC-024·FR-026 ✅, SC 9/9, git 이력 비밀값 0건) | Claude(PDCA) |
