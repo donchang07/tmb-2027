@@ -52,7 +52,7 @@ export function LodgingTable({ rows, lodgings }: { rows: LodgingTableRow[]; lodg
       onClick={() => toggle(row.lodging.id)}
       aria-expanded={openId === row.lodging.id}
       aria-controls="lodging-edit-panel"
-      className="tap rounded-lg border border-alpine/40 px-3 text-sm font-semibold text-alpine"
+      className="tap rounded-full border border-alpine/40 px-3 text-sm font-semibold text-alpine-dark"
     >
       {openId === row.lodging.id ? "닫기" : "편집"}
     </button>
@@ -63,7 +63,7 @@ export function LodgingTable({ rows, lodgings }: { rows: LodgingTableRow[]; lodg
       <div className="card hidden overflow-hidden lg:block">
         <table className="w-full text-sm">
           <caption className="sr-only">14박 숙박·예약 목록</caption>
-          <thead className="bg-snow text-left text-xs text-rock">
+          <thead className="bg-ink text-left text-xs text-white">
             <tr>
               <th scope="col" className="px-3 py-2">Day/날짜</th>
               <th scope="col" className="px-3 py-2">숙박</th>

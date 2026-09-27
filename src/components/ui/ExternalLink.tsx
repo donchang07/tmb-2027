@@ -14,7 +14,7 @@ export function ExternalLink({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`tap inline-flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-alpine underline-offset-2 hover:underline ${className}`}
+      className={`tap inline-flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-alpine-dark underline-offset-2 hover:underline ${className}`}
     >
       {children}
       <span aria-hidden="true">↗</span>

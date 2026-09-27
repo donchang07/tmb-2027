@@ -33,7 +33,7 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
       <LoginForm next={next} />
       <div className="space-y-1 text-sm">
         <p>
-          <Link href={withNext("/signup", next)} className="tap inline-flex items-center font-semibold text-alpine underline">
+          <Link href={withNext("/signup", next)} className="tap inline-flex items-center font-semibold text-alpine-dark underline">
             계정이 없으신가요? 회원가입
           </Link>
         </p>

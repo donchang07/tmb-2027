@@ -33,7 +33,7 @@ import { CardSkeleton } from "@/components/ui/Skeleton";
 
 type Props = { categories: PackingCategory[]; items: PackingItem[] };
 
-const LINK_CLASS = "tap inline-flex items-center rounded-lg border border-alpine/40 px-4 text-sm font-semibold text-alpine-dark";
+const LINK_CLASS = "tap inline-flex items-center rounded-full border border-alpine/40 px-4 text-sm font-semibold text-alpine-dark";
 
 export function PackingList(props: Props) {
   const [queryClient] = useState(
@@ -99,7 +99,7 @@ function ChecklistBody({
             type="button"
             onClick={onClearAll}
             disabled={!hydrated || done === 0}
-            className="tap rounded-lg border border-rock/40 px-4 text-sm font-semibold text-rock disabled:opacity-50"
+            className="tap rounded-full border border-rock/40 px-4 text-sm font-semibold text-rock disabled:opacity-50"
           >
             전체 해제
           </button>

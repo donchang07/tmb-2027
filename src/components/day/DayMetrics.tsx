@@ -13,7 +13,7 @@ export function DayMetrics({ day }: { day: Day }) {
       {items.map((it) => (
         <div key={it.label} className="card p-4 text-center">
           <dt className="text-xs text-rock">{it.label}</dt>
-          <dd className="mt-1 text-2xl font-black text-alpine">{it.value}</dd>
+          <dd className="mt-1 text-2xl font-bold text-alpine-dark">{it.value}</dd>
         </div>
       ))}
     </dl>

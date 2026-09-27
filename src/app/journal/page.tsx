@@ -21,7 +21,7 @@ export default async function JournalIndexPage() {
       <ol className="card divide-y divide-rock/10">
         {days.map((d) => (
           <li key={d.id}>
-            <Link href={`/journal/${d.id}`} className="tap flex items-center gap-3 px-4 py-2 text-sm hover:text-alpine">
+            <Link href={`/journal/${d.id}`} className="tap flex items-center gap-3 px-4 py-2 text-sm hover:text-alpine-dark">
               <span className="w-14 shrink-0 font-semibold">Day {d.trekDayNumber}</span>
               <span className="w-20 shrink-0 text-rock">{formatKoDate(d.date)}</span>
               <span className="min-w-0 flex-1 truncate">{d.nameKo}</span>

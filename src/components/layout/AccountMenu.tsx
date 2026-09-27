@@ -37,7 +37,7 @@ export function AccountMenu() {
         onClick={(e) => {
           if (!onAuthPage) e.currentTarget.href = loginHref(currentPath());
         }}
-        className="tap flex shrink-0 items-center rounded-lg px-3 text-sm font-semibold text-alpine hover:text-alpine-dark"
+        className="tap flex shrink-0 items-center rounded-lg px-3 text-sm font-semibold text-alpine-dark hover:text-alpine-dark"
       >
         로그인
       </a>
@@ -54,14 +54,14 @@ export function AccountMenu() {
                     onClick={(e) => {
                       e.currentTarget.href = `/login?reason=expired&next=${encodeURIComponent(currentPath())}`;
                     }}
-                    className="tap inline-flex items-center rounded-lg bg-alpine px-4 text-sm font-semibold text-white"
+                    className="tap inline-flex items-center rounded-full bg-alpine px-4 text-sm font-semibold text-white"
                   >
                     다시 로그인
                   </a>
                   <button
                     type="button"
                     onClick={dismissExpired}
-                    className="tap inline-flex items-center rounded-lg border border-rock/40 px-4 text-sm font-semibold text-rock"
+                    className="tap inline-flex items-center rounded-full border border-rock/40 px-4 text-sm font-semibold text-rock"
                   >
                     닫기
                   </button>
@@ -128,7 +128,7 @@ function UserMenu({ email }: { email: string }) {
           setOpen((v) => !v);
           void checkRole();
         }}
-        className="tap flex max-w-[11rem] items-center gap-1 rounded-lg border border-rock/30 px-3 text-sm font-semibold text-alpine"
+        className="tap flex max-w-[11rem] items-center gap-1 rounded-full border border-rock/30 px-3 text-sm font-semibold text-alpine-dark"
       >
         <span aria-hidden="true">◉</span>
         <span className="sr-only">계정</span>
@@ -140,17 +140,17 @@ function UserMenu({ email }: { email: string }) {
           id="account-menu"
           role="menu"
           aria-label="계정 메뉴"
-          className="card absolute right-0 top-full z-40 mt-2 w-64 max-w-[calc(100vw-2rem)] space-y-1 border border-rock/20 bg-snow p-2 shadow-lg"
+          className="card absolute right-0 top-full z-40 mt-2 w-64 max-w-[calc(100vw-2rem)] space-y-1 border border-rock/15 bg-white p-2 shadow-sm"
         >
           <p role="presentation" className="break-all px-3 py-2 text-sm text-rock">
             {email}
           </p>
           {isLeader ? (
-            <Link href="/admin" role="menuitem" onClick={() => setOpen(false)} className="tap flex items-center rounded-lg px-3 text-sm text-alpine hover:bg-alpine/5">
+            <Link href="/admin" role="menuitem" onClick={() => setOpen(false)} className="tap flex items-center rounded-lg px-3 text-sm text-alpine-dark hover:bg-snow">
               관리자 화면
             </Link>
           ) : null}
-          <SignOutButton menuItem className="tap flex w-full items-center rounded-lg px-3 text-left text-sm font-semibold text-rock hover:bg-alpine/5 disabled:opacity-60" />
+          <SignOutButton menuItem className="tap flex w-full items-center rounded-lg px-3 text-left text-sm font-semibold text-rock hover:bg-snow disabled:opacity-60" />
         </div>
       ) : null}
     </div>

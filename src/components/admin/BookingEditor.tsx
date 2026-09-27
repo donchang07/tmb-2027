@@ -96,17 +96,17 @@ export function BookingEditor({ lodging, row, lodgings = [] }: { lodging: Editor
       </div>
 
       <div className="flex flex-wrap items-center gap-3">
-        <button type="submit" disabled={pending} className="tap rounded-lg bg-alpine px-4 font-semibold text-white disabled:opacity-60">
+        <button type="submit" disabled={pending} className="tap rounded-full bg-alpine px-4 font-semibold text-white disabled:opacity-60">
           {pending ? "저장 중…" : state.status === "error" ? "저장 재시도" : "저장"}
         </button>
-        {dirty ? <span className="text-sm text-amber-800">저장되지 않은 변경이 있습니다</span> : null}
+        {dirty ? <span className="text-sm font-semibold text-ink">저장되지 않은 변경이 있습니다</span> : null}
         {state.status === "saved" && !dirty ? (
-          <span role="status" className="text-sm text-emerald-800">
+          <span role="status" className="text-sm text-alpine-dark">
             저장됨 · {current?.updated_at ? formatKoDateTime(current.updated_at) : ""}
           </span>
         ) : null}
         {state.status === "conflict" ? (
-          <span role="alert" className="text-sm text-amber-800">
+          <span role="alert" className="text-sm font-semibold text-ink">
             {state.message}
             {!state.row ? " 최신 값을 가져올 수 없습니다 — 페이지를 새로고침하세요." : ""}
           </span>

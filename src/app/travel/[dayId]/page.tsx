@@ -74,11 +74,11 @@ export default async function TravelDayPage({ params }: { params: Promise<Params
 
       <div className="mt-6 flex flex-wrap gap-2">
         {day.type === "trek" ? (
-          <Link href={`/day/${day.id}`} className="tap inline-flex items-center rounded-lg bg-alpine px-4 text-sm font-semibold text-white">
+          <Link href={`/day/${day.id}`} className="tap inline-flex items-center rounded-full bg-alpine px-4 text-sm font-semibold text-white">
             Day {day.trekDayNumber} 상세 보기
           </Link>
         ) : null}
-        <Link href="/itinerary" className="tap inline-flex items-center rounded-lg border border-rock/30 px-4 text-sm font-semibold text-rock">
+        <Link href="/itinerary" className="tap inline-flex items-center rounded-full border border-rock/30 px-4 text-sm font-semibold text-rock">
           전체 일정
         </Link>
       </div>

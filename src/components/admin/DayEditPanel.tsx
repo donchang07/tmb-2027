@@ -30,7 +30,7 @@ export function DayEditPanel({
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-controls="day-edit-body"
-          className="tap rounded-lg border border-alpine/40 px-3 text-sm font-semibold text-alpine"
+          className="tap rounded-full border border-alpine/40 px-3 text-sm font-semibold text-alpine-dark"
         >
           {open ? "접기" : "펼치기"}
         </button>

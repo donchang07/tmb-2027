@@ -84,7 +84,7 @@ export default async function DayDetailPage({ params }: { params: Promise<Params
           </div>
           <Link
             href={`/travel/${day.id}`}
-            className="tap mt-2 inline-flex items-center text-sm font-medium text-alpine underline-offset-2 hover:underline"
+            className="tap mt-2 inline-flex items-center text-sm font-medium text-alpine-dark underline-offset-2 hover:underline"
           >
             이동 상세 보기 ({legs.length}구간)
           </Link>
@@ -96,7 +96,7 @@ export default async function DayDetailPage({ params }: { params: Promise<Params
           tone="warn"
           title={`이 항목은 확인 중입니다 · 기준일 ${day.sourceCheckedAt}`}
           action={
-            <Link href="/admin" className="tap inline-flex items-center rounded-lg border border-amber-400 px-3 text-sm font-semibold">
+            <Link href="/admin" className="tap inline-flex items-center rounded-lg border border-rock/30 px-3 text-sm font-semibold">
               관리자 점검
             </Link>
           }
@@ -165,7 +165,7 @@ export default async function DayDetailPage({ params }: { params: Promise<Params
         {day.notes ? <p className="mt-2 text-sm">{day.notes}</p> : null}
       </section>
 
-      <Link href={`/journal/${day.id}`} className="card tap flex items-center justify-between p-4 text-sm font-semibold text-alpine hover:border-alpine">
+      <Link href={`/journal/${day.id}`} className="card tap flex items-center justify-between p-4 text-sm font-semibold text-alpine-dark hover:bg-rock/15">
         <span>팀 기록 보기</span>
         <span aria-hidden="true">→</span>
       </Link>

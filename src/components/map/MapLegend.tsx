@@ -33,7 +33,7 @@ export function MapLegend() {
             const day = getDay(s.dayId);
             return (
               <li key={s.dayId}>
-                <Link href={`/day/${s.dayId}`} className="tap flex items-center gap-3 py-2 text-sm hover:text-alpine">
+                <Link href={`/day/${s.dayId}`} className="tap flex items-center gap-3 py-2 text-sm hover:text-alpine-dark">
                   <span aria-hidden="true" className="inline-block h-3 w-8 shrink-0 rounded-full" style={{ backgroundColor: s.color }} />
                   <span className="w-12 shrink-0 font-semibold">Day {s.trekDayNumber}</span>
                   <span className="min-w-0 flex-1 truncate">{day?.nameKo ?? s.dayId}</span>

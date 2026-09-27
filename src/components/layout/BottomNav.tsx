@@ -12,14 +12,14 @@ export function BottomNav() {
   return (
     <nav
       aria-label="주요 메뉴"
-      className="fixed inset-x-0 bottom-0 z-30 border-t border-rock/20 bg-white/95 backdrop-blur sm:hidden"
+      className="fixed inset-x-0 bottom-0 z-30 border-t border-rock/15 bg-white/80 backdrop-blur-xl sm:hidden"
     >
       <ul className="mx-auto grid max-w-3xl grid-cols-5">
         {ITEMS.map((item) => (
           <li key={item.href}>
             <Link
               href={item.href}
-              className="tap flex h-14 flex-col items-center justify-center text-xs font-medium text-rock hover:text-alpine"
+              className="tap flex h-14 flex-col items-center justify-center text-xs font-medium text-rock hover:text-ink"
             >
               {item.label}
             </Link>

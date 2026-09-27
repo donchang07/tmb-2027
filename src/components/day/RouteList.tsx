@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/Badge";
 export function RouteList({ points, lang = "fr" }: { points: RoutePoint[]; lang?: string }) {
   if (points.length === 0) return <p className="text-sm text-rock">경로 지점 확인 필요</p>;
   return (
-    <ol className="relative space-y-3 border-l-2 border-alpine/30 pl-5">
+    <ol className="relative space-y-3 border-l border-rock/20 pl-5">
       {points.map((p, i) => {
         const role = i === 0 ? "출발" : i === points.length - 1 ? "도착" : "경유";
         return (

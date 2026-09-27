@@ -28,7 +28,7 @@ export function TodayCard({
         tone="info"
         title={`출발까지 D-${state.daysUntil} (현지 기준)`}
         action={
-          <Link href={`/travel/${state.firstDay.id}`} data-testid="today-card-link" className="tap inline-flex items-center rounded-lg bg-alpine px-4 text-sm font-semibold text-white">
+          <Link href={`/travel/${state.firstDay.id}`} data-testid="today-card-link" className="tap inline-flex items-center rounded-full bg-alpine px-4 text-sm font-semibold text-white">
             첫 일정 보기 · {state.firstDay.nameKo}
           </Link>
         }
@@ -43,7 +43,7 @@ export function TodayCard({
         tone="info"
         title="원정이 종료되었습니다"
         action={
-          <Link href="/itinerary" data-testid="today-card-link" className="tap inline-flex items-center rounded-lg bg-alpine px-4 text-sm font-semibold text-white">
+          <Link href="/itinerary" data-testid="today-card-link" className="tap inline-flex items-center rounded-full bg-alpine px-4 text-sm font-semibold text-white">
             전체 일정 요약 보기
           </Link>
         }

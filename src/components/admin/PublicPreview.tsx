@@ -9,7 +9,7 @@ export function PublicPreview({ lodgings, bookings }: { lodgings: EditorLodging[
     <div className="card overflow-hidden">
       <table className="w-full text-sm">
         <caption className="sr-only">방문자에게 보이는 예약 상태</caption>
-        <thead className="bg-snow text-left text-xs text-rock">
+        <thead className="bg-ink text-left text-xs text-white">
           <tr>
             <th scope="col" className="px-3 py-2">
               Day

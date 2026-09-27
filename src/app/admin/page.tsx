@@ -45,7 +45,7 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
           title="이 정보에 접근할 수 없습니다"
           action={
             <div className="flex flex-wrap gap-2">
-              <Link href="/" className="tap inline-flex items-center rounded-lg bg-alpine px-4 text-sm font-semibold text-white">
+              <Link href="/" className="tap inline-flex items-center rounded-full bg-alpine px-4 text-sm font-semibold text-white">
                 공개 화면으로
               </Link>
               <SignOutButton />
@@ -62,7 +62,7 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
           title={`리더로 로그인됨 · ${session.email}`}
           action={
             <div className="flex flex-wrap gap-2">
-              <Link href="/admin/bookings" className="tap inline-flex items-center rounded-lg bg-alpine px-4 text-sm font-semibold text-white">
+              <Link href="/admin/bookings" className="tap inline-flex items-center rounded-full bg-alpine px-4 text-sm font-semibold text-white">
                 12박 예약 상태 편집
               </Link>
               <SignOutButton />
@@ -75,7 +75,7 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
               DB `team_members`에 리더 이메일이 등록되지 않았습니다. 저장이 거부됩니다 — 마이그레이션 하단 주석의 insert 문을 실행하세요.
             </span>
           ) : null}
-          {registered === true ? <span className="mt-2 block text-emerald-800">DB 리더 등록 확인됨.</span> : null}
+          {registered === true ? <span className="mt-2 block text-alpine-dark">DB 리더 등록 확인됨.</span> : null}
         </StatusNote>
       ) : null}
     </div>

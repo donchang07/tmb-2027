@@ -42,7 +42,7 @@ export default async function JournalDayPage({ params }: { params: Promise<Param
         </div>
         <h1 className="mt-1 text-2xl font-bold">{day.nameKo}</h1>
         <p className="text-rock">{day.nameOriginal}</p>
-        <Link href={`/day/${day.id}`} className="tap mt-1 inline-flex items-center text-sm font-medium text-alpine underline-offset-2 hover:underline">
+        <Link href={`/day/${day.id}`} className="tap mt-1 inline-flex items-center text-sm font-medium text-alpine-dark underline-offset-2 hover:underline">
           Day 상세 보기
         </Link>
       </header>

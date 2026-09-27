@@ -35,21 +35,21 @@ export function ElevationProfile({ day }: { day: Day }) {
   return (
     <div>
       <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={label} className="mt-3 h-auto w-full">
-        <path d={area} fill="#0F5D7A" opacity={0.1} />
-        <path d={line} stroke="#0F5D7A" strokeWidth={3} fill="none" strokeLinejoin="round" />
+        <path d={area} fill="#0071E3" opacity={0.1} />
+        <path d={line} stroke="#0071E3" strokeWidth={3} fill="none" strokeLinejoin="round" />
         {points.map((p, i) =>
           p.altitudeM !== null ? (
             <g key={p.sequence}>
-              <circle cx={x(i)} cy={y(p.altitudeM)} r={5} fill={p.role === "via" ? "#C84A36" : "#0F5D7A"} stroke="#fff" strokeWidth={1.5} />
-              <text x={x(i)} y={y(p.altitudeM) - 10} fontSize={11} fontWeight={700} textAnchor={i === 0 ? "start" : i === points.length - 1 ? "end" : "middle"} fill="#1D2428">
+              <circle cx={x(i)} cy={y(p.altitudeM)} r={5} fill={p.role === "via" ? "#D70015" : "#0071E3"} stroke="#fff" strokeWidth={1.5} />
+              <text x={x(i)} y={y(p.altitudeM) - 10} fontSize={11} fontWeight={700} textAnchor={i === 0 ? "start" : i === points.length - 1 ? "end" : "middle"} fill="#1D1D1F">
                 {fmtM(p.altitudeM)}
               </text>
-              <text x={x(i)} y={H - 14} fontSize={10} textAnchor={i === 0 ? "start" : i === points.length - 1 ? "end" : "middle"} fill="#56616A">
+              <text x={x(i)} y={H - 14} fontSize={10} textAnchor={i === 0 ? "start" : i === points.length - 1 ? "end" : "middle"} fill="#6E6E73">
                 {p.labelOriginal.length > 10 ? `${p.labelOriginal.slice(0, 10)}…` : p.labelOriginal}
               </text>
             </g>
           ) : (
-            <text key={p.sequence} x={x(i)} y={H - 14} fontSize={10} textAnchor="middle" fill="#C84A36">
+            <text key={p.sequence} x={x(i)} y={H - 14} fontSize={10} textAnchor="middle" fill="#D70015">
               고도 확인 필요
             </text>
           ),

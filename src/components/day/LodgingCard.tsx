@@ -71,7 +71,7 @@ export function LodgingCard({
       ) : null}
 
       {status === "alternative" ? (
-        <p className="mt-3 rounded-lg border border-safety/40 bg-safety/5 p-2 text-sm text-safety">
+        <p className="mt-3 rounded-lg bg-white p-2 text-sm font-semibold text-safety">
           대안 숙소 확인 필요 — {approvedAlternative ?? lodging.alternative ?? "승인된 대안을 리더에게 확인하세요."}
         </p>
       ) : null}
@@ -108,10 +108,10 @@ export function LodgingCard({
               공식 예약 ({CHANNEL_LABEL[lodging.bookingChannel]})
             </ExternalLink>
           ) : (
-            <span className="text-sm text-amber-800">예약 링크 확인 필요</span>
+            <span className="text-sm font-semibold text-ink">예약 링크 확인 필요</span>
           )}
           {contact.kind === "phone" && contact.value ? (
-            <a href={`tel:${contact.value.replace(/\s+/g, "")}`} className="tap inline-flex items-center rounded-lg bg-alpine px-3 text-sm font-semibold text-white">
+            <a href={`tel:${contact.value.replace(/\s+/g, "")}`} className="tap inline-flex items-center rounded-full bg-alpine px-3 text-sm font-semibold text-white">
               전화 {contact.value}
             </a>
           ) : null}
@@ -120,7 +120,7 @@ export function LodgingCard({
               공식 연락
             </ExternalLink>
           ) : null}
-          {contact.kind === "none" ? <span className="text-sm text-amber-800">연락 수단 확인 필요</span> : null}
+          {contact.kind === "none" ? <span className="text-sm font-semibold text-ink">연락 수단 확인 필요</span> : null}
           {lodging.verifiedPhone === null ? <Badge tone="warn">전화 확인 필요</Badge> : null}
         </div>
       )}

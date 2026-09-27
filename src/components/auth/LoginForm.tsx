@@ -100,7 +100,7 @@ export function LoginForm({ next }: { next: string | null }) {
             aria-pressed={showPassword}
             aria-label="비밀번호 표시"
             onClick={() => setShowPassword((v) => !v)}
-            className="tap shrink-0 rounded-lg border border-rock/40 px-3 text-sm text-rock"
+            className="tap shrink-0 rounded-full border border-rock/40 px-3 text-sm text-rock"
           >
             표시
           </button>
@@ -111,7 +111,7 @@ export function LoginForm({ next }: { next: string | null }) {
           </p>
         ) : null}
       </div>
-      <button type="submit" disabled={pending} aria-busy={pending} className="tap w-full rounded-lg bg-alpine px-4 font-semibold text-white disabled:opacity-60">
+      <button type="submit" disabled={pending} aria-busy={pending} className="tap w-full rounded-full bg-alpine px-4 font-semibold text-white disabled:opacity-60">
         {pending ? "로그인 중…" : "로그인"}
       </button>
       {serverError ? (

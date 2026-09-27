@@ -18,7 +18,7 @@ export default async function SignupPage({ searchParams }: { searchParams: Promi
       </p>
       <SignupForm next={next} />
       <p className="text-sm">
-        <Link href={next ? `/login?next=${encodeURIComponent(next)}` : "/login"} className="tap inline-flex items-center font-semibold text-alpine underline">
+        <Link href={next ? `/login?next=${encodeURIComponent(next)}` : "/login"} className="tap inline-flex items-center font-semibold text-alpine-dark underline">
           이미 계정이 있으신가요? 로그인
         </Link>
       </p>

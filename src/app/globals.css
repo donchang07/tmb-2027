@@ -1,13 +1,17 @@
 @import "tailwindcss";
 
+/* Apple 스타일 디자인 시스템 — DESIGN.md §4.1. 클래스 이름은 유지하고 값만 매핑한다. */
 @theme {
-  --color-alpine: #0f5d7a;
-  --color-alpine-dark: #0a4359;
-  --color-snow: #f7f8f5;
-  --color-rock: #56616a;
-  --color-safety: #c84a36;
-  --color-ink: #1d2428;
-  --radius-card: 16px;
+  --color-alpine: #0071e3; /* Blue: 유일한 강조색 (버튼 채움, 큰 숫자) */
+  --color-alpine-dark: #0066cc; /* Blue Link: 작은 링크·강조 글자 */
+  --color-snow: #f5f5f7; /* Surface: 카드 면 */
+  --color-rock: #6e6e73; /* Gray Text: 보조 텍스트 */
+  --color-safety: #d70015; /* Red: 안전·비상·오류 전용 예외 */
+  --color-ink: #1d1d1f; /* Ink: 주 텍스트 */
+  --color-alpine-bright: #2997ff; /* 블랙 위 Blue (7.0:1): 히어로 아이브라우 */
+  --color-mist: #86868b; /* Gray: 블랙 위 보조 텍스트 */
+  --radius-card: 14px;
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
 }
 
 html {
@@ -16,9 +20,11 @@ html {
 }
 
 body {
-  background: var(--color-snow);
+  background: #fff;
   color: var(--color-ink);
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.01em;
   font-variant-numeric: tabular-nums;
   overflow-x: hidden;
   min-width: 320px;
@@ -51,35 +57,50 @@ button:focus-visible,
   outline-offset: 2px;
 }
 
-.card {
-  min-width: 0;
-  background: #fff;
-  border-radius: var(--radius-card);
-  border: 1px solid rgba(86, 97, 106, 0.18);
-  box-shadow: 0 1px 2px rgba(29, 36, 40, 0.06);
-}
-
 .tap {
   min-height: 44px;
   min-width: 44px;
 }
 
-.hero-gradient {
-  background: linear-gradient(160deg, #0f5d7a 0%, #2b7f9b 55%, #f7f8f5 140%);
-}
-
-.skeleton {
-  background: linear-gradient(90deg, #e6e9e6 25%, #f2f4f1 50%, #e6e9e6 75%);
-  background-size: 200% 100%;
-  animation: shimmer 1.2s infinite;
-  border-radius: 8px;
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: 200% 0;
+/* 컴포넌트 클래스는 레이어 안에 두어 Tailwind 유틸리티(bg-white 등)로 덮어쓸 수 있게 한다. */
+@layer components {
+  /* 카드: Surface 면만으로 구분한다. 테두리·그림자 없음. */
+  .card {
+    min-width: 0;
+    background: var(--color-snow);
+    border-radius: var(--radius-card);
   }
-  100% {
-    background-position: -200% 0;
+
+  /* 아이브라우: 제목 위 작은 강조 라벨 */
+  .eyebrow {
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-alpine-dark);
+  }
+
+  /* 스켈레톤: 그라데이션 없이 Surface 단색이 깜박인다 */
+  .skeleton {
+    background: var(--color-snow);
+    animation: skeleton-pulse 1.6s ease-in-out infinite;
+    border-radius: 8px;
+  }
+
+  .eyebrow-danger {
+    color: var(--color-safety);
+  }
+}
+
+@keyframes skeleton-pulse {
+  50% {
+    opacity: 0.55;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton {
+    animation: none;
   }
 }

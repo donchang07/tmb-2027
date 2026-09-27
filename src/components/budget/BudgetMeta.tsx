@@ -30,18 +30,18 @@ export function BudgetMeta({
         </div>
         <dl className="mt-3 grid gap-2 text-sm sm:grid-cols-2">
           {rates.map((r) => (
-            <div key={r.pair} className="flex justify-between rounded-lg bg-snow px-3 py-2">
+            <div key={r.pair} className="flex justify-between rounded-lg bg-white px-3 py-2">
               <dt className="text-rock">{r.pair}</dt>
               <dd className="font-semibold">
                 {krw.format(r.rate)} <span className="text-xs font-normal text-rock">({r.checkedAt})</span>
               </dd>
             </div>
           ))}
-          <div className="flex justify-between rounded-lg bg-snow px-3 py-2">
+          <div className="flex justify-between rounded-lg bg-white px-3 py-2">
             <dt className="text-rock">예산 기준일</dt>
             <dd className="font-semibold">{meta.checkedAt}</dd>
           </div>
-          <div className="flex justify-between rounded-lg bg-snow px-3 py-2">
+          <div className="flex justify-between rounded-lg bg-white px-3 py-2">
             <dt className="text-rock">재확인 기한</dt>
             <dd className="font-semibold">{meta.validUntil}</dd>
           </div>
@@ -49,11 +49,12 @@ export function BudgetMeta({
         <p className="mt-3 text-xs text-rock">표시 통화 EUR. CHF 항목은 1 CHF = 1.07 EUR로 환산된 근거값. 결제 전 재확인.</p>
       </section>
 
-      <section className="card border-l-4 border-l-alpine p-4" aria-labelledby="reco-heading">
-        <h2 id="reco-heading" className="font-bold">
+      <section className="card p-4" aria-labelledby="reco-heading">
+        <p className="eyebrow">권장</p>
+        <h2 id="reco-heading" className="mt-1 font-bold">
           권장 준비 금액 (1인)
         </h2>
-        <p className="mt-1 text-2xl font-black text-alpine">
+        <p className="mt-1 text-2xl font-bold text-alpine">
           {fmtEur(summary.recommendedLow)} ~ {fmtEur(summary.recommendedHigh)}
         </p>
         <p className="text-sm text-rock">

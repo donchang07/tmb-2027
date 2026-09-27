@@ -25,7 +25,7 @@ function Metric({ label, value }: { label: string; value: string }) {
   return (
     <div className="card p-4">
       <dt className="text-xs text-rock">{label}</dt>
-      <dd className="mt-1 text-xl font-bold text-alpine">{value}</dd>
+      <dd className="mt-1 text-xl font-bold text-alpine-dark">{value}</dd>
     </div>
   );
 }

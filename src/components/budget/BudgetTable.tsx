@@ -7,7 +7,7 @@ export function BudgetTable({ items, summary }: { items: BudgetItem[]; summary: 
     <div className="card overflow-hidden">
       <table className="w-full text-sm">
         <caption className="sr-only">항목별 1인 예산</caption>
-        <thead className="bg-snow text-left text-xs text-rock">
+        <thead className="bg-ink text-left text-xs text-white">
           <tr>
             <th scope="col" className="px-3 py-2">
               항목
@@ -35,7 +35,7 @@ export function BudgetTable({ items, summary }: { items: BudgetItem[]; summary: 
             </tr>
           ))}
         </tbody>
-        <tfoot className="border-t-2 border-rock/30 bg-snow">
+        <tfoot className="border-t border-rock/30 bg-white">
           <tr>
             <th scope="row" className="px-3 py-2 text-left">
               소계
@@ -52,7 +52,7 @@ export function BudgetTable({ items, summary }: { items: BudgetItem[]; summary: 
             <td className="px-3 py-2 text-right">{fmtEur(summary.contingencyMid)}</td>
             <td className="hidden px-3 py-2 text-xs text-rock sm:table-cell">만실 대체 숙소·우천 시 택시 등</td>
           </tr>
-          <tr className="text-base font-bold text-alpine">
+          <tr className="text-base font-bold text-alpine-dark">
             <th scope="row" className="px-3 py-3 text-left">
               합계(1인, 항공권 제외)
             </th>

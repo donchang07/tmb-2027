@@ -37,7 +37,7 @@ export default async function AdminBookingsPage() {
           <p className="text-sm text-rock">리더 {session.email} · 상태·숙박 정보는 공개, 예약번호·메모는 비공개</p>
         </div>
         <div className="flex gap-2">
-          <Link href="/admin" className="tap inline-flex items-center rounded-lg border border-rock/40 px-4 text-sm font-semibold text-rock">
+          <Link href="/admin" className="tap inline-flex items-center rounded-full border border-rock/40 px-4 text-sm font-semibold text-rock">
             관리자 홈
           </Link>
           <SignOutButton />

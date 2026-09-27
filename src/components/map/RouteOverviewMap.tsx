@@ -13,14 +13,14 @@ function Marker({ node, x, y }: { node: RouteNode; x: number; y: number }) {
       return (
         <g data-marker="pass">
           <title>{title}</title>
-          <polygon points={`${x},${y - 8} ${x - 7},${y + 5} ${x + 7},${y + 5}`} fill="#C84A36" stroke="#fff" strokeWidth={1.5} />
+          <polygon points={`${x},${y - 8} ${x - 7},${y + 5} ${x + 7},${y + 5}`} fill="#D70015" stroke="#fff" strokeWidth={1.5} />
         </g>
       );
     case "lodging":
       return (
         <g data-marker="lodging">
           <title>{title}</title>
-          <circle cx={x} cy={y} r={6.5} fill="#0F5D7A" stroke="#fff" strokeWidth={1.5} />
+          <circle cx={x} cy={y} r={6.5} fill="#0071E3" stroke="#fff" strokeWidth={1.5} />
         </g>
       );
     case "start":
@@ -28,21 +28,21 @@ function Marker({ node, x, y }: { node: RouteNode; x: number; y: number }) {
       return (
         <g data-marker={node.kind}>
           <title>{title}</title>
-          <rect x={x - 7} y={y - 7} width={14} height={14} transform={`rotate(45 ${x} ${y})`} fill="#1D2428" stroke="#fff" strokeWidth={1.5} />
+          <rect x={x - 7} y={y - 7} width={14} height={14} transform={`rotate(45 ${x} ${y})`} fill="#1D1D1F" stroke="#fff" strokeWidth={1.5} />
         </g>
       );
     case "town":
       return (
         <g data-marker="town">
           <title>{title}</title>
-          <circle cx={x} cy={y} r={5.5} fill="#fff" stroke="#56616A" strokeWidth={2} />
+          <circle cx={x} cy={y} r={5.5} fill="#fff" stroke="#6E6E73" strokeWidth={2} />
         </g>
       );
     default:
       return (
         <g data-marker="waypoint">
           <title>{title}</title>
-          <circle cx={x} cy={y} r={3} fill="#56616A" />
+          <circle cx={x} cy={y} r={3} fill="#6E6E73" />
         </g>
       );
   }
@@ -75,16 +75,16 @@ export function RouteOverviewMap() {
       <title id="map-title">TMB 2027 12개 Day 개요 지도 (개략 위치)</title>
       <desc id="map-desc">{desc}</desc>
 
-      <text x={PAD} y={H - 24} fontSize={13} fill="#56616A">
+      <text x={PAD} y={H - 24} fontSize={13} fill="#6E6E73">
         개략 위치 · 공식 지도 아님 · 거리·시간은 Day 카드 기준
       </text>
-      <text x={W * 0.18} y={H * 0.86} fontSize={22} fontWeight={700} fill="#56616A" opacity={0.35}>
+      <text x={W * 0.18} y={H * 0.86} fontSize={22} fontWeight={700} fill="#6E6E73" opacity={0.35}>
         FR
       </text>
-      <text x={W * 0.6} y={H * 0.78} fontSize={22} fontWeight={700} fill="#56616A" opacity={0.35}>
+      <text x={W * 0.6} y={H * 0.78} fontSize={22} fontWeight={700} fill="#6E6E73" opacity={0.35}>
         IT
       </text>
-      <text x={W * 0.8} y={H * 0.2} fontSize={22} fontWeight={700} fill="#56616A" opacity={0.35}>
+      <text x={W * 0.8} y={H * 0.2} fontSize={22} fontWeight={700} fill="#6E6E73" opacity={0.35}>
         CH
       </text>
 

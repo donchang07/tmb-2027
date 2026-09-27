@@ -26,7 +26,7 @@ export function DayCard({
   return (
     <article
       aria-current={isToday ? "date" : undefined}
-      className={`card p-4 transition ${isToday ? "border-2 border-alpine ring-2 ring-alpine/20" : ""}`}
+      className={`card p-4 transition ${isToday ? "ring-2 ring-alpine" : ""}`}
     >
       <Link href={`/day/${day.id}`} data-testid={linkTestId} className="block focus-visible:outline-none">
         <div className="flex flex-wrap items-center gap-2 text-sm text-rock">
@@ -54,7 +54,7 @@ export function DayCard({
           <BookingStatusBadge lodgingId={day.lodgingId} initialStatus={bookingStatus} initialUpdatedAt={bookingUpdatedAt} />
         </div>
         {missingFields.length > 0 ? (
-          <p className="mt-2 text-xs text-amber-800">
+          <p className="mt-2 text-xs font-semibold text-ink">
             이 항목은 확인 중입니다 · 기준일 {day.sourceCheckedAt} ({missingFields.join(", ")})
           </p>
         ) : null}
@@ -65,7 +65,7 @@ export function DayCard({
 
 function Metric({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-lg bg-snow px-1 py-2">
+    <div className="rounded-lg bg-white px-1 py-2">
       <dt className="text-[11px] text-rock">{label}</dt>
       <dd className="text-sm font-bold">{value}</dd>
     </div>

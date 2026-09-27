@@ -44,7 +44,7 @@ export function SignupForm({ next }: { next: string | null }) {
   if (state.status === "success") {
     const target = state.redirectTo;
     return (
-      <div ref={successRef} tabIndex={-1} role="status" className="card border border-alpine/30 bg-alpine/5 p-4 text-alpine-dark">
+      <div ref={successRef} tabIndex={-1} role="status" className="card p-4 text-ink">
         <p className="font-semibold">가입이 완료되어 로그인되었습니다. 잠시 후 보던 화면으로 이동합니다.</p>
         <a
           href={target}
@@ -52,7 +52,7 @@ export function SignupForm({ next }: { next: string | null }) {
             e.preventDefault();
             void clearSwPageCache().then(() => window.location.assign(target));
           }}
-          className="tap mt-3 inline-flex items-center rounded-lg bg-alpine px-4 text-sm font-semibold text-white"
+          className="tap mt-3 inline-flex items-center rounded-full bg-alpine px-4 text-sm font-semibold text-white"
         >
           바로 이동
         </a>
@@ -158,7 +158,7 @@ export function SignupForm({ next }: { next: string | null }) {
           </p>
         ) : null}
       </div>
-      <button type="submit" disabled={pending} aria-busy={pending} className="tap w-full rounded-lg bg-alpine px-4 font-semibold text-white disabled:opacity-60">
+      <button type="submit" disabled={pending} aria-busy={pending} className="tap w-full rounded-full bg-alpine px-4 font-semibold text-white disabled:opacity-60">
         {pending ? "가입 중…" : "가입하기"}
       </button>
       {serverError ? (

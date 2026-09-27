@@ -22,7 +22,7 @@ export function MagicLinkForm({ next }: { next: string }) {
         className="tap w-full rounded-lg border border-rock/40 px-3 text-base"
         placeholder="leader@example.com"
       />
-      <button type="submit" disabled={pending} className="tap w-full rounded-lg bg-alpine px-4 font-semibold text-white disabled:opacity-60 sm:w-auto">
+      <button type="submit" disabled={pending} className="tap w-full rounded-full bg-alpine px-4 font-semibold text-white disabled:opacity-60 sm:w-auto">
         {pending ? "보내는 중…" : "로그인 링크 보내기"}
       </button>
       {state.message ? (

@@ -7,7 +7,7 @@ export default function NotFound() {
       tone="warn"
       title="페이지를 찾을 수 없습니다"
       action={
-        <Link href="/" className="tap inline-flex items-center rounded-lg bg-alpine px-4 text-sm font-semibold text-white">
+        <Link href="/" className="tap inline-flex items-center rounded-full bg-alpine px-4 text-sm font-semibold text-white">
           홈으로
         </Link>
       }

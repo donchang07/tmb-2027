@@ -3,27 +3,27 @@ import { AccountMenu } from "@/components/layout/AccountMenu";
 
 export function AppHeader() {
   return (
-    <header className="sticky top-0 z-30 border-b border-rock/20 bg-snow/95 backdrop-blur">
+    <header className="sticky top-0 z-30 border-b border-rock/15 bg-white/80 backdrop-blur-xl">
       <div className="mx-auto flex h-14 w-full max-w-3xl items-center justify-between px-4">
-        <Link href="/" className="tap flex items-center gap-2 font-bold text-alpine" aria-label="TMB 2027 홈">
+        <Link href="/" className="tap flex items-center gap-2 font-semibold text-ink" aria-label="TMB 2027 홈">
           <span className="text-lg">TMB 2027</span>
           <span className="hidden text-sm font-normal text-rock sm:inline">걸어야 산다!</span>
         </Link>
         <div className="flex items-center gap-1">
           <nav aria-label="보조 메뉴" className="hidden gap-1 sm:flex">
-            <Link href="/itinerary" className="tap flex items-center px-3 text-sm text-rock hover:text-alpine">
+            <Link href="/itinerary" className="tap flex items-center px-3 text-sm text-rock hover:text-ink">
               일정
             </Link>
-            <Link href="/budget" className="tap flex items-center px-3 text-sm text-rock hover:text-alpine">
+            <Link href="/budget" className="tap flex items-center px-3 text-sm text-rock hover:text-ink">
               예산
             </Link>
-            <Link href="/map" className="tap flex items-center px-3 text-sm text-rock hover:text-alpine">
+            <Link href="/map" className="tap flex items-center px-3 text-sm text-rock hover:text-ink">
               지도
             </Link>
-            <Link href="/packing" className="tap flex items-center px-3 text-sm text-rock hover:text-alpine">
+            <Link href="/packing" className="tap flex items-center px-3 text-sm text-rock hover:text-ink">
               준비물
             </Link>
-            <Link href="/admin" className="tap flex items-center px-3 text-sm text-rock hover:text-alpine">
+            <Link href="/admin" className="tap flex items-center px-3 text-sm text-rock hover:text-ink">
               관리자
             </Link>
           </nav>

@@ -98,11 +98,11 @@ export function LodgingFields({ lodging }: { lodging: Lodging }) {
       </div>
 
       <div className="flex flex-wrap items-center gap-3">
-        <button type="submit" disabled={pending} className="tap rounded-lg bg-alpine px-4 font-semibold text-white disabled:opacity-60">
+        <button type="submit" disabled={pending} className="tap rounded-full bg-alpine px-4 font-semibold text-white disabled:opacity-60">
           {pending ? "저장 중…" : "숙박 정보 저장"}
         </button>
         {state.status === "saved" ? (
-          <span role="status" className="text-sm text-emerald-800">
+          <span role="status" className="text-sm text-alpine-dark">
             저장됨 — 새로고침하면 최신 값이 보입니다
           </span>
         ) : null}

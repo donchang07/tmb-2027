@@ -33,7 +33,7 @@ export function BookingStatusBadge({
     <span data-testid="booking-status" className="inline-flex flex-col items-end gap-0.5 text-right">
       <Badge tone={statusTone(status)}>{BOOKING_STATUS_LABEL[status]}</Badge>
       {updatedAt ? <span className="text-xs text-rock">상태 갱신 {formatKoDateTime(updatedAt)}</span> : null}
-      {notice ? <span className="text-xs text-amber-800">{notice}</span> : null}
+      {notice ? <span className="text-xs font-semibold text-ink">{notice}</span> : null}
     </span>
   );
 }

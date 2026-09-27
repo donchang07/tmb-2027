@@ -26,11 +26,11 @@ export function DisplayNameForm({ dayId, current }: { dayId: string; current: st
           placeholder="동인"
         />
       </label>
-      <button type="submit" disabled={pending} className="tap rounded-lg bg-alpine px-4 font-semibold text-white disabled:opacity-60">
+      <button type="submit" disabled={pending} className="tap rounded-full bg-alpine px-4 font-semibold text-white disabled:opacity-60">
         {pending ? "저장 중…" : "표시명 저장"}
       </button>
       {state.status === "saved" ? (
-        <p role="status" className="text-sm text-emerald-800">
+        <p role="status" className="text-sm text-alpine-dark">
           {state.message}
         </p>
       ) : null}
