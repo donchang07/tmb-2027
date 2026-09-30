@@ -7,24 +7,28 @@ export const metadata: Metadata = { title: "개요 지도 — TMB 2027" };
 
 export default function MapPage() {
   return (
-    <div className="space-y-6">
+    <div className="flex flex-col gap-3.5 sm:gap-6">
       <header>
-        <h1 className="text-2xl font-bold">개요 지도</h1>
-        <p className="text-sm text-rock">12개 Day · 주요 고개·숙박 위치 · 반시계 방향</p>
+        <h1 data-enter="1" className="text-[32px] font-extrabold leading-tight tracking-[-0.035em] sm:text-[44px]">
+          개요 지도
+        </h1>
+        <p className="mt-1 text-sm text-ink-2 sm:mt-2 sm:text-[17px]">12개 Day · 주요 고개·숙박 위치 · 반시계 방향</p>
       </header>
 
       <StatusNote tone="info" title="정적 개요 지도">
         검증된 GPX를 확보하기 전까지는 지점 마커 기반 개요만 제공합니다. GPX 승인 후 상호작용 지도(MapLibre)로 교체할 예정입니다 (I-003).
       </StatusNote>
 
-      <RouteOverviewMap />
-      <MapLegend />
+      <div className="grid gap-3.5 sm:gap-4 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)] lg:items-start lg:gap-6">
+        <RouteOverviewMap />
+        <MapLegend />
+      </div>
 
-      <section className="card p-4" aria-labelledby="source-heading">
-        <h2 id="source-heading" className="font-bold">
+      <section aria-labelledby="source-heading" className="text-xs leading-relaxed text-ink-3 sm:text-[13px]">
+        <h2 id="source-heading" className="font-bold text-forest-900">
           출처·라이선스
         </h2>
-        <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-rock">
+        <ul className="mt-1.5 list-disc space-y-1 pl-5">
           <li>좌표: 공개 지명 좌표 근사값(±1 km), 표시 전용 [추정]</li>
           <li>고도·구간: `docs/PRD.md` 부록 C (기준일 2026-09-09), GPX ±10% 허용</li>
           <li>지도 기준일 2026-09-16 · 라이선스: 팀 자체 제작 SVG (외부 타일·이미지 미사용)</li>

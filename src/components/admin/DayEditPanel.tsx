@@ -20,7 +20,7 @@ export function DayEditPanel({
   const [open, setOpen] = useState(false);
 
   return (
-    <section className="card p-4" aria-labelledby="day-edit-heading">
+    <section className="rounded-[12px] border border-amber p-4" aria-labelledby="day-edit-heading">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h3 id="day-edit-heading" className="font-bold">
           리더 편집
@@ -30,7 +30,7 @@ export function DayEditPanel({
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-controls="day-edit-body"
-          className="tap rounded-lg border border-alpine/40 px-3 text-sm font-semibold text-alpine"
+          className="btn btn-outline"
         >
           {open ? "접기" : "펼치기"}
         </button>

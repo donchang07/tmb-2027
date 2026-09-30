@@ -9,11 +9,11 @@ export function DayMetrics({ day }: { day: Day }) {
     { label: "시간", value: day.duration ?? "—" },
   ];
   return (
-    <dl className="grid grid-cols-2 gap-3 sm:grid-cols-4" aria-label="핵심 지표">
+    <dl className="grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3" aria-label="핵심 지표">
       {items.map((it) => (
-        <div key={it.label} className="card p-4 text-center">
-          <dt className="text-xs text-rock">{it.label}</dt>
-          <dd className="mt-1 text-2xl font-black text-alpine">{it.value}</dd>
+        <div key={it.label} className="card p-3.5 sm:p-[18px] lg:p-3.5 xl:p-[18px]">
+          <dt className="text-xs text-ink-3 sm:text-[13px]">{it.label}</dt>
+          <dd className="mt-0.5 text-[22px] font-bold tracking-[-0.02em] sm:mt-1 whitespace-nowrap lg:text-[19px] xl:text-2xl">{it.value}</dd>
         </div>
       ))}
     </dl>

@@ -3,8 +3,8 @@ import { CardSkeleton, Skeleton } from "@/components/ui/Skeleton";
 export default function Loading() {
   return (
     <div>
-      <Skeleton className="h-48 w-full rounded-[16px]" />
-      <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
+      <Skeleton className="h-[220px] w-full rounded-[12px] sm:h-[340px]" />
+      <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
         <Skeleton className="h-20" />
         <Skeleton className="h-20" />
         <Skeleton className="h-20" />

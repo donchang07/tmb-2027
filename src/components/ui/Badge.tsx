@@ -1,17 +1,17 @@
-type Tone = "neutral" | "alpine" | "safety" | "success" | "warn";
+type Tone = "neutral" | "sage" | "dark" | "amber" | "danger" | "success" | "warn" | "light" | "outline";
 
 const TONE: Record<Tone, string> = {
-  neutral: "bg-rock/10 text-rock",
-  alpine: "bg-alpine/10 text-alpine",
-  safety: "bg-safety/10 text-safety",
-  success: "bg-emerald-100 text-emerald-800",
-  warn: "bg-amber-100 text-amber-800",
+  neutral: "border border-line bg-bone text-ink-2",
+  sage: "bg-sage-200 text-forest-900",
+  dark: "bg-forest-900 text-bone",
+  amber: "bg-amber text-amber-ink",
+  danger: "bg-danger text-white",
+  success: "bg-forest-700 text-white",
+  warn: "bg-warn-bg text-warn-fg",
+  light: "bg-bone text-forest-900",
+  outline: "border border-line text-ink-2",
 };
 
 export function Badge({ children, tone = "neutral", className = "" }: { children: React.ReactNode; tone?: Tone; className?: string }) {
-  return (
-    <span className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ${TONE[tone]} ${className}`}>
-      {children}
-    </span>
-  );
+  return <span className={`badge ${TONE[tone]} ${className}`}>{children}</span>;
 }

@@ -31,9 +31,21 @@ import { logEvent } from "@/lib/log";
 import { StatusNote } from "@/components/ui/StatusNote";
 import { CardSkeleton } from "@/components/ui/Skeleton";
 
-type Props = { categories: PackingCategory[]; items: PackingItem[] };
+type Props = { categories: PackingCategory[]; items: PackingItem[]; header?: React.ReactNode };
 
-const LINK_CLASS = "tap inline-flex items-center rounded-lg border border-alpine/40 px-4 text-sm font-semibold text-alpine-dark";
+const LINK_CLASS = "btn btn-primary";
+
+function Layout({ header, aside, children }: { header?: React.ReactNode; aside?: React.ReactNode; children: React.ReactNode }) {
+  return (
+    <div className="grid gap-3.5 lg:grid-cols-[360px_minmax(0,1fr)] lg:items-start lg:gap-6">
+      <div className="flex min-w-0 flex-col gap-3.5 lg:sticky lg:top-[92px] lg:gap-4">
+        {header}
+        {aside}
+      </div>
+      <div className="min-w-0">{children}</div>
+    </div>
+  );
+}
 
 export function PackingList(props: Props) {
   const [queryClient] = useState(
@@ -52,7 +64,7 @@ export function PackingList(props: Props) {
 export function PackingSubtitle() {
   const auth = useAuthUser();
   return (
-    <p className="text-sm text-rock">
+    <p className="mt-1 text-sm text-ink-2 sm:mt-1.5 sm:text-[15px]">
       {auth.status === "user" ? "체크 상태는 내 계정에 저장됩니다 · 12일 산장 트레킹 기준" : "체크 상태는 이 기기에만 저장됩니다 · 12일 산장 트레킹 기준"}
     </p>
   );
@@ -60,7 +72,12 @@ export function PackingSubtitle() {
 
 function PackingListBody(props: Props) {
   const auth = useAuthUser();
-  if (auth.status === "loading") return <CardSkeleton count={4} />;
+  if (auth.status === "loading")
+    return (
+      <Layout header={props.header}>
+        <CardSkeleton count={4} />
+      </Layout>
+    );
   if (auth.status === "user") return <AccountChecklist key={auth.userId} userId={auth.userId} {...props} />;
   return <GuestChecklist {...props} showAccountPrompt={auth.status === "guest"} />;
 }
@@ -68,6 +85,7 @@ function PackingListBody(props: Props) {
 function ChecklistBody({
   categories,
   items,
+  header,
   state,
   hydrated,
   statusLine,
@@ -88,66 +106,83 @@ function ChecklistBody({
   const sorted = [...categories].sort((a, b) => a.order - b.order);
 
   return (
-    <div className="space-y-4">
-      {notices}
-      <div className="card p-4">
-        <div className="flex flex-wrap items-center justify-between gap-2">
-          <p className="text-lg font-bold" data-testid="packing-progress">
-            {done}/{total} <span className="text-sm font-normal text-rock">({percent}%)</span>
-          </p>
-          <button
-            type="button"
-            onClick={onClearAll}
-            disabled={!hydrated || done === 0}
-            className="tap rounded-lg border border-rock/40 px-4 text-sm font-semibold text-rock disabled:opacity-50"
-          >
-            전체 해제
-          </button>
-        </div>
-        <progress value={done} max={total} className="mt-2 h-2 w-full" aria-label="준비물 진행률" />
-        {statusLine}
+    <Layout
+      header={header}
+      aside={
+        <>
+          {notices}
+          <div className="card-dark flex flex-col gap-2.5 p-4 sm:gap-3 sm:p-5">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <p className="text-[26px] font-extrabold leading-tight sm:text-[32px]" data-testid="packing-progress">
+                {done}/{total} <span className="whitespace-nowrap text-sm font-semibold text-on-dark-muted sm:text-base">({percent}%)</span>
+              </p>
+              <button type="button" onClick={onClearAll} disabled={!hydrated || done === 0} className="btn border border-on-dark-muted/40 text-sm text-bone">
+                전체 해제
+              </button>
+            </div>
+            <progress
+              value={done}
+              max={total}
+              className="block h-2 w-full appearance-none overflow-hidden rounded-[4px] border-0 bg-dark-line [&::-moz-progress-bar]:bg-amber [&::-webkit-progress-bar]:bg-dark-line [&::-webkit-progress-value]:bg-amber"
+              aria-label="준비물 진행률"
+            />
+            {statusLine}
+          </div>
+          {footer}
+        </>
+      }
+    >
+      <div data-stagger className="grid items-start gap-3.5 sm:grid-cols-2 sm:gap-4">
+        {sorted.map((cat) => {
+          const catItems = items.filter((i) => i.category === cat.id);
+          return (
+            <section key={cat.id} aria-labelledby={`cat-${cat.id}`} className="card px-4 py-3 sm:px-5 sm:py-[18px]">
+              <h2 id={`cat-${cat.id}`} className="flex items-baseline justify-between gap-3 text-base font-bold sm:text-[17px]">
+                {cat.label}{" "}
+                <span className="whitespace-nowrap font-semibold text-ink-3">
+                  ({catItems.filter((i) => state.checked[i.id]).length}/{catItems.length})
+                </span>
+              </h2>
+              <ul className="mt-1 sm:mt-2">
+                {catItems.map((it) => {
+                  const checked = !!state.checked[it.id];
+                  return (
+                    <li key={it.id}>
+                      <label className="tap flex cursor-pointer items-center gap-3 border-t border-bone py-2">
+                        <span className="grid h-6 w-6 shrink-0 place-items-center">
+                          <input
+                            type="checkbox"
+                            checked={checked}
+                            disabled={!hydrated}
+                            onChange={() => onToggle(it.id)}
+                            className="peer col-start-1 row-start-1 h-6 w-6 cursor-pointer appearance-none rounded-[7px] border-2 border-line-strong bg-white checked:border-forest-700 checked:bg-forest-700 disabled:opacity-50"
+                            data-item-id={it.id}
+                          />
+                          <span
+                            aria-hidden="true"
+                            className="pointer-events-none col-start-1 row-start-1 text-[15px] leading-none text-white opacity-0 peer-checked:opacity-100"
+                          >
+                            ✓
+                          </span>
+                        </span>
+                        <span className={`min-w-0 flex-1 text-[15px] ${checked ? "text-ink-3 line-through" : ""}`}>
+                          {it.label}
+                          {it.note ? <small className="block text-xs text-ink-3">{it.note}</small> : null}
+                        </span>
+                      </label>
+                    </li>
+                  );
+                })}
+              </ul>
+            </section>
+          );
+        })}
       </div>
-
-      {footer}
-
-      {sorted.map((cat) => {
-        const catItems = items.filter((i) => i.category === cat.id);
-        return (
-          <section key={cat.id} aria-labelledby={`cat-${cat.id}`} className="card p-4">
-            <h2 id={`cat-${cat.id}`} className="font-bold">
-              {cat.label} <span className="text-sm font-normal text-rock">({catItems.filter((i) => state.checked[i.id]).length}/{catItems.length})</span>
-            </h2>
-            <ul className="mt-2 divide-y divide-rock/10">
-              {catItems.map((it) => {
-                const checked = !!state.checked[it.id];
-                return (
-                  <li key={it.id}>
-                    <label className="tap flex cursor-pointer items-start gap-3 py-2">
-                      <input
-                        type="checkbox"
-                        checked={checked}
-                        disabled={!hydrated}
-                        onChange={() => onToggle(it.id)}
-                        className="mt-0.5 h-6 w-6 shrink-0 accent-alpine"
-                        data-item-id={it.id}
-                      />
-                      <span className={`min-w-0 flex-1 text-sm ${checked ? "line-through text-rock" : ""}`}>
-                        {it.label}
-                        {it.note ? <small className="block text-xs text-rock">{it.note}</small> : null}
-                      </span>
-                    </label>
-                  </li>
-                );
-              })}
-            </ul>
-          </section>
-        );
-      })}
-    </div>
+    </Layout>
   );
 }
 
-function GuestChecklist({ categories, items, showAccountPrompt }: Props & { showAccountPrompt: boolean }) {
+function GuestChecklist({ categories, items, header, showAccountPrompt }: Props & { showAccountPrompt: boolean }) {
   const validIds = useMemo(() => new Set(items.map((i) => i.id)), [items]);
   const [state, setState] = useState<PackingState>(emptyState);
   const [storageOk, setStorageOk] = useState(true);
@@ -165,7 +200,12 @@ function GuestChecklist({ categories, items, showAccountPrompt }: Props & { show
     if (!saveState(next)) setStorageOk(false);
   };
 
-  if (!hydrated) return <CardSkeleton count={4} />;
+  if (!hydrated)
+    return (
+      <Layout header={header}>
+        <CardSkeleton count={4} />
+      </Layout>
+    );
 
   const { done } = progress(state, items);
 
@@ -173,12 +213,13 @@ function GuestChecklist({ categories, items, showAccountPrompt }: Props & { show
     <ChecklistBody
       categories={categories}
       items={items}
+      header={header}
       state={state}
       hydrated={hydrated}
       onToggle={(id) => commit(toggle(state, id, new Date().toISOString()))}
       onClearAll={() => commit(clearAll(new Date().toISOString()))}
       statusLine={
-        <p className="mt-2 text-xs text-rock">
+        <p className="text-[13px] text-on-dark-muted">
           {done > 0 && state.updatedAt ? `저장 ${formatKoDateTime(state.updatedAt)} · 이 기기에만 저장됩니다` : "아직 체크한 항목이 없습니다 — 첫 항목을 체크해 보세요"}
         </p>
       }
@@ -192,7 +233,7 @@ function GuestChecklist({ categories, items, showAccountPrompt }: Props & { show
                 <Link href="/login?next=/packing" className={LINK_CLASS}>
                   로그인
                 </Link>
-                <Link href="/signup?next=/packing" className={LINK_CLASS}>
+                <Link href="/signup?next=/packing" className="btn btn-white">
                   회원가입
                 </Link>
               </div>
@@ -230,7 +271,7 @@ function useOnline(): boolean {
 
 type SyncStatus = "idle" | "saving" | "saved" | "failed";
 
-function AccountChecklist({ userId, categories, items }: Props & { userId: string }) {
+function AccountChecklist({ userId, categories, items, header }: Props & { userId: string }) {
   const validIds = useMemo(() => new Set(items.map((i) => i.id)), [items]);
   const queryClient = useQueryClient();
   const queryKey = useMemo(() => ["packing_checks", userId], [userId]);
@@ -333,7 +374,12 @@ function AccountChecklist({ userId, categories, items }: Props & { userId: strin
   }, [flush]);
 
   const base = query.data ?? copy?.rows;
-  if (base === undefined && query.isPending) return <CardSkeleton count={4} />;
+  if (base === undefined && query.isPending)
+    return (
+      <Layout header={header}>
+        <CardSkeleton count={4} />
+      </Layout>
+    );
 
   const view = applyQueue(base ?? {}, queue);
   const state = toPackingState(view);
@@ -360,12 +406,13 @@ function AccountChecklist({ userId, categories, items }: Props & { userId: strin
     <ChecklistBody
       categories={categories}
       items={items}
+      header={header}
       state={state}
       hydrated
       onToggle={(id) => change([{ itemId: id, checked: !state.checked[id], updatedAt: new Date().toISOString() }])}
       onClearAll={() => change(clearAllChanges(view, new Date().toISOString()))}
       statusLine={
-        <p role="status" className="mt-2 text-xs text-rock" data-testid="packing-sync-status">
+        <p role="status" className="text-[13px] text-on-dark-muted" data-testid="packing-sync-status">
           {statusText}
         </p>
       }

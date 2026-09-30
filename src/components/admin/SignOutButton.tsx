@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { prepareSignOut } from "@/lib/auth-client";
 
-const DEFAULT_CLASS = "tap inline-flex items-center rounded-lg border border-rock/40 px-4 text-sm font-semibold text-rock";
+const DEFAULT_CLASS = "btn btn-outline text-danger-ink";
 
 export function SignOutButton({ className = DEFAULT_CLASS, menuItem = false }: { className?: string; menuItem?: boolean }) {
   const [pending, setPending] = useState(false);
@@ -33,7 +33,7 @@ export function SignOutButton({ className = DEFAULT_CLASS, menuItem = false }: {
         {pending ? "로그아웃 중…" : "로그아웃"}
       </button>
       {error ? (
-        <p role="alert" className="mt-1 text-xs text-safety">
+        <p role="alert" className="mt-1 text-xs text-danger-ink">
           {error}
         </p>
       ) : null}

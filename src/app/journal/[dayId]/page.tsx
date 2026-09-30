@@ -34,31 +34,35 @@ export default async function JournalDayPage({ params }: { params: Promise<Param
   const alreadyWrote = profile.state === "member" && session.userId ? await hasEntry(day.id, session.userId) : false;
 
   return (
-    <div className="space-y-4">
-      <header>
-        <div className="flex flex-wrap items-center gap-2 text-sm text-rock">
-          <span className="font-semibold text-ink">{formatKoDate(day.date)}</span>
-          <Badge tone="alpine">{dayLabel}</Badge>
-        </div>
-        <h1 className="mt-1 text-2xl font-bold">{day.nameKo}</h1>
-        <p className="text-rock">{day.nameOriginal}</p>
-        <Link href={`/day/${day.id}`} className="tap mt-1 inline-flex items-center text-sm font-medium text-alpine underline-offset-2 hover:underline">
-          Day 상세 보기
-        </Link>
-      </header>
+    <div className="grid gap-5 lg:grid-cols-[400px_minmax(0,1fr)] lg:items-start lg:gap-7">
+      <div className="flex min-w-0 flex-col gap-3 sm:gap-4">
+        <header>
+          <div className="flex flex-wrap items-center gap-2 text-[13px] font-semibold sm:text-sm">
+            <span>{formatKoDate(day.date)}</span>
+            <Badge tone="dark">{dayLabel}</Badge>
+          </div>
+          <h1 data-enter="1" className="mt-3 text-2xl font-extrabold leading-[1.3] tracking-[-0.03em] sm:mt-4 sm:text-[28px]">
+            {day.nameKo}
+          </h1>
+          <p className="mt-2 text-sm text-ink-3">{day.nameOriginal}</p>
+          <Link href={`/day/${day.id}`} className="tap ix-link mt-1 inline-flex items-center text-sm font-semibold text-forest-700 sm:text-base">
+            Day 상세 보기
+          </Link>
+        </header>
 
-      <JournalAccessNote profile={profile} next={`/journal/${day.id}`} />
+        <JournalAccessNote profile={profile} next={`/journal/${day.id}`} />
 
-      {profile.state === "member" && !profile.displayName ? <DisplayNameForm dayId={day.id} current={null} /> : null}
-      {profile.state === "member" && profile.displayName ? (
-        alreadyWrote ? (
-          <StatusNote tone="info" title="이미 기록을 남겼습니다">
-            {DUPLICATE_MESSAGE} — Day별 1건까지 작성할 수 있습니다.
-          </StatusNote>
-        ) : (
-          <JournalForm dayId={day.id} />
-        )
-      ) : null}
+        {profile.state === "member" && !profile.displayName ? <DisplayNameForm dayId={day.id} current={null} /> : null}
+        {profile.state === "member" && profile.displayName ? (
+          alreadyWrote ? (
+            <StatusNote tone="info" title="이미 기록을 남겼습니다">
+              {DUPLICATE_MESSAGE} — Day별 1건까지 작성할 수 있습니다.
+            </StatusNote>
+          ) : (
+            <JournalForm dayId={day.id} />
+          )
+        ) : null}
+      </div>
 
       <JournalTimeline entries={entries} dayLabel={dayLabel} />
     </div>

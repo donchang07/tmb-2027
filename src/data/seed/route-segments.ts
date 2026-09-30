@@ -1,18 +1,18 @@
 import type { RouteSegment } from "@/lib/schema";
 
 export const SEGMENT_COLORS = [
-  "#0F5D7A",
-  "#C84A36",
-  "#2E7D32",
-  "#6A1B9A",
-  "#EF6C00",
-  "#00838F",
-  "#AD1457",
-  "#558B2F",
-  "#4527A0",
-  "#B26A00",
-  "#00695C",
-  "#8E24AA",
+  "#2E5A41",
+  "#4C7A57",
+  "#7A9A5C",
+  "#A7A852",
+  "#E3A43B",
+  "#D17F3A",
+  "#B3593A",
+  "#8C5A7A",
+  "#5E6FA6",
+  "#3F87A6",
+  "#2F9E8F",
+  "#1F6E5A",
 ] as const;
 
 // trailViaIds: 산길 경로 링크(GraphHopper hike)의 경유지. 생략하면 nodeIds의 중간 노드 전부를 경유한다.
@@ -22,7 +22,7 @@ const seg = (n: number, date: string, nodeIds: string[], trailViaIds?: string[])
   trekDayNumber: n,
   nodeIds,
   ...(trailViaIds ? { trailViaIds } : {}),
-  color: SEGMENT_COLORS[n - 1] ?? "#0F5D7A",
+  color: SEGMENT_COLORS[n - 1] ?? "#2E5A41",
 });
 
 export const routeSegments: RouteSegment[] = [

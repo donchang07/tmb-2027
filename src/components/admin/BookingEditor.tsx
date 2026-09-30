@@ -40,12 +40,12 @@ export function BookingEditor({ lodging, row, lodgings = [] }: { lodging: Editor
   const version = current?.version ?? 1;
 
   return (
-    <form key={formKey} action={action} onChange={() => setDirty(true)} className="card space-y-3 p-4" aria-labelledby={`edit-${lodging.id}`}>
+    <form key={formKey} action={action} onChange={() => setDirty(true)} className="flex min-w-0 flex-col gap-3" aria-labelledby={`edit-${lodging.id}`}>
       <div className="flex flex-wrap items-baseline justify-between gap-2">
-        <h3 id={`edit-${lodging.id}`} className="font-bold">
+        <h3 id={`edit-${lodging.id}`} className="text-base font-bold sm:text-[19px]">
           {lodging.dayLabel} · {lodging.nameOriginal}
         </h3>
-        <span className="text-xs text-rock">
+        <span className="text-xs text-ink-3">
           v{version}
           {current?.updated_at ? ` · 갱신 ${formatKoDateTime(current.updated_at)}` : ""}
         </span>
@@ -53,10 +53,10 @@ export function BookingEditor({ lodging, row, lodgings = [] }: { lodging: Editor
       <input type="hidden" name="lodgingId" value={lodging.id} />
       <input type="hidden" name="version" value={version} />
 
-      <div className="grid gap-3 sm:grid-cols-2">
-        <label className="block text-sm">
-          <span className="font-medium">공개 상태</span>
-          <select name="status" defaultValue={status} className="tap mt-1 w-full rounded-lg border border-rock/40 bg-white px-3">
+      <div className="grid gap-2.5 sm:grid-cols-2 sm:gap-3">
+        <label className="flex flex-col gap-1.5 text-[13px]">
+          <span className="font-semibold">공개 상태</span>
+          <select name="status" defaultValue={status} className="field">
             {BOOKING_STATUSES.map((s) => (
               <option key={s} value={s}>
                 {BOOKING_STATUS_LABEL[s]}
@@ -64,16 +64,16 @@ export function BookingEditor({ lodging, row, lodgings = [] }: { lodging: Editor
             ))}
           </select>
         </label>
-        <label className="block text-sm">
-          <span className="font-medium">예약번호 (비공개)</span>
-          <input name="confirmationRef" maxLength={100} defaultValue={current?.confirmation_ref ?? ""} className="tap mt-1 w-full rounded-lg border border-rock/40 px-3" />
+        <label className="flex flex-col gap-1.5 text-[13px]">
+          <span className="font-semibold">예약번호 (비공개)</span>
+          <input name="confirmationRef" maxLength={100} defaultValue={current?.confirmation_ref ?? ""} className="field" />
         </label>
-        <label className="block text-sm sm:col-span-2">
-          <span className="font-medium">대안 숙소 (등록된 숙박 중 선택 — 공개)</span>
+        <label className="flex flex-col gap-1.5 text-[13px] sm:col-span-2">
+          <span className="font-semibold">대안 숙소 (등록된 숙박 중 선택 — 공개)</span>
           <select
             name="alternativeLodgingId"
             defaultValue={current?.alternative_lodging_id ?? ""}
-            className="tap mt-1 w-full rounded-lg border border-rock/40 bg-white px-3"
+            className="field"
           >
             <option value="">선택 안 함</option>
             {lodgings
@@ -85,39 +85,39 @@ export function BookingEditor({ lodging, row, lodgings = [] }: { lodging: Editor
               ))}
           </select>
         </label>
-        <label className="block text-sm sm:col-span-2">
-          <span className="font-medium">대안 숙소 메모 (공개 — 상태가 ‘대안 확정’이면 방문자에게 표시)</span>
-          <input name="alternativeLodging" maxLength={200} defaultValue={current?.alternative_lodging ?? ""} className="tap mt-1 w-full rounded-lg border border-rock/40 px-3" />
+        <label className="flex flex-col gap-1.5 text-[13px] sm:col-span-2">
+          <span className="font-semibold">대안 숙소 메모 (공개 — 상태가 ‘대안 확정’이면 방문자에게 표시)</span>
+          <input name="alternativeLodging" maxLength={200} defaultValue={current?.alternative_lodging ?? ""} className="field" />
         </label>
-        <label className="block text-sm sm:col-span-2">
-          <span className="font-medium">비공개 메모</span>
-          <textarea name="privateMemo" maxLength={1000} rows={3} defaultValue={current?.private_memo ?? ""} className="mt-1 w-full rounded-lg border border-rock/40 px-3 py-2" />
+        <label className="flex flex-col gap-1.5 text-[13px] sm:col-span-2">
+          <span className="font-semibold">비공개 메모</span>
+          <textarea name="privateMemo" maxLength={1000} rows={3} defaultValue={current?.private_memo ?? ""} className="field leading-normal" />
         </label>
       </div>
 
       <div className="flex flex-wrap items-center gap-3">
-        <button type="submit" disabled={pending} className="tap rounded-lg bg-alpine px-4 font-semibold text-white disabled:opacity-60">
+        <button type="submit" disabled={pending} className="btn btn-primary w-full px-[22px] py-3 font-bold sm:w-auto">
           {pending ? "저장 중…" : state.status === "error" ? "저장 재시도" : "저장"}
         </button>
-        {dirty ? <span className="text-sm text-amber-800">저장되지 않은 변경이 있습니다</span> : null}
+        {dirty ? <span className="text-[13px] font-semibold text-warn-fg">저장되지 않은 변경이 있습니다</span> : null}
         {state.status === "saved" && !dirty ? (
-          <span role="status" className="text-sm text-emerald-800">
+          <span role="status" className="text-[13px] text-forest-700">
             저장됨 · {current?.updated_at ? formatKoDateTime(current.updated_at) : ""}
           </span>
         ) : null}
         {state.status === "conflict" ? (
-          <span role="alert" className="text-sm text-amber-800">
+          <span role="alert" className="text-[13px] font-semibold text-warn-fg">
             {state.message}
             {!state.row ? " 최신 값을 가져올 수 없습니다 — 페이지를 새로고침하세요." : ""}
           </span>
         ) : null}
         {state.status === "error" || state.status === "invalid" || state.status === "unconfigured" ? (
-          <span role="alert" className="text-sm text-safety">
+          <span role="alert" className="text-[13px] font-semibold text-danger-ink">
             {state.message}
           </span>
         ) : null}
         {state.status === "forbidden" || state.status === "unauthorized" ? (
-          <span role="alert" className="text-sm text-safety">
+          <span role="alert" className="text-[13px] font-semibold text-danger-ink">
             {state.message}{" "}
             <Link href="/admin" className="underline">
               로그인

@@ -22,13 +22,17 @@ export default async function HomePage() {
   const bookingStatus = booking?.status ?? "unbooked";
 
   return (
-    <div>
-      <Hero slogan={trip.slogan} />
-      <TripMetrics trip={trip} totals={totals} />
-      <div className="mt-6">
+    <div className="flex flex-col gap-[22px] sm:gap-10">
+      <Hero slogan={trip.slogan} todayHref={today ? `/${today.type === "trek" ? "day" : "travel"}/${today.id}` : undefined} />
+      <div className="order-2 sm:order-1">
+        <TripMetrics trip={trip} totals={totals} />
+      </div>
+      <div className="order-1 sm:order-2" data-enter="2">
         <TodayCard state={state} lodging={lodging} legs={legs} bookingStatus={bookingStatus} bookingUpdatedAt={booking?.updatedAt ?? null} />
       </div>
-      <QuickLinks />
+      <div className="order-3">
+        <QuickLinks />
+      </div>
     </div>
   );
 }

@@ -25,10 +25,7 @@ export function JournalAccessNote({ profile, next }: { profile: MemberProfile; n
         action={
           profile.state === "unconfigured" ? undefined : (
             <div className="flex flex-wrap gap-2">
-              <Link
-                href={`/journal/login?next=${encodeURIComponent(next)}`}
-                className="tap inline-flex items-center rounded-lg bg-alpine px-4 text-sm font-semibold text-white"
-              >
+              <Link href={`/journal/login?next=${encodeURIComponent(next)}`} className="btn btn-primary">
                 팀원 로그인
               </Link>
               {profile.state === "guest" ? <SignOutButton /> : null}

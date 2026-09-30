@@ -25,6 +25,7 @@ for (const path of PAGES) {
 
   test(`axe has no critical/serious violations on ${path} (WCAG 2.2 AA)`, async ({ page }) => {
     await page.goto(path);
+    await page.addStyleTag({ content: "*, *::before, *::after { animation: none !important; }" });
     const results = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag22aa"]).analyze();
     const severe = results.violations.filter((v) => v.impact === "critical" || v.impact === "serious");
     expect(severe, JSON.stringify(severe, null, 2)).toEqual([]);

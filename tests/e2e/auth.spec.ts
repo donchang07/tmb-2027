@@ -143,6 +143,7 @@ for (const path of ["/login", "/signup"]) {
     const account = page.locator("header").getByRole("link", { name: "로그인", exact: true });
     if ((await account.count()) > 0) await expect(account).toHaveAttribute("aria-current", "page");
 
+    await page.addStyleTag({ content: "*, *::before, *::after { animation: none !important; }" });
     const results = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag22aa"]).analyze();
     const severe = results.violations.filter((v) => v.impact === "critical" || v.impact === "serious");
     expect(severe, JSON.stringify(severe, null, 2)).toEqual([]);

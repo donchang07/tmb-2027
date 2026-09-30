@@ -9,31 +9,35 @@ const initial: TeamLoginState = { message: null, error: null };
 export function TeamLoginForm({ next }: { next: string }) {
   const [state, action, pending] = useActionState(sendTeamMagicLinkAction, initial);
   return (
-    <form action={action} className="card space-y-3 p-4">
-      <input type="hidden" name="next" value={next} />
-      <label className="block text-sm font-medium" htmlFor="team-email">
-        팀원 이메일
-      </label>
-      <input id="team-email" name="email" type="email" required autoComplete="email" className="tap w-full rounded-lg border border-rock/40 px-3 text-base" placeholder="member@example.com" />
-      <button type="submit" disabled={pending} className="tap w-full rounded-lg bg-alpine px-4 font-semibold text-white disabled:opacity-60 sm:w-auto">
-        {pending ? "보내는 중…" : "로그인 링크 보내기"}
-      </button>
-      <p className="text-xs text-rock">리더가 초대한 팀원 이메일만 로그인할 수 있습니다.</p>
-      <p className="text-sm">
-        <Link href={`/login?next=${encodeURIComponent(next)}`} className="tap inline-flex items-center text-alpine underline">
+    <div className="flex flex-col gap-3.5 sm:gap-[18px]">
+      <form action={action} data-enter="3" className="card flex flex-col gap-3 p-[18px] sm:gap-3.5 sm:p-6">
+        <input type="hidden" name="next" value={next} />
+        <div className="flex flex-col gap-1.5">
+          <label className="block text-sm font-semibold" htmlFor="team-email">
+            팀원 이메일
+          </label>
+          <input id="team-email" name="email" type="email" required autoComplete="email" className="field" placeholder="member@example.com" />
+          <p className="text-[13px] text-ink-3">리더가 초대한 팀원 이메일만 로그인할 수 있습니다.</p>
+        </div>
+        <button type="submit" disabled={pending} className="btn btn-primary w-full py-3.5 text-base font-bold">
+          {pending ? "보내는 중…" : "로그인 링크 보내기"}
+        </button>
+        {state.message ? (
+          <p role="status" className="text-sm leading-normal text-forest-700">
+            {state.message}
+          </p>
+        ) : null}
+        {state.error ? (
+          <p role="alert" className="text-sm font-semibold text-danger-ink">
+            {state.error}
+          </p>
+        ) : null}
+      </form>
+      <p className="text-sm sm:text-[15px]">
+        <Link href={`/login?next=${encodeURIComponent(next)}`} className="tap ix-link inline-flex items-center font-semibold text-forest-700">
           메일이 오지 않나요? 이메일·비밀번호로 로그인
         </Link>
       </p>
-      {state.message ? (
-        <p role="status" className="text-sm text-alpine-dark">
-          {state.message}
-        </p>
-      ) : null}
-      {state.error ? (
-        <p role="alert" className="text-sm text-safety">
-          {state.error}
-        </p>
-      ) : null}
-    </form>
+    </div>
   );
 }

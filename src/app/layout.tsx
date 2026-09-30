@@ -7,6 +7,8 @@ import { OfflineBanner } from "@/components/pwa/OfflineBanner";
 import { SwRegister } from "@/components/pwa/SwRegister";
 import { getPublicBookings } from "@/lib/bookings/public";
 
+const PRETENDARD_CSS = "https://cdnjs.cloudflare.com/ajax/libs/pretendard/1.3.9/variable/pretendardvariable-dynamic-subset.min.css";
+
 const DEV_SW_CLEANUP = `(function(){if(!('serviceWorker' in navigator))return;var sw=navigator.serviceWorker;var had=!!sw.controller;sw.getRegistrations().then(function(rs){return Promise.all(rs.map(function(r){return r.unregister();}));}).then(function(){return 'caches' in window?caches.keys().then(function(ks){return Promise.all(ks.map(function(k){return caches.delete(k);}));}):null;}).then(function(){if(had)location.reload();}).catch(function(){});})();`;
 
 export const metadata: Metadata = {
@@ -21,24 +23,27 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#0F5D7A",
+  viewportFit: "cover",
+  themeColor: "#EEF1EC",
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const bookings = await getPublicBookings();
   return (
     <html lang="ko">
-      {process.env.NODE_ENV !== "production" ? (
-        <head>
-          {/* dev 전용: 이전 세션의 SW가 옛 청크를 서빙해 하이드레이션이 깨지면 SwRegister(청크 안)가 실행되지 못한다.
-              청크와 무관한 인라인 스크립트로 SW·캐시를 제거하고, 제어 중이던 경우에만 1회 재로드한다. */}
-          <script dangerouslySetInnerHTML={{ __html: DEV_SW_CLEANUP }} />
-        </head>
-      ) : null}
+      <head>
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossOrigin="anonymous" />
+        <link rel="stylesheet" href={PRETENDARD_CSS} />
+        {/* dev 전용: 이전 세션의 SW가 옛 청크를 서빙해 하이드레이션이 깨지면 SwRegister(청크 안)가 실행되지 못한다.
+            청크와 무관한 인라인 스크립트로 SW·캐시를 제거하고, 제어 중이던 경우에만 1회 재로드한다. */}
+        {process.env.NODE_ENV !== "production" ? <script dangerouslySetInnerHTML={{ __html: DEV_SW_CLEANUP }} /> : null}
+      </head>
       <body className="min-h-dvh">
-        <OfflineBanner />
-        <AppHeader />
-        <main className="mx-auto w-full max-w-3xl px-4 pb-28 pt-4">
+        <div className="sticky top-0 z-30">
+          <AppHeader />
+          <OfflineBanner />
+        </div>
+        <main className="mx-auto w-full max-w-[1200px] px-4 pb-32 pt-3 sm:px-12 sm:pb-14 sm:pt-10">
           <BookingLive initial={bookings} fetchedAt={new Date().toISOString()}>
             {children}
           </BookingLive>

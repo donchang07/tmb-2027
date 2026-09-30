@@ -1,6 +1,6 @@
 import type { Day } from "@/lib/schema";
 import { getElevationPoints } from "@/lib/route";
-import { fmtM } from "@/lib/format";
+import { fmtM, langFor } from "@/lib/format";
 import { StatusNote } from "@/components/ui/StatusNote";
 
 const W = 640;
@@ -9,9 +9,10 @@ const PAD_X = 36;
 const PAD_TOP = 28;
 const PAD_BOTTOM = 44;
 
-export function ElevationProfile({ day }: { day: Day }) {
+export function ElevationProfile({ day, variant = "light" }: { day: Day; variant?: "light" | "dark" }) {
   const points = getElevationPoints(day);
   if (points.length < 3) {
+    if (variant === "dark") return null;
     return <StatusNote tone="warn" title="고도점 확인 필요">출발·주요 고개·도착 3점 이상이 필요합니다 (기준일 {day.sourceCheckedAt}).</StatusNote>;
   }
   const alts = points.map((p) => p.altitudeM).filter((a): a is number => a !== null);
@@ -32,24 +33,41 @@ export function ElevationProfile({ day }: { day: Day }) {
   const endAlt = points[points.length - 1]?.altitudeM;
   const label = `고도 프로파일 Day ${day.trekDayNumber}: 출발 ${startAlt !== null && startAlt !== undefined ? fmtM(startAlt) : "확인 필요"} · 최고 ${fmtM(peak)} · 도착 ${endAlt !== null && endAlt !== undefined ? fmtM(endAlt) : "확인 필요"}`;
 
+  if (variant === "dark") {
+    const top = withAlt.find((p) => p.altitudeM === peak);
+    return (
+      <div className="relative h-16 min-h-0 overflow-hidden rounded-[12px] bg-dark-well sm:h-auto sm:min-h-[150px] sm:flex-1">
+        <svg viewBox={`${PAD_X} ${PAD_TOP - 8} ${innerW} ${innerH + 8}`} preserveAspectRatio="none" role="img" aria-label={label} className="absolute inset-0 h-full w-full">
+          <path d={area} fill="#2F4A38" />
+          <path d={line} stroke="#E3A43B" strokeWidth={2.5} fill="none" strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
+        </svg>
+        {top ? (
+          <span className="absolute left-4 top-3.5 hidden text-[13px] font-semibold sm:block" lang={langFor(day.country)}>
+            {top.labelOriginal} {fmtM(peak)}
+          </span>
+        ) : null}
+      </div>
+    );
+  }
+
   return (
     <div>
-      <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={label} className="mt-3 h-auto w-full">
-        <path d={area} fill="#0F5D7A" opacity={0.1} />
-        <path d={line} stroke="#0F5D7A" strokeWidth={3} fill="none" strokeLinejoin="round" />
+      <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={label} className="h-auto w-full rounded-[12px] bg-bone">
+        <path d={area} fill="#DCE7DD" />
+        <path d={line} stroke="#2E5A41" strokeWidth={2.5} fill="none" strokeLinejoin="round" />
         {points.map((p, i) =>
           p.altitudeM !== null ? (
             <g key={p.sequence}>
-              <circle cx={x(i)} cy={y(p.altitudeM)} r={5} fill={p.role === "via" ? "#C84A36" : "#0F5D7A"} stroke="#fff" strokeWidth={1.5} />
-              <text x={x(i)} y={y(p.altitudeM) - 10} fontSize={11} fontWeight={700} textAnchor={i === 0 ? "start" : i === points.length - 1 ? "end" : "middle"} fill="#1D2428">
+              <circle cx={x(i)} cy={y(p.altitudeM)} r={5} fill={p.role === "via" ? "#E3A43B" : "#17281F"} stroke="#fff" strokeWidth={1.5} />
+              <text x={x(i)} y={y(p.altitudeM) - 10} fontSize={11} fontWeight={700} textAnchor={i === 0 ? "start" : i === points.length - 1 ? "end" : "middle"} fill="#17281F">
                 {fmtM(p.altitudeM)}
               </text>
-              <text x={x(i)} y={H - 14} fontSize={10} textAnchor={i === 0 ? "start" : i === points.length - 1 ? "end" : "middle"} fill="#56616A">
+              <text x={x(i)} y={H - 14} fontSize={10} textAnchor={i === 0 ? "start" : i === points.length - 1 ? "end" : "middle"} fill="#5C6B61">
                 {p.labelOriginal.length > 10 ? `${p.labelOriginal.slice(0, 10)}…` : p.labelOriginal}
               </text>
             </g>
           ) : (
-            <text key={p.sequence} x={x(i)} y={H - 14} fontSize={10} textAnchor="middle" fill="#C84A36">
+            <text key={p.sequence} x={x(i)} y={H - 14} fontSize={10} textAnchor="middle" fill="#9A3524">
               고도 확인 필요
             </text>
           ),

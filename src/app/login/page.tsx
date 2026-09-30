@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { LoginForm } from "@/components/auth/LoginForm";
+import { Photo } from "@/components/ui/Photo";
 import { StatusNote } from "@/components/ui/StatusNote";
+import { PHOTOS } from "@/lib/photos";
 import { redirectIfSignedIn, resolvePageNext } from "@/app/login/shared";
 
 export const metadata: Metadata = { title: "로그인 — TMB 2027" };
@@ -27,21 +29,30 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
           : null;
 
   return (
-    <div className="mx-auto w-full max-w-md space-y-4">
-      <h1 className="text-2xl font-bold">로그인</h1>
-      {notice ? <StatusNote tone={notice.tone} title={notice.text} /> : null}
-      <LoginForm next={next} />
-      <div className="space-y-1 text-sm">
-        <p>
-          <Link href={withNext("/signup", next)} className="tap inline-flex items-center font-semibold text-alpine underline">
+    <div className="grid gap-3.5 lg:grid-cols-[minmax(0,1fr)_448px] lg:items-center lg:gap-14">
+      <Photo src={PHOTOS.login} className="mx-auto h-[150px] w-full max-w-[448px] sm:h-[220px] lg:mx-0 lg:h-[600px] lg:max-w-none" />
+      <div className="mx-auto flex w-full max-w-[448px] min-w-0 flex-col gap-3.5 sm:gap-[18px] lg:mx-0">
+        <h1 data-enter="1" className="text-[32px] font-extrabold leading-tight tracking-[-0.035em] sm:text-[44px]">
+          로그인
+        </h1>
+        {notice ? (
+          <div data-enter="2">
+            <StatusNote tone={notice.tone} title={notice.text} />
+          </div>
+        ) : null}
+        <div data-enter="3">
+          <LoginForm next={next} />
+        </div>
+        <p data-enter="4" className="text-[15px]">
+          <Link href={withNext("/signup", next)} className="tap ix-link inline-flex items-center font-semibold text-forest-700">
             계정이 없으신가요? 회원가입
           </Link>
         </p>
-        <p className="flex flex-wrap gap-x-4">
-          <Link href="/journal/login" className="tap inline-flex items-center text-rock underline">
+        <p data-enter="5" className="flex flex-col border-t border-line pt-1.5 text-sm sm:flex-row sm:flex-wrap sm:gap-x-4">
+          <Link href="/journal/login" className="tap ix-link inline-flex items-center text-forest-700">
             팀원 이메일 링크 로그인
           </Link>
-          <Link href="/admin" className="tap inline-flex items-center text-rock underline">
+          <Link href="/admin" className="tap ix-link inline-flex items-center text-forest-700">
             리더 로그인
           </Link>
         </p>

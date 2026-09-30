@@ -30,17 +30,19 @@ export default async function AdminBookingsPage() {
   const bookingRows = rows.map((r) => r.booking).filter((b): b is NonNullable<typeof b> => b !== null);
 
   return (
-    <div className="space-y-6">
-      <header className="flex flex-wrap items-center justify-between gap-2">
-        <div>
-          <h1 className="text-2xl font-bold">14박 예약·숙박 편집</h1>
-          <p className="text-sm text-rock">리더 {session.email} · 상태·숙박 정보는 공개, 예약번호·메모는 비공개</p>
+    <div className="flex flex-col gap-5 sm:gap-7">
+      <header className="flex flex-wrap items-end justify-between gap-3 sm:gap-4">
+        <div className="min-w-0">
+          <h1 data-enter="1" className="text-[26px] font-extrabold leading-[1.2] tracking-[-0.035em] sm:text-[40px]">
+            14박 예약·숙박 편집
+          </h1>
+          <p className="mt-1.5 text-[13px] text-ink-2 sm:text-[15px]">리더 {session.email} · 상태·숙박 정보는 공개, 예약번호·메모는 비공개</p>
         </div>
-        <div className="flex gap-2">
-          <Link href="/admin" className="tap inline-flex items-center rounded-lg border border-rock/40 px-4 text-sm font-semibold text-rock">
+        <div className="flex flex-wrap gap-2">
+          <Link href="/admin" className="tap btn btn-white border border-line px-4">
             관리자 홈
           </Link>
-          <SignOutButton />
+          <SignOutButton className="btn btn-white border border-line px-4 text-danger-ink" />
         </div>
       </header>
 
@@ -54,18 +56,18 @@ export default async function AdminBookingsPage() {
         </StatusNote>
       ) : null}
 
-      <section aria-labelledby="edit-heading" className="space-y-3">
-        <h2 id="edit-heading" className="text-lg font-bold">
+      <section aria-labelledby="edit-heading" className="flex flex-col gap-3">
+        <h2 id="edit-heading" className="text-lg font-bold sm:text-[21px]">
           14박 편집
         </h2>
         <LodgingTable rows={rows} lodgings={lodgings} />
       </section>
 
-      <section aria-labelledby="preview-heading" className="space-y-3">
-        <h2 id="preview-heading" className="text-lg font-bold">
+      <section aria-labelledby="preview-heading" className="flex flex-col gap-3">
+        <h2 id="preview-heading" className="text-lg font-bold sm:text-[21px]">
           공개 미리보기
         </h2>
-        <p className="text-sm text-rock">방문자에게는 아래 상태와 갱신 시각만 보입니다.</p>
+        <p className="text-sm text-ink-2">방문자에게는 아래 상태와 갱신 시각만 보입니다.</p>
         <PublicPreview lodgings={lodgings} bookings={bookingRows.map(toPublicBooking)} />
       </section>
     </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import type { Day, Lodging, TravelLeg } from "@/lib/schema";
 import type { BookingStatus } from "@/lib/booking-status";
 import { DayCard } from "@/components/itinerary/DayCard";
@@ -22,6 +22,8 @@ export function ItineraryList({
   bookingStatuses = {},
   bookingUpdatedAt = {},
   missingByDay = {},
+  header,
+  notice,
 }: {
   days: Day[];
   lodgings: Lodging[];
@@ -30,32 +32,36 @@ export function ItineraryList({
   bookingStatuses?: Record<string, BookingStatus>;
   bookingUpdatedAt?: Record<string, string | null>;
   missingByDay?: Record<string, string[]>;
+  header?: ReactNode;
+  notice?: ReactNode;
 }) {
   const [filter, setFilter] = useState<Filter>("all");
   const visible = days.filter((d) => filter === "all" || d.type === filter);
 
   return (
     <div>
-      <div role="tablist" aria-label="일정 필터" className="mb-4 flex gap-2">
-        {FILTERS.map((f) => (
-          <button
-            key={f.key}
-            role="tab"
-            type="button"
-            aria-selected={filter === f.key}
-            onClick={() => setFilter(f.key)}
-            className={`tap rounded-full px-4 text-sm font-medium ${
-              filter === f.key ? "bg-alpine text-white" : "bg-white text-rock border border-rock/30"
-            }`}
-          >
-            {f.label}
-          </button>
-        ))}
+      <div className="mb-4 flex flex-col gap-4 sm:mb-7 sm:flex-row sm:items-end sm:justify-between sm:gap-6">
+        {header}
+        <div role="tablist" aria-label="일정 필터" className="seg sm:flex-none">
+          {FILTERS.map((f) => (
+            <button
+              key={f.key}
+              role="tab"
+              type="button"
+              aria-selected={filter === f.key}
+              onClick={() => setFilter(f.key)}
+              className="seg-item"
+            >
+              {f.label}
+            </button>
+          ))}
+        </div>
       </div>
+      {notice}
       {visible.length === 0 ? (
-        <p className="card p-6 text-center text-rock">일정 없음</p>
+        <p className="card p-6 text-center text-ink-3">일정 없음</p>
       ) : (
-        <ol className="space-y-3">
+        <ol data-stagger className="grid gap-2.5 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
           {visible.map((day) => (
             <li key={day.id}>
               {day.type === "trek" ? (

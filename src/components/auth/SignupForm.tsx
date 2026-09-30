@@ -5,7 +5,7 @@ import { signUpAction } from "@/app/login/actions";
 import { fieldErrorsFrom, SignupSchema, type AuthField, type AuthFormState, type FieldErrors } from "@/lib/auth-rules";
 import { clearSwPageCache } from "@/lib/auth-client";
 
-const INPUT_CLASS = "tap w-full rounded-lg border border-rock/40 px-3 text-base aria-[invalid=true]:border-safety";
+const INPUT_CLASS = "field min-h-[50px]";
 const ORDER: readonly AuthField[] = ["email", "password", "passwordConfirm"];
 
 export function SignupForm({ next }: { next: string | null }) {
@@ -44,7 +44,7 @@ export function SignupForm({ next }: { next: string | null }) {
   if (state.status === "success") {
     const target = state.redirectTo;
     return (
-      <div ref={successRef} tabIndex={-1} role="status" className="card border border-alpine/30 bg-alpine/5 p-4 text-alpine-dark">
+      <div ref={successRef} tabIndex={-1} role="status" className="flex flex-col gap-3 rounded-[12px] bg-sage-200 p-4 text-[15px] leading-[1.55] text-forest-900">
         <p className="font-semibold">가입이 완료되어 로그인되었습니다. 잠시 후 보던 화면으로 이동합니다.</p>
         <a
           href={target}
@@ -52,7 +52,7 @@ export function SignupForm({ next }: { next: string | null }) {
             e.preventDefault();
             void clearSwPageCache().then(() => window.location.assign(target));
           }}
-          className="tap mt-3 inline-flex items-center rounded-lg bg-alpine px-4 text-sm font-semibold text-white"
+          className="tap btn btn-primary w-full py-[13px] font-bold"
         >
           바로 이동
         </a>
@@ -91,10 +91,10 @@ export function SignupForm({ next }: { next: string | null }) {
   };
 
   return (
-    <form action={action} onSubmit={onSubmit} noValidate aria-busy={pending} className="card space-y-3 p-4">
+    <form action={action} onSubmit={onSubmit} noValidate aria-busy={pending} className="flex flex-col gap-3 sm:gap-3.5">
       <input type="hidden" name="next" value={next ?? ""} />
-      <div className="space-y-1">
-        <label className="block text-sm font-medium" htmlFor="signup-email">
+      <div className="flex flex-col gap-1.5">
+        <label className="block text-sm font-semibold" htmlFor="signup-email">
           이메일
         </label>
         <input
@@ -110,13 +110,13 @@ export function SignupForm({ next }: { next: string | null }) {
           className={INPUT_CLASS}
         />
         {fieldErrors.email ? (
-          <p id="signup-email-error" className="text-sm text-safety">
+          <p id="signup-email-error" className="text-sm font-semibold text-danger-ink">
             {fieldErrors.email}
           </p>
         ) : null}
       </div>
-      <div className="space-y-1">
-        <label className="block text-sm font-medium" htmlFor="signup-password">
+      <div className="flex flex-col gap-1.5">
+        <label className="block text-sm font-semibold" htmlFor="signup-password">
           비밀번호
         </label>
         <input
@@ -129,17 +129,17 @@ export function SignupForm({ next }: { next: string | null }) {
           aria-describedby={describedBy("password", "signup-password-help")}
           className={INPUT_CLASS}
         />
-        <p id="signup-password-help" className="text-xs text-rock">
+        <p id="signup-password-help" className="text-[13px] font-medium text-forest-700">
           8자 이상
         </p>
         {fieldErrors.password ? (
-          <p id="signup-password-error" className="text-sm text-safety">
+          <p id="signup-password-error" className="text-sm font-semibold text-danger-ink">
             {fieldErrors.password}
           </p>
         ) : null}
       </div>
-      <div className="space-y-1">
-        <label className="block text-sm font-medium" htmlFor="signup-passwordConfirm">
+      <div className="flex flex-col gap-1.5">
+        <label className="block text-sm font-semibold" htmlFor="signup-passwordConfirm">
           비밀번호 확인
         </label>
         <input
@@ -153,21 +153,21 @@ export function SignupForm({ next }: { next: string | null }) {
           className={INPUT_CLASS}
         />
         {fieldErrors.passwordConfirm ? (
-          <p id="signup-passwordConfirm-error" className="text-sm text-safety">
+          <p id="signup-passwordConfirm-error" className="text-sm font-semibold text-danger-ink">
             {fieldErrors.passwordConfirm}
           </p>
         ) : null}
       </div>
-      <button type="submit" disabled={pending} aria-busy={pending} className="tap w-full rounded-lg bg-alpine px-4 font-semibold text-white disabled:opacity-60">
+      <button type="submit" disabled={pending} aria-busy={pending} className="btn btn-accent w-full py-[15px] text-base">
         {pending ? "가입 중…" : "가입하기"}
       </button>
       {serverError ? (
-        <p ref={alertRef} role="alert" tabIndex={-1} className="text-sm text-safety">
+        <p ref={alertRef} role="alert" tabIndex={-1} className="text-sm font-semibold text-danger-ink">
           {serverError}
         </p>
       ) : null}
       {offline ? (
-        <p role="alert" className="text-sm text-safety">
+        <p role="alert" className="text-sm font-semibold text-danger-ink">
           오프라인 상태입니다. 연결 후 다시 시도해 주세요.
         </p>
       ) : null}

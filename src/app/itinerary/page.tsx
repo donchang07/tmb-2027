@@ -32,28 +32,33 @@ export default async function ItineraryPage() {
   }
 
   return (
-    <div>
-      <h1 className="mb-1 text-2xl font-bold">전체 일정</h1>
-      <p className="mb-4 text-sm text-rock">이동일 3일 + 트레킹 12일 · 2027-08-03 ~ 08-17</p>
-      {state.kind === "before" ? (
-        <div className="mb-4">
-          <StatusNote title={`출발까지 D-${state.daysUntil}`}>현지 날짜 기준. 첫 일정은 {state.firstDay.nameKo}입니다.</StatusNote>
+    <ItineraryList
+      days={days}
+      lodgings={lodgings}
+      legsByDay={legsByDay}
+      todayId={todayId}
+      bookingStatuses={bookingStatuses}
+      bookingUpdatedAt={bookingUpdatedAt}
+      missingByDay={missingByDay}
+      header={
+        <div>
+          <h1 data-enter="1" className="text-[32px] font-extrabold tracking-[-0.03em] sm:text-[44px] sm:tracking-[-0.035em]">
+            전체 일정
+          </h1>
+          <p className="mt-1 text-sm text-ink-2 sm:mt-2 sm:text-[17px]">이동일 3일 + 트레킹 12일 · 2027-08-03 ~ 08-17</p>
         </div>
-      ) : null}
-      {state.kind === "after" ? (
-        <div className="mb-4">
-          <StatusNote title="원정이 종료되었습니다">아래는 전체 일정 요약입니다.</StatusNote>
-        </div>
-      ) : null}
-      <ItineraryList
-        days={days}
-        lodgings={lodgings}
-        legsByDay={legsByDay}
-        todayId={todayId}
-        bookingStatuses={bookingStatuses}
-        bookingUpdatedAt={bookingUpdatedAt}
-        missingByDay={missingByDay}
-      />
-    </div>
+      }
+      notice={
+        state.kind === "before" ? (
+          <div className="mb-4 sm:mb-7">
+            <StatusNote title={`출발까지 D-${state.daysUntil}`}>현지 날짜 기준. 첫 일정은 {state.firstDay.nameKo}입니다.</StatusNote>
+          </div>
+        ) : state.kind === "after" ? (
+          <div className="mb-4 sm:mb-7">
+            <StatusNote title="원정이 종료되었습니다">아래는 전체 일정 요약입니다.</StatusNote>
+          </div>
+        ) : null
+      }
+    />
   );
 }

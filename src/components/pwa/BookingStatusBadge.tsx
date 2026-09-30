@@ -6,10 +6,10 @@ import { formatKoDateTime } from "@/lib/dates";
 import { Badge } from "@/components/ui/Badge";
 import { useBookingLive } from "@/components/pwa/BookingLive";
 
-function statusTone(status: BookingStatus): "neutral" | "success" | "warn" | "safety" {
+function statusTone(status: BookingStatus): "neutral" | "success" | "warn" | "sage" {
   if (status === "confirmed") return "success";
   if (status === "unbooked") return "neutral";
-  if (status === "alternative") return "safety";
+  if (status === "alternative") return "sage";
   return "warn";
 }
 
@@ -32,8 +32,8 @@ export function BookingStatusBadge({
   return (
     <span data-testid="booking-status" className="inline-flex flex-col items-end gap-0.5 text-right">
       <Badge tone={statusTone(status)}>{BOOKING_STATUS_LABEL[status]}</Badge>
-      {updatedAt ? <span className="text-xs text-rock">상태 갱신 {formatKoDateTime(updatedAt)}</span> : null}
-      {notice ? <span className="text-xs text-amber-800">{notice}</span> : null}
+      {updatedAt ? <span className="text-xs text-ink-3">상태 갱신 {formatKoDateTime(updatedAt)}</span> : null}
+      {notice ? <span className="text-xs text-warn-fg">{notice}</span> : null}
     </span>
   );
 }

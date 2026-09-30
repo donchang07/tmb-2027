@@ -5,7 +5,7 @@ import { signInAction } from "@/app/login/actions";
 import { fieldErrorsFrom, LoginSchema, type AuthField, type AuthFormState, type FieldErrors } from "@/lib/auth-rules";
 import { clearSwPageCache } from "@/lib/auth-client";
 
-const INPUT_CLASS = "tap w-full rounded-lg border border-rock/40 px-3 text-base aria-[invalid=true]:border-safety";
+const INPUT_CLASS = "field min-h-[50px]";
 const ORDER: readonly AuthField[] = ["email", "password"];
 
 export function LoginForm({ next }: { next: string | null }) {
@@ -56,10 +56,10 @@ export function LoginForm({ next }: { next: string | null }) {
   };
 
   return (
-    <form action={action} onSubmit={onSubmit} noValidate aria-busy={pending} className="card space-y-3 p-4">
+    <form action={action} onSubmit={onSubmit} noValidate aria-busy={pending} className="flex flex-col gap-3 sm:gap-3.5">
       <input type="hidden" name="next" value={next ?? ""} />
-      <div className="space-y-1">
-        <label className="block text-sm font-medium" htmlFor="login-email">
+      <div className="flex flex-col gap-1.5">
+        <label className="block text-sm font-semibold" htmlFor="login-email">
           이메일
         </label>
         <input
@@ -72,19 +72,19 @@ export function LoginForm({ next }: { next: string | null }) {
           defaultValue={state.email}
           aria-invalid={fieldErrors.email ? true : undefined}
           aria-describedby={fieldErrors.email ? "login-email-error" : undefined}
-          className={INPUT_CLASS}
+          className={`${INPUT_CLASS}${serverError ? " field-error" : ""}`}
         />
         {fieldErrors.email ? (
-          <p id="login-email-error" className="text-sm text-safety">
+          <p id="login-email-error" className="text-sm font-semibold text-danger-ink">
             {fieldErrors.email}
           </p>
         ) : null}
       </div>
-      <div className="space-y-1">
-        <label className="block text-sm font-medium" htmlFor="login-password">
+      <div className="flex flex-col gap-1.5">
+        <label className="block text-sm font-semibold" htmlFor="login-password">
           비밀번호
         </label>
-        <div className="flex gap-2">
+        <div className="relative">
           <input
             ref={refs.password}
             id="login-password"
@@ -93,34 +93,34 @@ export function LoginForm({ next }: { next: string | null }) {
             autoComplete="current-password"
             aria-invalid={fieldErrors.password ? true : undefined}
             aria-describedby={fieldErrors.password ? "login-password-error" : undefined}
-            className={INPUT_CLASS}
+            className={`${INPUT_CLASS} pr-[68px]${serverError ? " field-error" : ""}`}
           />
           <button
             type="button"
             aria-pressed={showPassword}
             aria-label="비밀번호 표시"
             onClick={() => setShowPassword((v) => !v)}
-            className="tap shrink-0 rounded-lg border border-rock/40 px-3 text-sm text-rock"
+            className="btn absolute inset-y-[3px] right-[3px] rounded-[9px] px-3 text-sm text-forest-700"
           >
             표시
           </button>
         </div>
         {fieldErrors.password ? (
-          <p id="login-password-error" className="text-sm text-safety">
+          <p id="login-password-error" className="text-sm font-semibold text-danger-ink">
             {fieldErrors.password}
           </p>
         ) : null}
       </div>
-      <button type="submit" disabled={pending} aria-busy={pending} className="tap w-full rounded-lg bg-alpine px-4 font-semibold text-white disabled:opacity-60">
+      <button type="submit" disabled={pending} aria-busy={pending} className="btn btn-primary mt-1 w-full py-[15px] text-base font-bold">
         {pending ? "로그인 중…" : "로그인"}
       </button>
       {serverError ? (
-        <p ref={alertRef} role="alert" tabIndex={-1} className="text-sm text-safety">
+        <p ref={alertRef} role="alert" tabIndex={-1} className="text-sm font-semibold text-danger-ink">
           {serverError}
         </p>
       ) : null}
       {offline ? (
-        <p role="alert" className="text-sm text-safety">
+        <p role="alert" className="text-sm font-semibold text-danger-ink">
           오프라인 상태입니다. 연결 후 다시 로그인해 주세요.
         </p>
       ) : null}
