@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics><meta name="design_doc_mode" content="canvas"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"><style>body{margin:0;word-break:keep-all;overflow-wrap:break-word;background:#dfe3dc;font-family:'Pretendard Variable',Pretendard,sans-serif;-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}h1,h2{text-wrap:balance}a{color:#2E5A41;text-decoration:none}a:hover{color:#17281F;text-decoration:underline}.dv-turn{padding:40px 44px 40px;border-bottom:1px solid rgba(0,0,0,.08);scroll-margin-top:16px}.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 20px}.dv-tid{white-space:nowrap;flex:none;font:600 11px ui-monospace,Menlo,monospace;padding:3px 8px;background:#17281F;color:#fff;border-radius:4px;text-decoration:none}.dv-tname{white-space:nowrap;font:600 14px/1.3 'Pretendard Variable',sans-serif;color:#17281F}.dv-card{flex:none;border:1px solid rgba(0,0,0,.08);border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);overflow:hidden}[data-ix="btn"]{white-space:nowrap;flex:none}[data-ix]{cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation;-webkit-user-select:none;user-select:none;transition:transform 160ms cubic-bezier(0.23,1,0.32,1),box-shadow 200ms ease,filter 200ms ease,background-color 200ms ease}[data-ix="btn"]:active,[data-ix="tab"]:active{transform:scale(0.97)}[data-ix="tile"]:active{transform:scale(0.98)}[data-ix="row"]:active{transform:scale(0.99)}[data-ix]:focus-visible{outline:2px solid currentColor;outline-offset:3px}@media (hover:hover) and (pointer:fine){[data-ix="btn"]:hover{filter:brightness(1.08)}[data-ix="tile"]:hover{transform:translateY(-3px);box-shadow:0 14px 28px -18px rgba(20,34,26,.55)}[data-ix="row"]:hover{background-color:rgba(23,40,31,.04)}[data-ix="link"]:hover{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:6px}}@keyframes ix-in{from{opacity:0;transform:translateY(12px)}}@keyframes ix-fade{from{opacity:0}}@keyframes ix-pop{from{opacity:0;transform:scale(0.95)}}@media (prefers-reduced-motion:no-preference){[data-enter]{animation:ix-in 420ms cubic-bezier(0.23,1,0.32,1) both}[data-enter="2"]{animation-delay:60ms}[data-enter="3"]{animation-delay:120ms}[data-enter="4"]{animation-delay:180ms}[data-enter="5"]{animation-delay:240ms}[data-enter="img"]{animation:ix-fade 600ms ease both}[data-stagger]>*{animation:ix-in 360ms cubic-bezier(0.23,1,0.32,1) both}[data-stagger]>*:nth-child(2){animation-delay:40ms}[data-stagger]>*:nth-child(3){animation-delay:80ms}[data-stagger]>*:nth-child(4){animation-delay:120ms}[data-stagger]>*:nth-child(5){animation-delay:160ms}[data-stagger]>*:nth-child(6){animation-delay:200ms}[data-stagger]>*:nth-child(7){animation-delay:240ms}[data-stagger]>*:nth-child(8){animation-delay:280ms}[data-stagger]>*:nth-child(n+9){animation-delay:320ms}[data-pop]{transform-origin:top right;animation:ix-pop 180ms cubic-bezier(0.23,1,0.32,1) both}}@media (prefers-reduced-motion:reduce){[data-enter],[data-stagger]>*,[data-pop]{animation:ix-fade 200ms ease both}}</style></helmet>
+<section class="dv-turn" id="index" style="background:#17281F;color:#EEF1EC;border-bottom:none">
+<div style="display:flex;flex-direction:column;gap:14px;max-width:1100px">
+<span style="font-size:13px;font-weight:600;color:#E3A43B">TMB 2027 · 4a 숲길 · 화면 정의 SCR-001~018 · web 1200 / mobile 390</span>
+<h1 data-enter="1" style="margin:0;font-size:40px;font-weight:800;letter-spacing:-.03em">전체 화면 목업 (1/3)</h1>
+<p style="margin:0;font-size:15px;line-height:1.6;color:#C9D8CD;max-width:820px;text-wrap:pretty">서체는 Pretendard 하나입니다. 색은 숲 초록 #17281F, 본 #EEF1EC, 앰버 액센트 #E3A43B를 쓰고, 모서리는 12px입니다. 예시 상태는 원정 중인 2027-08-07(토) Day 4입니다. 예약 상태는 예시값이고, 사진은 Mont Blanc Treks 갤러리 이미지를 임시로 넣었습니다.</p>
+<nav style="display:flex;flex-wrap:wrap;gap:8px;font-size:14px"><a href="#scr-001" style="color:#EEF1EC;background:#2E5A41;padding:8px 12px;border-radius:12px">SCR-001 홈</a><a href="#scr-002" style="color:#EEF1EC;background:#2E5A41;padding:8px 12px;border-radius:12px">SCR-002 전체 일정</a><a href="#scr-003" style="color:#EEF1EC;background:#2E5A41;padding:8px 12px;border-radius:12px">SCR-003 Day 상세</a><a href="#scr-004" style="color:#EEF1EC;background:#2E5A41;padding:8px 12px;border-radius:12px">SCR-004 이동일 상세</a><a href="TMB 2027 Screens 2.dc.html" style="color:#17281F;background:#E3A43B;padding:8px 12px;border-radius:12px">2/3: 지도·예산·준비물·기록 →</a><a href="TMB 2027 Screens 3.dc.html" style="color:#17281F;background:#E3A43B;padding:8px 12px;border-radius:12px">3/3: 관리자·인증·공통 →</a></nav>
+</div>
+</section>
+
+<!-- ================= SCR-001 ================= -->
+<section class="dv-turn" id="scr-001" data-screen-label="SCR-001 홈">
+<div class="dv-thd"><span class="dv-tid">SCR-001</span><span class="dv-tname">홈 · / · 오늘 상태 in_trip</span></div>
+<div style="display:flex;gap:32px;align-items:flex-start">
+<div class="dv-card" style="width:1200px;background:#EEF1EC;color:#17281F">
+<dc-import name="TMB Header" hint-size="100%,68px"></dc-import>
+<div style="padding:32px 48px 0;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px">
+<div style="display:flex;flex-direction:column;justify-content:center;gap:22px">
+<span style="align-self:flex-start;font-size:13px;font-weight:600;color:#2E5A41;background:#DCE7DD;padding:6px 12px;border-radius:12px">TMB 2027 · Tour du Mont-Blanc</span>
+<h1 data-enter="1" style="margin:0;font-weight:800;font-size:76px;line-height:1;letter-spacing:-.045em">걸어야 산다!</h1>
+<p style="margin:0;font-size:19px;line-height:1.6;color:#3C4C42;max-width:30ch">레주슈에서 샤모니까지, 반시계 방향 12일 · 리프트 없이 전 구간 도보.</p>
+<span data-ix="btn" style="align-self:flex-start;background:#E3A43B;color:#1B2A20;font-weight:700;font-size:16px;padding:14px 24px;border-radius:12px;white-space:nowrap">오늘 구간 보기</span>
+</div>
+<div style="height:460px;border-radius:12px;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/MG_8965-1-1.jpg') center 60%/cover"></div>
+</div>
+<dl aria-label="원정 지표" style="margin:40px 48px 0;display:grid;grid-template-columns:1.5fr repeat(4,1fr);border-top:1px solid #CBD4CA">
+<div style="padding:20px 0"><dt style="font-size:13px;color:#5C6B61">기간</dt><dd style="margin:6px 0 0;font-weight:700;font-size:24px;letter-spacing:-.02em;white-space:nowrap">2027-08-03 ~ 08-17</dd></div>
+<div style="padding:20px 0 20px 28px"><dt style="font-size:13px;color:#5C6B61">인원</dt><dd style="margin:6px 0 0;font-weight:700;font-size:24px;white-space:nowrap">10명</dd></div>
+<div style="padding:20px 0 20px 28px"><dt style="font-size:13px;color:#5C6B61">트레킹</dt><dd style="margin:6px 0 0;font-weight:700;font-size:24px;white-space:nowrap">163.0 km</dd></div>
+<div style="padding:20px 0 20px 28px"><dt style="font-size:13px;color:#5C6B61">획득 고도</dt><dd style="margin:6px 0 0;font-weight:700;font-size:24px;white-space:nowrap">+9,750 m</dd></div>
+<div style="padding:20px 0 20px 28px"><dt style="font-size:13px;color:#5C6B61">하강 고도</dt><dd style="margin:6px 0 0;font-weight:700;font-size:24px;white-space:nowrap">-9,725 m</dd></div>
+</dl>
+<div style="padding:40px 48px 56px;display:flex;flex-direction:column;gap:40px">
+<section aria-labelledby="today-heading" style="background:#17281F;color:#EEF1EC;border-radius:12px;padding:32px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px">
+<div style="display:flex;flex-direction:column;gap:18px">
+<div style="display:flex;align-items:center;gap:10px"><h2 id="today-heading" style="margin:0;font-size:26px;font-weight:700">오늘</h2><span style="font-size:14px;color:#A9BBAE;white-space:nowrap">8/7 (토) · Day 4 · 프랑스 → 이탈리아</span><span style="background:#E3A43B;color:#1B2A20;font-size:13px;font-weight:700;padding:3px 10px;border-radius:12px;white-space:nowrap">오늘</span></div>
+<div style="font-size:26px;font-weight:700;line-height:1.35;letter-spacing:-.02em">모테 → 콜 드 라 세뉴 → 엘리자베타 → 콩발 호수 → 메종 비에유</div>
+<div style="font-size:14px;color:#A9BBAE" lang="fr">Les Mottets → Col de la Seigne → Rifugio Maison Vieille</div>
+<div style="display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:18px;border-top:1px solid #2F4538"><div><div style="font-size:13px;color:#A9BBAE">오늘 숙박</div><div style="font-size:17px;font-weight:600">Rifugio Maison Vieille · 예약 확정</div></div><span data-ix="btn" style="background:#EEF1EC;color:#17281F;font-weight:700;font-size:15px;padding:12px 20px;border-radius:12px;white-space:nowrap">Day 상세</span></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px">
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
+<div><div style="font-size:13px;color:#A9BBAE">거리</div><div style="font-weight:700;font-size:30px;letter-spacing:-.02em">16.3<span style="font-size:15px;font-weight:500;white-space:nowrap"> km</span></div></div>
+<div><div style="font-size:13px;color:#A9BBAE">획득</div><div style="font-weight:700;font-size:30px;letter-spacing:-.02em;color:#E3A43B">+1,200</div></div>
+<div><div style="font-size:13px;color:#A9BBAE">하강</div><div style="font-weight:700;font-size:30px;letter-spacing:-.02em">-1,100</div></div>
+<div><div style="font-size:13px;color:#A9BBAE">시간</div><div style="font-weight:700;font-size:30px;letter-spacing:-.02em">6.5~7<span style="font-size:15px;font-weight:500;white-space:nowrap"> h</span></div></div>
+</div>
+<div style="flex:1;min-height:150px;border-radius:12px;background:#223629;position:relative;overflow:hidden">
+<svg viewBox="0 0 600 160" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%"><path d="M0,120 L150,20 L250,60 L330,92 L450,40 L600,90 L600,160 L0,160 Z" fill="#2F4A38"></path><path d="M0,120 L150,20 L250,60 L330,92 L450,40 L600,90" fill="none" stroke="#E3A43B" stroke-width="2.5" vector-effect="non-scaling-stroke"></path></svg>
+<span style="position:absolute;left:16px;top:14px;font-size:13px;font-weight:600;white-space:nowrap">콜 드 라 세뉴 2,516 m · 국경</span>
+</div>
+</div>
+</section>
+<nav aria-label="빠른 링크" data-stagger style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:170px 170px;gap:12px">
+<div data-ix="tile" style="grid-row:span 2;grid-column:span 2;position:relative;border-radius:12px;overflow:hidden;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/Refugio-Elizabetta-1-1.jpg') center/cover"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,28,20,0) 40%,rgba(15,28,20,.82) 100%)"></div><div style="position:absolute;left:24px;bottom:22px;color:#fff"><div style="font-size:26px;font-weight:700">일정</div><div style="font-size:15px">15일 전체</div></div></div>
+<div data-ix="tile" style="position:relative;border-radius:12px;overflow:hidden;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/Outdoor-dining-Truc.jpg') center/cover"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,28,20,0) 35%,rgba(15,28,20,.82) 100%)"></div><div style="position:absolute;left:18px;bottom:16px;color:#fff"><div style="font-size:19px;font-weight:700">예산</div><div style="font-size:14px">1인 저/중</div></div></div>
+<div data-ix="tile" style="position:relative;border-radius:12px;overflow:hidden;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/IMG_9309-1.jpg') center/cover"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,28,20,0) 35%,rgba(15,28,20,.82) 100%)"></div><div style="position:absolute;left:18px;bottom:16px;color:#fff"><div style="font-size:19px;font-weight:700">지도</div><div style="font-size:14px">12구간 개요</div></div></div>
+<div data-ix="tile" style="position:relative;border-radius:12px;overflow:hidden;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/Hikers-1.jpg') center/cover"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,28,20,0) 35%,rgba(15,28,20,.82) 100%)"></div><div style="position:absolute;left:18px;bottom:16px;color:#fff"><div style="font-size:19px;font-weight:700">준비물</div><div style="font-size:14px">체크리스트</div></div></div>
+<div data-ix="tile" style="position:relative;border-radius:12px;overflow:hidden;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/IMG_9271.jpg') center/cover"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,28,20,0) 35%,rgba(15,28,20,.82) 100%)"></div><div style="position:absolute;left:18px;bottom:16px;color:#fff"><div style="font-size:19px;font-weight:700">기록</div><div style="font-size:14px">팀 타임라인</div></div></div>
+</nav>
+</div>
+</div>
+<div class="dv-card" style="width:390px;background:#EEF1EC;color:#17281F;border-radius:32px;border:8px solid #17281F;display:flex;flex-direction:column;min-height:844px">
+<dc-import name="TMB Header" mobile="{{ true }}" hint-size="100%,56px"></dc-import>
+<div style="padding:4px 16px 0;display:flex;flex-direction:column;gap:14px">
+<div style="height:220px;border-radius:12px;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/MG_8965-1-1.jpg') center/cover"></div>
+<span style="align-self:flex-start;font-size:12px;font-weight:600;color:#2E5A41;background:#DCE7DD;padding:5px 10px;border-radius:12px">TMB 2027 · Tour du Mont-Blanc</span>
+<h1 data-enter="1" style="margin:0;font-weight:800;font-size:44px;line-height:1;letter-spacing:-.045em">걸어야 산다!</h1>
+<p style="margin:0;font-size:16px;line-height:1.55;color:#3C4C42">레주슈에서 샤모니까지, 반시계 방향 12일 · 리프트 없이 전 구간 도보.</p>
+</div>
+<div style="padding:22px 16px;display:flex;flex-direction:column;gap:22px">
+<section style="background:#17281F;color:#EEF1EC;border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;align-items:center;gap:8px"><h2 style="margin:0;font-size:21px;font-weight:700">오늘</h2><span style="font-size:13px;color:#A9BBAE;white-space:nowrap">8/7 (토) · Day 4</span></div>
+<div style="font-size:19px;font-weight:700;line-height:1.35">모테 → 콜 드 라 세뉴 → 메종 비에유</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:4px"><div><div style="font-size:12px;color:#A9BBAE">거리</div><div style="font-weight:700;font-size:19px">16.3</div></div><div><div style="font-size:12px;color:#A9BBAE">획득</div><div style="font-weight:700;font-size:19px;color:#E3A43B">+1,200</div></div><div><div style="font-size:12px;color:#A9BBAE">하강</div><div style="font-weight:700;font-size:19px">-1,100</div></div><div><div style="font-size:12px;color:#A9BBAE">시간</div><div style="font-weight:700;font-size:19px">6.5~7h</div></div></div>
+<svg viewBox="0 0 600 160" preserveAspectRatio="none" style="width:100%;height:64px;border-radius:12px;background:#223629"><path d="M0,120 L150,20 L250,60 L330,92 L450,40 L600,90 L600,160 L0,160 Z" fill="#2F4A38"></path><path d="M0,120 L150,20 L250,60 L330,92 L450,40 L600,90" fill="none" stroke="#E3A43B" stroke-width="2.5" vector-effect="non-scaling-stroke"></path></svg>
+<div style="display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid #2F4538"><span style="font-size:14px;font-weight:600;white-space:nowrap">Maison Vieille · 예약 확정</span><span data-ix="btn" style="background:#E3A43B;color:#1B2A20;font-weight:700;font-size:14px;padding:12px 16px;border-radius:12px;white-space:nowrap">Day 상세</span></div>
+</section>
+<dl style="margin:0;display:grid;grid-template-columns:1fr 1fr;row-gap:14px;column-gap:16px;border-top:1px solid #CBD4CA;padding-top:16px">
+<div style="grid-column:span 2"><dt style="font-size:12px;color:#5C6B61">기간</dt><dd style="margin:2px 0 0;font-weight:700;font-size:19px;white-space:nowrap">2027-08-03 ~ 08-17</dd></div>
+<div><dt style="font-size:12px;color:#5C6B61">인원</dt><dd style="margin:2px 0 0;font-weight:700;font-size:19px;white-space:nowrap">10명</dd></div>
+<div><dt style="font-size:12px;color:#5C6B61">트레킹</dt><dd style="margin:2px 0 0;font-weight:700;font-size:19px;white-space:nowrap">163.0 km</dd></div>
+<div><dt style="font-size:12px;color:#5C6B61">획득 고도</dt><dd style="margin:2px 0 0;font-weight:700;font-size:19px;white-space:nowrap">+9,750 m</dd></div>
+<div><dt style="font-size:12px;color:#5C6B61">하강 고도</dt><dd style="margin:2px 0 0;font-weight:700;font-size:19px;white-space:nowrap">-9,725 m</dd></div>
+</dl>
+<nav data-stagger style="display:grid;grid-template-columns:1fr 1fr;grid-template-rows:140px 110px 110px;gap:8px">
+<div data-ix="tile" style="grid-column:span 2;position:relative;border-radius:12px;overflow:hidden;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/Refugio-Elizabetta-1-1-600x380.jpg') center/cover"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,28,20,0) 30%,rgba(15,28,20,.82) 100%)"></div><div style="position:absolute;left:16px;bottom:14px;color:#fff"><div style="font-size:19px;font-weight:700">일정</div><div style="font-size:13px">15일 전체</div></div></div>
+<div data-ix="tile" style="position:relative;border-radius:12px;overflow:hidden;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/Outdoor-dining-Truc.jpg') center/cover"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,28,20,0) 25%,rgba(15,28,20,.85) 100%)"></div><div style="position:absolute;left:12px;bottom:10px;color:#fff"><b>예산</b><div style="font-size:12px">1인 저/중</div></div></div>
+<div data-ix="tile" style="position:relative;border-radius:12px;overflow:hidden;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/IMG_9309-1.jpg') center/cover"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,28,20,0) 25%,rgba(15,28,20,.85) 100%)"></div><div style="position:absolute;left:12px;bottom:10px;color:#fff"><b>지도</b><div style="font-size:12px">12구간 개요</div></div></div>
+<div data-ix="tile" style="position:relative;border-radius:12px;overflow:hidden;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/Hikers-1.jpg') center/cover"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,28,20,0) 25%,rgba(15,28,20,.85) 100%)"></div><div style="position:absolute;left:12px;bottom:10px;color:#fff"><b>준비물</b><div style="font-size:12px">체크리스트</div></div></div>
+<div data-ix="tile" style="position:relative;border-radius:12px;overflow:hidden;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/IMG_9271.jpg') center/cover"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,28,20,0) 25%,rgba(15,28,20,.85) 100%)"></div><div style="position:absolute;left:12px;bottom:10px;color:#fff"><b>기록</b><div style="font-size:12px">팀 타임라인</div></div></div>
+</nav>
+</div>
+<div style="margin-top:auto"><dc-import name="TMB TabBar" active="홈" hint-size="100%,80px"></dc-import></div>
+</div>
+</div>
+</section>
+
+<!-- ================= SCR-002 ================= -->
+<section class="dv-turn" id="scr-002" data-screen-label="SCR-002 전체 일정">
+<div class="dv-thd"><span class="dv-tid">SCR-002</span><span class="dv-tname">전체 일정 · /itinerary · 필터 "전체" · 오늘 Day 4 강조</span></div>
+<div style="display:flex;gap:32px;align-items:flex-start">
+<div class="dv-card" style="width:1200px;background:#EEF1EC;color:#17281F">
+<dc-import name="TMB Header" hint-size="100%,68px"></dc-import>
+<div style="padding:40px 48px 56px;display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px">
+<div><h1 data-enter="1" style="margin:0;font-size:44px;font-weight:800;letter-spacing:-.035em">전체 일정</h1><p style="margin:8px 0 0;font-size:17px;color:#3C4C42">이동일 3일 + 트레킹 12일 · 2027-08-03 ~ 08-17</p></div>
+<div role="tablist" style="display:flex;gap:4px;background:#DCE7DD;padding:4px;border-radius:12px"><span data-ix="btn" role="tab" aria-selected="true" style="background:#17281F;color:#EEF1EC;font-weight:700;font-size:15px;padding:11px 20px;border-radius:9px;white-space:nowrap">전체</span><span data-ix="btn" role="tab" style="font-weight:600;font-size:15px;padding:11px 20px;border-radius:9px;color:#2E5A41;white-space:nowrap">이동</span><span data-ix="btn" role="tab" style="font-weight:600;font-size:15px;padding:11px 20px;border-radius:9px;color:#2E5A41;white-space:nowrap">트레킹</span></div>
+</div>
+<div data-stagger style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px">
+<sc-for list="{{ days }}" as="d" hint-placeholder-count="15">
+<div data-ix="tile" aria-current="{{ d.current }}" style="background:#fff;border-radius:12px;overflow:hidden;display:flex;flex-direction:column;outline:{{ d.outline }};outline-offset:2px">
+<div style="height:150px;background:#4E6B55 url('{{ d.photo }}') center/cover;position:relative"><div style="position:absolute;left:12px;top:12px;display:flex;gap:6px"><span style="background:rgba(23,40,31,.9);color:#EEF1EC;font-size:12px;font-weight:700;padding:4px 9px;border-radius:12px;white-space:nowrap">{{ d.badge }}</span><sc-if value="{{ d.today }}"><span style="background:#E3A43B;color:#1B2A20;font-size:12px;font-weight:700;padding:4px 9px;border-radius:12px;white-space:nowrap">오늘</span></sc-if></div></div>
+<div style="padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1">
+<div style="display:flex;justify-content:space-between;font-size:13px;color:#5C6B61"><span>{{ d.date }}</span><span>{{ d.country }}</span></div>
+<div style="font-size:18px;font-weight:700;line-height:1.35;letter-spacing:-.01em">{{ d.nameKo }}</div>
+<div style="font-size:13px;color:#5C6B61" lang="fr">{{ d.nameOrig }}</div>
+<div style="font-size:14px;font-weight:600;color:#2E5A41;margin-top:2px">{{ d.metrics }}</div>
+<div style="display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:10px;border-top:1px solid #E4E9E2;font-size:14px"><span style="font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:62%">{{ d.lodging }}</span><span style="font-size:12px;font-weight:700;padding:3px 9px;border-radius:12px;background:{{ d.stBg }};color:{{ d.stFg }}">{{ d.status }}</span></div>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+<div class="dv-card" style="width:390px;background:#EEF1EC;color:#17281F;border-radius:32px;border:8px solid #17281F;display:flex;flex-direction:column;min-height:844px">
+<dc-import name="TMB Header" mobile="{{ true }}" hint-size="100%,56px"></dc-import>
+<div style="padding:12px 16px 24px;display:flex;flex-direction:column;gap:16px">
+<div><h1 data-enter="1" style="margin:0;font-size:32px;font-weight:800;letter-spacing:-.03em">전체 일정</h1><p style="margin:4px 0 0;font-size:14px;color:#3C4C42">이동일 3일 + 트레킹 12일 · 2027-08-03 ~ 08-17</p></div>
+<div role="tablist" style="display:grid;grid-template-columns:repeat(3,1fr);gap:4px;background:#DCE7DD;padding:4px;border-radius:12px"><span data-ix="btn" role="tab" aria-selected="true" style="text-align:center;background:#17281F;color:#EEF1EC;font-weight:700;font-size:15px;padding:12px 0;border-radius:9px;white-space:nowrap">전체</span><span data-ix="btn" role="tab" style="text-align:center;font-weight:600;font-size:15px;padding:12px 0;color:#2E5A41;white-space:nowrap">이동</span><span data-ix="btn" role="tab" style="text-align:center;font-weight:600;font-size:15px;padding:12px 0;color:#2E5A41;white-space:nowrap">트레킹</span></div>
+<div data-stagger style="display:flex;flex-direction:column;gap:10px">
+<sc-for list="{{ days }}" as="d" hint-placeholder-count="15">
+<div data-ix="row" style="background:#fff;border-radius:12px;padding:10px;display:grid;grid-template-columns:84px minmax(0,1fr);gap:12px;align-items:center;outline:{{ d.outline }};outline-offset:1px">
+<div style="height:84px;border-radius:9px;background:#4E6B55 url('{{ d.photo }}') center/cover"></div>
+<div style="display:flex;flex-direction:column;gap:3px;min-width:0">
+<div style="display:flex;gap:6px;align-items:center;font-size:12px;color:#5C6B61"><b style="color:#17281F;white-space:nowrap">{{ d.badge }}</b><span>{{ d.date }}</span><sc-if value="{{ d.today }}"><span style="background:#E3A43B;color:#1B2A20;font-weight:700;padding:1px 7px;border-radius:12px;white-space:nowrap">오늘</span></sc-if></div>
+<div style="font-size:15px;font-weight:700;line-height:1.3">{{ d.nameShort }}</div>
+<div style="font-size:12px;font-weight:600;color:#2E5A41">{{ d.metrics }}</div>
+<div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;gap:6px"><span style="color:#3C4C42;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ d.lodging }}</span><span style="flex:none;font-weight:700;padding:2px 8px;border-radius:12px;background:{{ d.stBg }};color:{{ d.stFg }}">{{ d.status }}</span></div>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="margin-top:auto;position:sticky;bottom:0"><dc-import name="TMB TabBar" active="일정" hint-size="100%,80px"></dc-import></div>
+</div>
+</div>
+</section>
+
+<!-- ================= SCR-003 ================= -->
+<section class="dv-turn" id="scr-003" data-screen-label="SCR-003 Day 상세">
+<div class="dv-thd"><span class="dv-tid">SCR-003</span><span class="dv-tname">Day 상세 · /day/day-04 · 비로그인(편집 패널 없음)</span></div>
+<div style="display:flex;gap:32px;align-items:flex-start">
+<div class="dv-card" style="width:1200px;background:#EEF1EC;color:#17281F">
+<dc-import name="TMB Header" hint-size="100%,68px"></dc-import>
+<div style="position:relative;height:420px;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/Col-De-Seigne-1-1.jpg') center 45%/cover">
+<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,28,20,0) 35%,rgba(15,28,20,.85) 100%)"></div>
+<div style="position:absolute;left:48px;right:48px;bottom:36px;color:#fff;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;gap:8px;align-items:center;font-size:14px;font-weight:600"><span>2027년 8월 7일 (토)</span><span style="background:#EEF1EC;color:#17281F;padding:3px 10px;border-radius:12px;white-space:nowrap">Day 4</span><span style="background:#E3A43B;color:#1B2A20;padding:3px 10px;border-radius:12px;white-space:nowrap">오늘</span><span>프랑스 → 이탈리아</span></div>
+<h1 data-enter="1" style="margin:0;font-size:44px;font-weight:800;line-height:1.15;letter-spacing:-.03em;max-width:900px">모테 → 콜 드 라 세뉴 → 엘리자베타 → 콩발 호수 → 메종 비에유</h1>
+<p style="margin:0;font-size:16px;opacity:.9" lang="fr">Les Mottets → Col de la Seigne → Rifugio Elisabetta → Lac Combal → Rifugio Maison Vieille</p>
+</div>
+</div>
+<div style="padding:32px 48px 56px;display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:24px">
+<div style="display:flex;flex-direction:column;gap:24px">
+<dl style="margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
+<div style="background:#fff;border-radius:12px;padding:18px"><dt style="font-size:13px;color:#5C6B61">거리</dt><dd style="margin:4px 0 0;font-size:24px;font-weight:700;white-space:nowrap">16.3 km</dd></div>
+<div style="background:#fff;border-radius:12px;padding:18px"><dt style="font-size:13px;color:#5C6B61">획득</dt><dd style="margin:4px 0 0;font-size:24px;font-weight:700;white-space:nowrap">+1,200 m</dd></div>
+<div style="background:#fff;border-radius:12px;padding:18px"><dt style="font-size:13px;color:#5C6B61">하강</dt><dd style="margin:4px 0 0;font-size:24px;font-weight:700;white-space:nowrap">-1,100 m</dd></div>
+<div style="background:#fff;border-radius:12px;padding:18px"><dt style="font-size:13px;color:#5C6B61">시간</dt><dd style="margin:4px 0 0;font-size:24px;font-weight:700;white-space:nowrap">6.5~7 h</dd></div>
+</dl>
+<section aria-labelledby="route-heading" style="background:#fff;border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:18px">
+<h2 id="route-heading" style="margin:0;font-size:21px;font-weight:700">경로</h2>
+<div style="position:relative;height:170px;border-radius:12px;background:#F3F6F1;overflow:hidden"><svg viewBox="0 0 600 170" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%"><path d="M0,120 L150,20 L250,60 L330,92 L450,40 L600,90 L600,170 L0,170 Z" fill="#DCE7DD"></path><path d="M0,120 L150,20 L250,60 L330,92 L450,40 L600,90" fill="none" stroke="#2E5A41" stroke-width="2.5" vector-effect="non-scaling-stroke"></path></svg><span style="position:absolute;left:23%;top:8px;font-size:12px;font-weight:700;background:#fff;padding:2px 8px;border-radius:12px;white-space:nowrap">콜 드 라 세뉴 2,516 m</span><span style="position:absolute;right:12px;bottom:10px;font-size:12px;color:#5C6B61;white-space:nowrap">고도 프로필 · 개략</span></div>
+<ol style="margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(6,1fr);gap:8px;font-size:13px">
+<li style="border-top:3px solid #17281F;padding-top:10px"><b style="display:block;font-size:14px;white-space:nowrap">모테</b><span style="color:#5C6B61;white-space:nowrap">1,870 m · 출발</span></li>
+<li style="border-top:3px solid #E3A43B;padding-top:10px"><b style="display:block;font-size:14px;white-space:nowrap">콜 드 라 세뉴</b><span style="color:#5C6B61;white-space:nowrap">2,516 m · 국경</span></li>
+<li style="border-top:3px solid #17281F;padding-top:10px"><b style="display:block;font-size:14px;white-space:nowrap">엘리자베타</b><span style="color:#5C6B61;white-space:nowrap">2,195 m · 점심</span></li>
+<li style="border-top:3px solid #17281F;padding-top:10px"><b style="display:block;font-size:14px;white-space:nowrap">콩발 호수</b><span style="color:#5C6B61;white-space:nowrap">1,950 m</span></li>
+<li style="border-top:3px solid #17281F;padding-top:10px"><b style="display:block;font-size:14px;white-space:nowrap">몽 파브르 발코니</b><span style="color:#5C6B61;white-space:nowrap">경유</span></li>
+<li style="border-top:3px solid #17281F;padding-top:10px"><b style="display:block;font-size:14px;white-space:nowrap">메종 비에유</b><span style="color:#5C6B61;white-space:nowrap">1,956 m · 숙박</span></li>
+</ol>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+<div style="height:140px;border-radius:12px;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/MG_8940.gif') center/cover"></div>
+<div style="height:140px;border-radius:12px;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/Refugio-Elizabetta-1-1-600x380.jpg') center/cover"></div>
+<div style="height:140px;border-radius:12px;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/MG_8965-1-1-600x380.jpg') center/cover"></div>
+</div>
+</section>
+<section aria-labelledby="map-heading" style="background:#fff;border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:14px">
+<h2 id="map-heading" style="margin:0;font-size:21px;font-weight:700">지도</h2>
+<p style="margin:0;font-size:16px">Refuge des Mottets → Rifugio Maison Vieille <span style="color:#5C6B61">(경유 Rifugio Elisabetta Soldini)</span></p>
+<div style="display:flex;gap:10px;flex-wrap:wrap"><span data-ix="btn" style="background:#17281F;color:#EEF1EC;font-weight:600;font-size:15px;padding:12px 18px;border-radius:12px;white-space:nowrap">Google 걷기 지도</span><span data-ix="btn" style="border:1px solid #CBD4CA;font-weight:600;font-size:15px;padding:12px 18px;border-radius:12px;white-space:nowrap">산길 경로 보기</span><span data-ix="btn" style="border:1px solid #CBD4CA;font-weight:600;font-size:15px;padding:12px 18px;border-radius:12px;white-space:nowrap">GPX 다운로드</span></div>
+<p style="margin:0;font-size:13px;color:#5C6B61">Google 지도는 고개 구간을 도로로 우회시킬 수 있습니다. 거리·시간은 이 화면 기준, 산길은 GPX(OSM 출처)로 확인하세요.</p>
+</section>
+</div>
+<div style="display:flex;flex-direction:column;gap:24px">
+<section aria-labelledby="meal-heading" style="background:#fff;border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:16px">
+<h2 id="meal-heading" style="margin:0;font-size:21px;font-weight:700">식사 · 숙박</h2>
+<div style="font-size:15px"><span style="color:#5C6B61;white-space:nowrap">점심</span><br><b>Rifugio Elisabetta</b> · 2,195 m · 자체 예약·도시락 €10</div>
+<div style="border-top:1px solid #E4E9E2;padding-top:16px;display:flex;flex-direction:column;gap:8px">
+<div style="display:flex;justify-content:space-between;align-items:center"><b style="font-size:18px;white-space:nowrap">Rifugio Maison Vieille</b><span style="font-size:12px;font-weight:700;padding:3px 10px;border-radius:12px;background:#2E5A41;color:#fff;white-space:nowrap">확정</span></div>
+<span style="font-size:14px;color:#3C4C42">산장 · 도미토리 하프보드 €75 (2025 요금, 기준일 2026-09-09)</span>
+<span style="font-size:14px;color:#3C4C42;white-space:nowrap">전화: 확인 필요 · 예약: 포털</span>
+<div style="display:flex;gap:8px;margin-top:6px"><span data-ix="btn" style="background:#17281F;color:#EEF1EC;font-weight:600;font-size:14px;padding:11px 16px;border-radius:12px;white-space:nowrap">공식 연락 링크</span><span data-ix="btn" style="border:1px solid #CBD4CA;font-weight:600;font-size:14px;padding:11px 16px;border-radius:12px;white-space:nowrap">예약 페이지</span></div>
+</div>
+</section>
+<section aria-labelledby="safety-heading" style="background:#17281F;color:#EEF1EC;border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:14px">
+<h2 id="safety-heading" style="margin:0;font-size:21px;font-weight:700">안전</h2>
+<p style="margin:0;font-size:15px;line-height:1.6"><b style="color:#E3A43B;white-space:nowrap">우천·피로 시</b> 콩발 호수에서 발 베니 계곡길로 우회(발코니 구간 생략, 획득 −250 m). 비상 시 발 베니 버스로 쿠르마예 이동 후 다음 날 조정.</p>
+<span data-ix="btn" style="align-self:flex-start;background:#B3412E;color:#fff;font-weight:700;font-size:16px;padding:13px 20px;border-radius:12px;white-space:nowrap">112 긴급 전화</span>
+<span style="font-size:13px;color:#A9BBAE">비상 연락: 112(유럽 공통) · 당일 숙박 연락처 · 산장 매점 현금 준비 · 확인 기준일 2026-09-16</span>
+</section>
+<section aria-labelledby="status-heading" style="background:#fff;border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:8px">
+<h2 id="status-heading" style="margin:0;font-size:18px;font-weight:700">데이터 상태</h2>
+<span style="font-size:14px;color:#3C4C42">검증 상태 <b>추정</b> · 기준일 2026-09-09 · 획득 고도는 상한 초과 추정값, GPX 기준 ±10%</span>
+</section>
+<div data-ix="tile" style="position:relative;height:120px;border-radius:12px;overflow:hidden;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/IMG_9342-1.jpg') center/cover"><div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,28,20,.85) 0%,rgba(15,28,20,.1) 100%)"></div><div style="position:absolute;left:20px;top:50%;transform:translateY(-50%);color:#fff"><b style="font-size:18px;white-space:nowrap">팀 기록 보기</b><div style="font-size:13px">Day 4 · 3건</div></div></div>
+<nav style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><span data-ix="btn" style="background:#fff;border-radius:12px;padding:14px;font-size:14px"><span style="color:#5C6B61;white-space:nowrap">← 이전</span><br><b>Day 3 라 발므 → 모테</b></span><span data-ix="btn" style="background:#fff;border-radius:12px;padding:14px;font-size:14px;text-align:right"><span style="color:#5C6B61;white-space:nowrap">다음 →</span><br><b>Day 5 쿠르마예 → 베르토네</b></span></nav>
+</div>
+</div>
+</div>
+<div class="dv-card" style="width:390px;background:#EEF1EC;color:#17281F;border-radius:32px;border:8px solid #17281F;display:flex;flex-direction:column;min-height:844px">
+<dc-import name="TMB Header" mobile="{{ true }}" hint-size="100%,56px"></dc-import>
+<div style="position:relative;height:300px;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/Col-De-Seigne-1-1-600x380.jpg') center/cover"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,28,20,0) 25%,rgba(15,28,20,.88) 100%)"></div>
+<div style="position:absolute;left:16px;right:16px;bottom:18px;color:#fff;display:flex;flex-direction:column;gap:8px"><div style="display:flex;gap:6px;font-size:12px;font-weight:600"><span>8/7 (토)</span><span style="background:#EEF1EC;color:#17281F;padding:1px 8px;border-radius:12px;white-space:nowrap">Day 4</span><span style="background:#E3A43B;color:#1B2A20;padding:1px 8px;border-radius:12px;white-space:nowrap">오늘</span><span>FR → IT</span></div><h1 data-enter="1" style="margin:0;font-size:26px;font-weight:800;line-height:1.25;letter-spacing:-.02em">모테 → 콜 드 라 세뉴 → 메종 비에유</h1><p style="margin:0;font-size:13px;opacity:.9" lang="fr">Les Mottets → Col de la Seigne → Rifugio Maison Vieille</p></div></div>
+<div style="padding:16px;display:flex;flex-direction:column;gap:14px">
+<dl style="margin:0;display:grid;grid-template-columns:1fr 1fr;gap:8px">
+<div style="background:#fff;border-radius:12px;padding:14px"><dt style="font-size:12px;color:#5C6B61">거리</dt><dd style="margin:2px 0 0;font-size:22px;font-weight:700;white-space:nowrap">16.3 km</dd></div>
+<div style="background:#fff;border-radius:12px;padding:14px"><dt style="font-size:12px;color:#5C6B61">시간</dt><dd style="margin:2px 0 0;font-size:22px;font-weight:700;white-space:nowrap">6.5~7 h</dd></div>
+<div style="background:#fff;border-radius:12px;padding:14px"><dt style="font-size:12px;color:#5C6B61">획득</dt><dd style="margin:2px 0 0;font-size:22px;font-weight:700;white-space:nowrap">+1,200 m</dd></div>
+<div style="background:#fff;border-radius:12px;padding:14px"><dt style="font-size:12px;color:#5C6B61">하강</dt><dd style="margin:2px 0 0;font-size:22px;font-weight:700;white-space:nowrap">-1,100 m</dd></div>
+</dl>
+<section style="background:#fff;border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:12px">
+<h2 style="margin:0;font-size:18px;font-weight:700">경로</h2>
+<svg viewBox="0 0 600 170" preserveAspectRatio="none" style="width:100%;height:90px;border-radius:12px;background:#F3F6F1"><path d="M0,120 L150,20 L250,60 L330,92 L450,40 L600,90 L600,170 L0,170 Z" fill="#DCE7DD"></path><path d="M0,120 L150,20 L250,60 L330,92 L450,40 L600,90" fill="none" stroke="#2E5A41" stroke-width="2.5" vector-effect="non-scaling-stroke"></path></svg>
+<ol style="margin:0;padding:0 0 0 14px;list-style:none;border-left:3px solid #CBD4CA;display:flex;flex-direction:column;gap:10px;font-size:14px">
+<li><b>모테</b> <span style="color:#5C6B61;white-space:nowrap">1,870 m</span></li><li><b>콜 드 라 세뉴</b> <span style="color:#5C6B61;white-space:nowrap">2,516 m · 국경</span></li><li><b>엘리자베타</b> <span style="color:#5C6B61;white-space:nowrap">2,195 m · 점심</span></li><li><b>콩발 호수</b> <span style="color:#5C6B61;white-space:nowrap">1,950 m</span></li><li><b>메종 비에유</b> <span style="color:#5C6B61;white-space:nowrap">1,956 m · 숙박</span></li>
+</ol>
+<div style="display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;margin-right:-18px;scrollbar-width:none"><div style="flex:none;width:150px;height:100px;border-radius:12px;scroll-snap-align:start;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/MG_8940.gif') center/cover"></div><div style="flex:none;width:150px;height:100px;border-radius:12px;scroll-snap-align:start;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/Refugio-Elizabetta-1-1-600x380.jpg') center/cover"></div><div style="flex:none;width:150px;height:100px;border-radius:12px;scroll-snap-align:start;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/MG_8965-1-1-600x380.jpg') center/cover"></div></div>
+</section>
+<section style="background:#fff;border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:8px">
+<h2 style="margin:0;font-size:18px;font-weight:700">식사 · 숙박</h2>
+<span style="font-size:14px">점심 <b>Rifugio Elisabetta</b> · 도시락 €10</span>
+<div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid #E4E9E2;padding-top:10px"><b>Rifugio Maison Vieille</b><span style="font-size:12px;font-weight:700;padding:2px 9px;border-radius:12px;background:#2E5A41;color:#fff;white-space:nowrap">확정</span></div>
+<span style="font-size:13px;color:#3C4C42;white-space:nowrap">도미토리 하프보드 €75 · 전화 확인 필요</span>
+<span data-ix="btn" style="text-align:center;background:#17281F;color:#EEF1EC;font-weight:600;font-size:15px;padding:13px;border-radius:12px;white-space:nowrap">공식 연락 링크</span>
+</section>
+<section style="background:#fff;border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:10px">
+<h2 style="margin:0;font-size:18px;font-weight:700">지도</h2>
+<span data-ix="btn" style="text-align:center;background:#17281F;color:#EEF1EC;font-weight:600;font-size:15px;padding:13px;border-radius:12px;white-space:nowrap">Google 걷기 지도</span>
+<span data-ix="btn" style="text-align:center;border:1px solid #CBD4CA;font-weight:600;font-size:15px;padding:13px;border-radius:12px;white-space:nowrap">산길 경로 보기</span>
+<span data-ix="btn" style="text-align:center;border:1px solid #CBD4CA;font-weight:600;font-size:15px;padding:13px;border-radius:12px;white-space:nowrap">GPX 다운로드</span>
+</section>
+<section style="background:#17281F;color:#EEF1EC;border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:10px">
+<h2 style="margin:0;font-size:18px;font-weight:700">안전</h2>
+<p style="margin:0;font-size:14px;line-height:1.55"><b style="color:#E3A43B;white-space:nowrap">우천·피로 시</b> 콩발 호수에서 발 베니 계곡길로 우회. 비상 시 발 베니 버스로 쿠르마예.</p>
+<span data-ix="btn" style="text-align:center;background:#B3412E;color:#fff;font-weight:700;font-size:16px;padding:14px;border-radius:12px;white-space:nowrap">112 긴급 전화</span>
+</section>
+<p style="margin:0;font-size:12px;color:#5C6B61">데이터 상태 · 추정 · 기준일 2026-09-09 · GPX 기준 ±10%</p>
+<div data-ix="tile" style="position:relative;height:90px;border-radius:12px;overflow:hidden;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/IMG_9342-1.jpg') center/cover"><div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,28,20,.85) 0%,rgba(15,28,20,.1) 100%)"></div><div style="position:absolute;left:16px;top:50%;transform:translateY(-50%);color:#fff"><b>팀 기록 보기</b><div style="font-size:12px">Day 4 · 3건</div></div></div>
+<nav style="display:grid;grid-template-columns:1fr 1fr;gap:8px"><span data-ix="btn" style="background:#fff;border-radius:12px;padding:12px;font-size:13px"><span style="color:#5C6B61;white-space:nowrap">← 이전</span><br><b>Day 3</b></span><span data-ix="btn" style="background:#fff;border-radius:12px;padding:12px;font-size:13px;text-align:right"><span style="color:#5C6B61;white-space:nowrap">다음 →</span><br><b>Day 5</b></span></nav>
+</div>
+<div style="margin-top:auto;position:sticky;bottom:0"><dc-import name="TMB TabBar" active="일정" hint-size="100%,80px"></dc-import></div>
+</div>
+</div>
+</section>
+
+<!-- ================= SCR-004 ================= -->
+<section class="dv-turn" id="scr-004" data-screen-label="SCR-004 이동일 상세">
+<div class="dv-thd"><span class="dv-tid">SCR-004</span><span class="dv-tname">이동일 상세 · /travel/travel-0816 · 에귀 뒤 미디 관광</span></div>
+<div style="display:flex;gap:32px;align-items:flex-start">
+<div class="dv-card" style="width:1200px;background:#EEF1EC;color:#17281F">
+<dc-import name="TMB Header" hint-size="100%,68px"></dc-import>
+<div style="padding:32px 48px 0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:end">
+<div style="display:flex;flex-direction:column;gap:14px;padding-bottom:8px">
+<div style="display:flex;gap:8px;font-size:14px;font-weight:600;align-items:center"><span>2027년 8월 16일 (월)</span><span style="background:#17281F;color:#EEF1EC;padding:3px 10px;border-radius:12px;white-space:nowrap">이동일</span><span>프랑스</span></div>
+<h1 data-enter="1" style="margin:0;font-size:48px;font-weight:800;line-height:1.1;letter-spacing:-.035em">에귀 뒤 미디 관광 · 샤모니 2박째</h1>
+<p style="margin:0;font-size:16px;color:#5C6B61" lang="fr">Aiguille du Midi · Chamonix-Mont-Blanc</p>
+<p style="margin:0;font-size:16px;line-height:1.6;color:#3C4C42">완주 다음 날 첫 케이블카로 3,842 m 전망대에 올랐다 내려옵니다. 트레킹 합계에는 포함하지 않습니다. 숙박은 8/15와 같은 호텔 2박째입니다.</p>
+</div>
+<div style="height:340px;border-radius:12px;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/bigstock-Aiguille-Du-Midi-Mont-blanc-8807989-1.jpg') center/cover"></div>
+</div>
+<div style="padding:32px 48px 56px;display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:24px">
+<section aria-labelledby="legs-heading" style="background:#fff;border-radius:12px;padding:28px;display:flex;flex-direction:column;gap:6px">
+<h2 id="legs-heading" style="margin:0 0 10px;font-size:21px;font-weight:700">구간</h2>
+<ol data-stagger data-testid="leg-timeline" style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column">
+<sc-for list="{{ legs }}" as="l" hint-placeholder-count="4">
+<li style="display:grid;grid-template-columns:28px minmax(0,1fr);gap:16px">
+<div style="display:flex;flex-direction:column;align-items:center"><span style="width:14px;height:14px;border-radius:50%;border:3px solid #17281F;background:#fff;margin-top:4px"></span><span style="flex:1;width:2px;background:#CBD4CA"></span></div>
+<div style="padding-bottom:22px;display:flex;flex-direction:column;gap:8px">
+<div style="display:flex;gap:6px;align-items:center;font-size:12px;font-weight:700"><span style="background:#DCE7DD;color:#2E5A41;padding:3px 9px;border-radius:12px;white-space:nowrap">{{ l.mode }}</span><span style="border:1px solid #CBD4CA;padding:2px 8px;border-radius:12px;color:#3C4C42;white-space:nowrap">{{ l.verify }}</span><span style="font-weight:500;color:#5C6B61;white-space:nowrap">기준일 2026-09-18</span></div>
+<div style="font-size:17px;font-weight:700">{{ l.route }}</div>
+<div style="display:flex;gap:28px;font-size:14px"><span><span style="color:#5C6B61;white-space:nowrap">출발</span> <b>{{ l.dep }}</b></span><span><span style="color:#5C6B61;white-space:nowrap">도착</span> <b>{{ l.arr }}</b></span><span><span style="color:#5C6B61;white-space:nowrap">소요</span> <b>{{ l.dur }}</b></span></div>
+<div style="font-size:14px;color:#3C4C42;line-height:1.55">{{ l.note }}</div>
+<div style="font-size:14px"><span style="color:#2E5A41;font-weight:600;white-space:nowrap">{{ l.link }}</span> · <span style="color:#5C6B61;white-space:nowrap">지연 시 {{ l.fallback }}</span></div>
+</div>
+</li>
+</sc-for>
+</ol>
+</section>
+<div style="display:flex;flex-direction:column;gap:24px">
+<section aria-labelledby="lodging-heading" style="background:#fff;border-radius:12px;overflow:hidden">
+<div style="height:150px;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/chamonix-street-2.jpg') center/cover"></div>
+<div style="padding:22px;display:flex;flex-direction:column;gap:8px">
+<h2 id="lodging-heading" style="margin:0;font-size:18px;font-weight:700">숙박</h2>
+<div style="display:flex;justify-content:space-between;align-items:center"><b style="font-size:17px;white-space:nowrap">샤모니 호텔 (2박째)</b><span style="font-size:12px;font-weight:700;padding:3px 10px;border-radius:12px;border:1px solid #CBD4CA;color:#3C4C42;white-space:nowrap">미예약</span></div>
+<span style="font-size:14px;color:#3C4C42">8월 €200~300/실 · 2인 분담 · 기준일 2026-09-18</span>
+<span style="font-size:14px;color:#3C4C42;white-space:nowrap">8/15와 연속 예약 · 짐 보관·체크아웃 없음</span>
+</div>
+</section>
+<section style="background:#17281F;color:#EEF1EC;border-radius:12px;padding:22px;display:flex;flex-direction:column;gap:8px">
+<h2 style="margin:0;font-size:18px;font-weight:700">고도 주의</h2>
+<p style="margin:0;font-size:14px;line-height:1.6">20분 만에 3,842 m까지 오릅니다. 두통·현기증이 오면 천천히 걷고 물을 마시세요. 정상은 0°C 전후에 강풍이라 방풍 재킷·장갑·선글라스가 필요합니다.</p>
+</section>
+<section aria-labelledby="data-heading" style="background:#fff;border-radius:12px;padding:22px">
+<h2 id="data-heading" style="margin:0 0 6px;font-size:18px;font-weight:700">데이터 상태</h2>
+<span style="font-size:14px;color:#3C4C42">일정 상태: <b>조사</b> · 기준일 2026-09-18 · 항공권·교통 예약 직전과 출발 30일 전 재확인</span>
+</section>
+<span data-ix="btn" style="text-align:center;background:#17281F;color:#EEF1EC;font-weight:700;font-size:15px;padding:14px;border-radius:12px;white-space:nowrap">전체 일정</span>
+</div>
+</div>
+</div>
+<div class="dv-card" style="width:390px;background:#EEF1EC;color:#17281F;border-radius:32px;border:8px solid #17281F;display:flex;flex-direction:column;min-height:844px">
+<dc-import name="TMB Header" mobile="{{ true }}" hint-size="100%,56px"></dc-import>
+<div style="padding:4px 16px 0;display:flex;flex-direction:column;gap:10px">
+<div style="height:190px;border-radius:12px;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/bigstock-Aiguille-Du-Midi-Mont-blanc-8807989-1.jpg') center/cover"></div>
+<div style="display:flex;gap:6px;font-size:12px;font-weight:600;align-items:center"><span>8/16 (월)</span><span style="background:#17281F;color:#EEF1EC;padding:2px 8px;border-radius:12px;white-space:nowrap">이동일</span><span>프랑스</span></div>
+<h1 data-enter="1" style="margin:0;font-size:28px;font-weight:800;line-height:1.2;letter-spacing:-.03em">에귀 뒤 미디 관광 · 샤모니 2박째</h1>
+<p style="margin:0;font-size:13px;color:#5C6B61" lang="fr">Aiguille du Midi · Chamonix-Mont-Blanc</p>
+</div>
+<div style="padding:16px;display:flex;flex-direction:column;gap:14px">
+<section style="background:#fff;border-radius:12px;padding:18px">
+<h2 style="margin:0 0 12px;font-size:18px;font-weight:700">구간</h2>
+<ol data-stagger style="margin:0;padding:0;list-style:none">
+<sc-for list="{{ legs }}" as="l" hint-placeholder-count="4">
+<li style="display:grid;grid-template-columns:20px minmax(0,1fr);gap:12px">
+<div style="display:flex;flex-direction:column;align-items:center"><span style="width:12px;height:12px;border-radius:50%;border:3px solid #17281F;margin-top:3px"></span><span style="flex:1;width:2px;background:#CBD4CA"></span></div>
+<div style="padding-bottom:18px;display:flex;flex-direction:column;gap:5px"><div style="display:flex;gap:6px;font-size:11px;font-weight:700"><span style="background:#DCE7DD;color:#2E5A41;padding:2px 8px;border-radius:12px;white-space:nowrap">{{ l.mode }}</span><span style="border:1px solid #CBD4CA;padding:1px 7px;border-radius:12px;white-space:nowrap">{{ l.verify }}</span></div><b style="font-size:15px;white-space:nowrap">{{ l.route }}</b><span style="font-size:13px">{{ l.dep }} → {{ l.arr }} · {{ l.dur }}</span><span style="font-size:12px;color:#5C6B61;white-space:nowrap">지연 시 {{ l.fallback }}</span></div>
+</li>
+</sc-for>
+</ol>
+</section>
+<section style="background:#fff;border-radius:12px;overflow:hidden"><div style="height:110px;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/chamonix-street-2.jpg') center/cover"></div><div style="padding:16px;display:flex;flex-direction:column;gap:4px"><div style="display:flex;justify-content:space-between"><b>샤모니 호텔 (2박째)</b><span style="font-size:12px;font-weight:700;padding:2px 9px;border-radius:12px;border:1px solid #CBD4CA;white-space:nowrap">미예약</span></div><span style="font-size:13px;color:#3C4C42;white-space:nowrap">€200~300/실 · 2인 분담</span></div></section>
+<section style="background:#17281F;color:#EEF1EC;border-radius:12px;padding:16px;font-size:13px;line-height:1.55"><b style="color:#E3A43B;white-space:nowrap">고도 주의</b> · 20분 만에 3,842 m. 0°C 전후·강풍, 방풍 재킷·장갑·선글라스.</section>
+<p style="margin:0;font-size:12px;color:#5C6B61">일정 상태 조사 · 기준일 2026-09-18 · 출발 30일 전 재확인</p>
+<span data-ix="btn" style="text-align:center;background:#17281F;color:#EEF1EC;font-weight:700;font-size:15px;padding:14px;border-radius:12px;white-space:nowrap">전체 일정</span>
+</div>
+<div style="margin-top:auto;position:sticky;bottom:0"><dc-import name="TMB TabBar" active="일정" hint-size="100%,80px"></dc-import></div>
+</div>
+</div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const IMG = 'https://montblanctreks.com.au/wp-content/uploads/';
+const ST = {
+  '확정': ['#2E5A41', '#fff'], '대안 확정': ['#DCE7DD', '#17281F'], '대기': ['#F3E3C0', '#4A3408'],
+  '문의': ['#F3E3C0', '#4A3408'], '미예약': ['#EEF1EC', '#3C4C42'], '숙박 없음': ['#EEF1EC', '#3C4C42']
+};
+const DAYS = [
+  ['이동일', '8/3 (화)', '한국 → 스위스', '인천 → 취리히 → 제네바', 'Incheon → Zürich → Genève', '인천 → 제네바', '구간 3개 · 항공 · 기차', '제네바 호텔 (Hotel Astoria 후보)', '확정', '2013/10/cable-car-1.jpg'],
+  ['Day 1', '8/4 (수)', '프랑스', '레주슈 → 콜 드 보자 → 레 콩타민', 'Les Houches → Col de Voza → Les Contamines', '레주슈 → 레 콩타민', '16.5 km · +880 m · -800 m · 5~6 h', 'Chalet-Hôtel Gai Soleil', '확정', '2013/10/Bionnassay-1.jpg'],
+  ['Day 2', '8/5 (목)', '프랑스', '레 콩타민 → 낭 보랑 → 라 발므', 'Les Contamines → Nant Borrant → Refuge de la Balme', '레 콩타민 → 라 발므', '9 km · +550 m · -0 m · 3 h', 'Refuge de la Balme', '확정', '2013/10/MG_8872-1-1.jpg'],
+  ['Day 3', '8/6 (금)', '프랑스', '라 발므 → 콜 뒤 보놈 → 콜 데 푸르 → 모테', 'La Balme → Col du Bonhomme → Col des Fours → Les Mottets', '라 발므 → 모테', '15 km · +1,000 m · -900 m · 6~6.5 h', 'Refuge des Mottets', '확정', '2013/10/Ascending-Col-Du-Bonhomme-1-1.jpg'],
+  ['Day 4', '8/7 (토)', '프랑스 → 이탈리아', '모테 → 콜 드 라 세뉴 → 엘리자베타 → 콩발 호수 → 메종 비에유', 'Les Mottets → Col de la Seigne → Rifugio Maison Vieille', '모테 → 메종 비에유', '16.3 km · +1,200 m · -1,100 m · 6.5~7 h', 'Rifugio Maison Vieille', '확정', '2013/10/Col-De-Seigne-1-1.jpg', true],
+  ['Day 5', '8/8 (일)', '이탈리아', '메종 비에유 → 쿠르마예 → 베르토네', 'Maison Vieille → Courmayeur → Rifugio Bertone', '쿠르마예 → 베르토네', '9.2 km · +830 m · -750 m · 5 h', 'Rifugio Bertone', '대기', '2013/10/MG_8968.jpg'],
+  ['Day 6', '8/9 (월)', '이탈리아', '베르토네 → 보나티 → 아르누바 → 엘레나', 'Bertone → Bonatti → Arnouvaz → Rifugio Elena', '보나티 → 엘레나', '15 km · +750 m · -700 m · 5~5.5 h', 'Rifugio Elena', '문의', '2013/10/IMG_9117-1.jpg'],
+  ['Day 7', '8/10 (화)', '이탈리아 → 스위스', '엘레나 → 그랑 콜 페레 → 라 푈 → 라 풀리', 'Elena → Grand Col Ferret → La Peule → La Fouly', '그랑 콜 페레 → 라 풀리', '13.5 km · +480 m · -930 m · 5 h', 'Hôtel Edelweiss', '확정', '2013/10/IMG_9128-1.jpg'],
+  ['Day 8', '8/11 (수)', '스위스', '라 풀리 → 프라 드 포르 → 샹페 호수', 'La Fouly → Praz-de-Fort → Champex-Lac', '라 풀리 → 샹페', '15 km · +420 m · -565 m · 4.5~5 h', 'Pension en Plein Air', '미예약', '2013/10/MG_9157-1.jpg'],
+  ['Day 9', '8/12 (목)', '스위스', '샹페 → 보빈 → 콜 드 라 포르클라 → 트리앙', 'Champex → Bovine → Col de la Forclaz → Trient', '보빈 → 트리앙', '16 km · +850 m · -1,015 m · 6 h', 'Auberge Mont-Blanc', '문의', '2013/10/IMG_9184-1.jpg'],
+  ['Day 10', '8/13 (금)', '스위스 → 프랑스', '트리앙 → 콜 드 발므 → 에귀예트 데 포제트 → 트레르샹', 'Trient → Col de Balme → Aiguillette des Posettes → Tré-le-Champ', '콜 드 발므 → 트레르샹', '13.5 km · +1,100 m · -975 m · 6 h', 'Auberge La Boërne', '대기', '2014/07/IMG_19401-e1405664837580.jpg'],
+  ['Day 11', '8/14 (토)', '프랑스', '트레르샹 → 사다리 구간 → 라크 블랑 → 라 플레제르', 'Tré-le-Champ → Échelles → Lac Blanc → La Flégère', '라크 블랑 → 플레제르', '11 km · +950 m · -500 m · 5 h', 'Refuge de la Flégère', '문의', '2013/10/IMG_9329-1.jpg'],
+  ['Day 12', '8/15 (일)', '프랑스', '라 플레제르 → 르 브레방 → 벨라샤 → 샤모니', 'La Flégère → Le Brévent → Bellachat → Chamonix', '브레방 → 샤모니', '13 km · +740 m · -1,490 m · 6 h', '샤모니 호텔 (미정)', '미예약', '2014/07/IMG_2040.jpg'],
+  ['이동일', '8/16 (월)', '프랑스', '에귀 뒤 미디 관광 · 샤모니 2박째', 'Aiguille du Midi', '에귀 뒤 미디 관광', '구간 4개 · 도보 · 케이블카', '샤모니 호텔 (2박째)', '미예약', '2013/10/bigstock-Aiguille-Du-Midi-Mont-blanc-8807989-1.jpg'],
+  ['이동일', '8/17 (화)', '프랑스 → 스위스 → 한국', '샤모니 → 제네바 공항 → 취리히 공항 → 인천', 'Chamonix → Genève-Aéroport → Zürich Flughafen', '샤모니 → 인천', '구간 3개 · 버스 · 기차 · 항공', '기내 (숙박 없음)', '숙박 없음', '2013/10/Chamonix-mural-1.jpg']
+];
+const LEGS = [
+  { mode: '도보', verify: '확정', route: '샤모니 호텔 → 에귀 뒤 미디 승강장', dep: '06:30', arr: '06:45', dur: '약 15분', note: '샤모니 남역 쪽 승강장까지 걸어갑니다.', link: '예매 링크 없음', fallback: '다음 슬롯으로 이동' },
+  { mode: '케이블카', verify: '조사', route: '샤모니 1,035 m → 플랑 드 레귀유 2,317 m → 에귀 뒤 미디 3,842 m', dep: '07:00 슬롯', arr: '07:20', dur: '약 20분', note: '성인 왕복 €60.20~83 동적 요금 · 7~8월 온라인 시간대 예약 필수 · 10인은 개인 예매', link: 'montblancnaturalresort.com 예매', fallback: '오후 슬롯(14:00~15:30 상행)' },
+  { mode: '이동', verify: '조사', route: '전망대 · 테라스 3,777 m', dep: '07:30', arr: '09:00', dur: '60~90분', note: '몽블랑·발레 블랑슈 조망 · 강풍·악천후 시 운휴', link: '예매 링크 없음', fallback: 'Montenvers 열차 또는 시내 휴식' },
+  { mode: '케이블카', verify: '조사', route: '에귀 뒤 미디 → 샤모니', dep: '09:00~09:30', arr: '10:00', dur: '약 20분 + 대기', note: '하산 후 샤모니 시내, 장비 정리', link: '왕복권에 포함', fallback: '다음 하행 편' }
+];
+class Component extends DCLogic {
+  renderVals() {
+    const days = DAYS.map(d => {
+      const st = ST[d[8]] || ST['미예약'];
+      return { badge: d[0], date: d[1], country: d[2], nameKo: d[3], nameOrig: d[4], nameShort: d[5], metrics: d[6], lodging: d[7], status: d[8], stBg: st[0], stFg: st[1], photo: IMG + d[9], today: !!d[10], current: d[10] ? 'date' : 'false', outline: d[10] ? '2px solid #E3A43B' : '0 solid transparent' };
+    });
+    return { days, legs: LEGS };
+  }
+}
+</script>
+</body>
+</html>

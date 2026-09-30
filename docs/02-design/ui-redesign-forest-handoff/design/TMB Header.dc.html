@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<sc-if value="{{ web }}" hint-placeholder-val="{{ true }}">
+<div style="display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:68px;background:#EEF1EC;border-bottom:1px solid #DCE2DA;font-family:'Pretendard Variable',Pretendard,sans-serif;color:#17281F">
+<div style="display:flex;align-items:baseline;gap:12px"><span style="font-weight:800;font-size:20px;letter-spacing:-.02em;white-space:nowrap">TMB 2027</span><span style="font-size:14px;color:#56655B;white-space:nowrap">걸어야 산다!</span></div>
+<nav style="display:flex;align-items:center;gap:28px;font-size:15px;font-weight:500;color:#33443A"><span data-ix="link">일정</span><span data-ix="link">예산</span><span data-ix="link">지도</span><span data-ix="link">준비물</span><span data-ix="link">관리자</span>
+<sc-if value="{{ loggedOut }}" hint-placeholder-val="{{ true }}"><span data-ix="btn" style="padding:9px 18px;border-radius:12px;background:#17281F;color:#EEF1EC;font-weight:600;white-space:nowrap">로그인</span></sc-if>
+<sc-if value="{{ loggedIn }}"><span data-ix="btn" style="display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:12px;background:#fff;border:1px solid #CBD4CA;font-weight:600"><span style="width:22px;height:22px;border-radius:50%;background:#DCE7DD;color:#2E5A41;font-size:12px;display:flex;align-items:center;justify-content:center;white-space:nowrap">{{ initial }}</span>{{ account }}</span></sc-if>
+</nav>
+</div>
+</sc-if>
+<sc-if value="{{ mobile }}">
+<div style="display:flex;align-items:center;justify-content:space-between;padding:0 18px;height:56px;background:#EEF1EC;font-family:'Pretendard Variable',Pretendard,sans-serif;color:#17281F">
+<span style="font-weight:800;font-size:18px;letter-spacing:-.02em;white-space:nowrap">TMB 2027</span>
+<sc-if value="{{ loggedOut }}" hint-placeholder-val="{{ true }}"><span data-ix="btn" style="padding:10px 16px;border-radius:12px;background:#17281F;color:#EEF1EC;font-size:14px;font-weight:600;white-space:nowrap">로그인</span></sc-if>
+<sc-if value="{{ loggedIn }}"><span data-ix="btn" style="display:flex;align-items:center;gap:6px;padding:8px 12px;border-radius:12px;background:#fff;border:1px solid #CBD4CA;font-size:13px;font-weight:600"><span style="width:20px;height:20px;border-radius:50%;background:#DCE7DD;color:#2E5A41;font-size:11px;display:flex;align-items:center;justify-content:center;white-space:nowrap">{{ initial }}</span>{{ account }}</span></sc-if>
+</div>
+</sc-if>
+<sc-if value="{{ offline }}">
+<div role="status" style="background:#F3E3C0;color:#4A3408;padding:10px 20px;font-family:'Pretendard Variable',Pretendard,sans-serif;font-size:14px;line-height:1.45"><b>오프라인 · 마지막 갱신 8/7 06:40</b> · 지도·예약 편집 등 온라인 전용 기능은 비활성입니다.</div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1200,&quot;height&quot;:68},&quot;mobile&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;account&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;offline&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const mobile = !!this.props.mobile;
+    const account = this.props.account || '';
+    return { web: !mobile, mobile, loggedOut: !account, loggedIn: !!account, account, initial: account ? account[0].toUpperCase() : '', offline: !!this.props.offline };
+  }
+}
+</script>
+</body>
+</html>

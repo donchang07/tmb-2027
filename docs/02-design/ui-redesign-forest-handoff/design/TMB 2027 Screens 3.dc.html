@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics><meta name="design_doc_mode" content="canvas"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"><style>body{margin:0;word-break:keep-all;overflow-wrap:break-word;background:#dfe3dc;font-family:'Pretendard Variable',Pretendard,sans-serif;-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}h1,h2{text-wrap:balance}a{color:#2E5A41;text-decoration:none}a:hover{color:#17281F;text-decoration:underline}.dv-turn{padding:40px 44px 40px;border-bottom:1px solid rgba(0,0,0,.08);scroll-margin-top:16px}.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 20px}.dv-tid{white-space:nowrap;flex:none;font:600 11px ui-monospace,Menlo,monospace;padding:3px 8px;background:#17281F;color:#fff;border-radius:4px;text-decoration:none}.dv-tname{white-space:nowrap;font:600 14px/1.3 'Pretendard Variable',sans-serif;color:#17281F}.dv-card{flex:none;border:1px solid rgba(0,0,0,.08);border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);overflow:hidden}[data-ix="btn"]{white-space:nowrap;flex:none}[data-ix]{cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation;-webkit-user-select:none;user-select:none;transition:transform 160ms cubic-bezier(0.23,1,0.32,1),box-shadow 200ms ease,filter 200ms ease,background-color 200ms ease}[data-ix="btn"]:active,[data-ix="tab"]:active{transform:scale(0.97)}[data-ix="tile"]:active{transform:scale(0.98)}[data-ix="row"]:active{transform:scale(0.99)}[data-ix]:focus-visible{outline:2px solid currentColor;outline-offset:3px}@media (hover:hover) and (pointer:fine){[data-ix="btn"]:hover{filter:brightness(1.08)}[data-ix="tile"]:hover{transform:translateY(-3px);box-shadow:0 14px 28px -18px rgba(20,34,26,.55)}[data-ix="row"]:hover{background-color:rgba(23,40,31,.04)}[data-ix="link"]:hover{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:6px}}@keyframes ix-in{from{opacity:0;transform:translateY(12px)}}@keyframes ix-fade{from{opacity:0}}@keyframes ix-pop{from{opacity:0;transform:scale(0.95)}}@media (prefers-reduced-motion:no-preference){[data-enter]{animation:ix-in 420ms cubic-bezier(0.23,1,0.32,1) both}[data-enter="2"]{animation-delay:60ms}[data-enter="3"]{animation-delay:120ms}[data-enter="4"]{animation-delay:180ms}[data-enter="5"]{animation-delay:240ms}[data-enter="img"]{animation:ix-fade 600ms ease both}[data-stagger]>*{animation:ix-in 360ms cubic-bezier(0.23,1,0.32,1) both}[data-stagger]>*:nth-child(2){animation-delay:40ms}[data-stagger]>*:nth-child(3){animation-delay:80ms}[data-stagger]>*:nth-child(4){animation-delay:120ms}[data-stagger]>*:nth-child(5){animation-delay:160ms}[data-stagger]>*:nth-child(6){animation-delay:200ms}[data-stagger]>*:nth-child(7){animation-delay:240ms}[data-stagger]>*:nth-child(8){animation-delay:280ms}[data-stagger]>*:nth-child(n+9){animation-delay:320ms}[data-pop]{transform-origin:top right;animation:ix-pop 180ms cubic-bezier(0.23,1,0.32,1) both}}@media (prefers-reduced-motion:reduce){[data-enter],[data-stagger]>*,[data-pop]{animation:ix-fade 200ms ease both}}</style></helmet>
+<section class="dv-turn" id="index" style="background:#17281F;color:#EEF1EC;border-bottom:none">
+<div style="display:flex;flex-direction:column;gap:14px;max-width:1100px">
+<span style="font-size:13px;font-weight:600;color:#E3A43B">TMB 2027 · 4a 숲길 · web 1200 / mobile 390</span>
+<h1 data-enter="1" style="margin:0;font-size:40px;font-weight:800;letter-spacing:-.03em">전체 화면 목업 (3/3)</h1>
+<nav style="display:flex;flex-wrap:wrap;gap:8px;font-size:14px"><a href="TMB 2027 Screens 1.dc.html" style="color:#17281F;background:#E3A43B;padding:8px 12px;border-radius:12px">← 1/3</a><a href="TMB 2027 Screens 2.dc.html" style="color:#17281F;background:#E3A43B;padding:8px 12px;border-radius:12px">← 2/3</a><a href="#scr-007" style="color:#EEF1EC;background:#2E5A41;padding:8px 12px;border-radius:12px">SCR-007 관리자 홈</a><a href="#scr-008" style="color:#EEF1EC;background:#2E5A41;padding:8px 12px;border-radius:12px">SCR-008 예약·숙박</a><a href="#scr-012" style="color:#EEF1EC;background:#2E5A41;padding:8px 12px;border-radius:12px">SCR-012 팀원 로그인</a><a href="#scr-013" style="color:#EEF1EC;background:#2E5A41;padding:8px 12px;border-radius:12px">SCR-013 오프라인</a><a href="#scr-014" style="color:#EEF1EC;background:#2E5A41;padding:8px 12px;border-radius:12px">SCR-014 찾을 수 없음</a><a href="#scr-015" style="color:#EEF1EC;background:#2E5A41;padding:8px 12px;border-radius:12px">SCR-015 로그인</a><a href="#scr-016" style="color:#EEF1EC;background:#2E5A41;padding:8px 12px;border-radius:12px">SCR-016 회원가입</a><a href="#scr-017" style="color:#EEF1EC;background:#2E5A41;padding:8px 12px;border-radius:12px">SCR-017 인증 콜백</a><a href="#scr-018" style="color:#EEF1EC;background:#2E5A41;padding:8px 12px;border-radius:12px">SCR-018 공통 메뉴</a></nav>
+</div>
+</section>
+
+<!-- ================= SCR-007 ================= -->
+<section class="dv-turn" id="scr-007" data-screen-label="SCR-007 관리자 홈">
+<div class="dv-thd"><span class="dv-tid">SCR-007</span><span class="dv-tname">관리자 홈·리더 로그인 · /admin · web: 리더 로그인됨 · mobile: 비로그인 폼</span></div>
+<div style="display:flex;gap:32px;align-items:flex-start">
+<div class="dv-card" style="width:1200px;background:#EEF1EC;color:#17281F">
+<dc-import name="TMB Header" account="donch@gmail…" hint-size="100%,68px"></dc-import>
+<div style="padding:40px 48px 56px;display:grid;grid-template-columns:minmax(0,1fr) 440px;gap:32px;align-items:start">
+<div style="display:flex;flex-direction:column;gap:18px">
+<h1 data-enter="1" style="margin:0;font-size:44px;font-weight:800;letter-spacing:-.035em">관리자 예약</h1>
+<div role="status" style="background:#DCE7DD;border-radius:12px;padding:16px 18px;font-size:15px;line-height:1.55"><b>리더로 로그인됨 · donch@example.com</b><br>공개 화면에는 상태만 표시되고 예약번호·비공개 메모는 리더에게만 보입니다.</div>
+<span style="font-size:14px;font-weight:600;color:#2E5A41;white-space:nowrap">DB 리더 등록 확인됨.</span>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px"><div style="background:#fff;border-radius:12px;padding:16px"><div style="font-size:13px;color:#5C6B61">확정</div><div style="font-size:28px;font-weight:800">7</div></div><div style="background:#fff;border-radius:12px;padding:16px"><div style="font-size:13px;color:#5C6B61">대기·문의</div><div style="font-size:28px;font-weight:800">5</div></div><div style="background:#fff;border-radius:12px;padding:16px"><div style="font-size:13px;color:#5C6B61">미예약</div><div style="font-size:28px;font-weight:800">2</div></div><div style="background:#fff;border-radius:12px;padding:16px"><div style="font-size:13px;color:#5C6B61">총 숙박</div><div style="font-size:28px;font-weight:800">14박</div></div></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap"><span data-ix="btn" style="background:#E3A43B;color:#1B2A20;font-weight:700;font-size:16px;padding:14px 22px;border-radius:12px;white-space:nowrap">14박 예약 상태 편집</span><span data-ix="btn" style="background:#fff;border:1px solid #CBD4CA;font-weight:600;font-size:16px;padding:14px 22px;border-radius:12px;white-space:nowrap">로그아웃</span></div>
+</div>
+<div style="height:380px;border-radius:12px;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/MG_9209-1.jpg') center/cover"></div>
+</div>
+</div>
+<div class="dv-card" style="width:390px;background:#EEF1EC;color:#17281F;border-radius:32px;border:8px solid #17281F;display:flex;flex-direction:column;min-height:844px">
+<dc-import name="TMB Header" mobile="{{ true }}" hint-size="100%,56px"></dc-import>
+<div style="padding:4px 16px 24px;display:flex;flex-direction:column;gap:14px">
+<div style="height:170px;border-radius:12px;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/MG_9209-1.jpg') center/cover"></div>
+<h1 data-enter="1" style="margin:0;font-size:30px;font-weight:800">관리자 예약</h1>
+<div role="status" style="background:#DCE7DD;border-radius:12px;padding:12px 14px;font-size:14px;line-height:1.5"><b>리더 로그인이 필요합니다</b><br>허용된 리더 이메일로 magic link를 보내 드립니다. 로그인 후 원래 화면으로 돌아갑니다.</div>
+<form style="background:#fff;border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:12px">
+<label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600">리더 이메일<span style="display:flex;align-items:center;height:48px;border:1.5px solid #CBD4CA;border-radius:12px;padding:0 14px;font-size:16px;font-weight:400;color:#6E7C71;white-space:nowrap">leader@example.com</span></label>
+<span data-ix="btn" style="text-align:center;background:#17281F;color:#EEF1EC;font-weight:700;font-size:16px;padding:14px;border-radius:12px;white-space:nowrap">로그인 링크 보내기</span>
+<span role="status" style="font-size:13px;color:#2E5A41">허용된 이메일이면 로그인 링크를 보냈습니다. 메일함을 확인해 주세요.</span>
+</form>
+</div>
+<div style="margin-top:auto;position:sticky;bottom:0"><dc-import name="TMB TabBar" active="" hint-size="100%,80px"></dc-import></div>
+</div>
+</div>
+</section>
+
+<!-- ================= SCR-008 ================= -->
+<section class="dv-turn" id="scr-008" data-screen-label="SCR-008 관리자 예약·숙박 목록">
+<div class="dv-thd"><span class="dv-tid">SCR-008</span><span class="dv-tname">관리자 예약·숙박 목록 · /admin/bookings · Day 5 편집 패널 열림</span></div>
+<div style="display:flex;gap:32px;align-items:flex-start">
+<div class="dv-card" style="width:1200px;background:#EEF1EC;color:#17281F">
+<dc-import name="TMB Header" account="donch@gmail…" hint-size="100%,68px"></dc-import>
+<div style="padding:32px 48px 56px;display:flex;flex-direction:column;gap:20px">
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px"><div><h1 data-enter="1" style="margin:0;font-size:40px;font-weight:800;letter-spacing:-.035em">14박 예약·숙박 편집</h1><p style="margin:6px 0 0;font-size:15px;color:#3C4C42">리더 donch@example.com · 상태·숙박 정보는 공개, 예약번호·메모는 비공개</p></div><div style="display:flex;gap:8px"><span data-ix="btn" style="background:#fff;border:1px solid #CBD4CA;font-weight:600;padding:11px 16px;border-radius:12px;white-space:nowrap">관리자 홈</span><span data-ix="btn" style="background:#fff;border:1px solid #CBD4CA;font-weight:600;padding:11px 16px;border-radius:12px;white-space:nowrap">로그아웃</span></div></div>
+<div style="background:#fff;border-radius:12px;overflow:hidden">
+<table style="width:100%;border-collapse:collapse;font-size:14px"><caption style="position:absolute;left:-9999px">14박 예약 목록</caption>
+<thead><tr style="text-align:left;color:#5C6B61;font-size:12px;background:#F6F8F5"><th scope="col" style="padding:12px 16px;font-weight:600">Day·날짜</th><th scope="col" style="padding:12px 8px;font-weight:600">숙박</th><th scope="col" style="padding:12px 8px;font-weight:600">상태</th><th scope="col" style="padding:12px 8px;font-weight:600">대안 숙소</th><th scope="col" style="padding:12px 8px;font-weight:600">전화(검증일)</th><th scope="col" style="padding:12px 8px;font-weight:600">가격</th><th scope="col" style="padding:12px 8px;font-weight:600">재확인일</th><th scope="col" style="padding:12px 8px;font-weight:600">갱신</th><th scope="col" style="padding:12px 16px"></th></tr></thead>
+<tbody data-stagger><sc-for list="{{ nights }}" as="n" hint-placeholder-count="14"><tr style="border-top:1px solid #E4E9E2;background:{{ n.rowBg }}"><td style="padding:10px 16px;white-space:nowrap"><b>{{ n.day }}</b> <span style="color:#5C6B61;white-space:nowrap">{{ n.date }}</span></td><td style="padding:10px 8px"><div style="display:flex;align-items:center;gap:10px"><span style="flex:none;width:40px;height:40px;border-radius:8px;background:#4E6B55 url('{{ n.photo }}') center/cover"></span><b>{{ n.name }}</b></div></td><td style="padding:10px 8px"><span style="font-size:12px;font-weight:700;padding:3px 9px;border-radius:12px;background:{{ n.stBg }};color:{{ n.stFg }};white-space:nowrap">{{ n.status }}</span></td><td style="padding:10px 8px;color:#3C4C42">{{ n.alt }}</td><td style="padding:10px 8px;color:#3C4C42">{{ n.phone }}</td><td style="padding:10px 8px;white-space:nowrap">{{ n.price }}</td><td style="padding:10px 8px;color:#3C4C42;white-space:nowrap">{{ n.recheck }}</td><td style="padding:10px 8px;color:#5C6B61;white-space:nowrap">{{ n.updated }}</td><td style="padding:10px 16px"><span data-ix="btn" aria-expanded="{{ n.open }}" style="font-weight:600;border:1px solid #CBD4CA;padding:8px 12px;border-radius:12px;white-space:nowrap">{{ n.action }}</span></td></tr></sc-for></tbody>
+</table>
+</div>
+<section style="background:#fff;border-radius:12px;padding:24px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;border:2px solid #E3A43B">
+<div style="display:flex;flex-direction:column;gap:12px">
+<h2 style="margin:0;font-size:19px;font-weight:700">예약 · Day 5 Rifugio Bertone</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+<label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600">공개 상태<span style="height:46px;border:1.5px solid #CBD4CA;border-radius:12px;padding:0 14px;display:flex;align-items:center;justify-content:space-between;font-size:16px;font-weight:500">대기 <span style="color:#5C6B61;white-space:nowrap">▾</span></span></label>
+<label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600">예약번호 (비공개)<span style="height:46px;border:1.5px solid #CBD4CA;border-radius:12px;padding:0 14px;display:flex;align-items:center;font-size:16px;font-weight:400;white-space:nowrap">MTB-27-0808-10</span></label>
+<label style="grid-column:span 2;display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600">대안 숙소 (등록된 숙박 중 선택 — 공개)<span style="height:46px;border:1.5px solid #CBD4CA;border-radius:12px;padding:0 14px;display:flex;align-items:center;justify-content:space-between;font-size:16px;font-weight:500">선택 안 함 <span style="color:#5C6B61;white-space:nowrap">▾</span></span></label>
+<label style="grid-column:span 2;display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600">비공개 메모<span style="min-height:70px;border:1.5px solid #CBD4CA;border-radius:12px;padding:12px 14px;font-size:15px;font-weight:400;line-height:1.5;white-space:nowrap">대기 2순위 · 8/1까지 확정 회신 요청</span></label>
+</div>
+<div style="display:flex;align-items:center;gap:12px"><span data-ix="btn" style="background:#17281F;color:#EEF1EC;font-weight:700;padding:12px 22px;border-radius:12px;white-space:nowrap">저장</span><span role="status" style="font-size:13px;color:#2E5A41;white-space:nowrap">저장됨 · 08-06 21:10</span></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<h2 style="margin:0;font-size:19px;font-weight:700">숙박 정보 (공개)</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+<label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600">유형<span style="height:46px;border:1.5px solid #CBD4CA;border-radius:12px;padding:0 14px;display:flex;align-items:center;justify-content:space-between;font-size:16px;font-weight:500">산장 <span style="color:#5C6B61;white-space:nowrap">▾</span></span></label>
+<label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600">객실 유형<span style="height:46px;border:1.5px solid #CBD4CA;border-radius:12px;padding:0 14px;display:flex;align-items:center;font-size:16px;font-weight:400;white-space:nowrap">도미토리</span></label>
+<label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600">검증된 전화<span style="height:46px;border:1.5px solid #CBD4CA;border-radius:12px;padding:0 14px;display:flex;align-items:center;font-size:16px;font-weight:400;color:#6E7C71;white-space:nowrap">+39 …</span></label>
+<label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600">전화 검증일<span style="height:46px;border:1.5px solid #CBD4CA;border-radius:12px;padding:0 14px;display:flex;align-items:center;font-size:16px;font-weight:400;color:#6E7C71;white-space:nowrap">YYYY-MM-DD</span></label>
+<label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600">최저가 · 최고가<span style="height:46px;border:1.5px solid #CBD4CA;border-radius:12px;padding:0 14px;display:flex;align-items:center;font-size:16px;font-weight:400;white-space:nowrap">70 ~ 80 EUR</span></label>
+<label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600">재확인일<span style="height:46px;border:1.5px solid #CBD4CA;border-radius:12px;padding:0 14px;display:flex;align-items:center;font-size:16px;font-weight:400;white-space:nowrap">2027-07-15</span></label>
+</div>
+<div style="display:flex;align-items:center;gap:12px"><span data-ix="btn" style="background:#fff;border:1.5px solid #17281F;font-weight:700;padding:11px 20px;border-radius:12px;white-space:nowrap">숙박 정보 저장</span></div>
+</div>
+</section>
+</div>
+</div>
+<div class="dv-card" style="width:390px;background:#EEF1EC;color:#17281F;border-radius:32px;border:8px solid #17281F;display:flex;flex-direction:column;min-height:844px">
+<dc-import name="TMB Header" mobile="{{ true }}" account="donch@gmail…" hint-size="100%,56px"></dc-import>
+<div style="padding:8px 16px 24px;display:flex;flex-direction:column;gap:12px">
+<h1 data-enter="1" style="margin:0;font-size:26px;font-weight:800;line-height:1.2">14박 예약·숙박 편집</h1>
+<p style="margin:0;font-size:13px;color:#3C4C42">상태·숙박 정보는 공개, 예약번호·메모는 비공개</p>
+<sc-for list="{{ nightsShort }}" as="n" hint-placeholder-count="5">
+<div style="background:#fff;border-radius:12px;padding:12px;display:grid;grid-template-columns:52px minmax(0,1fr) auto;gap:12px;align-items:center;outline:{{ n.outline }}"><span style="height:52px;border-radius:9px;background:#4E6B55 url('{{ n.photo }}') center/cover"></span><div style="min-width:0;display:flex;flex-direction:column;gap:2px"><b style="font-size:15px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ n.name }}</b><span style="font-size:12px;color:#5C6B61">{{ n.day }} · {{ n.date }} · {{ n.price }}</span><span style="align-self:flex-start;font-size:11px;font-weight:700;padding:2px 8px;border-radius:12px;background:{{ n.stBg }};color:{{ n.stFg }}">{{ n.status }}</span></div><span data-ix="btn" style="font-size:14px;font-weight:600;border:1px solid #CBD4CA;padding:10px 12px;border-radius:12px;white-space:nowrap">{{ n.action }}</span></div>
+</sc-for>
+<section style="background:#fff;border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:10px;border:2px solid #E3A43B">
+<b style="font-size:16px;white-space:nowrap">Day 5 · 예약 편집</b>
+<label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600">공개 상태<span style="height:48px;border:1.5px solid #CBD4CA;border-radius:12px;padding:0 14px;display:flex;align-items:center;justify-content:space-between;font-size:16px;font-weight:500">대기 <span>▾</span></span></label>
+<label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600">예약번호 (비공개)<span style="height:48px;border:1.5px solid #CBD4CA;border-radius:12px;padding:0 14px;display:flex;align-items:center;font-size:16px;font-weight:400;white-space:nowrap">MTB-27-0808-10</span></label>
+<span data-ix="btn" style="text-align:center;background:#17281F;color:#EEF1EC;font-weight:700;font-size:16px;padding:14px;border-radius:12px;white-space:nowrap">저장</span>
+</section>
+<p style="margin:0;font-size:12px;color:#5C6B61">나머지 9박은 아래로 스크롤 · 예약 상태는 예시값</p>
+</div>
+<div style="margin-top:auto;position:sticky;bottom:0"><dc-import name="TMB TabBar" active="" hint-size="100%,80px"></dc-import></div>
+</div>
+</div>
+</section>
+
+<!-- ================= SCR-012 ================= -->
+<section class="dv-turn" id="scr-012" data-screen-label="SCR-012 팀원 로그인">
+<div class="dv-thd"><span class="dv-tid">SCR-012</span><span class="dv-tname">팀원 로그인 · /journal/login · 링크 발송 완료 상태</span></div>
+<div style="display:flex;gap:32px;align-items:flex-start">
+<div class="dv-card" style="width:1200px;background:#EEF1EC;color:#17281F">
+<dc-import name="TMB Header" hint-size="100%,68px"></dc-import>
+<div style="padding:48px;display:grid;grid-template-columns:448px minmax(0,1fr);gap:40px;align-items:stretch">
+<div style="display:flex;flex-direction:column;gap:18px;justify-content:center">
+<h1 data-enter="1" style="margin:0;font-size:44px;font-weight:800;letter-spacing:-.035em">팀원 로그인</h1>
+<p style="margin:0;font-size:16px;line-height:1.6;color:#3C4C42">리더가 등록한 팀원 이메일로 로그인 링크를 보내 드립니다. 링크를 열면 기록 화면으로 돌아갑니다.</p>
+<form style="background:#fff;border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:14px">
+<label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600">팀원 이메일
+<span style="display:flex;align-items:center;height:48px;border:1.5px solid #2E5A41;border-radius:12px;padding:0 14px;font-size:16px;font-weight:400;white-space:nowrap">minji@example.com</span></label>
+<span data-ix="btn" style="text-align:center;background:#17281F;color:#EEF1EC;font-weight:700;font-size:16px;padding:14px;border-radius:12px;white-space:nowrap">로그인 링크 보내기</span>
+<span role="status" style="font-size:14px;color:#2E5A41;line-height:1.5">등록된 팀원이면 로그인 링크를 보냈습니다. 메일함을 확인해 주세요.</span>
+</form>
+<a href="#scr-015" style="font-weight:600;font-size:15px">메일이 오지 않나요? 이메일·비밀번호로 로그인</a>
+</div>
+<div data-enter="img" style="min-height:460px;border-radius:12px;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/IMG_9342-1.jpg') center/cover"></div>
+</div>
+</div>
+<div class="dv-card" style="width:390px;background:#EEF1EC;color:#17281F;border-radius:32px;border:8px solid #17281F;display:flex;flex-direction:column;min-height:844px">
+<dc-import name="TMB Header" mobile="{{ true }}" hint-size="100%,56px"></dc-import>
+<div style="padding:4px 16px 24px;display:flex;flex-direction:column;gap:14px">
+<div data-enter="img" style="height:180px;border-radius:12px;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/IMG_9342-1.jpg') center/cover"></div>
+<h1 data-enter="1" style="margin:0;font-size:30px;font-weight:800">팀원 로그인</h1>
+<div role="alert" data-enter="2" style="background:#F3E3C0;color:#4A3408;border-radius:12px;padding:12px 14px;font-size:14px;line-height:1.5"><b>로그인 링크가 유효하지 않습니다</b> · 링크가 만료되었거나 이미 사용되었습니다. 다시 요청해 주세요.</div>
+<form data-enter="3" style="background:#fff;border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:12px">
+<label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600">팀원 이메일<span style="display:flex;align-items:center;height:48px;border:1.5px solid #CBD4CA;border-radius:12px;padding:0 14px;font-size:16px;font-weight:400;color:#6E7C71;white-space:nowrap">member@example.com</span></label>
+<span data-ix="btn" style="text-align:center;background:#17281F;color:#EEF1EC;font-weight:700;font-size:16px;padding:14px;border-radius:12px;white-space:nowrap">로그인 링크 보내기</span>
+</form>
+<a href="#scr-015" style="font-weight:600;font-size:14px">메일이 오지 않나요? 이메일·비밀번호로 로그인</a>
+</div>
+<div style="margin-top:auto;position:sticky;bottom:0"><dc-import name="TMB TabBar" active="" hint-size="100%,80px"></dc-import></div>
+</div>
+</div>
+</section>
+
+<!-- ================= SCR-013 ================= -->
+<section class="dv-turn" id="scr-013" data-screen-label="SCR-013 오프라인 안내">
+<div class="dv-thd"><span class="dv-tid">SCR-013</span><span class="dv-tname">오프라인 안내 · /offline · 캐시 미스 fallback</span></div>
+<div style="display:flex;gap:32px;align-items:flex-start">
+<div class="dv-card" style="width:1200px;background:#EEF1EC;color:#17281F">
+<dc-import name="TMB Header" offline="{{ true }}" hint-size="100%,108px"></dc-import>
+<div style="padding:56px 48px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center">
+<div style="display:flex;flex-direction:column;gap:18px">
+<div role="status" data-enter="1" style="align-self:flex-start;background:#F3E3C0;color:#4A3408;font-weight:700;font-size:15px;padding:8px 14px;border-radius:12px">인터넷 연결 후 한 번 열어 주세요</div>
+<h1 data-enter="2" style="margin:0;font-size:44px;font-weight:800;line-height:1.15;letter-spacing:-.035em">아직 이 기기에 저장되지 않은 화면입니다.</h1>
+<p data-enter="3" style="margin:0;font-size:17px;line-height:1.65;color:#3C4C42;max-width:46ch">온라인 상태에서 일정·Day 상세를 한 번 열면 이후 오프라인에서도 볼 수 있습니다.</p>
+<span data-ix="btn" data-enter="4" style="align-self:flex-start;background:#17281F;color:#EEF1EC;font-weight:700;font-size:16px;padding:14px 24px;border-radius:12px;white-space:nowrap">다시 시도</span>
+<section data-enter="5" style="margin-top:16px;background:#fff;border-radius:12px;padding:22px;display:flex;flex-direction:column;gap:12px"><h2 style="margin:0;font-size:19px;font-weight:700">비상 정보</h2><span data-ix="btn" style="align-self:flex-start;background:#B3412E;color:#fff;font-weight:700;font-size:17px;padding:14px 22px;border-radius:12px;white-space:nowrap">112 긴급 전화 (유럽 공통)</span><span style="font-size:14px;color:#3C4C42">숙박 연락 수단은 저장된 Day 상세 화면에서 확인하세요</span></section>
+</div>
+<div data-enter="img" style="height:520px;border-radius:12px;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/IMG_9243-1.jpg') center/cover"></div>
+</div>
+</div>
+<div class="dv-card" style="width:390px;background:#EEF1EC;color:#17281F;border-radius:32px;border:8px solid #17281F;display:flex;flex-direction:column;min-height:844px">
+<dc-import name="TMB Header" mobile="{{ true }}" offline="{{ true }}" hint-size="100%,112px"></dc-import>
+<div style="padding:16px;display:flex;flex-direction:column;gap:14px">
+<div data-enter="img" style="height:200px;border-radius:12px;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/IMG_9243-1.jpg') center/cover"></div>
+<div role="status" data-enter="1" style="align-self:flex-start;background:#F3E3C0;color:#4A3408;font-weight:700;font-size:14px;padding:7px 12px;border-radius:12px">인터넷 연결 후 한 번 열어 주세요</div>
+<p data-enter="2" style="margin:0;font-size:16px;line-height:1.6">이 화면은 아직 기기에 저장되지 않았습니다. 온라인 상태에서 일정·Day 상세를 한 번 열면 이후 오프라인에서도 볼 수 있습니다.</p>
+<span data-ix="btn" data-enter="3" style="text-align:center;background:#17281F;color:#EEF1EC;font-weight:700;font-size:16px;padding:14px;border-radius:12px;white-space:nowrap">다시 시도</span>
+<section data-enter="4" style="background:#fff;border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:10px"><h2 style="margin:0;font-size:18px;font-weight:700">비상 정보</h2><span data-ix="btn" style="text-align:center;background:#B3412E;color:#fff;font-weight:700;font-size:17px;padding:15px;border-radius:12px;white-space:nowrap">112 긴급 전화 (유럽 공통)</span><span style="font-size:13px;color:#3C4C42">숙박 연락 수단은 저장된 Day 상세 화면에서 확인하세요</span></section>
+</div>
+<div style="margin-top:auto;position:sticky;bottom:0"><dc-import name="TMB TabBar" active="" hint-size="100%,80px"></dc-import></div>
+</div>
+</div>
+</section>
+
+<!-- ================= SCR-014 ================= -->
+<section class="dv-turn" id="scr-014" data-screen-label="SCR-014 찾을 수 없음">
+<div class="dv-thd"><span class="dv-tid">SCR-014</span><span class="dv-tname">찾을 수 없음 · 존재하지 않는 경로</span></div>
+<div style="display:flex;gap:32px;align-items:flex-start">
+<div class="dv-card" style="width:1200px;background:#EEF1EC;color:#17281F">
+<dc-import name="TMB Header" hint-size="100%,68px"></dc-import>
+<div style="position:relative;height:560px;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/chamois-1.jpg') center/cover">
+<div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,28,20,.85) 0%,rgba(15,28,20,.2) 60%,rgba(15,28,20,0) 100%)"></div>
+<div style="position:absolute;left:56px;top:50%;transform:translateY(-50%);color:#fff;display:flex;flex-direction:column;gap:16px;max-width:520px">
+<div role="status" data-enter="1" style="align-self:flex-start;background:#F3E3C0;color:#4A3408;font-weight:700;font-size:15px;padding:8px 14px;border-radius:12px">페이지를 찾을 수 없습니다</div>
+<h1 data-enter="2" style="margin:0;font-size:56px;font-weight:800;line-height:1.05;letter-spacing:-.04em">길을 벗어났습니다.</h1>
+<p data-enter="3" style="margin:0;font-size:18px">주소를 다시 확인해 주세요.</p>
+<span data-ix="btn" data-enter="4" style="align-self:flex-start;background:#E3A43B;color:#1B2A20;font-weight:700;font-size:16px;padding:14px 24px;border-radius:12px;white-space:nowrap">홈으로</span>
+</div>
+</div>
+</div>
+<div class="dv-card" style="width:390px;background:#EEF1EC;color:#17281F;border-radius:32px;border:8px solid #17281F;display:flex;flex-direction:column;min-height:844px">
+<dc-import name="TMB Header" mobile="{{ true }}" hint-size="100%,56px"></dc-import>
+<div style="padding:4px 16px 24px;display:flex;flex-direction:column;gap:16px">
+<div data-enter="img" style="height:300px;border-radius:12px;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/chamois-1.jpg') center/cover"></div>
+<div role="status" data-enter="1" style="align-self:flex-start;background:#F3E3C0;color:#4A3408;font-weight:700;font-size:14px;padding:7px 12px;border-radius:12px">페이지를 찾을 수 없습니다</div>
+<h1 data-enter="2" style="margin:0;font-size:34px;font-weight:800;letter-spacing:-.03em">길을 벗어났습니다.</h1>
+<p data-enter="3" style="margin:0;font-size:16px;color:#3C4C42">주소를 다시 확인해 주세요.</p>
+<span data-ix="btn" data-enter="4" style="text-align:center;background:#17281F;color:#EEF1EC;font-weight:700;font-size:16px;padding:14px;border-radius:12px;white-space:nowrap">홈으로</span>
+</div>
+<div style="margin-top:auto;position:sticky;bottom:0"><dc-import name="TMB TabBar" active="" hint-size="100%,80px"></dc-import></div>
+</div>
+</div>
+</section>
+
+<!-- ================= SCR-015 ================= -->
+<section class="dv-turn" id="scr-015" data-screen-label="SCR-015 로그인">
+<div class="dv-thd"><span class="dv-tid">SCR-015</span><span class="dv-tname">로그인 · /login?next=/packing · web: 기본 · mobile: 자격 오류(입력 유지)</span></div>
+<div style="display:flex;gap:32px;align-items:flex-start">
+<div class="dv-card" style="width:1200px;background:#EEF1EC;color:#17281F">
+<dc-import name="TMB Header" hint-size="100%,68px"></dc-import>
+<div style="padding:48px;display:grid;grid-template-columns:minmax(0,1fr) 448px;gap:56px;align-items:center">
+<div data-enter="img" style="height:600px;border-radius:12px;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/Flowers3-1-1.jpg') center/cover"></div>
+<main style="display:flex;flex-direction:column;gap:18px">
+<h1 data-enter="1" style="margin:0;font-size:44px;font-weight:800;letter-spacing:-.035em">로그인</h1>
+<div role="status" data-enter="2" style="background:#DCE7DD;border-radius:12px;padding:12px 16px;font-size:14px;line-height:1.5">로그인이 필요한 화면입니다. 로그인하면 보던 화면으로 돌아갑니다.</div>
+<form data-enter="3" style="display:flex;flex-direction:column;gap:14px">
+<label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600">이메일<span style="display:flex;align-items:center;height:50px;background:#fff;border:1.5px solid #2E5A41;box-shadow:0 0 0 3px rgba(46,90,65,.18);border-radius:12px;padding:0 14px;font-size:16px;font-weight:400;white-space:nowrap">donch@example.com</span></label>
+<label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600">비밀번호<span style="display:flex;align-items:center;justify-content:space-between;height:50px;background:#fff;border:1.5px solid #CBD4CA;border-radius:12px;padding:0 6px 0 14px;font-size:16px;font-weight:400">••••••••••<span data-ix="btn" style="font-size:14px;font-weight:600;color:#2E5A41;padding:10px 12px;border-radius:9px;white-space:nowrap">표시</span></span></label>
+<span data-ix="btn" style="text-align:center;background:#17281F;color:#EEF1EC;font-weight:700;font-size:16px;padding:15px;border-radius:12px;margin-top:4px;white-space:nowrap">로그인</span>
+</form>
+<a data-enter="4" href="#scr-016" style="font-weight:600;font-size:15px">계정이 없으신가요? 회원가입</a>
+<div data-enter="5" style="display:flex;gap:16px;font-size:14px;padding-top:14px;border-top:1px solid #CBD4CA"><a href="#scr-012">팀원 이메일 링크 로그인</a><a href="#scr-007">리더 로그인</a></div>
+</main>
+</div>
+</div>
+<div class="dv-card" style="width:390px;background:#EEF1EC;color:#17281F;border-radius:32px;border:8px solid #17281F;display:flex;flex-direction:column;min-height:844px">
+<dc-import name="TMB Header" mobile="{{ true }}" hint-size="100%,56px"></dc-import>
+<main style="padding:4px 16px 24px;display:flex;flex-direction:column;gap:14px">
+<div data-enter="img" style="height:150px;border-radius:12px;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/Flowers3-1-1.jpg') center/cover"></div>
+<h1 data-enter="1" style="margin:0;font-size:32px;font-weight:800">로그인</h1>
+<form data-enter="2" style="display:flex;flex-direction:column;gap:12px">
+<label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600">이메일<span style="display:flex;align-items:center;height:50px;background:#fff;border:1.5px solid #B3412E;border-radius:12px;padding:0 14px;font-size:16px;font-weight:400;white-space:nowrap">donch@example.com</span></label>
+<label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600">비밀번호<span style="display:flex;align-items:center;justify-content:space-between;height:50px;background:#fff;border:1.5px solid #B3412E;border-radius:12px;padding:0 6px 0 14px;font-size:16px;font-weight:400">••••••••<span data-ix="btn" style="font-size:14px;font-weight:600;color:#2E5A41;padding:10px 12px;white-space:nowrap">표시</span></span></label>
+<span role="alert" style="font-size:14px;font-weight:600;color:#9A3524;white-space:nowrap">이메일 또는 비밀번호가 올바르지 않습니다.</span>
+<span data-ix="btn" style="text-align:center;background:#17281F;color:#EEF1EC;font-weight:700;font-size:16px;padding:15px;border-radius:12px;white-space:nowrap">로그인</span>
+</form>
+<a data-enter="3" href="#scr-016" style="font-weight:600;font-size:15px">계정이 없으신가요? 회원가입</a>
+<div data-enter="4" style="display:flex;flex-direction:column;gap:10px;font-size:14px;padding-top:12px;border-top:1px solid #CBD4CA"><a href="#scr-012">팀원 이메일 링크 로그인</a><a href="#scr-007">리더 로그인</a></div>
+</main>
+<div style="margin-top:auto;position:sticky;bottom:0"><dc-import name="TMB TabBar" active="" hint-size="100%,80px"></dc-import></div>
+</div>
+</div>
+</section>
+
+<!-- ================= SCR-016 ================= -->
+<section class="dv-turn" id="scr-016" data-screen-label="SCR-016 회원가입">
+<div class="dv-thd"><span class="dv-tid">SCR-016</span><span class="dv-tname">회원가입 · /signup · web: 입력 중 · mobile: 가입 완료</span></div>
+<div style="display:flex;gap:32px;align-items:flex-start">
+<div class="dv-card" style="width:1200px;background:#EEF1EC;color:#17281F">
+<dc-import name="TMB Header" hint-size="100%,68px"></dc-import>
+<div style="padding:48px;display:grid;grid-template-columns:448px minmax(0,1fr);gap:56px;align-items:center">
+<main style="display:flex;flex-direction:column;gap:16px">
+<h1 data-enter="1" style="margin:0;font-size:44px;font-weight:800;letter-spacing:-.035em">회원가입</h1>
+<p data-enter="2" style="margin:0;font-size:15px;line-height:1.6;color:#3C4C42">가입하면 준비물 체크가 계정에 저장되어 다른 기기에서도 이어집니다. 일정·예산 등 공개 화면은 가입 없이 볼 수 있습니다. 기록 작성과 예약 편집은 리더가 등록한 팀원·리더만 가능합니다.</p>
+<form data-enter="3" style="display:flex;flex-direction:column;gap:14px">
+<label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600">이메일<span style="display:flex;align-items:center;height:50px;background:#fff;border:1.5px solid #CBD4CA;border-radius:12px;padding:0 14px;font-size:16px;font-weight:400;white-space:nowrap">sunny@example.com</span></label>
+<label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600">비밀번호<span style="display:flex;align-items:center;height:50px;background:#fff;border:1.5px solid #2E5A41;box-shadow:0 0 0 3px rgba(46,90,65,.18);border-radius:12px;padding:0 14px;font-size:16px;font-weight:400;white-space:nowrap">•••••••••</span><span style="font-size:13px;font-weight:500;color:#2E5A41;white-space:nowrap">8자 이상 ✓</span></label>
+<label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600">비밀번호 확인<span style="display:flex;align-items:center;height:50px;background:#fff;border:1.5px solid #CBD4CA;border-radius:12px;padding:0 14px;font-size:16px;font-weight:400;color:#6E7C71;white-space:nowrap">한 번 더 입력</span></label>
+<span data-ix="btn" style="text-align:center;background:#E3A43B;color:#1B2A20;font-weight:700;font-size:16px;padding:15px;border-radius:12px;white-space:nowrap">가입하기</span>
+</form>
+<a data-enter="4" href="#scr-015" style="font-weight:600;font-size:15px">이미 계정이 있으신가요? 로그인</a>
+</main>
+<div data-enter="img" style="height:620px;border-radius:12px;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/flowers-1-1.jpg') center/cover"></div>
+</div>
+</div>
+<div class="dv-card" style="width:390px;background:#EEF1EC;color:#17281F;border-radius:32px;border:8px solid #17281F;display:flex;flex-direction:column;min-height:844px">
+<dc-import name="TMB Header" mobile="{{ true }}" account="sunny@exampl…" hint-size="100%,56px"></dc-import>
+<main style="padding:4px 16px 24px;display:flex;flex-direction:column;gap:16px">
+<div data-enter="img" style="height:260px;border-radius:12px;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/flowers-1-1.jpg') center/cover"></div>
+<h1 data-enter="1" style="margin:0;font-size:32px;font-weight:800">회원가입</h1>
+<div role="status" data-enter="2" style="background:#DCE7DD;border-radius:12px;padding:16px;font-size:15px;line-height:1.55;display:flex;flex-direction:column;gap:12px"><span><b>가입이 완료되어 로그인되었습니다.</b> 잠시 후 보던 화면으로 이동합니다.</span><span data-ix="btn" style="text-align:center;background:#17281F;color:#EEF1EC;font-weight:700;padding:13px;border-radius:12px;white-space:nowrap">바로 이동</span></div>
+<div aria-hidden="true" style="height:4px;border-radius:2px;background:#CBD4CA;overflow:hidden"><div style="width:60%;height:100%;background:#2E5A41"></div></div>
+</main>
+<div style="margin-top:auto;position:sticky;bottom:0"><dc-import name="TMB TabBar" active="" hint-size="100%,80px"></dc-import></div>
+</div>
+</div>
+</section>
+
+<!-- ================= SCR-017 ================= -->
+<section class="dv-turn" id="scr-017" data-screen-label="SCR-017 인증 콜백">
+<div class="dv-thd"><span class="dv-tid">SCR-017</span><span class="dv-tname">인증 콜백 · /auth/callback · 표시 UI 없음(서버 리다이렉트)</span></div>
+<div style="display:flex;gap:32px;align-items:flex-start">
+<div class="dv-card" style="width:1200px;background:#EEF1EC;color:#17281F">
+<div style="padding:40px 48px;display:flex;flex-direction:column;gap:20px">
+<h1 data-enter="1" style="margin:0;font-size:32px;font-weight:800">리다이렉트 흐름</h1>
+<p style="margin:0;font-size:15px;color:#3C4C42;max-width:70ch;line-height:1.6">magic link를 열면 코드를 세션으로 바꾼 뒤 화면을 그리지 않고 바로 이동합니다. 사용자는 도착 화면만 보게 됩니다.</p>
+<div data-stagger style="display:grid;grid-template-columns:1fr 60px 1fr 60px 1.3fr;align-items:center;gap:0">
+<div style="background:#fff;border-radius:12px;padding:20px"><div style="font-size:13px;color:#5C6B61">시작</div><b style="font-size:17px;white-space:nowrap">리더·팀원 magic link 메일</b></div>
+<div style="text-align:center;font-size:22px;color:#2E5A41">→</div>
+<div style="background:#17281F;color:#EEF1EC;border-radius:12px;padding:20px"><div style="font-size:13px;color:#A9BBAE">SCR-017</div><b style="font-size:17px;white-space:nowrap">/auth/callback</b><div style="font-size:13px;color:#A9BBAE;margin-top:4px">코드 → 세션 교환</div></div>
+<div style="text-align:center;font-size:22px;color:#2E5A41">→</div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<div style="background:#DCE7DD;border-radius:12px;padding:12px 16px;font-size:14px"><b>성공</b> · next 화면 (예: SCR-011 · SCR-007)</div>
+<div style="background:#F3E3C0;color:#4A3408;border-radius:12px;padding:12px 16px;font-size:14px"><b>실패 /journal*</b> → SCR-012 error=auth</div>
+<div style="background:#F3E3C0;color:#4A3408;border-radius:12px;padding:12px 16px;font-size:14px"><b>실패 /admin*</b> → SCR-007 error=auth</div>
+<div style="background:#F3E3C0;color:#4A3408;border-radius:12px;padding:12px 16px;font-size:14px"><b>실패 그 외</b> → SCR-015 error=auth</div>
+</div>
+</div>
+</div>
+</div>
+<div class="dv-card" style="width:390px;background:#EEF1EC;color:#17281F;border-radius:32px;border:8px solid #17281F;display:flex;flex-direction:column;min-height:844px">
+<dc-import name="TMB Header" mobile="{{ true }}" hint-size="100%,56px"></dc-import>
+<main style="padding:16px;display:flex;flex-direction:column;gap:14px">
+<span style="font-size:12px;font-weight:600;color:#5C6B61">실패 시 도착 화면 예시 · SCR-015?error=auth</span>
+<h1 data-enter="1" style="margin:0;font-size:32px;font-weight:800">로그인</h1>
+<div role="alert" data-enter="2" style="background:#F3E3C0;color:#4A3408;border-radius:12px;padding:12px 14px;font-size:14px;line-height:1.5">로그인 링크가 유효하지 않습니다. 다시 시도해 주세요.</div>
+<form data-enter="3" style="display:flex;flex-direction:column;gap:12px"><label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600">이메일<span style="display:flex;align-items:center;height:50px;background:#fff;border:1.5px solid #CBD4CA;border-radius:12px;padding:0 14px;font-size:16px;font-weight:400;color:#6E7C71;white-space:nowrap">you@example.com</span></label><label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600">비밀번호<span style="display:flex;align-items:center;height:50px;background:#fff;border:1.5px solid #CBD4CA;border-radius:12px;padding:0 14px"></span></label><span data-ix="btn" style="text-align:center;background:#17281F;color:#EEF1EC;font-weight:700;font-size:16px;padding:15px;border-radius:12px;white-space:nowrap">로그인</span></form>
+</main>
+<div style="margin-top:auto;position:sticky;bottom:0"><dc-import name="TMB TabBar" active="" hint-size="100%,80px"></dc-import></div>
+</div>
+</div>
+</section>
+
+<!-- ================= SCR-018 ================= -->
+<section class="dv-turn" id="scr-018" data-screen-label="SCR-018 공통 헤더·하단 메뉴·계정 메뉴">
+<div class="dv-thd"><span class="dv-tid">SCR-018</span><span class="dv-tname">공통 헤더·하단 메뉴·계정 메뉴 · 상태별</span></div>
+<div style="display:flex;gap:32px;align-items:flex-start">
+<div class="dv-card" style="width:1200px;background:#DCE2DA;color:#17281F;display:flex;flex-direction:column;gap:24px;padding:24px">
+<div style="display:flex;flex-direction:column;gap:8px"><span style="font-size:13px;font-weight:700;color:#3C4C42;white-space:nowrap">비로그인 · EL-01 "로그인"</span><div style="border-radius:12px;overflow:hidden"><dc-import name="TMB Header" hint-size="100%,68px"></dc-import></div></div>
+<div style="display:flex;flex-direction:column;gap:8px"><span style="font-size:13px;font-weight:700;color:#3C4C42">로그인 · 리더 · EL-02 계정 버튼 + EL-03 드롭다운 열림 (트리거 기준 scale 0.95 → 1, 180ms)</span>
+<div style="position:relative;border-radius:12px;background:#EEF1EC;min-height:300px"><div style="border-radius:12px 12px 0 0;overflow:hidden"><dc-import name="TMB Header" account="donch@gmail…" hint-size="100%,68px"></dc-import></div>
+<div role="menu" data-pop style="position:absolute;right:40px;top:62px;width:280px;background:#fff;border-radius:12px;box-shadow:0 18px 40px -16px rgba(20,34,26,.45),0 0 0 1px rgba(23,40,31,.08);padding:8px;display:flex;flex-direction:column">
+<div style="padding:12px 14px;border-bottom:1px solid #EEF1EC"><div style="font-size:12px;color:#5C6B61">로그인 계정</div><b style="font-size:15px;white-space:nowrap">donch@example.com</b></div>
+<span data-ix="row" role="menuitem" style="padding:14px;border-radius:9px;font-size:15px;font-weight:600;white-space:nowrap">관리자 화면</span>
+<span data-ix="row" role="menuitem" style="padding:14px;border-radius:9px;font-size:15px;font-weight:600;color:#9A3524;white-space:nowrap">로그아웃</span>
+</div>
+</div></div>
+<div style="display:flex;flex-direction:column;gap:8px"><span style="font-size:13px;font-weight:700;color:#3C4C42;white-space:nowrap">세션 만료 · EL-05 알림</span><div style="border-radius:12px;overflow:hidden;background:#EEF1EC"><dc-import name="TMB Header" hint-size="100%,68px"></dc-import><div role="status" data-enter="1" style="display:flex;justify-content:space-between;align-items:center;background:#F3E3C0;color:#4A3408;padding:12px 40px;font-size:14px"><span>로그인 시간이 만료되었습니다. 다시 로그인하면 계정 데이터를 불러옵니다.</span><span data-ix="btn" style="font-weight:700;background:#17281F;color:#EEF1EC;padding:9px 14px;border-radius:12px;white-space:nowrap">다시 로그인</span></div></div></div>
+<div style="display:flex;flex-direction:column;gap:8px"><span style="font-size:13px;font-weight:700;color:#3C4C42;white-space:nowrap">오프라인 배너 (공통)</span><div style="border-radius:12px;overflow:hidden"><dc-import name="TMB Header" offline="{{ true }}" hint-size="100%,108px"></dc-import></div></div>
+</div>
+<div class="dv-card" style="width:390px;background:#EEF1EC;color:#17281F;border-radius:32px;border:8px solid #17281F;display:flex;flex-direction:column;min-height:844px;position:relative">
+<dc-import name="TMB Header" mobile="{{ true }}" account="donch@gmail…" hint-size="100%,56px"></dc-import>
+<div role="menu" data-pop style="position:absolute;right:12px;top:56px;width:250px;background:#fff;border-radius:12px;box-shadow:0 18px 40px -16px rgba(20,34,26,.45),0 0 0 1px rgba(23,40,31,.08);padding:6px;display:flex;flex-direction:column;z-index:2">
+<div style="padding:12px;border-bottom:1px solid #EEF1EC"><div style="font-size:12px;color:#5C6B61">로그인 계정</div><b style="font-size:14px;white-space:nowrap">donch@example.com</b></div>
+<span data-ix="row" role="menuitem" style="padding:14px 12px;border-radius:9px;font-size:15px;font-weight:600;white-space:nowrap">관리자 화면</span>
+<span data-ix="row" role="menuitem" style="padding:14px 12px;border-radius:9px;font-size:15px;font-weight:600;color:#9A3524;white-space:nowrap">로그아웃</span>
+</div>
+<div style="padding:180px 16px 16px;display:flex;flex-direction:column;gap:12px;font-size:14px;line-height:1.55;color:#3C4C42">
+<div style="background:#fff;border-radius:12px;padding:16px"><b style="color:#17281F;white-space:nowrap">하단 탭 (NAV-002~006)</b><br>640px 미만에서만 표시. 현재 탭은 앰버 막대와 굵은 글자로 표시하고, 홈 인디케이터 영역만큼 아래 여백을 둡니다.</div>
+<div style="background:#fff;border-radius:12px;padding:16px"><b style="color:#17281F;white-space:nowrap">계정 메뉴</b><br>Esc로 닫고 포커스를 계정 버튼으로 돌려줍니다. 로그아웃은 "로그아웃 중…" 표시 후 홈으로 이동합니다.</div>
+<div role="status" style="background:#F3E3C0;color:#4A3408;border-radius:12px;padding:12px 14px">연결 후 로그아웃할 수 있습니다.</div>
+</div>
+<div style="margin-top:auto;position:sticky;bottom:0"><dc-import name="TMB TabBar" active="홈" hint-size="100%,80px"></dc-import></div>
+</div>
+</div>
+</section></x-dc>
+<script type="text/x-dc" data-dc-script>
+const IMG = 'https://montblanctreks.com.au/wp-content/uploads/';
+const ST = { '확정': ['#2E5A41', '#fff'], '대안 확정': ['#DCE7DD', '#17281F'], '대기': ['#F3E3C0', '#4A3408'], '문의': ['#F3E3C0', '#4A3408'], '미예약': ['#EEF1EC', '#3C4C42'] };
+const N = [
+  ['제네바', '8/3', 'Hotel Astoria (후보)', '확정', '—', '확인 필요', '€150~180/실', '2027-06-30', '08-01 10:12', '2013/10/cable-car-1.jpg'],
+  ['Day 1', '8/4', 'Chalet-Hôtel Gai Soleil', '확정', '—', '확인 필요', '€85/인', '2027-07-01', '07-28 09:40', '2013/10/Bionnassay-1.jpg'],
+  ['Day 2', '8/5', 'Refuge de la Balme', '확정', 'Nant Borrant', '확인 필요', '€68~75', '2027-07-01', '07-28 09:41', '2013/10/MG_8872-1-1.jpg'],
+  ['Day 3', '8/6', 'Refuge des Mottets', '확정', '—', '확인 필요', '€70', '2027-07-01', '07-28 09:43', '2013/10/MG_8937-1-1.jpg'],
+  ['Day 4', '8/7', 'Rifugio Maison Vieille', '확정', '—', '확인 필요', '€75', '2027-07-01', '07-28 09:44', '2013/10/Col-De-Seigne-1-1.jpg'],
+  ['Day 5', '8/8', 'Rifugio Bertone', '대기', '—', '확인 필요', '€70~80', '2027-07-15', '08-06 21:10', '2013/10/MG_8968.jpg', true],
+  ['Day 6', '8/9', 'Rifugio Elena', '문의', '—', '확인 필요', '€60~70', '2027-07-15', '08-02 18:05', '2013/10/IMG_9117-1.jpg'],
+  ['Day 7', '8/10', 'Hôtel Edelweiss', '확정', '—', '확인 필요', 'CHF 95', '2027-07-01', '07-28 09:50', '2013/10/IMG_9128-1.jpg'],
+  ['Day 8', '8/11', 'Pension en Plein Air', '미예약', '—', '확인 필요', 'CHF 82', '2027-07-15', '—', '2013/10/MG_9157-1.jpg'],
+  ['Day 9', '8/12', 'Auberge Mont-Blanc', '문의', '—', '확인 필요', 'CHF 70', '2027-07-15', '08-02 18:10', '2013/10/IMG_9195-1.jpg'],
+  ['Day 10', '8/13', 'Auberge La Boërne', '대기', '—', '확인 필요', '€60~70', '2027-07-15', '08-03 08:22', '2014/07/IMG_19401-e1405664837580.jpg'],
+  ['Day 11', '8/14', 'Refuge de la Flégère', '문의', '—', '확인 필요', '€50~60', '2027-07-15', '08-03 08:30', '2013/10/IMG_9363-1.jpg'],
+  ['Day 12', '8/15', '샤모니 호텔 (미정)', '미예약', '—', '확인 필요', '€200~300/실', '2027-06-30', '—', '2013/10/chamonix-street-2.jpg'],
+  ['8/16', '8/16', '샤모니 호텔 (2박째)', '대기', '—', '확인 필요', '€200~300/실', '2027-06-30', '08-04 12:00', '2013/10/Chamonix-mural-1.jpg']
+];
+class Component extends DCLogic {
+  renderVals() {
+    const nights = N.map(n => {
+      const st = ST[n[3]];
+      return { day: n[0], date: n[1], name: n[2], status: n[3], alt: n[4], phone: n[5], price: n[6], recheck: n[7], updated: n[8], photo: IMG + n[9], stBg: st[0], stFg: st[1], open: n[10] ? 'true' : 'false', action: n[10] ? '닫기' : '편집', rowBg: n[10] ? '#FBF3E2' : '#fff', outline: n[10] ? '2px solid #E3A43B' : '0 solid transparent' };
+    });
+    return { nights, nightsShort: nights.slice(2, 7) };
+  }
+}
+</script>
+</body>
+</html>

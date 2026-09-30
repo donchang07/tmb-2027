@@ -1,13 +1,10 @@
 {
   "version": "3.0",
-  "lastUpdated": "2026-09-23T13:28:54.555Z",
+  "lastUpdated": "2026-09-30T12:25:34.383Z",
   "activeFeatures": [
-    "itinerary-core",
-    "booking-tracker",
-    "budget-view",
-    "multiuser-cloud-deployment"
+    "ui-redesign-forest"
   ],
-  "primaryFeature": "multiuser-cloud-deployment",
+  "primaryFeature": "ui-redesign-forest",
   "features": {
     "itinerary-core": {
       "phase": "completed",
@@ -198,6 +195,43 @@
         "SC-023 git history scan",
         "SC-024 production smoke"
       ]
+    },
+    "ui-redesign-forest": {
+      "phase": "completed",
+      "matchRate": 98.8,
+      "iterationCount": 1,
+      "startedAt": "2026-09-30T11:25:29.239Z",
+      "updatedAt": "2026-09-30T12:25:34.383Z",
+      "documents": {
+        "plan": "docs/01-plan/ui-redesign-forest.plan.md",
+        "design": "docs/02-design/ui-redesign-forest.design.md",
+        "analysis": "docs/03-analysis/ui-redesign-forest.analysis.md",
+        "report": "docs/04-report/ui-redesign-forest.report.md"
+      },
+      "note": "Claude Design handoff (4a 숲길) UI delta — Option C, author one-shot 2026-09-30",
+      "axes": {
+        "structural": 100,
+        "functional": 98,
+        "contract": 98,
+        "runtime": 99
+      },
+      "iterations": [
+        {
+          "label": "check-0",
+          "matchRate": 96.05
+        },
+        {
+          "label": "act-1",
+          "matchRate": 98.8
+        }
+      ],
+      "completedAt": "2026-09-30T12:25:34.383Z",
+      "qaStatus": "PASS",
+      "externalPending": [
+        "git commit",
+        "team-owned photos",
+        "real device check"
+      ]
     }
   },
   "pipeline": {
@@ -208,7 +242,7 @@
   "session": {
     "startedAt": "2026-09-16T09:43:30.331Z",
     "onboardingCompleted": false,
-    "lastActivity": "2026-09-23T13:28:54.555Z"
+    "lastActivity": "2026-09-23T13:43:20.738Z"
   },
   "history": [
     {
@@ -431,6 +465,42 @@
       "action": "state_transition",
       "matchRate": 100,
       "iterationCount": 1,
+      "automationLevel": 2
+    },
+    {
+      "timestamp": "2026-09-23T13:43:20.738Z",
+      "feature": "multiuser-cloud-deployment",
+      "event": "REPORT_DONE",
+      "from": "report",
+      "to": "archived",
+      "action": "state_transition",
+      "automationLevel": 2
+    },
+    {
+      "at": "2026-09-30T11:25:29.239Z",
+      "event": "ui_redesign_forest_cycle_started",
+      "features": [
+        "ui-redesign-forest"
+      ]
+    },
+    {
+      "timestamp": "2026-09-30T12:24:30.516Z",
+      "feature": "ui-redesign-forest",
+      "event": "CHECK_DONE",
+      "from": "do",
+      "to": "check",
+      "action": "state_transition",
+      "matchRate": 98.8,
+      "iterationCount": 1,
+      "automationLevel": 2
+    },
+    {
+      "timestamp": "2026-09-30T12:25:34.383Z",
+      "feature": "ui-redesign-forest",
+      "event": "REPORT_DONE",
+      "from": "check",
+      "to": "report",
+      "action": "state_transition",
       "automationLevel": 2
     }
   ],

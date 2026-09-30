@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics><meta name="design_doc_mode" content="canvas"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"><style>body{margin:0;word-break:keep-all;overflow-wrap:break-word;background:#dfe3dc;font-family:'Pretendard Variable',Pretendard,sans-serif;-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}h1,h2{text-wrap:balance}a{color:#2E5A41;text-decoration:none}a:hover{color:#17281F;text-decoration:underline}.dv-turn{padding:40px 44px 40px;border-bottom:1px solid rgba(0,0,0,.08);scroll-margin-top:16px}.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 20px}.dv-tid{white-space:nowrap;flex:none;font:600 11px ui-monospace,Menlo,monospace;padding:3px 8px;background:#17281F;color:#fff;border-radius:4px;text-decoration:none}.dv-tname{white-space:nowrap;font:600 14px/1.3 'Pretendard Variable',sans-serif;color:#17281F}.dv-card{flex:none;border:1px solid rgba(0,0,0,.08);border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);overflow:hidden}[data-ix="btn"]{white-space:nowrap;flex:none}[data-ix]{cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation;-webkit-user-select:none;user-select:none;transition:transform 160ms cubic-bezier(0.23,1,0.32,1),box-shadow 200ms ease,filter 200ms ease,background-color 200ms ease}[data-ix="btn"]:active,[data-ix="tab"]:active{transform:scale(0.97)}[data-ix="tile"]:active{transform:scale(0.98)}[data-ix="row"]:active{transform:scale(0.99)}[data-ix]:focus-visible{outline:2px solid currentColor;outline-offset:3px}@media (hover:hover) and (pointer:fine){[data-ix="btn"]:hover{filter:brightness(1.08)}[data-ix="tile"]:hover{transform:translateY(-3px);box-shadow:0 14px 28px -18px rgba(20,34,26,.55)}[data-ix="row"]:hover{background-color:rgba(23,40,31,.04)}[data-ix="link"]:hover{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:6px}}@keyframes ix-in{from{opacity:0;transform:translateY(12px)}}@keyframes ix-fade{from{opacity:0}}@keyframes ix-pop{from{opacity:0;transform:scale(0.95)}}@media (prefers-reduced-motion:no-preference){[data-enter]{animation:ix-in 420ms cubic-bezier(0.23,1,0.32,1) both}[data-enter="2"]{animation-delay:60ms}[data-enter="3"]{animation-delay:120ms}[data-enter="4"]{animation-delay:180ms}[data-enter="5"]{animation-delay:240ms}[data-enter="img"]{animation:ix-fade 600ms ease both}[data-stagger]>*{animation:ix-in 360ms cubic-bezier(0.23,1,0.32,1) both}[data-stagger]>*:nth-child(2){animation-delay:40ms}[data-stagger]>*:nth-child(3){animation-delay:80ms}[data-stagger]>*:nth-child(4){animation-delay:120ms}[data-stagger]>*:nth-child(5){animation-delay:160ms}[data-stagger]>*:nth-child(6){animation-delay:200ms}[data-stagger]>*:nth-child(7){animation-delay:240ms}[data-stagger]>*:nth-child(8){animation-delay:280ms}[data-stagger]>*:nth-child(n+9){animation-delay:320ms}[data-pop]{transform-origin:top right;animation:ix-pop 180ms cubic-bezier(0.23,1,0.32,1) both}}@media (prefers-reduced-motion:reduce){[data-enter],[data-stagger]>*,[data-pop]{animation:ix-fade 200ms ease both}}</style></helmet>
+<section class="dv-turn" id="index" style="background:#17281F;color:#EEF1EC;border-bottom:none">
+<div style="display:flex;flex-direction:column;gap:14px;max-width:1100px">
+<span style="font-size:13px;font-weight:600;color:#E3A43B">TMB 2027 · 4a 숲길 · web 1200 / mobile 390</span>
+<h1 data-enter="1" style="margin:0;font-size:40px;font-weight:800;letter-spacing:-.03em">전체 화면 목업 (2/3)</h1>
+<nav style="display:flex;flex-wrap:wrap;gap:8px;font-size:14px"><a href="TMB 2027 Screens 1.dc.html" style="color:#17281F;background:#E3A43B;padding:8px 12px;border-radius:12px">← 1/3: 홈·일정·Day·이동일</a><a href="#scr-005" style="color:#EEF1EC;background:#2E5A41;padding:8px 12px;border-radius:12px">SCR-005 개요 지도</a><a href="#scr-006" style="color:#EEF1EC;background:#2E5A41;padding:8px 12px;border-radius:12px">SCR-006 예산</a><a href="#scr-009" style="color:#EEF1EC;background:#2E5A41;padding:8px 12px;border-radius:12px">SCR-009 준비물</a><a href="#scr-010" style="color:#EEF1EC;background:#2E5A41;padding:8px 12px;border-radius:12px">SCR-010 여행 기록</a><a href="#scr-011" style="color:#EEF1EC;background:#2E5A41;padding:8px 12px;border-radius:12px">SCR-011 Day 기록</a><a href="TMB 2027 Screens 3.dc.html" style="color:#17281F;background:#E3A43B;padding:8px 12px;border-radius:12px">3/3: 관리자·인증·공통 →</a></nav>
+</div>
+</section>
+
+<!-- ================= SCR-005 ================= -->
+<section class="dv-turn" id="scr-005" data-screen-label="SCR-005 개요 지도">
+<div class="dv-thd"><span class="dv-tid">SCR-005</span><span class="dv-tname">개요 지도 · /map</span></div>
+<div style="display:flex;gap:32px;align-items:flex-start">
+<div class="dv-card" style="width:1200px;background:#EEF1EC;color:#17281F">
+<dc-import name="TMB Header" hint-size="100%,68px"></dc-import>
+<div style="padding:40px 48px 56px;display:flex;flex-direction:column;gap:24px">
+<div><h1 data-enter="1" style="margin:0;font-size:44px;font-weight:800;letter-spacing:-.035em">개요 지도</h1><p style="margin:8px 0 0;font-size:17px;color:#3C4C42">12개 Day · 주요 고개·숙박 위치 · 반시계 방향</p></div>
+<div role="status" style="background:#DCE7DD;border-radius:12px;padding:14px 18px;font-size:14px;line-height:1.55"><b>정적 개요 지도</b> · 검증된 GPX를 확보하기 전까지는 지점 마커 기반 개요만 제공합니다. GPX 승인 후 상호작용 지도(MapLibre)로 교체할 예정입니다 (I-003).</div>
+<div style="display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:24px;align-items:start">
+<figure style="margin:0;background:#fff;border-radius:12px;padding:16px">
+<svg role="img" aria-label="TMB 12구간 개요 지도" viewBox="0 0 800 620" style="width:100%;display:block">
+<rect width="800" height="620" rx="10" fill="#F3F6F1"></rect>
+<text x="150" y="250" font-size="44" font-weight="800" fill="#DCE2DA">FR</text><text x="330" y="600" font-size="44" font-weight="800" fill="#DCE2DA">IT</text><text x="660" y="170" font-size="44" font-weight="800" fill="#DCE2DA">CH</text>
+<line x1="300" y1="170" x2="210" y2="300" stroke="#2E5A41" stroke-width="7" stroke-linecap="round"></line><line x1="210" y1="300" x2="200" y2="390" stroke="#4C7A57" stroke-width="7" stroke-linecap="round"></line><line x1="200" y1="390" x2="230" y2="490" stroke="#7A9A5C" stroke-width="7" stroke-linecap="round"></line><line x1="230" y1="490" x2="330" y2="540" stroke="#A7A852" stroke-width="7" stroke-linecap="round"></line><line x1="330" y1="540" x2="440" y2="510" stroke="#E3A43B" stroke-width="7" stroke-linecap="round"></line><line x1="440" y1="510" x2="480" y2="450" stroke="#D17F3A" stroke-width="7" stroke-linecap="round"></line><line x1="480" y1="450" x2="590" y2="380" stroke="#B3593A" stroke-width="7" stroke-linecap="round"></line><line x1="590" y1="380" x2="620" y2="280" stroke="#8C5A7A" stroke-width="7" stroke-linecap="round"></line><line x1="620" y1="280" x2="600" y2="190" stroke="#5E6FA6" stroke-width="7" stroke-linecap="round"></line><line x1="600" y1="190" x2="500" y2="120" stroke="#3F87A6" stroke-width="7" stroke-linecap="round"></line><line x1="500" y1="120" x2="420" y2="100" stroke="#2F9E8F" stroke-width="7" stroke-linecap="round"></line><line x1="420" y1="100" x2="360" y2="130" stroke="#1F6E5A" stroke-width="7" stroke-linecap="round"></line><line x1="360" y1="130" x2="330" y2="165" stroke="#1F6E5A" stroke-width="7" stroke-linecap="round"></line><path d="M250,428 L261,448 L239,448 Z" fill="#E3A43B" stroke="#17281F" stroke-width="2"></path><text x="264" y="462" font-size="14" fill="#3C4C42">콜 뒤 보놈</text><path d="M330,528 L341,548 L319,548 Z" fill="#E3A43B" stroke="#17281F" stroke-width="2"></path><text x="344" y="562" font-size="14" fill="#3C4C42">콜 드 라 세뉴</text><path d="M650,318 L661,338 L639,338 Z" fill="#E3A43B" stroke="#17281F" stroke-width="2"></path><text x="664" y="352" font-size="14" fill="#3C4C42">그랑 콜 페레</text><path d="M460,93 L471,113 L449,113 Z" fill="#E3A43B" stroke="#17281F" stroke-width="2"></path><text x="474" y="127" font-size="14" fill="#3C4C42">콜 드 발므</text><path d="M395,288 L406,308 L384,308 Z" fill="#E3A43B" stroke="#17281F" stroke-width="2"></path><text x="409" y="322" font-size="14" fill="#3C4C42">몽블랑 산군</text><circle cx="300" cy="170" r="7" fill="#fff" stroke="#17281F" stroke-width="3"></circle><text x="230" y="158" font-size="15" font-weight="700" fill="#17281F">레주슈</text><circle cx="210" cy="300" r="7" fill="#fff" stroke="#17281F" stroke-width="3"></circle><text x="110" y="305" font-size="15" font-weight="700" fill="#17281F">레 콩타민</text><circle cx="200" cy="390" r="7" fill="#fff" stroke="#17281F" stroke-width="3"></circle><text x="122" y="395" font-size="15" font-weight="700" fill="#17281F">라 발므</text><circle cx="230" cy="490" r="7" fill="#fff" stroke="#17281F" stroke-width="3"></circle><text x="180" y="495" font-size="15" font-weight="700" fill="#17281F">모테</text><circle cx="440" cy="510" r="7" fill="#fff" stroke="#17281F" stroke-width="3"></circle><text x="450" y="540" font-size="15" font-weight="700" fill="#17281F">메종 비에유</text><circle cx="480" cy="450" r="7" fill="#fff" stroke="#17281F" stroke-width="3"></circle><text x="494" y="455" font-size="15" font-weight="700" fill="#17281F">베르토네</text><circle cx="590" cy="380" r="7" fill="#fff" stroke="#17281F" stroke-width="3"></circle><text x="604" y="385" font-size="15" font-weight="700" fill="#17281F">엘레나</text><circle cx="620" cy="280" r="7" fill="#fff" stroke="#17281F" stroke-width="3"></circle><text x="634" y="285" font-size="15" font-weight="700" fill="#17281F">라 풀리</text><circle cx="600" cy="190" r="7" fill="#fff" stroke="#17281F" stroke-width="3"></circle><text x="614" y="195" font-size="15" font-weight="700" fill="#17281F">샹페</text><circle cx="500" cy="120" r="7" fill="#fff" stroke="#17281F" stroke-width="3"></circle><text x="480" y="104" font-size="15" font-weight="700" fill="#17281F">트리앙</text><circle cx="420" cy="100" r="7" fill="#fff" stroke="#17281F" stroke-width="3"></circle><text x="380" y="84" font-size="15" font-weight="700" fill="#17281F">트레르샹</text><circle cx="360" cy="130" r="7" fill="#fff" stroke="#17281F" stroke-width="3"></circle><text x="300" y="114" font-size="15" font-weight="700" fill="#17281F">플레제르</text><circle cx="330" cy="165" r="7" fill="#fff" stroke="#17281F" stroke-width="3"></circle><text x="340" y="193" font-size="15" font-weight="700" fill="#17281F">샤모니</text>
+<text x="24" y="598" font-size="13" fill="#56655B">개략 위치 · 공식 지도 아님 · 거리·시간은 Day 카드 기준</text>
+</svg>
+</figure>
+<div style="display:flex;flex-direction:column;gap:16px">
+<div style="background:#fff;border-radius:12px;padding:18px"><div style="display:flex;justify-content:space-between"><b>기호</b><span style="font-size:13px;color:#5C6B61;white-space:nowrap">숙박 13 · 고개 5</span></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;font-size:14px"><span>▲ 고개</span><span>● 숙박</span><span>◆ 출발·도착</span><span>○ 마을</span></div></div>
+<div style="background:#fff;border-radius:12px;padding:8px 8px">
+<div style="padding:8px 10px;font-weight:700">12개 Day</div>
+<sc-for list="{{ days }}" as="d" hint-placeholder-count="12">
+<div data-ix="row" style="display:grid;grid-template-columns:6px 56px minmax(0,1fr);gap:12px;align-items:center;padding:6px 10px;border-radius:9px"><span style="height:40px;border-radius:3px;background:{{ d.color }}"></span><span style="height:40px;border-radius:8px;background:#4E6B55 url('{{ d.photo }}') center/cover"></span><span style="font-size:14px"><b>Day {{ d.n }}</b> <span style="color:#3C4C42;white-space:nowrap">{{ d.name }}</span></span></div>
+</sc-for>
+</div>
+</div>
+</div>
+<p style="margin:0;font-size:13px;color:#5C6B61;line-height:1.6">출처·라이선스 · 좌표는 공개 지명 좌표 근사값(±1 km, 표시 전용) · 고도·구간은 PRD 부록 C(기준일 2026-09-09), GPX ±10% 허용 · 지도 기준일 2026-09-16 · 팀 자체 제작 SVG</p>
+</div>
+</div>
+<div class="dv-card" style="width:390px;background:#EEF1EC;color:#17281F;border-radius:32px;border:8px solid #17281F;display:flex;flex-direction:column;min-height:844px">
+<dc-import name="TMB Header" mobile="{{ true }}" hint-size="100%,56px"></dc-import>
+<div style="padding:12px 16px 24px;display:flex;flex-direction:column;gap:14px">
+<div><h1 data-enter="1" style="margin:0;font-size:32px;font-weight:800;letter-spacing:-.03em">개요 지도</h1><p style="margin:4px 0 0;font-size:14px;color:#3C4C42">12개 Day · 주요 고개·숙박 위치 · 반시계 방향</p></div>
+<div role="status" style="background:#DCE7DD;border-radius:12px;padding:12px 14px;font-size:13px;line-height:1.5"><b>정적 개요 지도</b> · GPX 승인 후 상호작용 지도로 교체 예정</div>
+<div style="background:#fff;border-radius:12px;padding:8px"><svg viewBox="0 0 800 620" style="width:100%;display:block"><rect width="800" height="620" rx="10" fill="#F3F6F1"></rect><line x1="300" y1="170" x2="210" y2="300" stroke="#2E5A41" stroke-width="10" stroke-linecap="round"></line><line x1="210" y1="300" x2="200" y2="390" stroke="#4C7A57" stroke-width="10" stroke-linecap="round"></line><line x1="200" y1="390" x2="230" y2="490" stroke="#7A9A5C" stroke-width="10" stroke-linecap="round"></line><line x1="230" y1="490" x2="330" y2="540" stroke="#A7A852" stroke-width="10" stroke-linecap="round"></line><line x1="330" y1="540" x2="440" y2="510" stroke="#E3A43B" stroke-width="10" stroke-linecap="round"></line><line x1="440" y1="510" x2="480" y2="450" stroke="#D17F3A" stroke-width="10" stroke-linecap="round"></line><line x1="480" y1="450" x2="590" y2="380" stroke="#B3593A" stroke-width="10" stroke-linecap="round"></line><line x1="590" y1="380" x2="620" y2="280" stroke="#8C5A7A" stroke-width="10" stroke-linecap="round"></line><line x1="620" y1="280" x2="600" y2="190" stroke="#5E6FA6" stroke-width="10" stroke-linecap="round"></line><line x1="600" y1="190" x2="500" y2="120" stroke="#3F87A6" stroke-width="10" stroke-linecap="round"></line><line x1="500" y1="120" x2="420" y2="100" stroke="#2F9E8F" stroke-width="10" stroke-linecap="round"></line><line x1="420" y1="100" x2="360" y2="130" stroke="#1F6E5A" stroke-width="10" stroke-linecap="round"></line><line x1="360" y1="130" x2="330" y2="165" stroke="#1F6E5A" stroke-width="10" stroke-linecap="round"></line><path d="M250,428 L261,448 L239,448 Z" fill="#E3A43B" stroke="#17281F" stroke-width="2"></path><path d="M330,528 L341,548 L319,548 Z" fill="#E3A43B" stroke="#17281F" stroke-width="2"></path><path d="M650,318 L661,338 L639,338 Z" fill="#E3A43B" stroke="#17281F" stroke-width="2"></path><path d="M460,93 L471,113 L449,113 Z" fill="#E3A43B" stroke="#17281F" stroke-width="2"></path><path d="M395,288 L406,308 L384,308 Z" fill="#E3A43B" stroke="#17281F" stroke-width="2"></path><circle cx="300" cy="170" r="9" fill="#fff" stroke="#17281F" stroke-width="3"></circle><circle cx="210" cy="300" r="9" fill="#fff" stroke="#17281F" stroke-width="3"></circle><circle cx="200" cy="390" r="9" fill="#fff" stroke="#17281F" stroke-width="3"></circle><circle cx="230" cy="490" r="9" fill="#fff" stroke="#17281F" stroke-width="3"></circle><circle cx="440" cy="510" r="9" fill="#fff" stroke="#17281F" stroke-width="3"></circle><circle cx="480" cy="450" r="9" fill="#fff" stroke="#17281F" stroke-width="3"></circle><circle cx="590" cy="380" r="9" fill="#fff" stroke="#17281F" stroke-width="3"></circle><circle cx="620" cy="280" r="9" fill="#fff" stroke="#17281F" stroke-width="3"></circle><circle cx="600" cy="190" r="9" fill="#fff" stroke="#17281F" stroke-width="3"></circle><circle cx="500" cy="120" r="9" fill="#fff" stroke="#17281F" stroke-width="3"></circle><circle cx="420" cy="100" r="9" fill="#fff" stroke="#17281F" stroke-width="3"></circle><circle cx="360" cy="130" r="9" fill="#fff" stroke="#17281F" stroke-width="3"></circle><circle cx="330" cy="165" r="9" fill="#fff" stroke="#17281F" stroke-width="3"></circle></svg></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:13px;background:#fff;border-radius:12px;padding:12px"><span>▲ 고개</span><span>● 숙박</span><span>◆ 출발·도착</span><span>○ 마을</span></div>
+<div data-stagger style="background:#fff;border-radius:12px;padding:6px">
+<sc-for list="{{ days }}" as="d" hint-placeholder-count="12"><div data-ix="row" style="display:grid;grid-template-columns:5px 48px minmax(0,1fr);gap:10px;align-items:center;padding:6px 8px;min-height:44px"><span style="height:36px;border-radius:3px;background:{{ d.color }}"></span><span style="height:36px;border-radius:8px;background:#4E6B55 url('{{ d.photo }}') center/cover"></span><span style="font-size:14px"><b>Day {{ d.n }}</b> <span style="color:#3C4C42;white-space:nowrap">{{ d.name }}</span></span></div></sc-for>
+</div>
+<p style="margin:0;font-size:12px;color:#5C6B61">개략 위치 · 공식 지도 아님 · 기준일 2026-09-16</p>
+</div>
+<div style="margin-top:auto;position:sticky;bottom:0"><dc-import name="TMB TabBar" active="지도" hint-size="100%,80px"></dc-import></div>
+</div>
+</div>
+</section>
+
+<!-- ================= SCR-006 ================= -->
+<section class="dv-turn" id="scr-006" data-screen-label="SCR-006 예산">
+<div class="dv-thd"><span class="dv-tid">SCR-006</span><span class="dv-tname">예산 · /budget · 재확인 기한 경과 배너 표시 상태</span></div>
+<div style="display:flex;gap:32px;align-items:flex-start">
+<div class="dv-card" style="width:1200px;background:#EEF1EC;color:#17281F">
+<dc-import name="TMB Header" hint-size="100%,68px"></dc-import>
+<div style="padding:32px 48px 0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:center">
+<div><h1 data-enter="1" style="margin:0;font-size:44px;font-weight:800;letter-spacing:-.035em">예산 (1인, 항공권 제외)</h1><p style="margin:8px 0 0;font-size:17px;color:#3C4C42">저/중 범위 · EUR 기준 · 항목 합산 자동 계산</p></div>
+<div style="height:220px;border-radius:12px;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/Outdoor-dining-Truc.jpg') center/cover"></div>
+</div>
+<div style="padding:24px 48px 56px;display:flex;flex-direction:column;gap:20px">
+<div role="status" style="background:#F3E3C0;color:#4A3408;border-radius:12px;padding:14px 18px;font-size:14px;line-height:1.55"><b>금액을 다시 확인해 주세요</b> · 재확인 기한(2027-03-31)이 지났습니다. 아래 값은 2026-09-09 기준 참고용입니다.</div>
+<div style="display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:20px;align-items:start">
+<div style="background:#fff;border-radius:12px;padding:8px 24px 20px">
+<table style="width:100%;border-collapse:collapse;font-size:15px"><caption style="position:absolute;left:-9999px">항목별 1인 예산</caption>
+<thead><tr style="text-align:left;color:#5C6B61;font-size:13px"><th scope="col" style="padding:14px 0;font-weight:600">항목</th><th scope="col" style="padding:14px 0;font-weight:600;text-align:right">저(€)</th><th scope="col" style="padding:14px 0;font-weight:600;text-align:right">중(€)</th><th scope="col" style="padding:14px 0 14px 20px;font-weight:600">근거·비고</th></tr></thead>
+<tbody data-stagger><sc-for list="{{ budget }}" as="b" hint-placeholder-count="10"><tr style="border-top:1px solid #E4E9E2"><th scope="row" style="padding:12px 12px 12px 0;text-align:left;font-weight:600">{{ b.item }}</th><td style="padding:12px 0;text-align:right">{{ b.lo }}</td><td style="padding:12px 0;text-align:right">{{ b.mid }}</td><td style="padding:12px 0 12px 20px;font-size:13px;color:#5C6B61;line-height:1.45">{{ b.note }}</td></tr></sc-for></tbody>
+<tfoot><tr style="border-top:2px solid #17281F"><th scope="row" style="padding:12px 0;text-align:left">소계</th><td style="text-align:right">1,560</td><td style="text-align:right">2,430</td><td></td></tr><tr style="border-top:1px solid #E4E9E2"><th scope="row" style="padding:12px 0;text-align:left;font-weight:600">예비비 10%</th><td style="text-align:right">156.00</td><td style="text-align:right">243.00</td><td style="padding-left:20px;font-size:13px;color:#5C6B61">만실 대체 숙소·우천 시 택시 등</td></tr><tr style="background:#17281F;color:#EEF1EC"><th scope="row" style="padding:14px 12px;text-align:left;border-radius:9px 0 0 9px">합계(1인, 항공권 제외)</th><td style="text-align:right;font-size:19px;font-weight:800">€1,716.00</td><td style="text-align:right;font-size:19px;font-weight:800;color:#E3A43B">€2,673.00</td><td style="border-radius:0 9px 9px 0"></td></tr></tfoot>
+</table>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px">
+<section style="background:#17281F;color:#EEF1EC;border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:8px"><span style="font-size:14px;color:#A9BBAE;white-space:nowrap">권장 준비 금액 (1인)</span><span style="font-size:40px;font-weight:800;letter-spacing:-.03em;white-space:nowrap">€1,900~3,000</span><span style="font-size:16px">약 285만~450만 원 (1 EUR ≈ 1,500원)</span><span style="font-size:13px;color:#A9BBAE;line-height:1.55">2027년 물가 인상(연 3~5%, 2년) 반영 · 저 1,716 × 1.03² ≈ 1,820 → 1,900 · 중 2,673 × 1.05² ≈ 2,947 → 3,000</span></section>
+<section style="background:#fff;border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:8px"><div style="display:flex;justify-content:space-between;align-items:center"><b>환율·기준일</b><span style="font-size:12px;font-weight:700;background:#F3E3C0;color:#4A3408;padding:3px 9px;border-radius:12px;white-space:nowrap">재확인 필요</span></div><span style="font-size:14px">1 CHF ≈ 1.07 EUR · 2026-09-09</span><span style="font-size:14px;white-space:nowrap">1 EUR ≈ 1,500 KRW · 가정</span><span style="font-size:13px;color:#5C6B61">예산 기준일 2026-09-09 · 재확인 기한 2027-03-31</span></section>
+<section style="background:#fff;border-radius:12px;padding:20px;font-size:14px;line-height:1.6"><b>산정 가정</b><ul style="margin:6px 0 0;padding-left:18px;color:#3C4C42"><li>총 14박: 제네바 1박 · 트레킹 11박 · 샤모니 2박</li><li>호텔 2인 1실 분담, 산장 하프보드</li><li>트레킹 구간 리프트 비용 없음, 8/16 케이블카만 포함</li></ul></section>
+<section style="background:#fff;border-radius:12px;padding:20px;font-size:14px;line-height:1.6"><b>참고</b><ul style="margin:6px 0 0;padding-left:18px;color:#3C4C42"><li>1인 1실 위주면 마을형 숙소 4박 기준 +€250~450</li><li>업계 기준 전 구간 €1,600~2,000/인</li></ul></section>
+</div>
+</div>
+</div>
+</div>
+<div class="dv-card" style="width:390px;background:#EEF1EC;color:#17281F;border-radius:32px;border:8px solid #17281F;display:flex;flex-direction:column;min-height:844px">
+<dc-import name="TMB Header" mobile="{{ true }}" hint-size="100%,56px"></dc-import>
+<div style="padding:4px 16px 24px;display:flex;flex-direction:column;gap:14px">
+<div style="height:150px;border-radius:12px;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/Outdoor-dining-Truc.jpg') center/cover"></div>
+<div><h1 data-enter="1" style="margin:0;font-size:28px;font-weight:800;letter-spacing:-.03em">예산 (1인, 항공권 제외)</h1><p style="margin:4px 0 0;font-size:14px;color:#3C4C42">저/중 범위 · EUR 기준 · 항목 합산 자동 계산</p></div>
+<div role="status" style="background:#F3E3C0;color:#4A3408;border-radius:12px;padding:12px 14px;font-size:13px;line-height:1.5"><b>금액을 다시 확인해 주세요</b> · 아래 값은 2026-09-09 기준 참고용입니다.</div>
+<section style="background:#17281F;color:#EEF1EC;border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:4px"><span style="font-size:13px;color:#A9BBAE;white-space:nowrap">권장 준비 금액 (1인)</span><span style="font-size:32px;font-weight:800;white-space:nowrap">€1,900~3,000</span><span style="font-size:14px;white-space:nowrap">약 285만~450만 원</span></section>
+<div data-stagger style="background:#fff;border-radius:12px;padding:4px 14px">
+<sc-for list="{{ budget }}" as="b" hint-placeholder-count="10"><div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px;padding:12px 0;border-bottom:1px solid #E4E9E2"><span style="font-size:14px;font-weight:600;flex:1 1 100%;white-space:nowrap">{{ b.item }}</span><span style="font-size:13px;color:#5C6B61">저 <b style="color:#17281F;white-space:nowrap">€{{ b.lo }}</b></span><span style="font-size:13px;color:#5C6B61">중 <b style="color:#17281F;white-space:nowrap">€{{ b.mid }}</b></span></div></sc-for>
+<div style="display:flex;justify-content:space-between;padding:12px 0;font-size:14px"><span>소계 · 예비비 10%</span><span>1,716 / 2,673</span></div>
+</div>
+<div style="background:#17281F;color:#EEF1EC;border-radius:12px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center"><b>합계</b><span style="font-weight:800">€1,716.00 ~ <span style="color:#E3A43B;white-space:nowrap">€2,673.00</span></span></div>
+<section style="background:#fff;border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:4px;font-size:13px"><div style="display:flex;justify-content:space-between"><b style="font-size:15px;white-space:nowrap">환율·기준일</b><span style="font-weight:700;background:#F3E3C0;color:#4A3408;padding:2px 8px;border-radius:12px;white-space:nowrap">재확인 필요</span></div><span>1 CHF ≈ 1.07 EUR · 1 EUR ≈ 1,500원</span><span style="color:#5C6B61;white-space:nowrap">기준일 2026-09-09</span></section>
+</div>
+<div style="margin-top:auto;position:sticky;bottom:0"><dc-import name="TMB TabBar" active="예산" hint-size="100%,80px"></dc-import></div>
+</div>
+</div>
+</section>
+
+<!-- ================= SCR-009 ================= -->
+<section class="dv-turn" id="scr-009" data-screen-label="SCR-009 준비물">
+<div class="dv-thd"><span class="dv-tid">SCR-009</span><span class="dv-tname">준비물 · /packing · web: 비로그인(기기 저장) · mobile: 로그인(계정 저장)</span></div>
+<div style="display:flex;gap:32px;align-items:flex-start">
+<div class="dv-card" style="width:1200px;background:#EEF1EC;color:#17281F">
+<dc-import name="TMB Header" hint-size="100%,68px"></dc-import>
+<div style="padding:32px 48px 56px;display:grid;grid-template-columns:360px minmax(0,1fr);gap:24px;align-items:start">
+<div style="display:flex;flex-direction:column;gap:16px;position:sticky;top:0">
+<div style="height:200px;border-radius:12px;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/Hikers-1.jpg') center/cover"></div>
+<div><h1 data-enter="1" style="margin:0;font-size:40px;font-weight:800;letter-spacing:-.035em">준비물</h1><p style="margin:6px 0 0;font-size:15px;color:#3C4C42">체크 상태는 이 기기에만 저장됩니다 · 12일 산장 트레킹 기준</p></div>
+<div style="background:#DCE7DD;border-radius:12px;padding:16px;font-size:14px;line-height:1.55">로그인하면 체크 상태가 내 계정에 저장되어 다른 기기에서도 이어집니다.<div style="display:flex;gap:8px;margin-top:10px"><span data-ix="btn" style="background:#17281F;color:#EEF1EC;font-weight:600;padding:10px 16px;border-radius:12px;white-space:nowrap">로그인</span><span data-ix="btn" style="background:#fff;font-weight:600;padding:10px 16px;border-radius:12px;white-space:nowrap">회원가입</span></div></div>
+<section style="background:#17281F;color:#EEF1EC;border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;justify-content:space-between;align-items:baseline"><span data-testid="packing-progress" style="font-size:32px;font-weight:800">14/35 <span style="font-size:16px;font-weight:600;color:#A9BBAE;white-space:nowrap">(40%)</span></span><span data-ix="btn" style="font-size:14px;font-weight:600;border:1px solid #3E5A48;padding:9px 14px;border-radius:12px;white-space:nowrap">전체 해제</span></div>
+<div aria-label="준비물 진행률" style="height:8px;border-radius:4px;background:#2F4538;overflow:hidden"><div style="width:40%;height:100%;background:#E3A43B"></div></div>
+<span style="font-size:13px;color:#A9BBAE">저장 2027-08-01 21:14 · 이 기기에만 저장됩니다</span>
+</section>
+</div>
+<div data-stagger style="display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start">
+<sc-for list="{{ packing }}" as="c" hint-placeholder-count="7">
+<section style="background:#fff;border-radius:12px;padding:18px 20px">
+<h2 style="margin:0 0 8px;font-size:17px;font-weight:700;display:flex;justify-content:space-between">{{ c.label }}<span style="font-weight:600;color:#5C6B61;white-space:nowrap">({{ c.done }}/{{ c.total }})</span></h2>
+<sc-for list="{{ c.items }}" as="it" hint-placeholder-count="5">
+<label style="display:flex;align-items:center;gap:12px;min-height:44px;border-top:1px solid #EEF1EC;font-size:15px;cursor:pointer">
+<sc-if value="{{ it.on }}"><span style="flex:none;width:24px;height:24px;border-radius:7px;background:#2E5A41;color:#fff;font-size:15px;display:flex;align-items:center;justify-content:center;white-space:nowrap">✓</span><span style="text-decoration:line-through;color:#8A968C;white-space:nowrap">{{ it.label }}</span></sc-if>
+<sc-if value="{{ it.off }}"><span style="flex:none;width:24px;height:24px;border-radius:7px;border:2px solid #A9B6AC"></span><span>{{ it.label }}</span></sc-if>
+</label>
+</sc-for>
+</section>
+</sc-for>
+</div>
+</div>
+</div>
+<div class="dv-card" style="width:390px;background:#EEF1EC;color:#17281F;border-radius:32px;border:8px solid #17281F;display:flex;flex-direction:column;min-height:844px">
+<dc-import name="TMB Header" mobile="{{ true }}" account="donch@gmail…" hint-size="100%,56px"></dc-import>
+<div style="padding:4px 16px 24px;display:flex;flex-direction:column;gap:14px">
+<div style="height:140px;border-radius:12px;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/Hikers-1.jpg') center/cover"></div>
+<div><h1 data-enter="1" style="margin:0;font-size:32px;font-weight:800;letter-spacing:-.03em">준비물</h1><p style="margin:4px 0 0;font-size:14px;color:#3C4C42">체크 상태는 내 계정에 저장됩니다 · 12일 산장 트레킹 기준</p></div>
+<span role="status" style="font-size:13px;font-weight:600;color:#2E5A41;background:#DCE7DD;padding:8px 12px;border-radius:12px;align-self:flex-start">내 계정에 저장됨 · 마지막 저장 08-07 06:52</span>
+<section style="background:#17281F;color:#EEF1EC;border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:10px"><div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:26px;font-weight:800">14/35 <span style="font-size:14px;color:#A9BBAE;white-space:nowrap">(40%)</span></span><span data-ix="btn" style="font-size:14px;font-weight:600;border:1px solid #3E5A48;padding:10px 14px;border-radius:12px;white-space:nowrap">전체 해제</span></div><div style="height:8px;border-radius:4px;background:#2F4538;overflow:hidden"><div style="width:40%;height:100%;background:#E3A43B"></div></div></section>
+<sc-for list="{{ packing }}" as="c" hint-placeholder-count="7">
+<section style="background:#fff;border-radius:12px;padding:12px 16px">
+<h2 style="margin:0 0 4px;font-size:16px;font-weight:700;display:flex;justify-content:space-between">{{ c.label }}<span style="font-weight:600;color:#5C6B61;white-space:nowrap">({{ c.done }}/{{ c.total }})</span></h2>
+<sc-for list="{{ c.items }}" as="it" hint-placeholder-count="5"><label style="display:flex;align-items:center;gap:12px;min-height:44px;border-top:1px solid #EEF1EC;font-size:15px"><sc-if value="{{ it.on }}"><span style="flex:none;width:24px;height:24px;border-radius:7px;background:#2E5A41;color:#fff;display:flex;align-items:center;justify-content:center;white-space:nowrap">✓</span><span style="text-decoration:line-through;color:#8A968C;white-space:nowrap">{{ it.label }}</span></sc-if><sc-if value="{{ it.off }}"><span style="flex:none;width:24px;height:24px;border-radius:7px;border:2px solid #A9B6AC"></span><span>{{ it.label }}</span></sc-if></label></sc-for>
+</section>
+</sc-for>
+</div>
+<div style="margin-top:auto;position:sticky;bottom:0"><dc-import name="TMB TabBar" active="준비물" hint-size="100%,80px"></dc-import></div>
+</div>
+</div>
+</section>
+
+<!-- ================= SCR-010 ================= -->
+<section class="dv-turn" id="scr-010" data-screen-label="SCR-010 여행 기록 목록">
+<div class="dv-thd"><span class="dv-tid">SCR-010</span><span class="dv-tname">여행 기록 목록 · /journal · 비로그인</span></div>
+<div style="display:flex;gap:32px;align-items:flex-start">
+<div class="dv-card" style="width:1200px;background:#EEF1EC;color:#17281F">
+<dc-import name="TMB Header" hint-size="100%,68px"></dc-import>
+<div style="position:relative;height:300px;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/IMG_9271.jpg') center/cover"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,28,20,0) 30%,rgba(15,28,20,.85) 100%)"></div><div style="position:absolute;left:48px;bottom:32px;color:#fff"><h1 data-enter="1" style="margin:0;font-size:48px;font-weight:800;letter-spacing:-.035em">여행 기록</h1><p style="margin:6px 0 0;font-size:17px">Day별 사진 1장 + 200자 · 팀원 1인당 Day 1건</p></div></div>
+<div style="padding:28px 48px 56px;display:flex;flex-direction:column;gap:20px">
+<div role="status" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;background:#DCE7DD;border-radius:12px;padding:14px 18px;font-size:14px"><span><b>열람은 누구나 가능합니다</b> · 기록 작성은 팀원 로그인(매직 링크) 후 가능합니다.</span><span data-ix="btn" style="background:#17281F;color:#EEF1EC;font-weight:600;padding:10px 16px;border-radius:12px;white-space:nowrap">팀원 로그인</span></div>
+<div data-stagger style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px">
+<sc-for list="{{ days }}" as="d" hint-placeholder-count="12">
+<div data-ix="tile" style="background:#fff;border-radius:12px;overflow:hidden"><div style="height:130px;background:#4E6B55 url('{{ d.photo }}') center/cover"></div><div style="padding:12px 14px;display:flex;flex-direction:column;gap:2px"><div style="display:flex;justify-content:space-between;font-size:13px;color:#5C6B61"><span><b style="color:#17281F;white-space:nowrap">Day {{ d.n }}</b> · {{ d.date }}</span><span style="font-weight:700;color:#2E5A41;white-space:nowrap">{{ d.count }}건</span></div><span style="font-size:15px;font-weight:600;white-space:nowrap">{{ d.name }}</span></div></div>
+</sc-for>
+</div>
+</div>
+</div>
+<div class="dv-card" style="width:390px;background:#EEF1EC;color:#17281F;border-radius:32px;border:8px solid #17281F;display:flex;flex-direction:column;min-height:844px">
+<dc-import name="TMB Header" mobile="{{ true }}" hint-size="100%,56px"></dc-import>
+<div style="position:relative;height:190px;background:#4E6B55 url('https://montblanctreks.com.au/wp-content/uploads/2013/10/IMG_9271.jpg') center/cover"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,28,20,0) 20%,rgba(15,28,20,.85) 100%)"></div><div style="position:absolute;left:16px;bottom:16px;color:#fff"><h1 data-enter="1" style="margin:0;font-size:30px;font-weight:800">여행 기록</h1><p style="margin:2px 0 0;font-size:13px">Day별 사진 1장 + 200자 · 팀원 1인당 Day 1건</p></div></div>
+<div style="padding:16px;display:flex;flex-direction:column;gap:12px">
+<div role="status" style="background:#DCE7DD;border-radius:12px;padding:12px 14px;font-size:13px;line-height:1.5"><b>열람은 누구나 가능합니다</b><br>기록 작성은 팀원 로그인 후 가능합니다.<span data-ix="btn" style="display:block;text-align:center;margin-top:10px;background:#17281F;color:#EEF1EC;font-weight:600;padding:12px;border-radius:12px;white-space:nowrap">팀원 로그인</span></div>
+<div data-stagger style="background:#fff;border-radius:12px;padding:4px">
+<sc-for list="{{ days }}" as="d" hint-placeholder-count="12"><div data-ix="row" style="display:grid;grid-template-columns:56px minmax(0,1fr) auto;gap:12px;align-items:center;padding:6px 8px;border-radius:9px;min-height:44px"><span style="height:48px;border-radius:8px;background:#4E6B55 url('{{ d.photo }}') center/cover"></span><span style="font-size:14px;line-height:1.35"><b>Day {{ d.n }}</b> <span style="color:#5C6B61;white-space:nowrap">{{ d.date }}</span><br>{{ d.name }}</span><span style="font-size:13px;font-weight:700;color:#2E5A41;white-space:nowrap">{{ d.count }}건</span></div></sc-for>
+</div>
+</div>
+<div style="margin-top:auto;position:sticky;bottom:0"><dc-import name="TMB TabBar" active="" hint-size="100%,80px"></dc-import></div>
+</div>
+</div>
+</section>
+
+<!-- ================= SCR-011 ================= -->
+<section class="dv-turn" id="scr-011" data-screen-label="SCR-011 Day 기록">
+<div class="dv-thd"><span class="dv-tid">SCR-011</span><span class="dv-tname">Day 기록 · /journal/day-04 · 팀원 로그인 · 아직 작성 전</span></div>
+<div style="display:flex;gap:32px;align-items:flex-start">
+<div class="dv-card" style="width:1200px;background:#EEF1EC;color:#17281F">
+<dc-import name="TMB Header" account="donch@gmail…" hint-size="100%,68px"></dc-import>
+<div style="padding:32px 48px 56px;display:grid;grid-template-columns:400px minmax(0,1fr);gap:28px;align-items:start">
+<div style="display:flex;flex-direction:column;gap:16px">
+<div style="display:flex;gap:8px;align-items:center;font-size:14px;font-weight:600"><span>2027년 8월 7일</span><span style="background:#17281F;color:#EEF1EC;padding:3px 10px;border-radius:12px;white-space:nowrap">Day 4</span></div>
+<h1 data-enter="1" style="margin:0;font-size:28px;font-weight:800;line-height:1.3;letter-spacing:-.03em">모테 → 콜 드 라 세뉴 →<br>메종 비에유</h1>
+<p style="margin:0;font-size:14px;color:#5C6B61" lang="fr">Les Mottets → Col de la Seigne → Rifugio Maison Vieille</p>
+<a href="#" style="font-weight:600">Day 상세 보기 →</a>
+<div role="status" style="background:#DCE7DD;border-radius:12px;padding:12px 16px;font-size:14px"><b>동인님으로 로그인</b></div>
+<form style="background:#fff;border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:14px">
+<label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600">한 줄 기록<span style="display:block;min-height:110px;border:1.5px solid #CBD4CA;border-radius:12px;padding:12px 14px;font-size:16px;font-weight:400;color:#6E7C71;white-space:nowrap">오늘 13km · 고개 하나</span><span style="align-self:flex-end;font-size:12px;font-weight:500;color:#5C6B61;white-space:nowrap">0/200</span></label>
+<label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600">사진 1장 (선택 · JPG·PNG·WebP 10MB 이하)<span data-ix="btn" style="display:flex;align-items:center;justify-content:center;min-height:56px;border:1.5px dashed #A9B6AC;border-radius:12px;font-weight:500;color:#3C4C42;white-space:nowrap">사진 선택</span></label>
+<span data-ix="btn" style="text-align:center;background:#E3A43B;color:#1B2A20;font-weight:700;font-size:16px;padding:14px;border-radius:12px;white-space:nowrap">저장</span>
+</form>
+</div>
+<section style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:22px;font-weight:700">팀 타임라인 <span style="font-size:15px;color:#5C6B61;font-weight:600;white-space:nowrap">3건</span></h2>
+<sc-for list="{{ entries }}" as="e" hint-placeholder-count="3">
+<article style="background:#fff;border-radius:12px;overflow:hidden;display:grid;grid-template-columns:260px minmax(0,1fr)"><div style="min-height:200px;background:#4E6B55 url('{{ e.photo }}') center/cover"></div><div style="padding:20px;display:flex;flex-direction:column;gap:10px"><p style="margin:0;font-size:17px;line-height:1.6">{{ e.text }}</p><span style="margin-top:auto;font-size:13px;color:#5C6B61"><b style="color:#17281F;white-space:nowrap">{{ e.author }}</b> · {{ e.time }}</span></div></article>
+</sc-for>
+</section>
+</div>
+</div>
+<div class="dv-card" style="width:390px;background:#EEF1EC;color:#17281F;border-radius:32px;border:8px solid #17281F;display:flex;flex-direction:column;min-height:844px">
+<dc-import name="TMB Header" mobile="{{ true }}" account="donch@gmail…" hint-size="100%,56px"></dc-import>
+<div style="padding:8px 16px 24px;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;gap:6px;font-size:13px;font-weight:600;align-items:center"><span>2027년 8월 7일</span><span style="background:#17281F;color:#EEF1EC;padding:2px 8px;border-radius:12px;white-space:nowrap">Day 4</span></div>
+<h1 data-enter="1" style="margin:0;font-size:24px;font-weight:800;line-height:1.3">모테 → 콜 드 라 세뉴 → 메종 비에유</h1>
+<a href="#" style="font-weight:600;font-size:14px">Day 상세 보기 →</a>
+<div role="status" style="background:#DCE7DD;border-radius:12px;padding:10px 14px;font-size:13px"><b>동인님으로 로그인</b></div>
+<form style="background:#fff;border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:12px">
+<label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600">한 줄 기록<span style="display:block;min-height:90px;border:1.5px solid #CBD4CA;border-radius:12px;padding:12px;font-size:16px;font-weight:400;color:#6E7C71;white-space:nowrap">오늘 13km · 고개 하나</span><span style="align-self:flex-end;font-size:12px;font-weight:500;color:#5C6B61;white-space:nowrap">0/200</span></label>
+<span data-ix="btn" style="display:flex;align-items:center;justify-content:center;min-height:52px;border:1.5px dashed #A9B6AC;border-radius:12px;font-size:14px;color:#3C4C42;white-space:nowrap">사진 선택 (JPG·PNG·WebP 10MB 이하)</span>
+<span data-ix="btn" style="text-align:center;background:#E3A43B;color:#1B2A20;font-weight:700;font-size:16px;padding:14px;border-radius:12px;white-space:nowrap">저장</span>
+</form>
+<h2 style="margin:8px 0 0;font-size:18px;font-weight:700">팀 타임라인 · 3건</h2>
+<sc-for list="{{ entries }}" as="e" hint-placeholder-count="3"><article style="background:#fff;border-radius:12px;overflow:hidden"><div style="height:200px;background:#4E6B55 url('{{ e.photo }}') center/cover"></div><div style="padding:14px 16px;display:flex;flex-direction:column;gap:6px"><p style="margin:0;font-size:15px;line-height:1.55">{{ e.text }}</p><span style="font-size:12px;color:#5C6B61"><b style="color:#17281F;white-space:nowrap">{{ e.author }}</b> · {{ e.time }}</span></div></article></sc-for>
+</div>
+<div style="margin-top:auto;position:sticky;bottom:0"><dc-import name="TMB TabBar" active="" hint-size="100%,80px"></dc-import></div>
+</div>
+</div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const IMG = 'https://montblanctreks.com.au/wp-content/uploads/';
+const COLORS = ['#2E5A41','#4C7A57','#7A9A5C','#A7A852','#E3A43B','#D17F3A','#B3593A','#8C5A7A','#5E6FA6','#3F87A6','#2F9E8F','#1F6E5A'];
+const NODES = [[300,170,'레주슈',-70,-12],[210,300,'레 콩타민',-90,5],[200,390,'라 발므',-70,5],[230,490,'모테',-50,5],[330,540,'',0,0],[440,510,'메종 비에유',10,28],[480,450,'베르토네',14,5],[590,380,'엘레나',14,5],[620,280,'라 풀리',14,5],[600,190,'샹페',14,5],[500,120,'트리앙',-20,-16],[420,100,'트레르샹',-30,-16],[360,130,'플레제르',-30,-16],[330,165,'샤모니',10,26]];
+const COLS = [[250,440,'콜 뒤 보놈'],[330,540,'콜 드 라 세뉴'],[650,330,'그랑 콜 페레'],[460,105,'콜 드 발므'],[395,300,'몽블랑 산군']];
+const DAYN = [['레주슈 → 레 콩타민','8/4','2013/10/Bionnassay-1.jpg',4],['레 콩타민 → 라 발므','8/5','2013/10/MG_8872-1-1.jpg',5],['라 발므 → 모테','8/6','2013/10/Ascending-Col-Du-Bonhomme-1-1.jpg',6],['모테 → 메종 비에유','8/7','2013/10/Col-De-Seigne-1-1.jpg',3],['메종 비에유 → 베르토네','8/8','2013/10/MG_8968.jpg',0],['베르토네 → 엘레나','8/9','2013/10/IMG_9117-1.jpg',0],['엘레나 → 라 풀리','8/10','2013/10/IMG_9128-1.jpg',0],['라 풀리 → 샹페','8/11','2013/10/MG_9157-1.jpg',0],['샹페 → 트리앙','8/12','2013/10/IMG_9184-1.jpg',0],['트리앙 → 트레르샹','8/13','2014/07/IMG_19401-e1405664837580.jpg',0],['트레르샹 → 라 플레제르','8/14','2013/10/IMG_9329-1.jpg',0],['라 플레제르 → 샤모니','8/15','2014/07/IMG_2040.jpg',0]];
+const BUDGET = [['ZRH↔GVA 기차 왕복(2등석)','70','132','저=Supersaver, 중=10인 단체권 30% 할인'],['제네바↔샤모니 버스 왕복','40','80','FlixBus·BlaBlaCar €12~27/편도, 공유셔틀 €30~45'],['샤모니 계곡 교통','0','10','숙박객 카드로 무료, 없으면 편도 €1.5~3'],['마을형 숙소 4박(1인 몫)','350','530','레 콩타민·라 풀리·샹페·트리앙'],['산장 하프보드 7박(도미토리)','455','545','프랑스·이탈리아 산장'],['제네바·샤모니 호텔 3박(1인 몫)','275','390','제네바 1박·샤모니 2박, 2인 분담'],['점심·도시락·음료 12일','180','360','€15/일 vs €30/일'],['호텔 숙박일 식사 3일','90','180','€30/일 vs €60/일'],['여행자보험 15일','40','120','국내 다이렉트 종합형 ~ World Nomads'],['에귀 뒤 미디 케이블카 왕복','60','83','2026 동적 요금, 7~8월 온라인 예약 필수']];
+const PACK = [['서류·돈',['여권','항공권·SBB 예약 확인','여행자보험 증서','현금 EUR·CHF','신용카드'],[1,1,1,1,0]],['배낭·산장 취침용품',['30~40L 배낭','레인커버','침낭 라이너','귀마개','헤드램프'],[1,1,0,0,1]],['의류',['하드셸 재킷·바지','경량 다운','트레킹 셔츠 2~3','트레킹 바지 2','양말 3~4','모자·장갑','산장용 샌들'],[1,1,0,0,0,0,0]],['장비',['트레킹 폴','등산화(방수)','선글라스','물병·하이드레이션 2L','정수 알약'],[1,1,1,0,0]],['안전·의료',['개인 상비약','물집 패드','자외선 차단제','응급 담요','호루라기'],[0,0,1,0,0]],['전자',['휴대폰·보조배터리','유럽 어댑터','케이블'],[0,0,0]],['기타',['세면도구 소형','속건 타월','지퍼백','도시락 용기'],[0,0,0,0]]];
+const ENTRIES = [
+  { photo: IMG + '2013/10/Col-De-Seigne-1-1.jpg', text: '국경 돌 앞에서 10명 단체 사진. 바람이 세서 10분만 머물렀다.', author: '민지', time: '8/7 11:42' },
+  { photo: IMG + '2013/10/IMG_9342-1.jpg', text: '엘리자베타 산장 블루베리 타르트. 오후 고개 하나 더 넘을 힘이 났다.', author: '성호', time: '8/7 13:05' },
+  { photo: IMG + '2013/10/Beer-leffe-1-1.jpg', text: '메종 비에유 도착. 16.3 km 끝, 모두 무사히.', author: '장동인', time: '8/7 18:20' }
+];
+class Component extends DCLogic {
+  renderVals() {
+    const segs = [];
+    for (let i = 0; i < 13; i++) { const a = NODES[i], b = NODES[i + 1]; segs.push({ x1: a[0], y1: a[1], x2: b[0], y2: b[1], color: COLORS[Math.min(i, 11)] }); }
+    const nodes = NODES.filter(n => n[2]).map(n => ({ x: n[0], y: n[1], label: n[2], tx: n[0] + n[3], ty: n[1] + n[4] }));
+    const cols = COLS.map(c => ({ d: `M${c[0]},${c[1] - 12} L${c[0] + 11},${c[1] + 8} L${c[0] - 11},${c[1] + 8} Z`, label: c[2], tx: c[0] + 14, ty: c[1] + 20 }));
+    const days = DAYN.map((d, i) => ({ n: i + 1, name: d[0], date: d[1], photo: IMG + d[2], count: d[3], color: COLORS[i] }));
+    const budget = BUDGET.map(b => ({ item: b[0], lo: b[1], mid: b[2], note: b[3] }));
+    const packing = PACK.map(p => { const items = p[1].map((l, j) => ({ label: l, on: !!p[2][j], off: !p[2][j] })); return { label: p[0], items, total: items.length, done: items.filter(x => x.on).length }; });
+    return { segs, nodes, cols, days, budget, packing, entries: ENTRIES };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<nav aria-label="주요 메뉴" style="display:grid;grid-template-columns:repeat(5,1fr);background:#fff;border-top:1px solid #DCE2DA;padding:6px 4px 26px;font-family:'Pretendard Variable',Pretendard,sans-serif;font-size:13px;font-weight:600;text-align:center;color:#5C6B61">
+<sc-for list="{{ tabs }}" as="t" hint-placeholder-count="5">
+<sc-if value="{{ t.on }}"><span data-ix="tab" aria-current="page" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding-top:4px;min-height:44px;color:#17281F;font-weight:700"><span style="width:24px;height:3px;border-radius:2px;background:#E3A43B"></span>{{ t.label }}</span></sc-if>
+<sc-if value="{{ t.off }}"><span data-ix="tab" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding-top:4px;min-height:44px"><span style="width:24px;height:3px"></span>{{ t.label }}</span></sc-if>
+</sc-for>
+</nav>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:390,&quot;height&quot;:80},&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;홈&quot;,&quot;일정&quot;,&quot;예산&quot;,&quot;지도&quot;,&quot;준비물&quot;,&quot;&quot;],&quot;default&quot;:&quot;홈&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const a = this.props.active ?? '홈';
+    return { tabs: ['홈','일정','예산','지도','준비물'].map(l => ({ label: l, on: l === a, off: l !== a })) };
+  }
+}
+</script>
+</body>
+</html>
