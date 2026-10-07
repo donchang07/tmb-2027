@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState, useEffect, useState } from "react";
+import { startTransition, useActionState, useEffect, useState } from "react";
 import Link from "next/link";
 import type { BookingRow } from "@/lib/bookings/admin";
 import { BOOKING_STATUSES, BOOKING_STATUS_LABEL, type BookingStatus } from "@/lib/booking-status";
@@ -12,8 +12,16 @@ export type EditorLodging = { id: string; nameOriginal: string; dayLabel: string
 
 const initial: SaveState = { status: "idle", message: null, row: null };
 
+async function saveOrNetworkError(prev: SaveState, formData: FormData): Promise<SaveState> {
+  try {
+    return await saveBookingAction(prev, formData);
+  } catch {
+    return { status: "error", message: "저장 실패: 네트워크 연결을 확인한 뒤 다시 시도하세요.", row: prev.row };
+  }
+}
+
 export function BookingEditor({ lodging, row, lodgings = [] }: { lodging: EditorLodging; row: BookingRow | null; lodgings?: EditorLodging[] }) {
-  const [state, action, pending] = useActionState(saveBookingAction, initial);
+  const [state, action, pending] = useActionState(saveOrNetworkError, initial);
   const current = state.row ?? row;
   const [dirty, setDirty] = useState(false);
   const [formKey, setFormKey] = useState(0);
@@ -40,7 +48,14 @@ export function BookingEditor({ lodging, row, lodgings = [] }: { lodging: Editor
   const version = current?.version ?? 1;
 
   return (
-    <form key={formKey} action={action} onChange={() => setDirty(true)} className="flex min-w-0 flex-col gap-3" aria-labelledby={`edit-${lodging.id}`}>
+    <form
+      key={formKey}
+      onSubmit={(e) => {
+        e.preventDefault();
+        const formData = new FormData(e.currentTarget);
+        startTransition(() => action(formData));
+      }}
+      onChange={() => setDirty(true)} className="flex min-w-0 flex-col gap-3" aria-labelledby={`edit-${lodging.id}`}>
       <div className="flex flex-wrap items-baseline justify-between gap-2">
         <h3 id={`edit-${lodging.id}`} className="text-base font-bold sm:text-[19px]">
           {lodging.dayLabel} · {lodging.nameOriginal}

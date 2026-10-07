@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState } from "react";
+import { startTransition, useActionState } from "react";
 import { saveLodgingAction, type SaveLodgingState } from "@/app/admin/bookings/actions";
 import { LodgingKind, type Lodging } from "@/lib/schema";
 
@@ -8,13 +8,27 @@ const KIND_LABEL: Record<Lodging["kind"], string> = { refuge: "산장", village:
 
 const initial: SaveLodgingState = { status: "idle", message: null };
 
+async function saveOrNetworkError(prev: SaveLodgingState, formData: FormData): Promise<SaveLodgingState> {
+  try {
+    return await saveLodgingAction(prev, formData);
+  } catch {
+    return { status: "error", message: "저장 실패: 네트워크 연결을 확인한 뒤 다시 시도하세요." };
+  }
+}
+
 const field = "field";
 
 export function LodgingFields({ lodging }: { lodging: Lodging }) {
-  const [state, action, pending] = useActionState(saveLodgingAction, initial);
+  const [state, action, pending] = useActionState(saveOrNetworkError, initial);
 
   return (
-    <form action={action} className="flex min-w-0 flex-col gap-3" aria-labelledby={`lodging-fields-${lodging.id}`}>
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        const formData = new FormData(e.currentTarget);
+        startTransition(() => action(formData));
+      }}
+      className="flex min-w-0 flex-col gap-3" aria-labelledby={`lodging-fields-${lodging.id}`}>
       <h4 id={`lodging-fields-${lodging.id}`} className="text-base font-bold sm:text-[19px]">
         숙박 정보 <span className="text-xs font-normal text-ink-3">v{lodging.version}</span>
       </h4>
@@ -99,7 +113,7 @@ export function LodgingFields({ lodging }: { lodging: Lodging }) {
 
       <div className="flex flex-wrap items-center gap-3">
         <button type="submit" disabled={pending} className="btn btn-white w-full border-[1.5px] border-forest-900 px-5 py-[11px] font-bold sm:w-auto">
-          {pending ? "저장 중…" : "숙박 정보 저장"}
+          {pending ? "저장 중…" : state.status === "error" ? "저장 재시도" : "숙박 정보 저장"}
         </button>
         {state.status === "saved" ? (
           <span role="status" className="text-[13px] text-forest-700">
