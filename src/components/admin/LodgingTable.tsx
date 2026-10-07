@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { BookingRow } from "@/lib/bookings/admin";
 import type { Lodging } from "@/lib/schema";
 import { BOOKING_STATUS_LABEL, type BookingStatus } from "@/lib/booking-status";
@@ -52,6 +52,16 @@ export function LodgingTable({ rows, lodgings }: { rows: LodgingTableRow[]; lodg
   const [openId, setOpenId] = useState<string | null>(null);
   const names = new Map(rows.map((r) => [r.lodging.id, r.lodging.nameOriginal]));
   const open = rows.find((r) => r.lodging.id === openId) ?? null;
+  const panelRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!openId) return;
+    const panel = panelRef.current;
+    if (!panel) return;
+    const smooth = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    panel.scrollIntoView({ behavior: smooth ? "smooth" : "auto", block: "start" });
+    panel.querySelector<HTMLElement>("select, input")?.focus({ preventScroll: true });
+  }, [openId]);
 
   const toggle = (id: string) => setOpenId((cur) => (cur === id ? null : id));
 
@@ -147,7 +157,7 @@ export function LodgingTable({ rows, lodgings }: { rows: LodgingTableRow[]; lodg
         ))}
       </ul>
 
-      <div id="lodging-edit-panel">
+      <div id="lodging-edit-panel" ref={panelRef} className="scroll-mt-20">
         {open ? (
           <div className="card flex flex-col gap-4 border-2 border-amber p-4 sm:p-6">
             <h3 className="text-base font-bold sm:text-[19px]">
