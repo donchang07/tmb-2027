@@ -9,7 +9,7 @@ export async function GET(request: NextRequest) {
   const code = url.searchParams.get("code");
   const rawNext = url.searchParams.get("next");
   if (rawNext !== null && rawNext !== "" && !isSafeNext(rawNext, url.origin)) logEvent("auth_next_rejected", "security", { reason: "callback" });
-  const next = safeNext(rawNext, "/admin", url.origin);
+  const next = safeNext(rawNext, "/", url.origin);
   const fail = (reason: "unconfigured" | "missing_code" | "exchange_failed") => {
     logEvent("auth_callback_failed", "warn", { reason });
     return NextResponse.redirect(new URL(callbackFailurePath(next), url.origin));
