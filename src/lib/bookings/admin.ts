@@ -2,7 +2,7 @@ import { z } from "zod";
 import { BOOKING_STATUSES, type BookingStatus } from "@/lib/booking-status";
 import { lodgings } from "@/data/seed/lodgings";
 import { LodgingKind, type Lodging } from "@/lib/schema";
-import { getLodgingsAsync, type LodgingRow } from "@/lib/lodgings";
+import { getLodgingsAsync, PUBLIC_LODGING_COLUMNS, type LodgingRow } from "@/lib/lodgings";
 import { logEvent } from "@/lib/log";
 import { getAdminEmail } from "@/lib/supabase/env";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
@@ -261,7 +261,7 @@ export async function saveLodging(input: unknown): Promise<SaveLodgingResult> {
     })
     .eq("id", v.id)
     .eq("version", v.version)
-    .select("*")
+    .select(PUBLIC_LODGING_COLUMNS)
     .maybeSingle();
 
   if (error) return { ok: false, reason: "error", message: `저장 실패: ${error.message}` };

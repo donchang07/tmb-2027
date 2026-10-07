@@ -166,6 +166,15 @@ describe("lodgings migration (FR-010, I-006, SC-004)", () => {
     expect(sql).toContain("phone_verified_at date");
   });
 
+  it("limits private columns to the admin (SYNC-04)", () => {
+    const v7 = readFileSync(path.resolve(__dirname, "../../supabase/migrations/20261007000007_lodgings_private_columns.sql"), "utf8");
+    expect(v7).toContain("revoke select on public.lodgings from authenticated");
+    expect(v7).toMatch(/grant select \(id, day_id[^)]*\) on public\.lodgings to authenticated/);
+    expect(v7).not.toMatch(/grant select \([^)]*phone_verified_by[^)]*\) on public\.lodgings to authenticated/);
+    expect(v7).toMatch(/where public\.is_admin\(\)/);
+    expect(v7).toContain("revoke all on function public.admin_lodging_private() from public, anon");
+  });
+
   it("imports all 14 lodgings (I-006)", () => {
     expect(sql).toContain("insert into public.lodgings");
     for (const l of lodgings) expect(sql, l.id).toContain(`('${l.id}', '${l.dayId}'`);
