@@ -18,3 +18,11 @@ next-env.d.ts
 .bkit/audit/
 .bkit/runtime/
 .bkit/checkpoints/
+
+# QA run artifacts (screenshots, traces, reports, production DB snapshot)
+/qa/screenshots/
+/qa/traces/
+/qa/html-report*/
+/qa/prev-run-*/
+/qa/results*.json
+/qa/baseline-snapshot.json

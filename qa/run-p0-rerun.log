@@ -1,0 +1,92 @@
+PS C:\Users\donch\work1> npx playwright test -c playwright.qa.config.ts --headed --grep "TC-P0-0[1-5] |TC-P1-05 |TC-EX-99 "
+
+Running 14 tests using 1 worker
+
+  ok  1 … 테스트가 만든 데이터 정리 확인: 가입 계정·기록·예약·준비물이 기준선과 일치 (7.9s)  ok  2 …메뉴 → 로그아웃 → 세션 소멸, 잘못된 비밀번호 (SCR-015·018, FR-019~021·029) (28.9s)  ok  3 …단, 관리자 허용 (5.1, SCR-007·008·011·018, FR-021, SC-007·020, SYNC-02·04) (23.0s)  ok  4 …자 간 격리·로그아웃 후 기기 모드 (SCR-009, FR-015·022~024, SC-011·017~020) (24.8s)  ok  5 …공개 화면 반영 → 새로고침 후 유지 → 복원 (SCR-008·003, FR-010, SC-004·007) (21.9s)  ok  6 …크 → 이동일 (SCR-001·002·003·004, FR-001·002·003·005·008, SC-001·002·008) (11.1s)   ok  7 … TC-P1-05 팀원 이메일로는 가입 불가 (FR-030, SC-020, D-017, 권한 없는 접근) (4.9s)  ok  8 … 테스트가 만든 데이터 정리 확인: 가입 계정·기록·예약·준비물이 기준선과 일치 (5.0s)  ok  9 …메뉴 → 로그아웃 → 세션 소멸, 잘못된 비밀번호 (SCR-015·018, FR-019~021·029) (26.5s)  ok 10 …단, 관리자 허용 (5.1, SCR-007·008·011·018, FR-021, SC-007·020, SYNC-02·04) (21.0s)  ok 11 …자 간 격리·로그아웃 후 기기 모드 (SCR-009, FR-015·022~024, SC-011·017~020) (33.5s)  ok 12 …공개 화면 반영 → 새로고침 후 유지 → 복원 (SCR-008·003, FR-010, SC-004·007) (19.7s)  ok 13 …링크 → 이동일 (SCR-001·002·003·004, FR-001·002·003·005·008, SC-001·002·008) (9.3s)  ok 14 … TC-P1-05 팀원 이메일로는 가입 불가 (FR-030, SC-020, D-017, 권한 없는 접근) (3.4s)
+                                                                                            14 passed (4.2m)
+
+To open last HTML report run:
+
+  npx playwright show-report qa\html-report
+
+PS C:\Users\donch\work1> npx playwright test -c playwright.qa.config.ts --headed --grep "TC-P0-0[1-5] |TC-P1-05 |TC-EX-99 "
+
+Running 14 tests using 1 worker
+
+  ok  1 … 테스트가 만든 데이터 정리 확인: 가입 계정·기록·예약·준비물이 기준선과 일치 (5.6s)  ok  2 …메뉴 → 로그아웃 → 세션 소멸, 잘못된 비밀번호 (SCR-015·018, FR-019~021·029) (28.3s)  x   3 …단, 관리자 허용 (5.1, SCR-007·008·011·018, FR-021, SC-007·020, SYNC-02·04) (14.4s)
+PS C:\Users\donch\work1>
+                                                                                            1) [mobile-360] › tests\e2e\qa-p0.spec.ts:84:7 › P0 핵심 흐름 › TC-P0-02 역할별 접근 권 한: 비로그인·일반 사용자 차단, 관리자 허용 (5.1, SCR-007·008·011·018, FR-021, SC-007·020, SYNC-02·04)
+
+    Test was interrupted.
+
+    Error: page.goto: Target page, context or browser has been closed
+    Call log:
+      - navigating to "https://utmb2027.vercel.app/admin", waiting until "load"
+
+
+      161 |     const admin = await newRoleContext("admin");
+      162 |     await test.step("관리자: /admin 리더 배너·편집 링크, 계정 메뉴에 '관리자 화면', /admin/bookings 14박 목록", async () => {
+    > 163 |       await admin.page.goto("/admin");
+          |                        ^
+      164 |       await expect(admin.page.getByText("리더로 로그인됨")).toBeVisible();
+      165 |       await expect(admin.page.getByText("DB 리더 등록 확인됨.")).toBeVisible();
+      166 |       await expect(admin.page.getByRole("link", { name: /예약 상태 편집/ })).toBeVisible();
+        at C:\Users\donch\work1\tests\e2e\qa-p0.spec.ts:163:24
+        at C:\Users\donch\work1\tests\e2e\qa-p0.spec.ts:162:5
+
+    attachment #1: TC-P0-02-anon-admin.png (image/png) ────────────────────────────────────
+    qa\traces\qa-p0-P0-핵심-흐름-TC-P0-02-역할-73fa8--021-SC-007·020-SYNC-02·04--mobile-360\attachments\TC-P0-02-anon-admin-png-a3937215ca54ec88134795637ff4ec76b0d1273b.png
+    ───────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: TC-P0-02-userA-admin-forbidden.png (image/png) ─────────────────────────
+    qa\traces\qa-p0-P0-핵심-흐름-TC-P0-02-역할-73fa8--021-SC-007·020-SYNC-02·04--mobile-360\attachments\TC-P0-02-userA-admin-forbidden-png-42bd2af92c7a3ae131791fb159fdcd46a54d289c.png
+    ───────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: screenshot (image/png) ─────────────────────────────────────────────────
+    qa\traces\qa-p0-P0-핵심-흐름-TC-P0-02-역할-73fa8--021-SC-007·020-SYNC-02·04--mobile-360\test-failed-2.png
+    ───────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: screenshot (image/png) ─────────────────────────────────────────────────
+    qa\traces\qa-p0-P0-핵심-흐름-TC-P0-02-역할-73fa8--021-SC-007·020-SYNC-02·04--mobile-360\test-failed-1.png
+    ───────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #6: video (video/webm) ─────────────────────────────────────────────────────
+    qa\traces\qa-p0-P0-핵심-흐름-TC-P0-02-역할-73fa8--021-SC-007·020-SYNC-02·04--mobile-360\video.webm
+    ───────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #7: screenshot (image/png) ─────────────────────────────────────────────────
+    qa\traces\qa-p0-P0-핵심-흐름-TC-P0-02-역할-73fa8--021-SC-007·020-SYNC-02·04--mobile-360\test-failed-3.png
+    ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: qa\traces\qa-p0-P0-핵심-흐름-TC-P0-02-역할-73fa8--021-SC-007·020-SYNC-02·04--mobile-360\error-context.md
+
+    Error Context: qa\traces\qa-p0-P0-핵심-흐름-TC-P0-02-역할-73fa8--021-SC-007·020-SYNC-02·04--mobile-360\error-context.md
+
+    attachment #10: trace (application/zip) ───────────────────────────────────────────────
+    qa\traces\qa-p0-P0-핵심-흐름-TC-P0-02-역할-73fa8--021-SC-007·020-SYNC-02·04--mobile-360\trace.zip
+    Usage:
+
+        npx playwright show-trace qa\traces\qa-p0-P0-핵심-흐름-TC-P0-02-역할-73fa8--021-SC-007·020-SYNC-02·04--mobile-360\trace.zip
+
+    ───────────────────────────────────────────────────────────────────────────────────────
+
+  1 interrupted
+    [mobile-360] › tests\e2e\qa-p0.spec.ts:84:7 › P0 핵심 흐름 › TC-P0-02 역할별 접근 권한: 비로그인·일반 사용자 차단, 관리자 허용 (5.1, SCR-007·008·011·018, FR-021, SC-007·020, SYNC-02·04)
+  11 did not run
+  2 passed (53.0s)
+
+To open last HTML report run:
+
+  npx playwright show-report qa\html-report
+
+                         ^C
+PS C:\Users\donch\work1> npx playwright test -c playwright.qa.config.ts --grep "TC-EX-99"
+
+Running 2 tests using 1 worker
+
+  ok 1 …9 테스트가 만든 데이터 정리 확인: 가입 계정·기록·예약·준비물이 기준선과 일치 (6.0s)  ok 2 …9 테스트가 만든 데이터 정리 확인: 가입 계정·기록·예약·준비물이 기준선과 일치 (4.4s)
+                                                                                            2 passed (13.3s)
+
+To open last HTML report run:
+
+  npx playwright show-report qa\html-report
