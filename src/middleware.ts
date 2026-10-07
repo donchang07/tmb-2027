@@ -1,9 +1,15 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 import { getAdminEmail, getSupabasePublicEnv } from "@/lib/supabase/env";
+import { isMissingDetailPath } from "@/lib/detail-routes";
 import { USER_SCOPED_HEADER } from "@/lib/sw-rules";
 
 export async function middleware(request: NextRequest) {
+  if (isMissingDetailPath(request.nextUrl.pathname)) {
+    return NextResponse.rewrite(new URL("/__not-found", request.url), { status: 404 });
+  }
+  if (request.nextUrl.pathname.startsWith("/travel/")) return NextResponse.next();
+
   const env = getSupabasePublicEnv();
   let response = NextResponse.next({ request });
   if (!env) return response;
@@ -30,5 +36,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/admin/:path*", "/api/admin/:path*", "/journal/:path*", "/packing", "/login", "/signup", "/day/:path*"],
+  matcher: ["/admin/:path*", "/api/admin/:path*", "/journal/:path*", "/packing", "/login", "/signup", "/day/:path*", "/travel/:path*"],
 };
