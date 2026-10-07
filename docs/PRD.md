@@ -49,7 +49,7 @@
   - Supabase 테이블: `team_members`·`bookings`·`bookings_public`·`lodgings`·`journal_entries`(+ Storage `journal-photos`), 모두 RLS 활성. 사용자 소유 컬럼은 `journal_entries.author_id`뿐이다.
   - 준비물 체크는 브라우저 localStorage(`tmb2027:packing:v1`)에만 저장된다.
   - 저장소는 git 저장소가 아니며(`git status` 실패) GitHub·Vercel 연결이 없다. `.env.local`에 Supabase 키와 코드가 쓰지 않는 추가 비밀값이 있다.
-  - `.env.local`의 Supabase 프로젝트 ref(`htqsosafoqcqqzfxceal`)는 현재 Supabase MCP 계정에서 조회되지 않아 원격 마이그레이션 적용 여부를 확인하지 못했다(12장 I-014).
+  - `.env.local`의 Supabase 프로젝트 ref(`htqsosafoqcqqzfxceal`)(`utmb2027`)의 원격 마이그레이션 적용 상태: 확인 [2026-10-07] — 7개(20260916000001~20261007000007) 적용·이력 일치(12장 I-014).
 - **데이터 신뢰도:** 일정·비용은 브리프와 2026-09-09 조사 snapshot이며 Day 9·10 거리·고도는 2026-09-16 GPX 기반 자료로 수정했다. 2027 운영·가격·운행 정보는 부록 B의 재확인 규칙을 따른다.
 
 ## 3. 목표 (Goals)
@@ -1660,7 +1660,7 @@ FR-001~018은 v3.1 문장을 보존하고 `화면·요소`·`데이터`·`관련
 | I-011 | 서비스 워커 운영 | 프로덕션 빌드에서만 등록, dev·E2E 분리, 새 SW 제어 시 1회 재로드 | FR-013·SC-006 | 각 release |
 | I-012 | 8/17 장거리 이동 리스크 | 샤모니 08:00 이전 출발, 셔틀 예비 예약, 열차 지연 시 다음 편 | FR-005·SC-015 | 항공권 확정 후 |
 | I-013 | 계정 메뉴와 정적 렌더링 | SCR-018 계정 메뉴는 클라이언트 컴포넌트(`createBrowserClient().auth.getSession()`·`onAuthStateChange`)로 구현하고 레이아웃에서 쿠키를 읽지 않는다(정적 라우트 보존). middleware matcher는 기존 3개 + `/packing`·`/login`·`/signup`·`/day/:path*`만 추가 | FR-029·NFR 성능 | Design |
-| I-014 | 원격 Supabase 상태 | `.env.local`의 프로젝트(`htqsosafoqcqqzfxceal`)가 Supabase MCP 계정에서 보이지 않음. 구현 시작 시 `supabase login`·`supabase link` 후 `supabase migration list`로 기존 4개 적용 여부 확인, 미적용이면 순서대로 적용 | FR-022·FR-023·SC-018~020 | 구현 시작(첫 작업) |
+| I-014 | 원격 Supabase 상태 | `.env.local`의 프로젝트(`htqsosafoqcqqzfxceal`)가 Supabase MCP 계정에서 보이지 않음. 구현 시작 시 `supabase login`·`supabase link` 후 `supabase migration list`로 기존 4개 적용 여부 확인, 미적용이면 순서대로 적용. **확인 [2026-10-07]** — `utmb2027`에 link, 수동 적용분 6개를 `migration repair --status applied`로 이력 등록, 20261007000007은 `db push`로 적용. 이후 `db push`로 관리 | FR-022·FR-023·SC-018~020 | 해결 2026-10-07 |
 | I-015 | magic link 콜백 주소 | `emailRedirectTo`는 요청 origin(`headers()`의 host·proto) + `/auth/callback`으로 계산하고 `NEXT_PUBLIC_SITE_URL`은 fallback. 기존 `src/app/admin/actions.ts`·`src/app/journal/actions.ts`도 같은 방식으로 바꿔 Preview에서 localhost로 돌아가지 않게 한다. Supabase Redirect URLs에 `http://localhost:3000/**`, production URL `/**`, Vercel preview 패턴 등록 | FR-026·SCR-007·SCR-012 | 배포 전 |
 | I-016 | Supabase Auth 정책 | 이메일 인증 OFF(Confirm email OFF — 가입 즉시 확인·로그인), 비밀번호 최소 8자, 가입 허용 ON(D-008), Auth Hook(before user created) 활성(D-017 — production 공개 전 필수), 세션 기본값(액세스 토큰 1시간) | FR-019·FR-020·FR-030 | 배포 전 |
 | I-017 | 준비물 저장·조회 경로 | 저장: Server Action + `createSupabaseServerClient()`(사용자 쿠키 세션)로 `packing_checks` upsert, RLS가 소유자 강제, 항목별 `updated_at` 최신 우선, service_role 미사용. 조회: 브라우저 Supabase 클라이언트 + `@tanstack/react-query`(D-018 ②, 작성자 승인 2026-09-23). `/packing`은 정적(○)을 유지하고 HTML에 사용자 데이터가 없으므로 SW page 캐시에 계정 데이터가 들어가지 않는다. `QueryClientProvider`는 `PackingList.tsx` 안의 로컬 provider(QueryClient는 컴포넌트 state로 1회 생성)로 두어 `layout.tsx`와 다른 라우트는 바꾸지 않는다 | FR-022~024 | Design |
@@ -2208,7 +2208,7 @@ v3.1 부록 A-1~A-4의 엔티티를 `DATA-*`로 이관했다(A-1 Trip→DATA-001
 | Vercel Git 연동 기본 동작(`main` → Production, 기타 브랜치 → Preview, Preview 배포 보호) | Vercel 문서 [조사·기준일] | 2026-09-23 | Vercel 연결 시 | FR-026, SC-024 |
 | ~~GitHub private 저장소 push protection(비밀값 스캔)은 유료 기능일 수 있음~~ → GitHub public 저장소는 secret scanning·push protection을 무료로 제공 (변경 사유: D-012 ② 공개 저장소, 2026-09-23) | GitHub 문서 [조사·기준일] | 2026-09-23 | 저장소 생성 시 활성 여부 재확인 | FR-028, SC-023 — 로컬 스캔 테스트(I-020)와 함께 사용(11.5 #1) |
 | bkit 설치본 v2.1.39 docPaths 기본값(`docs/00-pm/features/`, `docs/00-pm/` 순서, 게이트 90) | 설치본 `bkit.config.json` | 2026-09-23 | bkit 업데이트 시 | 15장 — 로컬 config(게이트 95, `docs/00-pm/`)가 우선 |
-| 원격 Supabase 프로젝트 `htqsosafoqcqqzfxceal` 마이그레이션 적용 상태 | 확인 완료: 6개 마이그레이션(20260916000001~20260923000006) + seed 원격 적용(완료 보고서 2026-09-23) [code-sync 2026-10-07] | 2026-09-23 | 스키마 변경 시(I-014) | FR-022·FR-023, SC-018~020 |
+| 원격 Supabase 프로젝트 `htqsosafoqcqqzfxceal` 마이그레이션 적용 상태 | 확인: 7개 마이그레이션(20260916000001~20261007000007) 원격 적용, `supabase migration list` 이력 일치 [2026-10-07] | 2026-10-07 | 스키마 변경 시(I-014) | FR-022·FR-023, SC-018~020 |
 
 ## 부록 C. 기존 조사 기반 일정·예약 seed data
 > 기준일 2026-09-09(Day 9·10과 대안은 2026-09-16). 거리·고도·시간은 공식 사이트·산장 홈페이지·복수 트레킹 가이드 교차 근사값이며 GPX 기준 ±10% 오차를 허용한다. [확정 2026-10-07] 거리·고도는 좌표(GPX) 기준값을 정본으로 하며, ±10%를 넘는 Day는 GPX 값으로 교체한다(SYNC-03, 좌표 보정 후 교체 — 18.3 참조). 가격은 2025~2026 시즌 하프보드(저녁·아침) 1인 기준. 방향: 반시계(레주슈 → 프랑스 → 이탈리아 → 스위스 → 샤모니). 트레킹 구간 리프트·케이블카 미사용(8/16 에귀 뒤 미디 관광 케이블카만 사용).
