@@ -6,12 +6,12 @@
 > feature: product
 > 정본: docs/PRD.md · 정본 개정: v4.1, 2026-10-07
 > 작성일: 2026-09-09 · 최종 수정일: 2026-10-07
-> 개정 이력: v1 최초 통합 2026-09-09 · v2 bkit 실행 계약·추적성·시스템 가정·gate 추가 2026-09-16 · v2.0 정밀 검토(Major 17·Minor 24) 반영 2026-09-16 · v3.0 구현 반영(9 feature PDCA 95% 게이트 통과)·산길 경로·GPX·SW 운영 정책·보안 grant·8/16 에귀 뒤 미디 추가 2026-09-18 · v3.1 마지막 일정 재구성(D-007)·에귀 뒤 미디 실측·준비물 카테고리 보정 2026-09-18 · **v4.0 screen-first-v1 마이그레이션(기존 8장 화면 → SCR-001~014, 부록 A → DATA-001~016, FR-001~018·SC-001~015 ID 보존) + 멀티유저 인증·사용자별 데이터(RLS)·GitHub 소스 관리·Vercel production 배포 델타(SCR-015~018, FR-019~030, SC-016~024, DATA-017~019, feature `multiuser-cloud-deployment`) 2026-09-23** · v4.0 작성자 결정 반영(D-008·D-009·D-010·D-012·D-013·D-014·D-015·D-016·D-017·D-018 Closed, 이메일 인증 OFF·공개 저장소) 2026-09-23 · v4.1 코드 동기화(ui-redesign-forest 반영 누락·화면 요소·데이터 계약·테스트 계약 정합화, 결정 필요 19건은 18장) 2026-10-07
+> 개정 이력: v1 최초 통합 2026-09-09 · v2 bkit 실행 계약·추적성·시스템 가정·gate 추가 2026-09-16 · v2.0 정밀 검토(Major 17·Minor 24) 반영 2026-09-16 · v3.0 구현 반영(9 feature PDCA 95% 게이트 통과)·산길 경로·GPX·SW 운영 정책·보안 grant·8/16 에귀 뒤 미디 추가 2026-09-18 · v3.1 마지막 일정 재구성(D-007)·에귀 뒤 미디 실측·준비물 카테고리 보정 2026-09-18 · **v4.0 screen-first-v1 마이그레이션(기존 8장 화면 → SCR-001~014, 부록 A → DATA-001~016, FR-001~018·SC-001~015 ID 보존) + 멀티유저 인증·사용자별 데이터(RLS)·GitHub 소스 관리·Vercel production 배포 델타(SCR-015~018, FR-019~030, SC-016~024, DATA-017~019, feature `multiuser-cloud-deployment`) 2026-09-23** · v4.0 작성자 결정 반영(D-008·D-009·D-010·D-012·D-013·D-014·D-015·D-016·D-017·D-018 Closed, 이메일 인증 OFF·공개 저장소) 2026-09-23 · v4.1 코드 동기화(ui-redesign-forest 반영 누락·화면 요소·데이터 계약·테스트 계약 정합화, 결정 필요 19건은 18장) 2026-10-07 · v4.1 후속 qa-fix 반영(상세 라우트 404·관리자 저장 네트워크 오류·숙박 편집 패널 스크롤/포커스·원격 마이그레이션 7개 확인) 2026-10-07
 > v3.1 원본: 루트 `tmb2027-v3.1.md`(v3.1 `docs/PRD.md`와 바이트 동일, 2026-09-23 `cmp` 확인) — ID 보존 대조 근거
 > 입력: v3.1 `docs/PRD.md`(Google Drive `tmb2027-v3.1.md` 사본), 2026-09-23 멀티유저·클라우드 배포 브리프(사용자 대화), 구현 저장소 코드 읽기(`src/app`·`src/components`·`src/lib`·`src/middleware.ts`·`supabase/migrations`·`.gitignore`·`.env.example`·`bkit.config.json`), bkit v2.1.39 설치본, Supabase 공식 문서(기본 SMTP 제한, 2026-09-23 조회), 2026-09-23 작성자 결정(D-008~D-018, 사용자 대화)
 > bkit 계약: 설치본 v2.1.39(2026-09-23 확인) · 로컬 `bkit.config.json` 우선: `matchRateThreshold` 95 · `maxIterations` 5 · `autoIterate` true · `requireDesignDoc` true · `pdca.docPaths.pm` = `docs/00-pm/FEATURE.prd.md`
 > 게이트: 98점 · 착수 가능 · Blocker 0 · Major 0 · Minor 2(c1·c2, 게이트 직후 반영) → docs/00-pm/_product.gate.md
-> 라벨: [확정·출처] · [조사·기준일] · [추정] · [가설] · [확정 2026-09-16] · [확정 2026-09-18] = 작성자 결정 · [구현 2026-09-17] = 구현 완료분 반영 · [기본값 2026-09-23] = 이번 개정에서 안전한 기본값으로 채택(2026-09-23 작성자가 13.1 fallback을 수락해 확정, D-011만 Open) · [확정 2026-09-23] = 13.1 작성자 결정 · [code-sync 2026-10-07] = 코드 기준 동기화
+> 라벨: [확정·출처] · [조사·기준일] · [추정] · [가설] · [확정 2026-09-16] · [확정 2026-09-18] = 작성자 결정 · [구현 2026-09-17] = 구현 완료분 반영 · [기본값 2026-09-23] = 이번 개정에서 안전한 기본값으로 채택(2026-09-23 작성자가 13.1 fallback을 수락해 확정, D-011만 Open) · [확정 2026-09-23] = 13.1 작성자 결정 · [code-sync 2026-10-07] = 코드 기준 동기화 · [qa-fix 2026-10-07] = QA 수정 후 코드 기준 반영
 > 슬로건: **“걸어야 산다!”**
 
 ## 0. Executive Summary
@@ -790,7 +790,7 @@ v4.0 마이그레이션 규칙: v3.1의 `8.1~8.8` 순서 참조를 아래 `SCR-*
 | SCR-008-EL-30 | 입력 | "가격·시즌 설명 (공개)" | 관리자 | 편집 패널 열림 시 | DATA-006.season | `maxLength=300` | 저장 시 `lodgings.season` 갱신 |
 | SCR-008-EL-31 | 입력 | "대안 숙소 메모 (공개)" | 관리자 | 편집 패널 열림 시 | DATA-006.alternative | `maxLength=300`, 선택 입력 | 저장 시 `lodgings.alternative` 갱신 |
 | SCR-008-EL-32 | 텍스트영역 | "비고 (공개)" | 관리자 | 편집 패널 열림 시 | DATA-006.notes | `maxLength=1000`, `rows=2`, 선택 입력 | 저장 시 `lodgings.notes` 갱신 |
-| SCR-008-EL-33 | 버튼 | "숙박 정보 저장" · 대기 중 "저장 중…" | 관리자 | 편집 패널 열림 시, `pending`이면 비활성(중복 제출 방지) | 해당 없음 — 행동·안내 요소로 저장 데이터 없음 | `version` 히든 필드로 낙관적 동시성 제어 | `saveLodgingAction` → `saveLodging()`이 서버 재검사(RLS `is_admin()`), `id+version` 일치 조건으로 `UPDATE` |
+| SCR-008-EL-33 | 버튼 | "숙박 정보 저장" · 대기 중 "저장 중…" · 오류 후 "저장 재시도" [qa-fix 2026-10-07] | 관리자 | 편집 패널 열림 시, `pending`이면 비활성(중복 제출 방지) | 해당 없음 — 행동·안내 요소로 저장 데이터 없음 | `version` 히든 필드로 낙관적 동시성 제어 | `saveLodgingAction` → `saveLodging()`이 서버 재검사(RLS `is_admin()`), `id+version` 일치 조건으로 `UPDATE` |
 | SCR-008-EL-34 | 상태 텍스트 | "저장됨 — 새로고침하면 최신 값이 보입니다" / 오류·충돌·권한 메시지 | 관리자 | 저장 액션 완료 후 | DATA-006.version, DATA-006.updated_at | 없음 | 충돌 시 "다른 변경이 먼저 저장되었거나 편집 권한이 없습니다. 새로고침 후 다시 시도하세요." |
 | SCR-008-EL-35 | 표 | 공개 미리보기(Day, 숙박, 공개 상태 배지, 갱신 시각) | 관리자 | 항상 | DATA-008.status, DATA-008.updated_at | 없음 — 읽기 전용 표 | 방문자가 실제로 보는 값과 동일함을 리더가 확인(비공개 필드는 애초에 이 표에 없음) |
 
@@ -799,7 +799,7 @@ v4.0 마이그레이션 규칙: v3.1의 `8.1~8.8` 순서 참조를 아래 `SCR-*
 | 트리거 | 선행 조건 | 처리·데이터 변화 | 성공 결과·다음 화면 | 실패 결과 | 관련 FR·SC |
 |---|---|---|---|---|---|
 | 세션 비관리자 상태로 진입 | `getAdminSession().state !== "admin"` | 서버 컴포넌트에서 `redirect()` 호출 | `/admin?next=/admin/bookings`로 즉시 리다이렉트, 로그인 후 이 화면으로 복귀 | 해당 없음 | FR-021, SC-020 |
-| SCR-008-EL-08 편집 클릭 | 목록 렌더 완료 | `openId` 상태 변경(클라이언트 전용, 서버 요청 없음) | 목록 아래 편집 패널(`#lodging-edit-panel`)에 BookingEditor + LodgingFields 노출, 선택 행 강조 [code-sync 2026-10-07] | 해당 없음 | FR-010 |
+| SCR-008-EL-08 편집 클릭 | 목록 렌더 완료 | `openId` 상태 변경(클라이언트 전용, 서버 요청 없음) | 목록 아래 편집 패널(`#lodging-edit-panel`)에 BookingEditor + LodgingFields 노출, 선택 행 강조 [code-sync 2026-10-07]. 패널이 열리면 패널 상단으로 스크롤(`scroll-mt-20`, `prefers-reduced-motion: reduce`이면 즉시 이동)하고 첫 입력(select·input)에 포커스한다 [qa-fix 2026-10-07] | 해당 없음 | FR-010 |
 | SCR-008-EL-15 저장(예약 상태) | 편집 패널 열림, 폼 값 입력됨 | `saveBookingAction` 실행 → 세션 재검사 → zod 파싱 → `lodgingId+version` 조건 `UPDATE`, 트리거가 `version+1`·`updated_at`·`updated_by` 자동 갱신 | 성공 시 `revalidatePath("/", "layout")`로 공개 화면 재검증, 홈·Day 상세의 `bookings_public` 값도 갱신(SC-004: 5초 내 Realtime 반영, 실패 시 30초 폴링) | 버전 불일치 시 `booking_conflict` warn 로그와 함께 최신 행 재조회 후 conflict 메시지, 세션 만료 시 forbidden/unauthorized 메시지 | FR-010, SC-004, SC-007 |
 | SCR-008-EL-33 저장(숙박 정보) | 편집 패널 열림, 폼 값 입력됨 | `saveLodgingAction` 실행 → 세션 재검사 → zod 파싱 → `id+version` 조건 `UPDATE`, 트리거가 `version+1` 자동 갱신 | 성공 시 `revalidatePath("/", "layout")`, 공개 화면에 숙박 정보 즉시 반영 | 버전 불일치·권한 없음 시 `booking_conflict` warn 로그와 conflict 메시지 | FR-010, SC-004 |
 | 저장되지 않은 변경 중 페이지 이탈 시도 | BookingEditor `dirty === true` | `beforeunload` 이벤트에서 브라우저 기본 확인창 표시, `unsaved_changes` info 로그 | 사용자가 유지 선택 시 이탈 취소 | 사용자가 이탈 선택 시 변경 손실 | Edge Case "저장 중 이탈" |
@@ -1659,7 +1659,7 @@ FR-001~018은 v3.1 문장을 보존하고 `화면·요소`·`데이터`·`관련
 | I-010 | GPX 재생성 절차 | `npm run build:gpx` → `public/gpx`·manifest 갱신 → SC-014 테스트 → 커밋 | FR-018 | 노선 변경 시 |
 | I-011 | 서비스 워커 운영 | 프로덕션 빌드에서만 등록, dev·E2E 분리, 새 SW 제어 시 1회 재로드 | FR-013·SC-006 | 각 release |
 | I-012 | 8/17 장거리 이동 리스크 | 샤모니 08:00 이전 출발, 셔틀 예비 예약, 열차 지연 시 다음 편 | FR-005·SC-015 | 항공권 확정 후 |
-| I-013 | 계정 메뉴와 정적 렌더링 | SCR-018 계정 메뉴는 클라이언트 컴포넌트(`createBrowserClient().auth.getSession()`·`onAuthStateChange`)로 구현하고 레이아웃에서 쿠키를 읽지 않는다(정적 라우트 보존). middleware matcher는 기존 3개 + `/packing`·`/login`·`/signup`·`/day/:path*`만 추가 | FR-029·NFR 성능 | Design |
+| I-013 | 계정 메뉴와 정적 렌더링 | SCR-018 계정 메뉴는 클라이언트 컴포넌트(`createBrowserClient().auth.getSession()`·`onAuthStateChange`)로 구현하고 레이아웃에서 쿠키를 읽지 않는다(정적 라우트 보존). middleware matcher는 기존 3개 + `/packing`·`/login`·`/signup`·`/day/:path*`만 추가. [qa-fix 2026-10-07] 없는 dayId 404 판정(SCR-014)을 위해 `/travel/:path*`를 추가했으며, `/travel/*`은 404 판정만 하고 Supabase 세션 처리 없이 통과한다 | FR-029·NFR 성능 | Design |
 | I-014 | 원격 Supabase 상태 | `.env.local`의 프로젝트(`htqsosafoqcqqzfxceal`)가 Supabase MCP 계정에서 보이지 않음. 구현 시작 시 `supabase login`·`supabase link` 후 `supabase migration list`로 기존 4개 적용 여부 확인, 미적용이면 순서대로 적용. **확인 [2026-10-07]** — `utmb2027`에 link, 수동 적용분 6개를 `migration repair --status applied`로 이력 등록, 20261007000007은 `db push`로 적용. 이후 `db push`로 관리 | FR-022·FR-023·SC-018~020 | 해결 2026-10-07 |
 | I-015 | magic link 콜백 주소 | `emailRedirectTo`는 요청 origin(`headers()`의 host·proto) + `/auth/callback`으로 계산하고 `NEXT_PUBLIC_SITE_URL`은 fallback. 기존 `src/app/admin/actions.ts`·`src/app/journal/actions.ts`도 같은 방식으로 바꿔 Preview에서 localhost로 돌아가지 않게 한다. Supabase Redirect URLs에 `http://localhost:3000/**`, production URL `/**`, Vercel preview 패턴 등록 | FR-026·SCR-007·SCR-012 | 배포 전 |
 | I-016 | Supabase Auth 정책 | 이메일 인증 OFF(Confirm email OFF — 가입 즉시 확인·로그인), 비밀번호 최소 8자, 가입 허용 ON(D-008), Auth Hook(before user created) 활성(D-017 — production 공개 전 필수), 세션 기본값(액세스 토큰 1시간) | FR-019·FR-020·FR-030 | 배포 전 |
@@ -1838,7 +1838,7 @@ itinerary-core(8/16 샤모니 2박째·8/17 공항 직행 3구간)·booking-trac
 | 수정 | `src/lib/safe-next.ts` | 제어문자·백슬래시·origin 검사 강화(I-024), 시그니처 유지 |
 | 수정 | `src/components/journal/TeamLoginForm.tsx` | SCR-012-EL-07 링크 1개 추가 |
 | 수정 | `src/app/admin/actions.ts`, `src/app/journal/actions.ts` | `emailRedirectTo`를 요청 origin 기반으로(I-015), 그 외 동작 유지 |
-| 수정 | `src/middleware.ts` | matcher 4개 추가(`/packing`·`/login`·`/signup`·`/day`), 관리자 세션의 `/day` 응답에만 `x-tmb-user-scoped: 1` 헤더(I-025) |
+| 수정 | `src/middleware.ts` | matcher 4개 추가(`/packing`·`/login`·`/signup`·`/day`), 관리자 세션의 `/day` 응답에만 `x-tmb-user-scoped: 1` 헤더(I-025). [qa-fix 2026-10-07] `/travel/:path*` 추가 및 없는 상세 dayId 404 rewrite(`src/lib/detail-routes.ts` 신규) |
 | 수정 | `src/lib/sw-rules.ts`, `public/sw.js` | `/login`·`/signup` network-only, `x-tmb-user-scoped` 응답 미캐시, `/day/*`·`/packing` 온라인 network-first, 로그인·로그아웃 시 page 캐시 삭제(I-025) |
 | 수정 | `src/components/admin/SignOutButton.tsx` | 제출 전 SW page 캐시·계정 대기열 삭제(I-025), 그 외 동작 유지 |
 | 수정 | `.gitignore`, `.env.example` | 제외 규칙, 변수 이름 목록 |
