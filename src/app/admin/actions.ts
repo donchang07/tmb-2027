@@ -29,3 +29,12 @@ export async function sendMagicLinkAction(_prev: MagicLinkState, formData: FormD
   if (error) return { message: null, error: `로그인 링크 발송 실패: ${error.message}` };
   return generic;
 }
+
+export async function isAdminViewerAction(): Promise<boolean> {
+  const supabase = await createSupabaseServerClient();
+  const adminEmail = getAdminEmail();
+  if (!supabase || !adminEmail) return false;
+  const { data } = await supabase.auth.getUser();
+  const email = data.user?.email?.toLowerCase();
+  return email ? canEdit(email, adminEmail) : false;
+}

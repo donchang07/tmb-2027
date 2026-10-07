@@ -3,9 +3,10 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { isAdminViewerAction } from "@/app/admin/actions";
 import { SignOutButton } from "@/components/admin/SignOutButton";
 import { accountLabel } from "@/lib/auth-rules";
-import { dismissExpired, getAuthClient, useAuthUser } from "@/lib/auth-client";
+import { dismissExpired, useAuthUser } from "@/lib/auth-client";
 
 // Design Ref: §5.3.2 — SCR-018 NAV-012 계정 메뉴(EL-01~05)
 
@@ -71,7 +72,7 @@ export function AccountMenu() {
 
 function UserMenu({ email }: { email: string }) {
   const [open, setOpen] = useState(false);
-  const [isLeader, setIsLeader] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
   const roleChecked = useRef(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -100,13 +101,10 @@ function UserMenu({ email }: { email: string }) {
   const checkRole = async () => {
     if (roleChecked.current) return;
     roleChecked.current = true;
-    const client = getAuthClient();
-    if (!client) return;
     try {
-      const { data, error } = await client.from("team_members").select("role").eq("email", email.toLowerCase()).maybeSingle();
-      if (!error && data && (data as { role?: unknown }).role === "leader") setIsLeader(true);
+      setIsAdmin(await isAdminViewerAction());
     } catch {
-      setIsLeader(false);
+      setIsAdmin(false);
     }
   };
 
@@ -142,7 +140,7 @@ function UserMenu({ email }: { email: string }) {
           <p role="presentation" className="break-all border-b border-bone p-3 text-sm font-bold text-forest-900 sm:px-3.5 sm:text-[15px]">
             {email}
           </p>
-          {isLeader ? (
+          {isAdmin ? (
             <Link href="/admin" role="menuitem" onClick={() => setOpen(false)} className="tap ix-row flex items-center whitespace-nowrap rounded-[9px] px-3 py-3.5 text-[15px] font-semibold text-forest-900 sm:px-3.5">
               관리자 화면
             </Link>
