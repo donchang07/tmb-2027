@@ -6,11 +6,11 @@
 > feature: product
 > 정본: docs/PRD.md · 정본 개정: v4.1, 2026-10-07
 > 작성일: 2026-09-09 · 최종 수정일: 2026-10-07
-> 개정 이력: v1 최초 통합 2026-09-09 · v2 bkit 실행 계약·추적성·시스템 가정·gate 추가 2026-09-16 · v2.0 정밀 검토(Major 17·Minor 24) 반영 2026-09-16 · v3.0 구현 반영(9 feature PDCA 95% 게이트 통과)·산길 경로·GPX·SW 운영 정책·보안 grant·8/16 에귀 뒤 미디 추가 2026-09-18 · v3.1 마지막 일정 재구성(D-007)·에귀 뒤 미디 실측·준비물 카테고리 보정 2026-09-18 · **v4.0 screen-first-v1 마이그레이션(기존 8장 화면 → SCR-001~014, 부록 A → DATA-001~016, FR-001~018·SC-001~015 ID 보존) + 멀티유저 인증·사용자별 데이터(RLS)·GitHub 소스 관리·Vercel production 배포 델타(SCR-015~018, FR-019~030, SC-016~024, DATA-017~019, feature `multiuser-cloud-deployment`) 2026-09-23** · v4.0 작성자 결정 반영(D-008·D-009·D-010·D-012·D-013·D-014·D-015·D-016·D-017·D-018 Closed, 이메일 인증 OFF·공개 저장소) 2026-09-23 · v4.1 코드 동기화(ui-redesign-forest 반영 누락·화면 요소·데이터 계약·테스트 계약 정합화, 결정 필요 19건은 18장) 2026-10-07 · v4.1 후속 qa-fix 반영(상세 라우트 404·관리자 저장 네트워크 오류·숙박 편집 패널 스크롤/포커스·원격 마이그레이션 7개 확인) 2026-10-07
+> 개정 이력: v1 최초 통합 2026-09-09 · v2 bkit 실행 계약·추적성·시스템 가정·gate 추가 2026-09-16 · v2.0 정밀 검토(Major 17·Minor 24) 반영 2026-09-16 · v3.0 구현 반영(9 feature PDCA 95% 게이트 통과)·산길 경로·GPX·SW 운영 정책·보안 grant·8/16 에귀 뒤 미디 추가 2026-09-18 · v3.1 마지막 일정 재구성(D-007)·에귀 뒤 미디 실측·준비물 카테고리 보정 2026-09-18 · **v4.0 screen-first-v1 마이그레이션(기존 8장 화면 → SCR-001~014, 부록 A → DATA-001~016, FR-001~018·SC-001~015 ID 보존) + 멀티유저 인증·사용자별 데이터(RLS)·GitHub 소스 관리·Vercel production 배포 델타(SCR-015~018, FR-019~030, SC-016~024, DATA-017~019, feature `multiuser-cloud-deployment`) 2026-09-23** · v4.0 작성자 결정 반영(D-008·D-009·D-010·D-012·D-013·D-014·D-015·D-016·D-017·D-018 Closed, 이메일 인증 OFF·공개 저장소) 2026-09-23 · v4.1 코드 동기화(ui-redesign-forest 반영 누락·화면 요소·데이터 계약·테스트 계약 정합화, 결정 필요 19건은 18장) 2026-10-07 · v4.1 후속 qa-fix 반영(상세 라우트 404·관리자 저장 네트워크 오류·숙박 편집 패널 스크롤/포커스·원격 마이그레이션 7개 확인) 2026-10-07 · v4.1 production QA 결과 반영(앱 아이콘·SC-024 검증·QA 스위트 추적·관찰 사항, 18.6) 2026-10-07
 > 입력: v3.1 `docs/PRD.md`(Google Drive `tmb2027-v3.1.md` 사본), 2026-09-23 멀티유저·클라우드 배포 브리프(사용자 대화), 구현 저장소 코드 읽기(`src/app`·`src/components`·`src/lib`·`src/middleware.ts`·`supabase/migrations`·`.gitignore`·`.env.example`·`bkit.config.json`), bkit v2.1.39 설치본, Supabase 공식 문서(기본 SMTP 제한, 2026-09-23 조회), 2026-09-23 작성자 결정(D-008~D-018, 사용자 대화)
 > bkit 계약: 설치본 v2.1.39(2026-09-23 확인) · 로컬 `bkit.config.json` 우선: `matchRateThreshold` 95 · `maxIterations` 5 · `autoIterate` true · `requireDesignDoc` true · `pdca.docPaths.pm` = `docs/00-pm/FEATURE.prd.md`
 > 게이트: 98점 · 착수 가능 · Blocker 0 · Major 0 · Minor 2(c1·c2, 게이트 직후 반영) → docs/00-pm/_product.gate.md
-> 라벨: [확정·출처] · [조사·기준일] · [추정] · [가설] · [확정 2026-09-16] · [확정 2026-09-18] = 작성자 결정 · [구현 2026-09-17] = 구현 완료분 반영 · [기본값 2026-09-23] = 이번 개정에서 안전한 기본값으로 채택(2026-09-23 작성자가 13.1 fallback을 수락해 확정, D-011만 Open) · [확정 2026-09-23] = 13.1 작성자 결정 · [code-sync 2026-10-07] = 코드 기준 동기화 · [qa-fix 2026-10-07] = QA 수정 후 코드 기준 반영
+> 라벨: [확정·출처] · [조사·기준일] · [추정] · [가설] · [확정 2026-09-16] · [확정 2026-09-18] = 작성자 결정 · [구현 2026-09-17] = 구현 완료분 반영 · [기본값 2026-09-23] = 이번 개정에서 안전한 기본값으로 채택(2026-09-23 작성자가 13.1 fallback을 수락해 확정, D-011만 Open) · [확정 2026-09-23] = 13.1 작성자 결정 · [code-sync 2026-10-07] = 코드 기준 동기화 · [qa-fix 2026-10-07] = QA 수정 후 코드 기준 반영 · [qa 2026-10-07] = production QA 실행 결과 반영(`qa/test-report.md`)
 > 슬로건: **“걸어야 산다!”**
 
 ## 0. Executive Summary
@@ -239,7 +239,7 @@ v4.0 마이그레이션 규칙: v3.1의 `8.1~8.8` 순서 참조를 아래 `SCR-*
 
 - **인증 사용:** 예
 - **인증 방식:** Supabase Auth. (1) **이메일·비밀번호**(v4.0 신규, 모든 사용자, 이메일 인증 OFF — 가입 즉시 확인된 계정이 생성되고 로그인된다. 확인 메일 없음. `team_members` 이메일의 신규 가입은 Auth Hook(before user created)이 거부, D-008·D-017 확정 2026-09-23) · (2) **magic link**(기존 유지: 리더 SCR-007, 팀원 SCR-012 — 메일 발송은 D-011 조건을 따르고, 메일을 받을 수 없는 리더·팀원은 SCR-015 이메일·비밀번호 로그인을 쓴다). 두 방식은 같은 `auth.users` 이메일 계정을 공유한다. 세션은 `@supabase/ssr` 쿠키(서버 액션·Route Handler·middleware에서 갱신)로 유지한다. 서버 권한 판정은 `auth.getUser()`와 RLS(`auth.uid()`, `is_admin()`, `is_team_member()`)로만 하고 클라이언트 표시값을 신뢰하지 않는다.
-- **세션·로그아웃:** 액세스 토큰 1시간(Supabase 기본)·리프레시 토큰으로 자동 갱신, 브라우저를 닫았다 열어도 쿠키가 남아 있으면 로그인 유지. 로그아웃은 SCR-018-EL-04 → `/auth/signout`(POST) → SCR-001. 갱신 실패·리프레시 토큰 무효화 시 "만료"로 판정해 보호 데이터 표시를 멈추고 SCR-018-EL-05를 띄운다. middleware 세션 갱신 범위를 `/packing`·`/login`·`/signup`·`/day`까지 넓힌다. middleware matcher는 `/admin`·`/api/admin`·`/journal`·`/packing`·`/login`·`/signup`·`/day`이며, 관리자 계정의 `/day/*` 응답에는 `x-tmb-user-scoped` 헤더를 붙여 서비스 워커가 사용자별 HTML을 캐시하지 않게 한다. [code-sync 2026-10-07] **v4.0 변경은 기존 라우트의 렌더링 방식을 바꾸지 않는다** — 기준은 v3.1 `next build` 라우트 표(현재 `/`·`/itinerary`·`/day/[dayId]`·`/travel/[dayId]`·`/budget`은 이미 동적(ƒ), `/map`·`/packing`·`/offline` 등은 정적(○)). D-018 ②(확정 2026-09-23)로 `/packing`은 정적(○)을 유지하고 계정 체크는 브라우저에서 조회하므로 라우트 표 diff는 0건이다.
+- **세션·로그아웃:** 액세스 토큰 1시간(Supabase 기본)·리프레시 토큰으로 자동 갱신, 브라우저를 닫았다 열어도 쿠키가 남아 있으면 로그인 유지. 로그아웃은 SCR-018-EL-04 → `/auth/signout`(POST) → SCR-001. 로그아웃은 `supabase.auth.signOut()` 기본 범위(global)라 같은 계정으로 로그인한 다른 브라우저·기기의 세션도 함께 끝난다 [qa 2026-10-07]. 갱신 실패·리프레시 토큰 무효화 시 "만료"로 판정해 보호 데이터 표시를 멈추고 SCR-018-EL-05를 띄운다. middleware 세션 갱신 범위를 `/packing`·`/login`·`/signup`·`/day`까지 넓힌다. middleware matcher는 `/admin`·`/api/admin`·`/journal`·`/packing`·`/login`·`/signup`·`/day`·`/travel`(없는 dayId 404 판정 전용 [qa-fix 2026-10-07])이며, 관리자 계정의 `/day/*` 응답에는 `x-tmb-user-scoped` 헤더를 붙여 서비스 워커가 사용자별 HTML을 캐시하지 않게 한다. [code-sync 2026-10-07] **v4.0 변경은 기존 라우트의 렌더링 방식을 바꾸지 않는다** — 기준은 v3.1 `next build` 라우트 표(현재 `/`·`/itinerary`·`/day/[dayId]`·`/travel/[dayId]`·`/budget`은 이미 동적(ƒ), `/map`·`/packing`·`/offline` 등은 정적(○)). D-018 ②(확정 2026-09-23)로 `/packing`은 정적(○)을 유지하고 계정 체크는 브라우저에서 조회하므로 라우트 표 diff는 0건이다.
 
 | 상황 | 화면 ID | 진입 조건 | 성공 결과·복귀 | 실패·만료·권한 없음 |
 |---|---|---|---|---|
@@ -1003,7 +1003,7 @@ v4.0 마이그레이션 규칙: v3.1의 `8.1~8.8` 순서 참조를 아래 `SCR-*
 | SCR-011-EL-13 | 파일 입력 | "사진 1장 (선택 · JPG·PNG·WebP 10MB 이하)" | 팀원 | 표시명 있음, 아직 작성 안 함 | DATA-015.image_url(업로드 전 파일) | `accept="image/jpeg,image/png,image/webp"`, 선택 시 즉시 클라이언트 검증(형식·용량), 실패 시 "JPG·PNG·WebP 10MB 이하만 가능합니다 — 파일을 다시 선택해 주세요." | 유효하지 않으면 저장 버튼 비활성화, 서버에서도 매직 바이트 검사로 재검증 |
 | SCR-011-EL-14 | 상태 텍스트 | 클라이언트 사진 검증 오류 문구 | 팀원 | 파일 선택 후 형식·용량 오류 시 | 해당 없음 — 행동·안내 요소로 저장 데이터 없음 | 없음 | 저장 버튼(EL-15) 비활성화 |
 | SCR-011-EL-15 | 버튼 | "저장" · 대기 중 "저장 중…" | 팀원 | 표시명 있음, 아직 작성 안 함, 사진 오류 없음, `pending`이면 비활성(중복 제출 방지) | 해당 없음 — 행동·안내 요소로 저장 데이터 없음 | 폼 제출(`multipart/form-data`) | `createEntryAction` → `createEntry()`가 세션·표시명·zod·사진 매직바이트를 서버에서 재검사 후 Storage 업로드 + `journal_entries` insert |
-| SCR-011-EL-16 | 상태 텍스트 | "기록이 저장되었습니다." / 실패 사유별 오류 문구(표시명 필요·중복·형식 오류·업로드 실패·권한 없음) | 팀원 | 액션 완료 후 | 해당 없음 — 행동·안내 요소로 저장 데이터 없음 | 없음 | 성공 시 폼 초기화(`formKey` 증가)·글자수 리셋, `revalidatePath(/journal/[dayId])`로 타임라인 갱신 |
+| SCR-011-EL-16 | 상태 텍스트 | "기록이 저장되었습니다." / 실패 사유별 오류 문구(표시명 필요·중복·형식 오류·업로드 실패·권한 없음) | 팀원 | 액션 완료 후 | 해당 없음 — 행동·안내 요소로 저장 데이터 없음 | 없음 | 성공 시 폼 초기화(`formKey` 증가)·글자수 리셋, `revalidatePath(/journal/[dayId])`로 타임라인 갱신. [qa 2026-10-07] 저장 성공 후 같은 Day에 기록이 생기면 EL-11 안내로 바뀌며 작성 폼이 사라져 성공 문구는 화면에 남지 않는다(SYNC-20) |
 | SCR-011-EL-17 | 리스트 | 팀 타임라인(작성순 최신순: 사진, 기록 텍스트, "[작성자 표시명] · [작성 시각]") 또는 "아직 기록이 없습니다." | 비로그인, 일반 사용자, 팀원, 관리자 | 항상, 엔트리 0건이면 안내 문구만 | DATA-015.image_url, DATA-015.text, DATA-015.author_label, DATA-015.created_at | 없음 — 읽기 전용, 익명 조회는 `id, day_id, author_label, text, image_path, created_at` 컬럼만 노출(author_id 비노출) | 사진 클릭 등 별도 인터랙션 없음(정적 표시) |
 
 ##### 상호작용·전이
@@ -1516,7 +1516,7 @@ FR-001~018은 v3.1 문장을 보존하고 `화면·요소`·`데이터`·`관련
 | SC-021 | 로그인 상태에서 SCR-009를 새로고침하거나 브라우저를 다시 열면 로그인 상태와 계정 체크가 그대로 복원되고, 세션이 만료되면 SCR-015 `reason=expired`를 거쳐 원래 화면으로 돌아온다. | FR-020 · FR-021 · FR-024 | SCR-009 · SCR-015 · SCR-018 | E2E(reload·storageState 재사용·쿠키 삭제로 만료 시뮬레이션) | 예 | [가설] |
 | SC-022 | v4.0 적용 후 localhost에서 `npm run typecheck` 0 오류, `npm test` 전체 통과(v3.1 기준 124건 이상), `npx playwright test --workers=1` 전체 통과(v3.1 기준 108건 이상)이며 17장 회귀 목록의 기존 동작이 모두 유지된다. | FR-027 | SCR-001 · SCR-003 · SCR-009 · SCR-011 | 테스트 실행 로그 | 예 | [확정·출처] 16.1·16.3 결과 수치 |
 | SC-023 | GitHub 저장소의 모든 커밋에 `.env.local` 등 비밀값 파일과 비밀값 패턴이 0건이고 `.env.example`의 값은 비어 있다. | FR-025 · FR-028 | SCR-018 | 비밀값 스캔 테스트, `git log --all -p` 패턴 검색, GitHub 저장소 파일 목록 | 예 | [가설] |
-| SC-024 | Vercel production 배포가 `main` 커밋으로 빌드 성공(Ready) 상태이고 production URL에서 SCR-001·SCR-006·SCR-009·SCR-015가 200으로 열리며 브라우저 콘솔 오류가 0건이다. [미구현 2026-10-07: production 스모크 E2E·200·콘솔 오류 0건 테스트 없음, 17장 수동 체크리스트(11.5 #6)로만 확인] | FR-026 | SCR-001 · SCR-006 · SCR-009 · SCR-015 | Vercel 배포 상태 + production 스모크 E2E | 아니오 — Vercel 연결 후(D-012·D-014는 2026-09-23 확정) | [가설] |
+| SC-024 | Vercel production 배포가 `main` 커밋으로 빌드 성공(Ready) 상태이고 production URL에서 SCR-001·SCR-006·SCR-009·SCR-015가 200으로 열리며 브라우저 콘솔 오류가 0건이다. [qa 2026-10-07] 검증: production QA 스위트(`playwright.qa.config.ts`)의 TC-P1-55(4개 화면 200·콘솔 오류 0건)와 P0 5건의 콘솔·실패 요청 0건 단언이 통과. 첫 실행에서 favicon 부재로 `/favicon.ico` 404 콘솔 오류가 나와 `src/app/icon.png`를 추가했다(커밋 fa19ded) | FR-026 | SCR-001 · SCR-006 · SCR-009 · SCR-015 | Vercel 배포 상태 + production 스모크 E2E | 예 [qa 2026-10-07] | [확정·출처] `qa/test-report.md` |
 
 ## 8. Edge Cases
 
@@ -1861,7 +1861,7 @@ itinerary-core(8/16 샤모니 2박째·8/17 공항 직행 3구간)·booking-trac
 | 반응형·접근성 | 전체 | `tests/e2e/responsive.spec.ts`(axe) | 360/768/1440 가로 스크롤 0, 44px |
 | 알림 | 공통 | `notify.test.ts` | security 메일 |
 | 전체 | 전체 | `npm run typecheck`·`npm test`·`npx playwright test --workers=1`·`npm run build` | 0 오류·전체 통과·라우트 표(○/ƒ) 변경 전후 동일 |
-| 라우트 렌더링 기준표 | 전체 | `next build` 출력 | ○ 정적: `/map`·`/packing`·`/offline`·`/manifest.webmanifest`·`/_not-found` · ƒ 동적: `/`·`/itinerary`·`/budget`·`/day/[dayId]`·`/travel/[dayId]`·`/journal*`·`/admin*`·`/login`·`/signup`·`/auth/*`·`/api/*` [code-sync 2026-10-07] |
+| 라우트 렌더링 기준표 | 전체 | `next build` 출력 | ○ 정적: `/map`·`/packing`·`/offline`·`/manifest.webmanifest`·`/icon.png` [qa 2026-10-07]·`/_not-found` · ƒ 동적: `/`·`/itinerary`·`/budget`·`/day/[dayId]`·`/travel/[dayId]`·`/journal*`·`/admin*`·`/login`·`/signup`·`/auth/*`·`/api/*` [code-sync 2026-10-07] |
 
 ## 18. v4.1 코드 동기화 [2026-10-07]
 
@@ -1912,15 +1912,16 @@ itinerary-core(8/16 샤모니 2박째·8/17 공항 직행 3구간)·booking-trac
 | SYNC-17 | PRD 경로 표기 | 15장·I-023: `docs/00-pm/FEATURE.prd.md` | `bkit.config.json`: `{feature}` 표기 | `FEATURE`를 `{feature}`로 통일 | 통일(의미 동일) |
 | SYNC-18 | SC-014 다운로드 E2E 범위 | "gpx 단위 테스트 + 다운로드 E2E" | `tests/e2e/day-detail.spec.ts:46-50` Day 7 1건만, 12개 파일은 `gpx.test.ts` | PRD에 "다운로드 E2E(Day 7 대표)" 명시 | 명시 |
 | SYNC-19 | SC-017~021 E2E 실행 조건 | SC-020 "로그아웃 후 Cache Storage 검사 E2E" 등 | `tests/e2e/multiuser.spec.ts:47,129`, `auth.spec.ts:173` `E2E_USER_*` 변수가 없으면 skip | 측정 방법에 "(계정 변수 필요, 없으면 skip)" 추가 | 추가 |
+| SYNC-20 | 기록 저장 성공 문구 노출 [qa 2026-10-07] | SCR-011-EL-16: 저장 성공 시 "기록이 저장되었습니다." 표시 | `src/app/journal/actions.ts:51`이 문구를 반환하지만 저장 후 `hasEntry`가 참이 되어 `src/app/journal/[dayId]/page.tsx:58` "이미 기록을 남겼습니다" 안내로 바뀌고 폼(문구 포함)이 사라짐 | ① PRD를 "성공 시 EL-11 안내와 타임라인 새 기록으로 확인"으로 수정 ② 코드에서 성공 문구를 폼 밖(예: EL-11 위)에 일시 표시 | ① — 저장 결과는 타임라인과 EL-11로 충분히 확인됨 |
 
 ### 18.4 미구현 목록
 
 | 요구사항 | 위치 | 코드 현황 |
 |---|---|---|
-| production 스모크 E2E(200·콘솔 오류 0건) | SC-024, FR-026 검증 방법 | 테스트 없음. `playwright.config.ts:13-19`는 `PLAYWRIGHT_BASE_URL`이 있어도 항상 localhost webServer를 기동. 11.5 #6 수동 체크리스트로만 확인 |
+| ~~production 스모크 E2E(200·콘솔 오류 0건)~~ | SC-024, FR-026 검증 방법 | 해결 [qa 2026-10-07]: `playwright.qa.config.ts`(webServer 없음, 기본 `https://utmb2027.vercel.app`) + `tests/e2e/qa-*.spec.ts` |
 | Lighthouse CI(production URL) | 6장 성능 NFR | 설정·스크립트·의존성 없음 |
-| 5초 내 실시간 반영 E2E | SC-004 측정 방법 | `booking-live.test.ts`·`bookings.test.ts` 단위 테스트와 `security.spec.ts:13` 공개 API 필드 snapshot만 있음 |
-| 기록 업로드 E2E(형식·용량) | SC-012 측정 방법 | `journal.test.ts` 단위 테스트(15건)와 `security.spec.ts:34,40,48` 비로그인 열람·쓰기 폼 없음 E2E만 있음 |
+| ~~5초 내 실시간 반영 E2E~~ | SC-004 측정 방법 | 해결 [qa 2026-10-07]: `tests/e2e/qa-p0.spec.ts` TC-P0-04가 관리자 저장 → 방문자 Day 상세 반영 시간을 측정(1차 2.8~3.2초) |
+| ~~기록 업로드 E2E(형식·용량)~~ | SC-012 측정 방법 | 해결 [qa 2026-10-07]: `tests/e2e/qa-p1.spec.ts` TC-P1-30(201자 거부·사진 형식/용량 오류·200자 저장·1일 1건) |
 | 고도점 0~4,810 m 범위 검증 | DATA-003 | 범위 검증 코드 없음(`altitudeM`은 nullable number), `seed.test.ts:171-172`는 Day당 3점 이상만 검증 |
 | 숙박 좌표 범위·https 강제·국제 전화 형식 검증 | DATA-006 | `LodgingInputSchema`에 `lat`·`lng` 입력 없음(seed 전용), URL은 형식·500자, 전화는 30자 이하만 검증 |
 
@@ -1933,7 +1934,7 @@ itinerary-core(8/16 샤모니 2박째·8/17 공항 직행 3구간)·booking-trac
 | SC-001 | `tests/e2e/day-detail.spec.ts:9` home today card reaches a lodging contact in two taps | OK |
 | SC-002 | `tests/unit/seed.test.ts:84` every trek day has the 8 required fields | OK |
 | SC-003 | `tests/unit/budget.test.ts`(8건), `tests/e2e/responsive.spec.ts:35` budget table | OK |
-| SC-004 | `tests/unit/booking-live.test.ts`, `bookings.test.ts:180`(미러 테이블), `security.spec.ts:13`(공개 API 필드) | 5초 반영 E2E 없음 |
+| SC-004 | `tests/unit/booking-live.test.ts`, `bookings.test.ts:180`(미러 테이블), `security.spec.ts:13`(공개 API 필드), `qa-p0.spec.ts` TC-P0-04 [qa 2026-10-07] | OK |
 | SC-005 | `tests/e2e/responsive.spec.ts:7`(가로 스크롤·44px·axe), `tests/e2e/auth.spec.ts:125`(SCR-015·016·018 포함) | OK |
 | SC-006 | `tests/e2e/offline.spec.ts:3,27` | OK |
 | SC-007 | `tests/e2e/security.spec.ts:3`(admin API 401/403, 공개 API 필드), `bookings.test.ts` | OK |
@@ -1942,11 +1943,11 @@ itinerary-core(8/16 샤모니 2박째·8/17 공항 직행 3구간)·booking-trac
 | SC-009b | `tests/unit/route.test.ts`(12구간·마커) | OK |
 | SC-010 | `tests/unit/map-url.test.ts:44`, `seed.test.ts:69,175` | OK |
 | SC-011 | `tests/e2e/packing.spec.ts:3`, `tests/unit/packing-store.test.ts:42` | OK |
-| SC-012 | `tests/unit/journal.test.ts:7`, `security.spec.ts:34,40,48` | 업로드 E2E 없음(단위로 대체) |
+| SC-012 | `tests/unit/journal.test.ts:7`, `security.spec.ts:34,40,48`, `qa-p1.spec.ts` TC-P1-30 [qa 2026-10-07] | OK |
 | SC-013 | `tests/unit/seed.test.ts:96`, `tests/e2e/day-detail.spec.ts:59` | OK |
 | SC-014 | `tests/unit/gpx.test.ts:11,30,42`, `tests/e2e/day-detail.spec.ts:46-50` | OK |
 | SC-015 | `tests/unit/seed.test.ts:130,151`, `tests/e2e/responsive.spec.ts:66,77`, `budget.test.ts` | OK |
-| SC-016 | `tests/e2e/auth.spec.ts:178` signup logs in immediately(+중복 가입 문구) | `E2E_USER_A_*` 없으면 skip. production URL 실행 경로 없음 |
+| SC-016 | `tests/e2e/auth.spec.ts:178` signup logs in immediately(+중복 가입 문구), `qa-p1.spec.ts` TC-P1-04 [qa 2026-10-07] | `E2E_USER_A_*` 없으면 skip. production URL은 QA 스위트로 실행 [qa 2026-10-07] |
 | SC-017 | `tests/e2e/multiuser.spec.ts:66,109` | 계정 변수 없으면 skip |
 | SC-018 | `tests/e2e/multiuser.spec.ts:66`, `tests/unit/packing-sync.test.ts:55`, `migrations-v4.test.ts:12` | 계정 변수 없으면 E2E skip |
 | SC-019 | `tests/e2e/multiuser.spec.ts:88`(RLS 직접 호출) | 계정 변수 없으면 skip |
@@ -1954,7 +1955,16 @@ itinerary-core(8/16 샤모니 2박째·8/17 공항 직행 3구간)·booking-trac
 | SC-021 | `tests/e2e/auth.spec.ts:262`, `multiuser.spec.ts:109` | 계정 변수 없으면 skip |
 | SC-022 | 전체 스위트(vitest 175, playwright 177 목록) | 전체 실행 시 secrets 1건 간헐 실패 관찰 |
 | SC-023 | `tests/unit/secrets.test.ts:92`(스캔·`.env.example`·check-ignore) | `git log --all -p` 검색·GitHub 파일 목록은 수동 |
-| SC-024 | NONE | production 스모크 E2E 없음 [미구현 2026-10-07] |
+| SC-024 | `qa-p1.spec.ts` TC-P1-55, `qa-p0.spec.ts` P0 5건(콘솔·실패 요청 0건 단언, `qa-support/fixtures.ts:95`) [qa 2026-10-07] | OK(production) |
+
+### 18.6 production QA 결과 [qa 2026-10-07]
+
+- 대상·기준: `https://utmb2027.vercel.app`, 이 PRD v4.1. 코드 `playwright.qa.config.ts`, `tests/e2e/qa-p0.spec.ts`·`qa-p1.spec.ts`·`qa-explore.spec.ts`(+`qa-support/`), 문서 `qa/test-plan.md`·`qa/test-cases.md`·`qa/test-report.md`.
+- 규모: 71케이스 × mobile-360·desktop-1440 = 142회, workers 1, headed. 운영 데이터는 실행 전 기준선 캡처 → 종료 시 복원, TC-EX-99로 정리 검증.
+- 최종 결과: 통과 140 · 실패 0 · 차단 2(TC-P1-08 = SYNC-01 콜백 성공 경로, 이메일 발송 필요). P0 5건(로그인·역할별 권한·준비물 사용자별 저장/격리·관리자 저장/공개 반영·핵심 조회) 모두 통과 → 판정 READY.
+- QA로 발견해 수정한 결함: 관리자 저장 네트워크 실패 시 화면 붕괴(SCR-008 시스템 오류, e9533aa), 없는 상세 dayId의 HTTP 200(SCR-014, e300af7), favicon 404 콘솔 오류(SC-024, fa19ded).
+- 관찰 사항(PRD 반영): 같은 계정 로그아웃의 전역 범위(5.4 세션·로그아웃), 기록 저장 성공 문구 비노출(SYNC-20). 기존 결정 대기 항목과 겹치는 관찰은 I-027(12박 카피)·SYNC-03(Day 2 고도 편차)에 이미 있다.
+- 미검증: 실제 이메일 magic link 로그인 성공 경로, Lighthouse 성능, Vercel Preview 환경.
 
 ## 부록 A. 데이터 계약
 
