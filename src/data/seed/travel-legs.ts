@@ -23,8 +23,8 @@ export const travelLegs: TravelLeg[] = [
     bookingUrl: "https://www.koreanair.com",
     fallback: "항공 지연 시 SBB 후속 열차(매시 :08/:15/:48) 이용. 최종 열차 놓치면 취리히 1박 후 익일 아침 이동.",
     checkedAt: CHECKED,
-    verificationStatus: "needs_check",
-    notes: "브리프 기준, 확인 필요 — 항공권 예약 여부 확인 후 확정. 입국·수하물 약 60~75분.",
+    verificationStatus: "confirmed",
+    notes: "KE ICN 11:05 → ZRH 17:25 (확정). 입국·수하물 약 60~75분.",
   },
   {
     id: "leg-0803-2",

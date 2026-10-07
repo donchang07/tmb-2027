@@ -72,13 +72,13 @@ describe("seed validation (FR-001, FR-002, FR-005, FR-008, FR-017 / SC-002, SC-0
     }
   });
 
-  it("both flight legs are needs_check with the brief-based note (FR-005, 부록 B)", () => {
+  it("8/3 outbound flight is confirmed and 8/17 return flight stays needs_check (FR-005, 부록 B, SYNC-05)", () => {
     const flights = [...getTravelLegs("d2027-08-03"), ...getTravelLegs("d2027-08-17")].filter((l) => l.mode === "flight");
     expect(flights.map((l) => l.id)).toEqual(["leg-0803-1", "leg-0817-2"]);
-    for (const leg of flights) {
-      expect(leg.verificationStatus, leg.id).toBe("needs_check");
-      expect(leg.notes ?? "").toContain("브리프 기준, 확인 필요");
-    }
+    expect(flights[0]?.verificationStatus).toBe("confirmed");
+    expect(flights[0]?.notes ?? "").toContain("(확정)");
+    expect(flights[1]?.verificationStatus).toBe("needs_check");
+    expect(flights[1]?.notes ?? "").toContain("브리프 기준, 확인 필요");
   });
 
   it("every trek day has the 8 required fields or explicit needs-check contact (FR-002, SC-002)", () => {
