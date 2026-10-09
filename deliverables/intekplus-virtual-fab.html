@@ -231,13 +231,14 @@ html{scroll-behavior:smooth}
       <li><a href="#structure"><b>02</b>전체 구조</a></li>
       <li><a href="#prd"><b>03</b>① PRD</a></li>
       <li><a href="#platform"><b>04</b>② 플랫폼</a></li>
-      <li><a href="#simulator"><b>05</b>③ 시뮬레이터</a></li>
-      <li><a href="#flow"><b>06</b>업그레이드 흐름</a></li>
-      <li><a href="#deploy"><b>07</b>④ 배포·전환</a></li>
-      <li><a href="#security"><b>08</b>보안</a></li>
-      <li><a href="#rules"><b>09</b>운영 원칙</a></li>
-      <li><a href="#roadmap"><b>10</b>추진</a></li>
-      <li><a href="#limits"><b>11</b>한계</a></li>
+      <li><a href="#equipment"><b>05</b>장비·데이터</a></li>
+      <li><a href="#simulator"><b>06</b>③ 시뮬레이터</a></li>
+      <li><a href="#flow"><b>07</b>업그레이드 흐름</a></li>
+      <li><a href="#deploy"><b>08</b>④ 배포·전환</a></li>
+      <li><a href="#security"><b>09</b>보안</a></li>
+      <li><a href="#rules"><b>10</b>운영 원칙</a></li>
+      <li><a href="#roadmap"><b>11</b>추진</a></li>
+      <li><a href="#limits"><b>12</b>한계</a></li>
     </ol>
   </div>
 </nav>
@@ -526,10 +527,101 @@ html{scroll-behavior:smooth}
     </div>
   </section>
 
+  <section id="equipment">
+    <div class="wrap">
+      <div class="sec-label">05 · 장비와 데이터 전략</div>
+      <h2>가상 팹을 만들기 위한 장비 이해와 데이터 전략</h2>
+      <div class="body">
+        <p>가상 팹은 장비가 무엇을 측정하고 무엇과 통신하는지를 그대로 흉내 내야 하므로, 출발점은 인텍플러스 장비 자체입니다. 아래는 인텍플러스 홈페이지의 연혁·제품 공식 사양(2026-10-09 확인)과 언론 보도를 바탕으로 정리한 장비의 흐름, 현재 라인업, 그리고 가상 팹에 <strong>필요한 데이터</strong>와 가상 팹이 <strong>새로 만드는 데이터</strong>입니다.</p>
+      </div>
+
+      <h3 class="sub">과거부터 현재까지: 장비는 바뀌고 공통 기술은 이어졌다</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>시기</th><th>대표 장비·사건</th><th>의미</th></tr></thead>
+          <tbody>
+            <tr><td>1995~1999</td><td>(주)인텍엔지니어링 설립, 국내 최초 비접촉 모아레 3차원 스캐너(1997), 광학식 치수·형상·표면조도 측정기</td><td>출발은 3D 측정 기술</td></tr>
+            <tr><td>2000~2008</td><td>반도체칩 외관검사 iPIS-200(2003), 메모리모듈 iMAS-2000(2006), Flip-Chip 기판 iSIS-FC CSP(2008)</td><td>반도체 외관검사로 전환. 현재 주력 iPIS·iSIS 계열의 시작</td></tr>
+            <tr><td>2009~2014</td><td>LED·태양광 검사, 고속 프레임그래버 iGrab-X(2012), LCD 3D 리뷰 모듈, 코스닥 상장(2011)</td><td>사업 다각화, 영상 획득까지 내재화</td></tr>
+            <tr><td>2015~2018</td><td>FC-BGA 기판 iSIS-NBGA(2016), OLED 모듈 검사, 북미 비메모리 고객용 iPIS-500(2018), 2차전지 모듈</td><td>글로벌 반도체 고객 진입, 4개 사업부 체제</td></tr>
+            <tr><td>2019~현재</td><td>iPIS-580HX/340HX, Tape &amp; Reel 일체형 iPIS-560TR, iSIS-QPM/NTV, 면품질 검사기 iSQS-100, CoWoS·유리기판·웨이퍼 범프 검사 준비(언론 보도)</td><td>현재 주력 라인업 완성, 차세대 패키징 대응</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout">
+        <p><strong>30년 동안 이어진 공통 기술: 3D 측정 · 2D 비전 · 핸들러 · 영상 획득.</strong> 이 공통 기술이 범용 플랫폼의 공통 코어가 됩니다. 또 측정·광학·영상 획득을 직접 만든 회사이므로, 가상 팹에서 가장 어려운 HAL과 가상 장치를 외부에 의존하지 않고 내부에서 만들 수 있습니다.</p>
+      </div>
+
+      <h3 class="sub">현재 라인업과 가상 팹 대상</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>사업</th><th>대표 모델</th><th>특징 (공식 사양)</th><th>주요 검사 항목</th><th>가상 팹</th></tr></thead>
+          <tbody>
+            <tr><td>반도체 후공정</td><td>iPIS HX · XTR · IN</td><td>6면 검사, UPH 최대 80K~100K, 패키지 2~120mm, 큰 패키지 이어붙이기, 딥러닝, 장기 안정성 모니터링, Auto Reel Changer</td><td>외관 불량, 전체 높이, 상면 찍힘, 측면, SiP·POP·FOWLP</td><td><strong>1차 대상</strong></td></tr>
+            <tr><td>모듈·SSD</td><td>iMAS-2000, iSSD-Q1000D</td><td>상·하면 2D/3D, 리뷰 스테이션, 빠른 검사 조건 설정</td><td>DIMM·SODIMM, SSD 외관</td><td><strong>1차 대상</strong></td></tr>
+            <tr><td>반도체 미드엔드</td><td>iSIS NBGA · NTV · QPM · NCSP · FP3D</td><td>WSI(백색광 간섭계) 3D, 높이 정확도 ±1µm, 두 개의 3D 광학계, EFEM 연결</td><td>범프 높이, 영역 휨, 동일 평면도, 두께, 범프 직경</td><td><strong>1차 대상 (파일럿 1순위)</strong></td></tr>
+            <tr><td>디스플레이</td><td>OLED Cell · Glass 검사, 광학모듈</td><td>수십 µm 불량, 해상도 0.73~1.2µm, 실시간 자동 초점</td><td>OLED Cell, 커버글라스</td><td>2단계</td></tr>
+            <tr><td>2차전지</td><td>iBIM-E200, iBAIS-S200, iBIM-C200, iBMI-M100</td><td>최대 18 ppm, 2D/3D + 딥러닝, 두께 0.01mm</td><td>두께, IR/OCV, 절연, 마킹, 탭, 외관</td><td>2단계</td></tr>
+            <tr><td>스마트팩토리</td><td>i3D-800, iSQS-100, iSAF-200, 프레임그래버</td><td>3D 센서, 로봇 연동</td><td>차체 면품질</td><td>2단계</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="sub">가상 팹에 필요한 데이터 (입력)</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>데이터</th><th>내용</th><th>가상 팹 용도</th><th>확보</th></tr></thead>
+          <tbody>
+            <tr><td>소스·변경 이력</td><td>고객별 소스, 업그레이드 단위 과거 버전, 고객 요청서·변경 승인서</td><td>현재 상태 PRD 역생성, 과거 업그레이드 재현 시험</td><td>사내</td></tr>
+            <tr><td>이미지 원본</td><td>2D 이미지, 3D 높이 맵(WSI·모아레·광삼각법), 이어붙이기 전 조각 영상</td><td>골든 이미지셋, L2 회귀 시험</td><td><strong>고객 협의</strong></td></tr>
+            <tr><td>판정·리뷰 기록</td><td>검사 결과, 불량 코드, 리뷰 스테이션의 작업자 재판정(과검·미검 정답)</td><td>기대 판정, 딥러닝 재학습 정답</td><td><strong>고객 협의</strong></td></tr>
+            <tr><td>레시피·설정</td><td>패키지별 레시피, 판정 기준, 검사 영역, 조명·초점 조건</td><td>고객 PRD의 기계 판독 사양</td><td>고객별</td></tr>
+            <tr><td>통신 사양·로그</td><td>고객 GEM 사양서, SECS/GEM·MES 로그, 2D ID 연동, 맵 파일, E84 물류 신호</td><td>가상 호스트·물류 시나리오 (업그레이드의 30%)</td><td>고객별</td></tr>
+            <tr><td>장비 운영 로그</td><td>알람, 택트 타임, 모션 이벤트, 장기 안정성 모니터링, 보정 기록</td><td>장애 재현, L1 타이밍 근사</td><td>대체로 가능</td></tr>
+            <tr><td>하드웨어 사양</td><td>카메라·조명·모션·I/O 구성, 프레임그래버 인터페이스</td><td>HAL 설계, 가상 장치</td><td>사내</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="caution">
+        <p><b>가장 가치 있고 가장 얻기 어려운 데이터</b>는 고객 소유인 이미지 원본과 판정·리뷰 기록입니다. 파일럿 고객과의 첫 협의는 데이터 사용 범위부터 시작합니다. 리뷰 스테이션의 작업자 재판정 결과가 장비에 저장되어 있다면 골든 데이터 확보가 훨씬 쉬워집니다(확인 필요).</p>
+      </div>
+
+      <h3 class="sub">가상 팹이 새로 만드는 데이터 (산출, 인텍 소유 자산)</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>산출 데이터</th><th>만드는 방법</th><th>담당</th><th>쓰임</th></tr></thead>
+          <tbody>
+            <tr><td>골든 이미지셋 + 기대 판정</td><td>이미지·리뷰 기록에서 양품·불량·경계 사례를 선별하고 정답을 붙임</td><td>인텍 품질 + 핵심 개발자</td><td>L2 회귀 시험, PRD 합격 기준</td></tr>
+            <tr><td>현재 상태 PRD</td><td>소스를 AI로 역생성 → 근거·신뢰도 표시 → 시뮬레이터 기록과 대조</td><td>AI 컨설턴트·브레인크루 → 인텍 확정</td><td>업그레이드의 출발점</td></tr>
+            <tr><td>요구사항 ↔ 코드 ↔ 시험 추적표</td><td>역생성 때 생성, 업그레이드마다 갱신</td><td>bkit + 인텍</td><td>범위 밖 수정 차단, 고객 승인 자료</td></tr>
+            <tr><td>동작 기록</td><td>현재 소스를 시뮬레이터로 실행해 판정 결과·GEM 메시지 순서를 저장</td><td>시뮬레이터팀</td><td>회귀 기준, 플랫폼 전환 시 "전과 같다"는 증거</td></tr>
+            <tr><td>시뮬레이터 시나리오</td><td>통신 로그로 GEM·물류 시나리오, 운영 로그로 장애 재현 시나리오</td><td>시뮬레이터팀 (+ 브레인크루 GEM 추출)</td><td>L1 시험</td></tr>
+            <tr><td>합성·자체 시료 데이터</td><td>자체 시료 촬영 이미지, 불량 합성 이미지</td><td>인텍 품질</td><td>보안 등급 C 고객의 대체 시험 데이터</td></tr>
+            <tr><td>변경 지도 · 운영 지표</td><td>제품군별(iPIS·iSIS·모듈) 워크숍, KPI 측정</td><td>PM + 핵심 개발자</td><td>AI 수정 허용 범위, 게이트 판정</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="sub">장비군별 우선순위</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>순위</th><th>장비군</th><th>이유</th></tr></thead>
+          <tbody>
+            <tr><td>1순위</td><td>iSIS 미드엔드 (FC-BGA 범프)</td><td>수주가 늘고 있는 성장 분야(언론 보도). 범프 높이·동일 평면도·휨 등 수치 측정 중심이라 골든 데이터의 정답이 명확하고 회귀 시험 구축이 가장 쉬움</td></tr>
+            <tr><td>2순위</td><td>iPIS 후공정 (HX·IN·XTR)</td><td>출하 대수와 고객별 변형이 많을 것으로 추정. 외관 불량은 판정 경계가 모호해 골든셋 구축 난도가 높음</td></tr>
+            <tr><td>3순위</td><td>모듈·SSD</td><td>구조가 비교적 단순, 확산 단계의 대상</td></tr>
+            <tr><td>이후</td><td>디스플레이 · 2차전지 · 스마트팩토리</td><td>통신·공정 체계가 달라 플랫폼 2단계 확장 대상</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="muted" style="margin-top:12px;font-size:14px">장비군별 출하 대수와 업그레이드 요청 비중은 공개 자료에 없어 인텍플러스 내부 확인이 필요합니다. 위 순위는 기술적 난이도 기준의 제안입니다.</p>
+    </div>
+  </section>
+
   <!-- 05 시뮬레이터 -->
   <section id="simulator">
     <div class="wrap">
-      <div class="sec-label">05 · ③ 가상 팹 시뮬레이터</div>
+      <div class="sec-label">06 · ③ 가상 팹 시뮬레이터</div>
       <h2>사무실에서 쓰는 것: PRD의 합격 기준을 실행하는 가상 팹</h2>
       <div class="body">
         <p>시뮬레이터는 고객사에 설치되지 않습니다. 인텍플러스 안에서, 고객사에 보낼 플랫폼 빌드가 <strong>PRD의 합격 기준을 통과하는지</strong> 판정하는 데만 씁니다.</p>
@@ -643,7 +735,7 @@ html{scroll-behavior:smooth}
   <!-- 06 흐름 -->
   <section id="flow">
     <div class="wrap">
-      <div class="sec-label">06 · 업그레이드 흐름</div>
+      <div class="sec-label">07 · 업그레이드 흐름</div>
       <h2>업그레이드 한 건은 이렇게 바뀝니다</h2>
       <div class="flow">
         <div>
@@ -677,7 +769,7 @@ html{scroll-behavior:smooth}
   <!-- 07 배포·전환 -->
   <section id="deploy">
     <div class="wrap">
-      <div class="sec-label">07 · ④ 배포와 기존 장비 전환</div>
+      <div class="sec-label">08 · ④ 배포와 기존 장비 전환</div>
       <h2>이미 설치된 장비는 한꺼번에 바꾸지 않습니다</h2>
       <div class="body">
         <p>목표는 모든 고객 장비를 범용 플랫폼으로 옮기는 것이지만, 생산 중인 장비를 일괄 교체하면 고객 재승인, 클린룸 작업 집중, 위험 집중이 한꺼번에 일어납니다. 안정화가 1순위이므로 <strong>업그레이드 요청이 들어올 때마다 조금씩</strong> 옮깁니다.</p>
@@ -724,7 +816,7 @@ html{scroll-behavior:smooth}
   <!-- 08 보안 -->
   <section id="security">
     <div class="wrap">
-      <div class="sec-label">08 · 보안</div>
+      <div class="sec-label">09 · 보안</div>
       <h2>고객별 보안 등급에 맞춘 세 가지 운영 방식</h2>
       <div class="body">
         <p>고객 이미지와 로그, 그리고 고객 사양이 담긴 PRD는 반출이 어렵고, 그 정도는 고객마다 다릅니다. PRD마다 보안 등급을 적어 두고, 등급에 따라 AI에 넣을 수 있는 범위와 시뮬레이터 위치를 정합니다.</p>
@@ -767,7 +859,7 @@ html{scroll-behavior:smooth}
   <!-- 09 운영 원칙 -->
   <section id="rules">
     <div class="wrap">
-      <div class="sec-label">09 · 운영 원칙</div>
+      <div class="sec-label">10 · 운영 원칙</div>
       <h2>PRD 방식이 무너지지 않게 지킬 규칙</h2>
       <div class="table-wrap">
         <table>
@@ -788,7 +880,7 @@ html{scroll-behavior:smooth}
   <!-- 10 추진 -->
   <section id="roadmap">
     <div class="wrap">
-      <div class="sec-label">10 · 추진</div>
+      <div class="sec-label">11 · 추진</div>
       <h2>추진 순서</h2>
       <div class="road">
         <div class="step"><div class="when">0 ~ 1개월</div><h3>진단과 파일럿 고객 선정</h3><p>보안 등급이 상대적으로 낮고 업그레이드가 잦은 고객 1곳을 고릅니다. 핵심 개발자 워크숍으로 <strong>변경 지도(고객 PRD·제품 PRD·PRD 제외)를 제품군별로 확정</strong>하고, 그 고객 소스의 하드웨어 호출 구조를 진단합니다. PRD 템플릿과 골든 이미지셋 확보 범위도 정합니다.</p></div>
@@ -813,7 +905,7 @@ html{scroll-behavior:smooth}
   <!-- 11 한계 -->
   <section id="limits">
     <div class="wrap">
-      <div class="sec-label">11 · 한계</div>
+      <div class="sec-label">12 · 한계</div>
       <h2>이 구조가 해결하지 못하는 것</h2>
       <div class="body">
         <ul class="plain">
