@@ -560,9 +560,9 @@ html{scroll-behavior:smooth}
             <tr><td>반도체 후공정</td><td>iPIS HX · XTR · IN</td><td>6면 검사, UPH 최대 80K~100K, 패키지 2~120mm, 큰 패키지 이어붙이기, 딥러닝, 장기 안정성 모니터링, Auto Reel Changer</td><td>외관 불량, 전체 높이, 상면 찍힘, 측면, SiP·POP·FOWLP</td><td><strong>1차 대상</strong></td></tr>
             <tr><td>모듈·SSD</td><td>iMAS-2000, iSSD-Q1000D</td><td>상·하면 2D/3D, 리뷰 스테이션, 빠른 검사 조건 설정</td><td>DIMM·SODIMM, SSD 외관</td><td><strong>1차 대상</strong></td></tr>
             <tr><td>반도체 미드엔드</td><td>iSIS NBGA · NTV · QPM · NCSP · FP3D</td><td>WSI(백색광 간섭계) 3D, 높이 정확도 ±1µm, 두 개의 3D 광학계, EFEM 연결</td><td>범프 높이, 영역 휨, 동일 평면도, 두께, 범프 직경</td><td><strong>1차 대상 (파일럿 1순위)</strong></td></tr>
-            <tr><td>디스플레이</td><td>OLED Cell · Glass 검사, 광학모듈</td><td>수십 µm 불량, 해상도 0.73~1.2µm, 실시간 자동 초점</td><td>OLED Cell, 커버글라스</td><td>2단계</td></tr>
-            <tr><td>2차전지</td><td>iBIM-E200, iBAIS-S200, iBIM-C200, iBMI-M100</td><td>최대 18 ppm, 2D/3D + 딥러닝, 두께 0.01mm</td><td>두께, IR/OCV, 절연, 마킹, 탭, 외관</td><td>2단계</td></tr>
-            <tr><td>스마트팩토리</td><td>i3D-800, iSQS-100, iSAF-200, 프레임그래버</td><td>3D 센서, 로봇 연동</td><td>차체 면품질</td><td>2단계</td></tr>
+            <tr><td>디스플레이</td><td>OLED Cell · Glass 검사, 광학모듈</td><td>수십 µm 불량, 해상도 0.73~1.2µm, 실시간 자동 초점</td><td>OLED Cell, 커버글라스</td><td>확장 (단계 7)</td></tr>
+            <tr><td>2차전지</td><td>iBIM-E200, iBAIS-S200, iBIM-C200, iBMI-M100</td><td>최대 18 ppm, 2D/3D + 딥러닝, 두께 0.01mm</td><td>두께, IR/OCV, 절연, 마킹, 탭, 외관</td><td>확장 (단계 7)</td></tr>
+            <tr><td>스마트팩토리</td><td>i3D-800, iSQS-100, iSAF-200, 프레임그래버</td><td>3D 센서, 로봇 연동</td><td>차체 면품질</td><td>확장 (단계 7)</td></tr>
           </tbody>
         </table>
       </div>
@@ -610,7 +610,8 @@ html{scroll-behavior:smooth}
             <tr><td>1순위</td><td>iSIS 미드엔드 (FC-BGA 범프)</td><td>수주가 늘고 있는 성장 분야(언론 보도). 범프 높이·동일 평면도·휨 등 수치 측정 중심이라 골든 데이터의 정답이 명확하고 회귀 시험 구축이 가장 쉬움</td></tr>
             <tr><td>2순위</td><td>iPIS 후공정 (HX·IN·XTR)</td><td>출하 대수와 고객별 변형이 많을 것으로 추정. 외관 불량은 판정 경계가 모호해 골든셋 구축 난도가 높음</td></tr>
             <tr><td>3순위</td><td>모듈·SSD</td><td>구조가 비교적 단순, 확산 단계의 대상</td></tr>
-            <tr><td>이후</td><td>디스플레이 · 2차전지 · 스마트팩토리</td><td>통신·공정 체계가 달라 플랫폼 2단계 확장 대상</td></tr>
+            <tr><td>병행</td><td>신규 장비 (CoWoS · 유리기판 · 웨이퍼 범프 등)</td><td>기존 소스가 없어 PRD부터 시작. 로드맵 단계 4의 대상</td></tr>
+            <tr><td>이후</td><td>디스플레이 · 2차전지 · 스마트팩토리</td><td>통신·공정 체계가 달라 로드맵 단계 7의 확장 대상</td></tr>
           </tbody>
         </table>
       </div>
@@ -881,14 +882,19 @@ html{scroll-behavior:smooth}
   <section id="roadmap">
     <div class="wrap">
       <div class="sec-label">11 · 추진</div>
-      <h2>추진 순서</h2>
+      <h2>증명 단위 8단계 로드맵 (24개월)</h2>
+      <div class="body"><p>누구도 해 보지 않은 일이므로 단계마다 한 가지를 증명하고, 측정값으로 다음 단계로 넘어갑니다. 실패해도 그 단계의 자산은 남고, 막히면 범위를 줄여 다시 시도합니다. 기존 장비 트랙(1→2→3→5)과 신규 장비 트랙(4)이 병행하다가 확산(6)과 수렴(7)에서 합쳐집니다.</p></div>
       <div class="road">
-        <div class="step"><div class="when">0 ~ 1개월</div><h3>진단과 파일럿 고객 선정</h3><p>보안 등급이 상대적으로 낮고 업그레이드가 잦은 고객 1곳을 고릅니다. 핵심 개발자 워크숍으로 <strong>변경 지도(고객 PRD·제품 PRD·PRD 제외)를 제품군별로 확정</strong>하고, 그 고객 소스의 하드웨어 호출 구조를 진단합니다. PRD 템플릿과 골든 이미지셋 확보 범위도 정합니다.</p></div>
-        <div class="step"><div class="when">1 ~ 3개월</div><h3>현재 상태 PRD + L2 골든 이미지 재생</h3><p>파일럿 고객 소스 중 고객 PRD 영역에 한해 AI로 "현재 상태 PRD"를 역생성하고, PRD 제외 영역은 현재 동작만 기록합니다. 동시에 검사 엔진만 떼어 이미지 재생 회귀 시험을 만듭니다. 70%인 검사 기능 업그레이드를 바로 지킬 수 있어 효과가 가장 빨리 보입니다.</p></div>
-        <div class="step"><div class="when">3 ~ 6개월</div><h3>PRD → 증분 → 시뮬레이터 흐름 가동</h3><p>HAL과 가상 호스트(SECS/GEM)를 붙여 L1 시뮬레이터를 완성하고, 실제 업그레이드 요청 2~3건을 PRD 방식으로 처리해 현장 체류 시간과 결함을 비교합니다. 신규 출하 장비는 이 시점부터 플랫폼 구조로 출하를 검토합니다.</p></div>
-        <div class="step"><div class="when">6 ~ 12개월</div><h3>고객 확대, 모듈 공통화, Tier C 키트</h3><p>주요 고객으로 PRD와 시뮬레이터를 넓히고, 검사 엔진부터 공통 모듈로 교체합니다. 망분리 고객용 반입형 키트와 L3 랩 환경을 만듭니다.</p></div>
+        <div class="step"><div class="when">단계 0 · M1</div><h3>준비: 데이터와 사람을 확보할 수 있다</h3><p>변경 지도(고객 PRD·제품 PRD·PRD 제외)를 제품군별로 확정하고, 파일럿 고객 소스를 진단하며, 골든 이미지·리뷰 데이터 사용을 협의합니다. 신규 장비 후보 1종도 정합니다.</p></div>
+        <div class="step"><div class="when">단계 1 · M2~M4 · 기존</div><h3>판정 재현: 검사 판정을 사무실에서 똑같이 재현할 수 있다</h3><p>검사 엔진만 떼어 이미지 재생 회귀 시험(L2)을 만듭니다. 업그레이드의 70%인 검사 기능 변경을 바로 지킬 수 있어 가장 쉽고 효과가 빠릅니다. <strong>넘어가는 조건:</strong> 실제 업그레이드 1건을 사무실에서 사전 검증하고 현장 결과와 비교.</p></div>
+        <div class="step"><div class="when">단계 2 · M3~M7 · 기존</div><h3>장비 재현: 실장비 없이 장비 소프트웨어 전체를 돌릴 수 있다</h3><p>HAL과 가상 호스트(SECS/GEM)·가상 물류(E84)를 붙여 L1 시뮬레이터를 완성합니다. <strong>넘어가는 조건:</strong> 통신 로그 재생 일치, 현장 장애 1건 사무실 재현.</p></div>
+        <div class="step"><div class="when">단계 3 · M5~M8 · 기존</div><h3>AI 증분: AI가 만든 증분을 가상 팹이 판정할 수 있다</h3><p>변경 영역에 한해 현재 상태 PRD를 역생성하고, 과거 업그레이드 재현 시험으로 범위 밖 수정·회귀·1회 합격률을 측정합니다. 기준을 통과한 변경 유형만 AI 자동화를 허용합니다.</p></div>
+        <div class="step"><div class="when">단계 4 · M4~M15 · 신규</div><h3>신규 장비: PRD부터 만들어 출하 전 검증할 수 있다</h3><p>기존 소스가 없는 신규 장비는 PRD를 먼저 쓰고, 코어는 재사용·위층은 AI로 생성하며, 고객 현장에 가기 전에 가상 팹에서 검증·시연합니다. 방법론 전체를 위험 없이 증명하는 트랙입니다.</p></div>
+        <div class="step"><div class="when">단계 5 · M7~M10 · 기존</div><h3>실전 적용: 실제 업그레이드에서 현장 시간이 줄어든다</h3><p>파일럿 고객의 실제 요청 2~3건을 이 체계로 처리하고 현장 체류 시간·재방문율·현장 발견 결함을 비교합니다.</p></div>
+        <div class="step"><div class="when">단계 6 · M10~M18</div><h3>확산: 여러 고객·장비군에서 반복하고 내부가 운영한다</h3><p>주요 고객과 iPIS로 넓히고, 검사 엔진부터 공통 모듈화하며, 망분리 고객용 반입 키트와 L3 랩 환경을 만듭니다. 운영은 내부 AI 챔피언이 인수합니다.</p></div>
+        <div class="step"><div class="when">단계 7 · M18~</div><h3>수렴: 신규 출하가 모두 이 방식이 되어 갈라진 소스가 준다</h3><p>신규 출하는 PRD 방식으로, 기존 고객은 업그레이드 시점에 플랫폼으로 전환합니다. 디스플레이·2차전지로 확장합니다.</p></div>
       </div>
-      <p class="muted" style="font-size:14px">기간은 소스 상태를 보지 않은 추정치입니다. 0단계 진단 결과에 따라 크게 달라질 수 있습니다.</p>
+      <p class="muted" style="font-size:14px">기간은 소스 상태를 보지 않은 추정치입니다. 넘어가는 조건의 수치 기준은 단계 0에서 기준선을 측정한 뒤 확정합니다. 역할·공수·일정 상세는 제안서를 참고하십시오.</p>
 
       <h3 class="sub">효과를 재는 지표</h3>
       <div class="kpi">

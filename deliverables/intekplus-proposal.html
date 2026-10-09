@@ -195,12 +195,12 @@ footer p+p{margin-top:8px}
   <div class="wrap">
     <div class="eyebrow">Proposal · Intekplus · AI-Driven Equipment Software Upgrade</div>
     <h1>인텍플러스 AI 기반<br>장비 소프트웨어 업그레이드 체계 구축 제안서</h1>
-    <p class="lede">고객사별로 갈라진 장비 소프트웨어를 <strong>PRD를 고쳐 AI가 증분을 만들고, 가상 팹 시뮬레이터가 사무실에서 합격을 판정한 뒤 배포하는 체계</strong>로 바꿉니다. 핵심인 시뮬레이터와 판정 기준은 인텍플러스 엔지니어가 AI를 익혀 직접 만들고, 외부 주체는 도구와 방법을 제공합니다.</p>
+    <p class="lede">고객사별로 갈라진 장비 소프트웨어를 <strong>PRD를 고쳐 AI가 증분을 만들고, 가상 팹 시뮬레이터가 사무실에서 합격을 판정한 뒤 배포하는 체계</strong>로 바꿉니다. 누구도 해 보지 않은 일이므로 <strong>단계마다 한 가지를 증명하고 그 측정값으로 다음 단계로 넘어가는 8단계 로드맵</strong>으로 진행합니다. 핵심인 시뮬레이터와 판정 기준은 인텍플러스 엔지니어가 AI를 익혀 직접 만들고, 외부 주체는 도구와 방법을 제공합니다.</p>
     <dl class="facts">
-      <div><dt>기간</dt><dd><b>12개월</b>게이트 4회</dd></div>
-      <div><dt>참여 주체</dt><dd><b>6</b>내부 2 · 외부 3 · PM</dd></div>
-      <div><dt>총 공수 (추정)</dt><dd><b>66~86 MM</b>인원·월 기준</dd></div>
-      <div><dt>내부 비중</dt><dd><b>약 2/3 이상</b>핵심 자산은 내부 소유</dd></div>
+      <div><dt>기간</dt><dd><b>24개월</b>증명 단위 8단계</dd></div>
+      <div><dt>트랙</dt><dd><b>2</b>기존 장비 · 신규 장비</dd></div>
+      <div><dt>총 공수 (추정)</dt><dd><b>127~167 MM</b>인원·월 기준</dd></div>
+      <div><dt>내부 비중</dt><dd><b>약 3/4</b>핵심 자산은 내부 소유</dd></div>
     </dl>
     <p class="meta">제안: 장동인 (PM) · 2026년 10월 · 착수 시점은 M1로 표기 (2026년 11월 착수 가정)</p>
   </div>
@@ -213,14 +213,14 @@ footer p+p{margin-top:8px}
       <li><a href="#solution"><b>02</b>해결 체계</a></li>
       <li><a href="#feasibility"><b>03</b>기술 타당성</a></li>
       <li><a href="#equipment"><b>04</b>장비·데이터</a></li>
-      <li><a href="#principle"><b>05</b>수행 원칙</a></li>
-      <li><a href="#roles"><b>06</b>주체별 역할</a></li>
-      <li><a href="#raci"><b>07</b>업무 분장표</a></li>
-      <li><a href="#schedule"><b>08</b>추진 일정</a></li>
-      <li><a href="#phases"><b>09</b>단계별 업무</a></li>
+      <li><a href="#roadmap"><b>05</b>단계별 로드맵</a></li>
+      <li><a href="#principle"><b>06</b>수행 원칙</a></li>
+      <li><a href="#roles"><b>07</b>주체별 역할</a></li>
+      <li><a href="#raci"><b>08</b>업무 분장표</a></li>
+      <li><a href="#schedule"><b>09</b>추진 일정</a></li>
       <li><a href="#effort"><b>10</b>투입 공수</a></li>
       <li><a href="#training"><b>11</b>AI 역량 전환</a></li>
-      <li><a href="#gates"><b>12</b>게이트</a></li>
+      <li><a href="#gates"><b>12</b>측정 지표</a></li>
       <li><a href="#risks"><b>13</b>리스크</a></li>
       <li><a href="#next"><b>14</b>즉시 착수</a></li>
     </ol>
@@ -236,11 +236,11 @@ footer p+p{margin-top:8px}
       <div class="summary">
         <div><div class="k">문제</div><h3>업그레이드 검증이 클린룸에서만 가능</h3><p>고객사별로 소스가 다르고, 업그레이드 요청(검사기능 7 : 호스트 연동 3)마다 핵심 개발자가 직접 수정한 뒤 현장에서 확인합니다. 고객별 지식은 180명 중 20명 안팎의 핵심 개발자에게 몰려 있습니다.</p></div>
         <div><div class="k">해법</div><h3>PRD → AI 증분 → 시뮬레이터 → 배포</h3><p>자주 바뀌는 영역만 PRD로 관리하고, AI가 PRD 변경분만큼 코드를 만들며, 가상 팹 시뮬레이터가 사무실에서 합격을 판정합니다. 합격본만 고객 장비에 설치합니다.</p></div>
-        <div><div class="k">수행 체계</div><h3>내부 TF 8명 + 외부 3주체 + PM</h3><p>시뮬레이터·판정 기준·PRD 승인은 인텍플러스 TF가 맡습니다. bkit 저자는 공정 도구를, 브레인크루는 문서 입력을, AI 컨설턴트는 에이전트 설계와 교육을 맡습니다.</p></div>
-        <div><div class="k">일정</div><h3>12개월, 파일럿은 6개월 차에 판정</h3><p>3개월 차에 기반(골든 이미지 회귀, 과거 업그레이드 재현 시험, bkit v1, 브레인크루 PoC)을, 6개월 차에 실제 업그레이드 2~3건 결과를, 12개월 차에 확산과 운영 이관을 판정합니다.</p></div>
+        <div><div class="k">수행 체계</div><h3>내부 TF 8명 + 신규 장비팀 2명 + 외부 3주체 + PM</h3><p>시뮬레이터·판정 기준·PRD 승인은 인텍플러스 TF가 맡습니다. bkit 저자는 공정 도구를, 브레인크루는 문서 입력을, AI 컨설턴트는 에이전트 설계와 교육을 맡습니다.</p></div>
+        <div><div class="k">로드맵</div><h3>증명 단위 8단계, 24개월, 2트랙</h3><p>기존 장비 트랙은 판정 재현(단계 1) → 장비 재현(2) → AI 증분(3) → 실전 적용(5)으로, 신규 장비 트랙은 PRD부터 만들어 가상 팹에서 출하 전 검증(4)합니다. 단계 1은 4개월 차에 첫 성과를 보여 주고, 두 트랙은 확산(6)과 수렴(7)에서 합쳐집니다.</p></div>
       </div>
       <div class="callout">
-        <p><strong>대표님께 요청드리는 결정은 세 가지입니다.</strong> ① 시뮬레이터 전담 엔지니어 2명과 핵심 개발자 3명의 시간(40~60%)을 TF로 확보, ② 파일럿 고객 1곳 선정과 골든 이미지 사용 협의, ③ 외부 3주체(bkit 저자, 브레인크루, AI 컨설턴트)와의 계약 범위 승인입니다. 이 중 ①이 성패를 가장 크게 좌우합니다.</p>
+        <p><strong>대표님께 요청드리는 결정은 세 가지입니다.</strong> ① 시뮬레이터 전담 엔지니어 2명과 핵심 개발자 3명의 시간(40~60%)을 TF로 확보, ② 파일럿 대상 선정(기존 고객 1곳과 신규 장비 1종)과 골든 이미지 사용 협의, ③ 외부 3주체(bkit 저자, 브레인크루, AI 컨설턴트)와의 계약 범위 승인입니다. 이 중 ①이 성패를 가장 크게 좌우합니다.</p>
       </div>
     </div>
   </section>
@@ -324,7 +324,7 @@ footer p+p{margin-top:8px}
       </div>
 
       <h3 class="sub">과거 업그레이드 재현 시험: 의견이 아니라 데이터로 판정</h3>
-      <div class="body" style="margin-top:12px"><p>인텍플러스에는 정답지가 이미 있습니다. 과거 업그레이드 때 실제로 바뀐 소스가 버전 이력에 남아 있기 때문입니다. 1단계(M2~M3) 4~6주 동안 아래 두 실험을 하고, 결과를 G1 판정 기준에 넣습니다.</p></div>
+      <div class="body" style="margin-top:12px"><p>인텍플러스에는 정답지가 이미 있습니다. 과거 업그레이드 때 실제로 바뀐 소스가 버전 이력에 남아 있기 때문입니다. 단계 3(M5~M8)에서 4~6주 동안 아래 두 실험을 하고, 결과를 단계 3의 넘어가는 조건에 넣습니다.</p></div>
       <div class="summary">
         <div><div class="k">실험 1 · 역생성 정확도</div><h3>고객 1곳의 GEM 모듈과 검사 항목을 AI로 PRD화</h3><p>핵심 개발자 검토와 시뮬레이터 동작 기록 대조. 측정: 개발자가 아는 동작 중 PRD에 담긴 비율, 틀린 기술 비율, 추정·빈칸 비율.</p></div>
         <div><div class="k">실험 2 · 증분 정확도</div><h3>과거 업그레이드 5~10건을 AI로 재현</h3><p>업그레이드 이전 소스와 PRD 변경분만 주고 생성한 증분을 실제 사람이 한 수정과 비교. 측정: 새 합격 기준 통과, 범위 밖 수정 0건, 회귀 0건, 리뷰 수정량, 반복 생성 시 편차.</p></div>
@@ -369,9 +369,9 @@ footer p+p{margin-top:8px}
             <tr><td>반도체 후공정</td><td>iPIS HX · XTR · IN</td><td>6면 검사, UPH 최대 80K~100K, 패키지 2~120mm, 큰 패키지 이어붙이기, 딥러닝, 장기 안정성 모니터링, Auto Reel Changer</td><td>외관 불량, 전체 높이, 상면 찍힘, 측면, SiP·POP·FOWLP</td><td><strong>1차 대상</strong></td></tr>
             <tr><td>모듈·SSD</td><td>iMAS-2000, iSSD-Q1000D</td><td>상·하면 2D/3D, 리뷰 스테이션, 빠른 검사 조건 설정</td><td>DIMM·SODIMM, SSD 외관</td><td><strong>1차 대상</strong></td></tr>
             <tr><td>반도체 미드엔드</td><td>iSIS NBGA · NTV · QPM · NCSP · FP3D</td><td>WSI(백색광 간섭계) 3D, 높이 정확도 ±1µm, 두 개의 3D 광학계, EFEM 연결</td><td>범프 높이, 영역 휨, 동일 평면도, 두께, 범프 직경</td><td><strong>1차 대상 (파일럿 1순위)</strong></td></tr>
-            <tr><td>디스플레이</td><td>OLED Cell · Glass 검사, 광학모듈</td><td>수십 µm 불량, 해상도 0.73~1.2µm, 실시간 자동 초점</td><td>OLED Cell, 커버글라스</td><td>2단계</td></tr>
-            <tr><td>2차전지</td><td>iBIM-E200, iBAIS-S200, iBIM-C200, iBMI-M100</td><td>최대 18 ppm, 2D/3D + 딥러닝, 두께 0.01mm</td><td>두께, IR/OCV, 절연, 마킹, 탭, 외관</td><td>2단계</td></tr>
-            <tr><td>스마트팩토리</td><td>i3D-800, iSQS-100, iSAF-200, 프레임그래버</td><td>3D 센서, 로봇 연동</td><td>차체 면품질</td><td>2단계</td></tr>
+            <tr><td>디스플레이</td><td>OLED Cell · Glass 검사, 광학모듈</td><td>수십 µm 불량, 해상도 0.73~1.2µm, 실시간 자동 초점</td><td>OLED Cell, 커버글라스</td><td>확장 (단계 7)</td></tr>
+            <tr><td>2차전지</td><td>iBIM-E200, iBAIS-S200, iBIM-C200, iBMI-M100</td><td>최대 18 ppm, 2D/3D + 딥러닝, 두께 0.01mm</td><td>두께, IR/OCV, 절연, 마킹, 탭, 외관</td><td>확장 (단계 7)</td></tr>
+            <tr><td>스마트팩토리</td><td>i3D-800, iSQS-100, iSAF-200, 프레임그래버</td><td>3D 센서, 로봇 연동</td><td>차체 면품질</td><td>확장 (단계 7)</td></tr>
           </tbody>
         </table>
       </div>
@@ -419,7 +419,8 @@ footer p+p{margin-top:8px}
             <tr><td>1순위</td><td>iSIS 미드엔드 (FC-BGA 범프)</td><td>수주가 늘고 있는 성장 분야(언론 보도). 범프 높이·동일 평면도·휨 등 수치 측정 중심이라 골든 데이터의 정답이 명확하고 회귀 시험 구축이 가장 쉬움</td></tr>
             <tr><td>2순위</td><td>iPIS 후공정 (HX·IN·XTR)</td><td>출하 대수와 고객별 변형이 많을 것으로 추정. 외관 불량은 판정 경계가 모호해 골든셋 구축 난도가 높음</td></tr>
             <tr><td>3순위</td><td>모듈·SSD</td><td>구조가 비교적 단순, 확산 단계의 대상</td></tr>
-            <tr><td>이후</td><td>디스플레이 · 2차전지 · 스마트팩토리</td><td>통신·공정 체계가 달라 플랫폼 2단계 확장 대상</td></tr>
+            <tr><td>병행</td><td>신규 장비 (CoWoS · 유리기판 · 웨이퍼 범프 등)</td><td>기존 소스가 없어 PRD부터 시작. 로드맵 단계 4의 대상</td></tr>
+            <tr><td>이후</td><td>디스플레이 · 2차전지 · 스마트팩토리</td><td>통신·공정 체계가 달라 로드맵 단계 7의 확장 대상</td></tr>
           </tbody>
         </table>
       </div>
@@ -427,9 +428,57 @@ footer p+p{margin-top:8px}
     </div>
   </section>
 
+  <section id="roadmap">
+    <div class="wrap">
+      <div class="sec-label">05 · 단계별 로드맵</div>
+      <h2>누구도 해 보지 않은 일이라, 단계마다 증명하고 넘어갑니다</h2>
+      <div class="body">
+        <p>이 체계는 정해진 답이 없습니다. 그래서 시간 단위가 아니라 <strong>증명 단위</strong>로 단계를 나눴습니다. 원칙은 네 가지입니다.</p>
+        <ul class="plain">
+          <li><strong>단계마다 한 가지만 증명</strong>합니다. 각 단계는 하나의 가설을 검증합니다.</li>
+          <li><strong>넘어가는 조건은 측정값</strong>입니다. 의견이 아니라 숫자로 다음 단계로 갑니다.</li>
+          <li><strong>실패해도 남는 자산</strong>이 있습니다. 다음 단계로 못 가도 그 단계의 산출물은 그대로 씁니다.</li>
+          <li><strong>막히면 범위를 줄여</strong> 다시 시도할 경로를 미리 정해 둡니다.</li>
+        </ul>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>단계</th><th>처음 증명하는 것</th><th>기간 (추정)</th><th>트랙</th></tr></thead>
+          <tbody><tr><td>단계 0 · 준비</td><td>데이터와 사람을 확보할 수 있다</td><td>M1</td><td>공통</td></tr><tr><td>단계 1 · 판정 재현</td><td>검사 판정을 사무실에서 똑같이 재현할 수 있다</td><td>M2~M4</td><td>기존 장비</td></tr><tr><td>단계 2 · 장비 재현</td><td>실장비 없이 장비 소프트웨어 전체를 돌릴 수 있다</td><td>M3~M7</td><td>기존 장비</td></tr><tr><td>단계 3 · AI 증분</td><td>AI가 만든 증분을 가상 팹이 판정할 수 있다</td><td>M5~M8</td><td>기존 장비</td></tr><tr class="sub"><td>단계 4 · 신규 장비</td><td>장비 소프트웨어를 PRD부터 만들어 출하 전 검증할 수 있다</td><td>M4~M15</td><td>신규 장비</td></tr><tr><td>단계 5 · 실전 적용</td><td>실제 고객 업그레이드에서 현장 시간이 줄어든다</td><td>M7~M10</td><td>기존 장비</td></tr><tr><td>단계 6 · 확산</td><td>여러 고객·장비군에서 반복하고 내부가 운영한다</td><td>M10~M18</td><td>공통</td></tr><tr><td>단계 7 · 수렴</td><td>신규 출하가 모두 이 방식이 되어 갈라진 소스가 준다</td><td>M18~</td><td>공통</td></tr></tbody>
+        </table>
+      </div>
+
+      <h3 class="sub">두 트랙의 관계</h3>
+      <div class="chain" aria-label="단계 흐름">
+        <div class="st"><div class="n">공통</div><h3>0 준비</h3></div>
+        <div class="st"><div class="n">기존 장비</div><h3>1 판정 재현</h3></div>
+        <div class="st"><div class="n">기존 장비</div><h3>2 장비 재현</h3></div>
+        <div class="st"><div class="n">기존 장비</div><h3>3 AI 증분</h3></div>
+        <div class="st"><div class="n">기존 장비</div><h3>5 실전 적용</h3></div>
+        <div class="st"><div class="n">공통</div><h3>6 확산</h3></div>
+        <div class="st"><div class="n">공통</div><h3>7 수렴</h3></div>
+      </div>
+      <div class="chain"><div class="st core"><div class="n">신규 장비 트랙 · 단계 1·2의 도구(골든 이미지 회귀, 가상 호스트, HAL)를 재사용하며 병행</div><h3>4 신규 장비: PRD부터 생성하고 가상 팹에서 출하 전 검증 → 단계 6 확산의 근거</h3></div></div>
+      <div class="callout"><p><strong>왜 이 순서인가.</strong> 기존 장비 전체를 리버스해 PRD로 만드는 일은 가장 어렵고 불확실합니다. 그래서 가장 쉽고 효과가 빠른 판정 재현(단계 1)으로 첫 성과를 내고, 방법론 전체(PRD → AI 생성 → 가상 팹)는 기존 소스가 없는 신규 장비(단계 4)에서 위험 없이 증명합니다. 신규 출하가 모두 PRD 방식이 되면 갈라진 소스 문제는 더 이상 생기지 않습니다(단계 7).</p></div>
+
+      <h3 class="sub">단계별 상세</h3>
+      <div class="tracks">
+        <div class="track"><div class="k">단계 0 · 공통</div><h3>준비: 데이터와 사람을 확보할 수 있다</h3><dl><dt>기간·대상</dt><dd>M1 · 기존 장비 + 신규 장비 후보</dd><dt>할 일</dt><dd>변경 지도 워크숍, 소스 진단, 데이터 협의, 신규 장비 선정, TF 구성</dd><dt>성취</dt><dd>데이터 접근권, 인력·범위 확정</dd><dt>넘어가는 조건</dt><dd><strong>시뮬레이터 전담 2명 확보, 이미지·리뷰 데이터 사용 동의</strong></dd><dt>실패 시</dt><dd>자체 시료 이미지로 단계 1 시작</dd><dt>남는 자산</dt><dd>변경 지도, 데이터 목록</dd><dt>담당</dt><dd>PM · 경영진 · 핵심 개발자</dd></dl></div>
+        <div class="track"><div class="k">단계 1 · 기존 장비</div><h3>판정 재현: 검사 판정을 사무실에서 똑같이 재현할 수 있다</h3><dl><dt>기간·대상</dt><dd>M2~M4 · 기존 iSIS 고객 1곳</dd><dt>할 일</dt><dd>검사 엔진 분리, 이미지 재생기 연결, 골든 이미지셋 구축, 기존 판정 기록</dd><dt>성취</dt><dd>같은 이미지를 넣으면 현장과 같은 판정이 나온다는 증거</dd><dt>넘어가는 조건</dt><dd><strong>골든셋 판정 일치(기준은 TF 확정), 실제 업그레이드 1건을 사무실에서 사전 검증하고 현장 결과와 비교</strong></dd><dt>실패 시</dt><dd>불일치 원인(조명 보정, 비결정적 처리 등) 항목만 제외하고 진행</dd><dt>남는 자산</dt><dd>골든셋·회귀 도구 — 이것만으로 업그레이드의 70%인 검사 기능 변경을 사무실에서 지킴</dd><dt>담당</dt><dd>시뮬레이터팀 · 품질 · AI 컨설턴트(코칭)</dd></dl></div>
+        <div class="track"><div class="k">단계 2 · 기존 장비</div><h3>장비 재현: 실장비 없이 장비 소프트웨어 전체를 돌릴 수 있다</h3><dl><dt>기간·대상</dt><dd>M3~M7 · 같은 고객</dd><dt>할 일</dt><dd>HAL 도입, 가상 호스트(SECS/GEM), 가상 물류(E84), 현장 로그 재생기</dd><dt>성취</dt><dd>실장비 없이 고객 호스트 시나리오 처리</dd><dt>넘어가는 조건</dt><dd><strong>통신 로그 재생 시 메시지 순서·내용 일치, 현장 장애 1건 사무실 재현</strong></dd><dt>실패 시</dt><dd>HAL이 어려우면 통신 계층만 먼저 분리(호스트 연동 30% 담당)</dd><dt>남는 자산</dt><dd>가상 호스트, HAL, 동작 기록</dd><dt>담당</dt><dd>시뮬레이터팀 · 핵심 개발자</dd></dl></div>
+        <div class="track"><div class="k">단계 3 · 기존 장비</div><h3>AI 증분: AI가 만든 증분을 가상 팹이 판정할 수 있다</h3><dl><dt>기간·대상</dt><dd>M5~M8 · 같은 고객, 설정·GEM 유형</dd><dt>할 일</dt><dd>bkit 장비용 v1, harness 에이전트 팀, 변경 영역 PRD, 과거 업그레이드 재현 시험</dd><dt>성취</dt><dd>범위 밖 수정 0건, 회귀 0건, 1회 합격률을 숫자로 증명</dd><dt>넘어가는 조건</dt><dd><strong>유형별 기준 통과 시 그 유형의 AI 자동화 허용</strong></dd><dt>실패 시</dt><dd>기준 미달 유형은 사람이 수정, AI는 시험 생성·리뷰</dd><dt>남는 자산</dt><dd>변경 영역 PRD, 추적표, 에이전트 팀</dd><dt>담당</dt><dd>bkit 저자 · AI 컨설턴트 · 핵심 개발자 · 브레인크루(PoC)</dd></dl></div>
+        <div class="track key"><div class="k">단계 4 · 신규 장비</div><h3>신규 장비: 장비 소프트웨어를 PRD부터 만들어 출하 전 검증할 수 있다</h3><dl><dt>기간·대상</dt><dd>M4~M15 · 신규 장비 1종 (제품 일정에 맞춤)</dd><dt>할 일</dt><dd>신규 장비 PRD 작성, 코어는 재사용·위층은 AI 생성, 가상 팹 동시 구축, 고객 GEM 사양 시나리오</dd><dt>성취</dt><dd>출하 전 사내 검증, 가상 팹으로 고객 시연·사전 승인</dd><dt>넘어가는 조건</dt><dd><strong>첫 설치의 현장 수정 건수·셋업 시간이 기존 신제품보다 적음</strong></dd><dt>실패 시</dt><dd>위층 생성이 불안정하면 사람이 작성하고 AI는 보조, PRD·가상 팹은 유지</dd><dt>남는 자산</dt><dd>PRD 정본에서 태어난 첫 장비 — 이후 업그레이드가 처음부터 PRD 방식</dd><dt>담당</dt><dd>신규 장비팀 · 시뮬레이터팀 · AI 컨설턴트 · bkit 저자</dd></dl></div>
+        <div class="track"><div class="k">단계 5 · 기존 장비</div><h3>실전 적용: 실제 고객 업그레이드에서 현장 시간이 줄어든다</h3><dl><dt>기간·대상</dt><dd>M7~M10 · 파일럿 고객 실제 요청 2~3건</dd><dt>할 일</dt><dd>단계 1~3 체계로 실제 업그레이드 요청 처리</dd><dt>성취</dt><dd>현장 체류 시간·재방문율·현장 발견 결함의 실측 비교</dd><dt>넘어가는 조건</dt><dd><strong>지표 개선 확인</strong></dd><dt>실패 시</dt><dd>병목(데이터, 시나리오, 승인 절차)을 보강하고 재적용</dd><dt>남는 자산</dt><dd>실전 사례, 고객 변경 승인 자료 양식</dd><dt>담당</dt><dd>고객대응 엔지니어 · TF 전원 · PM(측정)</dd></dl></div>
+        <div class="track"><div class="k">단계 6 · 공통</div><h3>확산: 여러 고객·장비군에서 반복하고 내부가 운영한다</h3><dl><dt>기간·대상</dt><dd>M10~M18 · 주요 고객, iPIS</dd><dt>할 일</dt><dd>고객 확대, 검사 엔진 공통 모듈화, 망분리 반입 키트, 내부 AI 챔피언 인수</dd><dt>성취</dt><dd>고객 추가 공수 감소, 외부 지원 없는 운영</dd><dt>넘어가는 조건</dt><dd><strong>고객 1곳 추가 공수가 정한 기준 이하</strong></dd><dt>실패 시</dt><dd>업그레이드가 잦은 고객군으로 좁혀 확산</dd><dt>남는 자산</dt><dd>공통 모듈, 고객별 가상 팹</dd><dt>담당</dt><dd>TF 전원 · AI 챔피언 · 브레인크루(망분리)</dd></dl></div>
+        <div class="track"><div class="k">단계 7 · 공통</div><h3>수렴: 신규 출하가 모두 이 방식이 되어 갈라진 소스가 준다</h3><dl><dt>기간·대상</dt><dd>M18~ · 전 장비군</dd><dt>할 일</dt><dd>신규 출하는 PRD 방식, 기존 고객은 업그레이드 시점에 플랫폼 전환, 디스플레이·2차전지 확장</dd><dt>성취</dt><dd>갈라진 소스 수의 실제 감소</dd><dt>넘어가는 조건</dt><dd><strong>소스 수·유지보수 공수를 계속 추적</strong></dd><dt>실패 시</dt><dd>업그레이드가 잦은 고객부터 선택적으로 전환</dd><dt>남는 자산</dt><dd>범용 플랫폼</dd><dt>담당</dt><dd>인텍 전사</dd></dl></div>
+      </div>
+      <p class="muted" style="margin-top:12px;font-size:14px">넘어가는 조건의 수치 기준(판정 일치율, 1회 합격률 등)은 단계 0에서 기준선을 측정한 뒤 TF와 함께 확정합니다. 단계 4 기간은 신규 장비의 제품 일정에 맞춥니다.</p>
+    </div>
+  </section>
+
   <section id="principle">
     <div class="wrap">
-      <div class="sec-label">05 · 수행 원칙</div>
+      <div class="sec-label">06 · 수행 원칙</div>
       <h2>외부는 도구와 방법을, 내부는 판단과 기준을</h2>
       <div class="body">
         <p>시뮬레이터의 핵심 업무는 검사 장비의 물리, 고객 공정, 고객 데이터를 모두 알아야 하므로 외부 인력이 대신할 수 없습니다. 또 이것은 인텍플러스가 앞으로 계속 쌓아 갈 기술 자산입니다. 그래서 외부 주체는 <strong>도구를 만들고, 방법을 가르치고, 옆에서 코칭</strong>하는 데까지만 맡고, <strong>판단과 합격 기준은 인텍플러스 엔지니어가 소유</strong>합니다.</p>
@@ -455,30 +504,30 @@ footer p+p{margin-top:8px}
   <!-- 04 -->
   <section id="roles">
     <div class="wrap">
-      <div class="sec-label">06 · 주체별 역할</div>
+      <div class="sec-label">07 · 주체별 역할</div>
       <h2>여섯 주체가 맡는 일</h2>
       <div class="roles">
 
         <article class="role c-exec">
-          <div class="role-head"><h3>① 인텍플러스 경영진 (대표)</h3><span class="meta">스폰서 · 게이트 승인 · 월 1회 + 필요 시</span></div>
+          <div class="role-head"><h3>① 인텍플러스 경영진 (대표)</h3><span class="meta">스폰서 · 단계 판정 승인 · 월 1회 + 필요 시</span></div>
           <p class="lead">프로젝트의 최종 의사결정자입니다. 인력과 고객 협의처럼 내부에서만 풀 수 있는 장애물을 치웁니다.</p>
           <div class="role-grid">
             <div><h4>맡는 일</h4><ul>
-              <li>TF 인력 차출과 투입률 확정 (G0)</li>
-              <li>파일럿 고객 선정, 골든 이미지 사용 협의</li>
+              <li>TF 인력 차출과 투입률 확정 (단계 0)</li>
+              <li>파일럿 대상 선정(기존 고객 1곳, 신규 장비 1종), 골든 이미지 사용 협의</li>
               <li>외부 3주체 계약 범위·예산 승인</li>
-              <li>단계 게이트(G0~G3) 진행·중단 결정</li>
+              <li>단계 0~7의 넘어가기·중단 판정</li>
             </ul></div>
             <div><h4>산출물</h4><ul>
               <li>TF 구성·투입률 확정 문서</li>
               <li>파일럿 고객 협의 결과</li>
-              <li>게이트별 승인 기록</li>
+              <li>단계별 판정 기록</li>
             </ul></div>
           </div>
         </article>
 
         <article class="role key c-intek">
-          <div class="role-head"><h3>② 인텍플러스 내부 TF (8명) · 핵심 주체</h3><span class="meta">M1~M12 · 48~57 MM</span></div>
+          <div class="role-head"><h3>② 인텍플러스 내부 TF (8명) + 신규 장비팀 (2명) · 핵심 주체</h3><span class="meta">M1~M24 · 103~126 MM</span></div>
           <p class="lead">시뮬레이터, 판정 기준, 변경 지도, PRD 승인, 배포를 소유합니다. 처음 3개월 동안 AI 도구를 배우고, 이후 AI로 일하는 방식으로 직접 수행합니다.</p>
           <div class="table-wrap" style="margin-top:0">
             <table>
@@ -487,8 +536,9 @@ footer p+p{margin-top:8px}
                 <tr><td>TF 리더 (핵심 개발자 겸)</td><td>1명 · 60%</td><td>내부 총괄, PRD·배포 최종 승인, 변경 지도 확정 주도, 외부 주체 산출물 수용 판정</td></tr>
                 <tr><td>시뮬레이터 전담</td><td>2명 · 100%</td><td>HAL, 이미지 재생(L2), 가상 호스트·물류(L1), 랩 연동(L3), 결과 출력 규격, 망분리용 반입 키트</td></tr>
                 <tr><td>핵심 개발자</td><td>2명 · 40~60%</td><td>PRD 검토·확정, 현재 상태 PRD 검수, 도메인 스킬(SECS/GEM·검사 규칙) 작성, AI 증분 리뷰, 검사 엔진 공통 모듈화</td></tr>
-                <tr><td>고객대응 엔지니어</td><td>2명 · 20~30% (M4~)</td><td>고객 요청을 PRD 초안으로 정리, 파일럿 현장 설치·최종 확인, 고객 변경 승인 대응</td></tr>
+                <tr><td>고객대응 엔지니어</td><td>2명 · 20~30% (M7~)</td><td>고객 요청을 PRD 초안으로 정리, 파일럿 현장 설치·최종 확인, 고객 변경 승인 대응</td></tr>
                 <tr><td>품질 엔지니어</td><td>1명 · 50%</td><td>골든 이미지셋 선정·관리, 기대 판정 정의, 회귀 결과 판독</td></tr>
+                <tr><td>신규 장비팀</td><td>2명 · 30~50% (M4~M15)</td><td>신규 장비 PRD 작성, AI 생성 위층 리뷰, 가상 팹 시나리오 (단계 4)</td></tr>
               </tbody>
             </table>
           </div>
@@ -510,7 +560,7 @@ footer p+p{margin-top:8px}
         </article>
 
         <article class="role c-bkit">
-          <div class="role-head"><h3>③ bkit 저자 (POPUP Studio)</h3><span class="meta">M2~M6 집중 · M7~M12 운영 지원 · 3~5 MM</span></div>
+          <div class="role-head"><h3>③ bkit 저자 (POPUP Studio)</h3><span class="meta">M2~M8 집중 · 이후 운영 지원 · 4~7 MM</span></div>
           <p class="lead">bkit을 인텍플러스 장비 소프트웨어용으로 포크·커스터마이징합니다. 공정(PRD → Plan → Design → Do → Check → Act → Report)과 합격 게이트를 만듭니다.</p>
           <div class="role-grid">
             <div><h4>맡는 일</h4><ul>
@@ -523,9 +573,9 @@ footer p+p{margin-top:8px}
               <li>bkit 운영 교육 (Track B 일부)</li>
             </ul></div>
             <div><h4>산출물·일정</h4><ul>
-              <li>bkit-intek v1 (M2~M3, 6~8주)</li>
-              <li>시뮬레이터 연동·추적표 v2 (M4~M6, 4~6주)</li>
-              <li>운영 지원 월 2~4일 (M7~M12)</li>
+              <li>bkit-intek v1 (단계 3, M5~M6, 6~8주)</li>
+              <li>시뮬레이터 연동·추적표 v2 (단계 3~4, M7~M8, 4~6주)</li>
+              <li>운영 지원 월 2~4일 (M9~M24)</li>
               <li>인텍 저장소로 포크 이관, 운영 문서</li>
             </ul></div>
           </div>
@@ -533,8 +583,8 @@ footer p+p{margin-top:8px}
         </article>
 
         <article class="role c-bc">
-          <div class="role-head"><h3>④ 브레인크루 (도구 + 엔지니어)</h3><span class="meta">PoC M2~M3 · 구축 M4~M6 · 망분리 M8~M10 · 7~12 MM</span></div>
-          <p class="lead">고객 문서를 읽어 PRD의 입력을 만드는 앞단과, 사내 지식베이스를 맡습니다. PoC 결과(G1)에 따라 구축 여부를 정합니다.</p>
+          <div class="role-head"><h3>④ 브레인크루 (도구 + 엔지니어)</h3><span class="meta">PoC 단계 3 · 신규 장비 GEM 입력 단계 4 · 망분리 단계 6 · 7~12 MM</span></div>
+          <p class="lead">고객 문서를 읽어 PRD의 입력을 만드는 앞단과, 사내 지식베이스를 맡습니다. 단계 3의 PoC 결과에 따라 구축 여부를 정합니다.</p>
           <div class="role-grid">
             <div><h4>맡는 일</h4><ul>
               <li>PoC: GEM 사양서 보고 항목 추출 정확도 100%, PRD 초안 품질, Git 변경 요청 연동, 망분리 내부 LLM 동작</li>
@@ -555,7 +605,7 @@ footer p+p{margin-top:8px}
         </article>
 
         <article class="role c-ai">
-          <div class="role-head"><h3>⑤ AI 컨설턴트 (하네스 아키텍트·교육)</h3><span class="meta">M1~M12 · 40~60% · 5~7 MM</span></div>
+          <div class="role-head"><h3>⑤ AI 컨설턴트 (하네스 아키텍트·교육)</h3><span class="meta">M1~M24 · 20~60% · 8~12 MM</span></div>
           <p class="lead">에이전트 팀과 오케스트레이션을 설계하고, 인텍 엔지니어가 AI로 일할 수 있게 가르칩니다. 코드를 대신 쓰지 않고 코칭합니다.</p>
           <div class="role-grid">
             <div><h4>맡는 일</h4><ul>
@@ -571,18 +621,18 @@ footer p+p{margin-top:8px}
               <li>에이전트 팀·스킬 v1 (M3~M5)</li>
               <li>보안 아키텍처 문서 (M3)</li>
               <li>교육 과정·실습 자료 (M2~M6)</li>
-              <li>운영 이관 문서 (M12)</li>
+              <li>운영 이관 문서 (M24)</li>
             </ul></div>
           </div>
           <p class="not"><b>하지 않는 일:</b> 시뮬레이터 코드 대신 작성, 판정 기준 결정, 고객 데이터 직접 취급.</p>
         </article>
 
         <article class="role c-pm">
-          <div class="role-head"><h3>⑥ PM (장동인)</h3><span class="meta">M1~M12 · 주 1~2일 · 2.5~5 MM</span></div>
+          <div class="role-head"><h3>⑥ PM (장동인)</h3><span class="meta">M1~M24 · 주 1~2일 · 5~10 MM</span></div>
           <p class="lead">전체 체계의 설계자이자 통합 책임자입니다. 여러 주체의 산출물이 서로 맞물리도록 <strong>주체 간 규격</strong>을 정의하고, 게이트를 운영합니다.</p>
           <div class="role-grid">
             <div><h4>맡는 일</h4><ul>
-              <li>전체 아키텍처·범위·일정 책임, 게이트 운영과 대표 보고</li>
+              <li>전체 아키텍처·범위·일정 책임, 단계 판정 운영과 대표 보고</li>
               <li>변경 지도 워크숍 진행</li>
               <li>PRD 작성 표준·템플릿 정의 (to-prd 기반)</li>
               <li>주체 간 규격 정의: PRD 규격, 시뮬레이터 결과 규격, Git 흐름</li>
@@ -590,7 +640,7 @@ footer p+p{margin-top:8px}
               <li>KPI 기준선 측정과 효과 보고, 리스크 관리</li>
             </ul></div>
             <div><h4>산출물</h4><ul>
-              <li>실행 계획서, 게이트 보고서 4회</li>
+              <li>실행 계획서, 단계 판정 보고서 8회</li>
               <li>PRD 표준·템플릿</li>
               <li>주체 간 인터페이스 정의서</li>
               <li>KPI 기준선·성과 보고서</li>
@@ -617,13 +667,13 @@ footer p+p{margin-top:8px}
   <!-- 05 RACI -->
   <section id="raci">
     <div class="wrap">
-      <div class="sec-label">07 · 업무 분장표</div>
+      <div class="sec-label">08 · 업무 분장표</div>
       <h2>업무별 책임 (RACI)</h2>
       <div class="table-wrap">
         <table class="raci">
           <thead><tr><th>업무</th><th class="rc">경영진</th><th class="rc">인텍 TF</th><th class="rc">bkit 저자</th><th class="rc">브레인크루</th><th class="rc">AI 컨설턴트</th><th class="rc">PM</th></tr></thead>
           <tbody>
-            <tr><td>프로젝트 총괄·게이트 운영</td><td class="a">A</td><td class="c">C</td><td class="i">I</td><td class="i">I</td><td class="i">I</td><td class="r">R</td></tr>
+            <tr><td>프로젝트 총괄·단계 판정 운영</td><td class="a">A</td><td class="c">C</td><td class="i">I</td><td class="i">I</td><td class="i">I</td><td class="r">R</td></tr>
             <tr><td>TF 구성·고객사 협의</td><td class="a">A</td><td class="r">R</td><td class="x">–</td><td class="x">–</td><td class="x">–</td><td class="c">C</td></tr>
             <tr><td>변경 지도 확정</td><td class="i">I</td><td class="a">A</td><td class="x">–</td><td class="x">–</td><td class="c">C</td><td class="r">R</td></tr>
             <tr><td>골든 이미지셋·판정 기준</td><td class="x">–</td><td class="a">A·R</td><td class="x">–</td><td class="x">–</td><td class="x">–</td><td class="i">I</td></tr>
@@ -637,6 +687,7 @@ footer p+p{margin-top:8px}
             <tr><td>현재 상태 PRD 역생성</td><td class="x">–</td><td class="a">A</td><td class="x">–</td><td class="r">R</td><td class="r">R</td><td class="c">C</td></tr>
             <tr><td>보안 아키텍처 (등급별)</td><td class="a">A</td><td class="c">C</td><td class="x">–</td><td class="c">C</td><td class="r">R</td><td class="c">C</td></tr>
             <tr><td>내부 엔지니어 AI 교육</td><td class="i">I</td><td class="c">C</td><td class="r">R</td><td class="x">–</td><td class="r">R</td><td class="a">A</td></tr>
+            <tr><td>신규 장비 PRD·생성 (단계 4)</td><td class="i">I</td><td class="a">A·R</td><td class="c">C</td><td class="c">C</td><td class="c">C</td><td class="c">C</td></tr>
             <tr><td>파일럿 업그레이드 수행</td><td class="i">I</td><td class="a">A·R</td><td class="c">C</td><td class="c">C</td><td class="c">C</td><td class="c">C</td></tr>
             <tr><td>배포·롤백 체계</td><td class="x">–</td><td class="a">A·R</td><td class="x">–</td><td class="x">–</td><td class="c">C</td><td class="i">I</td></tr>
             <tr><td>KPI 측정·성과 보고</td><td class="a">A</td><td class="c">C</td><td class="i">I</td><td class="i">I</td><td class="c">C</td><td class="r">R</td></tr>
@@ -653,145 +704,75 @@ footer p+p{margin-top:8px}
   <!-- 06 Gantt -->
   <section id="schedule">
     <div class="wrap">
-      <div class="sec-label">08 · 추진 일정</div>
-      <h2>12개월 일정</h2>
-      <div class="body"><p>M1은 착수월입니다(2026년 11월 착수 시 M12는 2027년 10월). 빗금 막대는 앞 게이트 결과에 따라 진행 여부가 정해지는 조건부 업무입니다.</p></div>
+      <div class="sec-label">09 · 추진 일정</div>
+      <h2>24개월 일정</h2>
+      <div class="body"><p>M1은 착수월입니다(2026년 11월 착수 가정). 마름모는 각 단계를 마치고 다음 단계로 넘어갈지 판정하는 시점입니다. 판정은 대표님이 하고, 근거는 단계별 측정값입니다.</p></div>
+      <style>
+        .g24{min-width:860px;padding:12px 14px 16px}
+        .g24-row{display:grid;grid-template-columns:150px repeat(24,minmax(24px,1fr));align-items:center;min-height:34px}
+        .g24-head{display:grid;grid-template-columns:150px repeat(8,minmax(72px,1fr));font-family:var(--font-mono);font-size:11px;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:6px}
+        .g24-head span{text-align:center;line-height:1.3}
+        .g24-track{grid-column:2/26;grid-row:1;align-self:stretch;background-image:linear-gradient(to right,var(--line) 1px,transparent 1px);background-size:calc(100% / 8) 100%}
+      </style>
       <div class="gantt-wrap">
-        <div class="gantt" role="img" aria-label="주체별 12개월 간트 차트">
-          <div class="g-row g-head"><span></span><span>M1</span><span>M2</span><span>M3</span><span>M4</span><span>M5</span><span>M6</span><span>M7</span><span>M8</span><span>M9</span><span>M10</span><span>M11</span><span>M12</span></div>
-
-          <div class="g-row g-group"><span>게이트</span></div>
-          <div class="g-row"><div class="g-label">단계 게이트</div><div class="g-track"></div>
-            <div class="g-gate" style="grid-column:2/3"></div><div class="g-gate-l" style="grid-column:2/3">G0</div>
-            <div class="g-gate" style="grid-column:4/5"></div><div class="g-gate-l" style="grid-column:4/5">G1</div>
-            <div class="g-gate" style="grid-column:7/8"></div><div class="g-gate-l" style="grid-column:7/8">G2</div>
-            <div class="g-gate" style="grid-column:13/14"></div><div class="g-gate-l" style="grid-column:13/14">G3</div>
-          </div>
-
-          <div class="g-row g-group"><span>인텍 내부 TF</span></div>
-          <div class="g-row c-intek"><div class="g-label">진단·변경 지도 확정<span class="who c-intek">핵심 개발자</span></div><div class="g-track"></div><div class="g-bar" style="grid-column:2/3">진단</div></div>
-          <div class="g-row c-intek"><div class="g-label">골든 이미지셋 구축<span class="who c-intek">품질 + 핵심 개발자</span></div><div class="g-track"></div><div class="g-bar" style="grid-column:2/6">골든셋</div></div>
-          <div class="g-row c-intek"><div class="g-label">과거 업그레이드 재현 시험<span class="who c-intek">핵심 개발자 + AI 컨설턴트</span></div><div class="g-track"></div><div class="g-bar" style="grid-column:3/5">재현 시험</div></div>
-          <div class="g-row c-intek"><div class="g-label">L2 이미지 재생 회귀<span class="who c-intek">시뮬레이터팀</span></div><div class="g-track"></div><div class="g-bar" style="grid-column:3/5">L2 MVP</div></div>
-          <div class="g-row c-intek"><div class="g-label">HAL + L1 가상 호스트·물류<span class="who c-intek">시뮬레이터팀</span></div><div class="g-track"></div><div class="g-bar" style="grid-column:4/9">HAL · L1</div></div>
-          <div class="g-row c-intek"><div class="g-label">현재 상태 PRD 검수·확정<span class="who c-intek">핵심 개발자</span></div><div class="g-track"></div><div class="g-bar" style="grid-column:4/7">현재 상태 PRD</div></div>
-          <div class="g-row c-intek"><div class="g-label">파일럿 업그레이드 2~3건<span class="who c-intek">TF 전원</span></div><div class="g-track"></div><div class="g-bar" style="grid-column:6/9">파일럿</div></div>
-          <div class="g-row c-intek"><div class="g-label">고객 확대·검사 엔진 공통화<span class="who c-intek">TF 전원</span></div><div class="g-track"></div><div class="g-bar cond" style="grid-column:8/14">확산</div></div>
-          <div class="g-row c-intek"><div class="g-label">L3 랩 · 망분리 반입 키트<span class="who c-intek">시뮬레이터팀</span></div><div class="g-track"></div><div class="g-bar cond" style="grid-column:10/14">L3 · 키트</div></div>
-
-          <div class="g-row g-group"><span>외부 주체</span></div>
-          <div class="g-row c-bkit"><div class="g-label">bkit-intek v1<span class="who c-bkit">bkit 저자</span></div><div class="g-track"></div><div class="g-bar" style="grid-column:3/5">v1</div></div>
-          <div class="g-row c-bkit"><div class="g-label">시뮬레이터 연동·추적표<span class="who c-bkit">bkit 저자 + 시뮬레이터팀</span></div><div class="g-track"></div><div class="g-bar" style="grid-column:5/8">v2 연동</div></div>
-          <div class="g-row c-bkit"><div class="g-label">bkit 운영 지원<span class="who c-bkit">bkit 저자</span></div><div class="g-track"></div><div class="g-bar" style="grid-column:8/14">월 2~4일</div></div>
-          <div class="g-row c-bc"><div class="g-label">브레인크루 PoC<span class="who c-bc">브레인크루</span></div><div class="g-track"></div><div class="g-bar" style="grid-column:3/5">PoC</div></div>
-          <div class="g-row c-bc"><div class="g-label">문서 입력·지식베이스 구축<span class="who c-bc">브레인크루</span></div><div class="g-track"></div><div class="g-bar cond" style="grid-column:5/8">구축 (G1 합격 시)</div></div>
-          <div class="g-row c-bc"><div class="g-label">망분리 온프레미스 설치<span class="who c-bc">브레인크루</span></div><div class="g-track"></div><div class="g-bar cond" style="grid-column:9/12">등급 C</div></div>
-          <div class="g-row c-ai"><div class="g-label">레거시 분석·보안 설계<span class="who c-ai">AI 컨설턴트</span></div><div class="g-track"></div><div class="g-bar" style="grid-column:2/5">분석·설계</div></div>
-          <div class="g-row c-ai"><div class="g-label">에이전트 팀·Workflow<span class="who c-ai">AI 컨설턴트</span></div><div class="g-track"></div><div class="g-bar" style="grid-column:4/7">harness 팀 v1</div></div>
-          <div class="g-row c-ai"><div class="g-label">AI 교육 Track A·B·C<span class="who c-ai">AI 컨설턴트 · bkit 저자 · PM</span></div><div class="g-track"></div><div class="g-bar" style="grid-column:3/8">교육·코칭</div></div>
-          <div class="g-row c-ai"><div class="g-label">evolve·챔피언 양성·이관<span class="who c-ai">AI 컨설턴트</span></div><div class="g-track"></div><div class="g-bar" style="grid-column:8/14">이관</div></div>
-
-          <div class="g-row g-group"><span>PM</span></div>
-          <div class="g-row c-pm"><div class="g-label">총괄·규격·게이트·KPI<span class="who c-pm">PM</span></div><div class="g-track"></div><div class="g-bar" style="grid-column:2/14">전 기간</div></div>
+        <div class="g24" role="img" aria-label="단계별 24개월 간트 차트">
+          <div class="g24-head"><span></span><span>Q1<br>M1~3</span><span>Q2<br>M4~6</span><span>Q3<br>M7~9</span><span>Q4<br>M10~12</span><span>Q5<br>M13~15</span><span>Q6<br>M16~18</span><span>Q7<br>M19~21</span><span>Q8<br>M22~24</span></div>
+          <div class="g24-row"><div class="g-label">단계 0 준비</div><div class="g24-track"></div><div class="g-bar" style="--c:#1B2A4A;grid-column:2/3"></div><div class="g-gate" style="grid-column:2/3"></div></div>
+          <div class="g24-row"><div class="g-label">단계 1 판정 재현</div><div class="g24-track"></div><div class="g-bar" style="--c:var(--o-intek);grid-column:3/6"></div><div class="g-gate" style="grid-column:5/6"></div></div>
+          <div class="g24-row"><div class="g-label">단계 2 장비 재현</div><div class="g24-track"></div><div class="g-bar" style="--c:var(--o-intek);grid-column:4/9"></div><div class="g-gate" style="grid-column:8/9"></div></div>
+          <div class="g24-row"><div class="g-label">단계 3 AI 증분</div><div class="g24-track"></div><div class="g-bar" style="--c:var(--o-intek);grid-column:6/10"></div><div class="g-gate" style="grid-column:9/10"></div></div>
+          <div class="g24-row"><div class="g-label">단계 4 신규 장비</div><div class="g24-track"></div><div class="g-bar" style="--c:var(--o-bkit);grid-column:5/17"></div><div class="g-gate" style="grid-column:16/17"></div></div>
+          <div class="g24-row"><div class="g-label">단계 5 실전 적용</div><div class="g24-track"></div><div class="g-bar" style="--c:var(--o-intek);grid-column:8/12"></div><div class="g-gate" style="grid-column:11/12"></div></div>
+          <div class="g24-row"><div class="g-label">단계 6 확산</div><div class="g24-track"></div><div class="g-bar" style="--c:var(--o-pm);grid-column:11/20"></div><div class="g-gate" style="grid-column:19/20"></div></div>
+          <div class="g24-row"><div class="g-label">단계 7 수렴</div><div class="g24-track"></div><div class="g-bar cond" style="--c:var(--o-pm);grid-column:19/26"></div></div>
         </div>
-        <div class="g-note"><i><span class="sw"></span>확정 업무</i><i><span class="sw cond"></span>조건부 업무</i><i><span class="dm"></span>게이트 (해당 월 말)</i></div>
+        <div class="g-note"><i><span class="sw" style="background:var(--o-intek)"></span>기존 장비 트랙</i><i><span class="sw" style="background:var(--o-bkit)"></span>신규 장비 트랙</i><i><span class="sw"></span>공통</i><i><span class="dm"></span>넘어가는 조건 판정</i><i><span class="sw cond"></span>지속 단계</i></div>
+      </div>
+      <h3 class="sub">단계와 주체별 투입 시기</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>주체</th><th>집중 투입 단계</th><th>기간</th></tr></thead>
+          <tbody>
+            <tr><td><span class="who c-intek">인텍 시뮬레이터팀</span></td><td>단계 1·2 구축 → 단계 3~6 운영·확장</td><td>M1~M24</td></tr>
+            <tr><td><span class="who c-intek">인텍 핵심 개발자·품질</span></td><td>단계 0 변경 지도, 단계 1 골든셋, 단계 3 PRD 확정, 단계 5 실전</td><td>M1~M24</td></tr>
+            <tr><td><span class="who c-intek">신규 장비팀</span></td><td>단계 4</td><td>M4~M15</td></tr>
+            <tr><td><span class="who c-bkit">bkit 저자</span></td><td>단계 3 v1, 단계 4·5 시뮬레이터 연동·추적표, 이후 운영 지원</td><td>M2~M8 + 지원</td></tr>
+            <tr><td><span class="who c-bc">브레인크루</span></td><td>단계 3 PoC, 단계 4 GEM 사양 입력, 단계 6 망분리 설치</td><td>조건부</td></tr>
+            <tr><td><span class="who c-ai">AI 컨설턴트</span></td><td>단계 0 레거시 분석, 단계 1~4 코칭·에이전트 팀, 단계 6 이관</td><td>M1~M24</td></tr>
+            <tr><td><span class="who c-pm">PM</span></td><td>전 단계 규격·측정·판정 보고</td><td>M1~M24</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
 
   <!-- 07 Phases -->
-  <section id="phases">
-    <div class="wrap">
-      <div class="sec-label">09 · 단계별 업무</div>
-      <h2>단계마다 누가 무엇을 내놓는가</h2>
-
-      <div class="phase">
-        <div class="phase-head"><h3>0단계 · 착수와 진단</h3><span class="when">M1 · 4주 · 게이트 G0</span></div>
-        <p class="goal">목표: 인력과 파일럿 고객을 확정하고, AI가 손댈 범위(변경 지도)를 정합니다.</p>
-        <div class="table-wrap"><table>
-          <thead><tr><th>주체</th><th>할 일</th><th>산출물</th></tr></thead>
-          <tbody>
-            <tr><td><span class="who c-exec">경영진</span></td><td>TF 인력·투입률 확정, 파일럿 고객 협의 착수, 외부 계약 승인</td><td>TF 구성 확정</td></tr>
-            <tr><td><span class="who c-intek">인텍 TF</span></td><td>변경 지도 워크숍 참여, 파일럿 고객 소스의 하드웨어 호출 구조 진단, 최근 업그레이드 건 정리</td><td>소스 진단 메모, 변경 지도 초안</td></tr>
-            <tr><td><span class="who c-ai">AI 컨설턴트</span></td><td>AI로 레거시 소스 구조 분석, 개발 환경·보안 정책 확인</td><td>소스 구조 맵</td></tr>
-            <tr><td><span class="who c-bkit">bkit 저자</span></td><td>요구사항 청취, 장비용 템플릿 초안</td><td>커스터마이징 범위서</td></tr>
-            <tr><td><span class="who c-bc">브레인크루</span></td><td>PoC 범위·샘플 문서 협의</td><td>PoC 계획서</td></tr>
-            <tr><td><span class="who c-pm">PM</span></td><td>킥오프, 워크숍 진행, 주체 간 규격 초안, KPI 기준선 측정 설계</td><td>실행 계획서, 인터페이스 정의서 초안</td></tr>
-          </tbody>
-        </table></div>
-      </div>
-
-      <div class="phase">
-        <div class="phase-head"><h3>1단계 · 기반 구축</h3><span class="when">M2~M3 · 8주 · 게이트 G1</span></div>
-        <p class="goal">목표: 검사 기능(업그레이드의 70%)을 지키는 골든 이미지 회귀 시험을 돌리고, 도구를 시험합니다.</p>
-        <div class="table-wrap"><table>
-          <thead><tr><th>주체</th><th>할 일</th><th>산출물</th></tr></thead>
-          <tbody>
-            <tr><td><span class="who c-intek">인텍 TF</span></td><td>검사 엔진을 떼어 L2 이미지 재생 회귀 MVP 구축(AI 코딩 도구 활용), 골든 이미지셋 1차, 시뮬레이터 결과 규격 확정, <strong>과거 업그레이드 재현 시험</strong>(과거 5~10건 선정·판정), Track A·B·C 교육 이수</td><td>L2 MVP, 골든셋 v1, 결과 규격서, 재현 시험 결과</td></tr>
-            <tr><td><span class="who c-bkit">bkit 저자</span></td><td>bkit-intek v1: PRD 템플릿, 문서 구조, 가드레일 훅, 승인 게이트</td><td>bkit-intek v1</td></tr>
-            <tr><td><span class="who c-bc">브레인크루</span></td><td>PoC: GEM 사양서 추출, PRD 초안 5~10건 재현, Git 연동, 내부 LLM</td><td>PoC 결과 보고</td></tr>
-            <tr><td><span class="who c-ai">AI 컨설턴트</span></td><td>보안 등급별 아키텍처, 교육 진행, 시뮬레이터팀 주 1회 코칭, 재현 시험의 역생성·증분 생성 실행 지원</td><td>보안 아키텍처, 교육 자료</td></tr>
-            <tr><td><span class="who c-pm">PM</span></td><td>PRD 표준 확정, 규격 확정, G1 평가</td><td>PRD 표준, G1 보고서</td></tr>
-          </tbody>
-        </table></div>
-      </div>
-
-      <div class="phase">
-        <div class="phase-head"><h3>2단계 · 파일럿</h3><span class="when">M4~M6 · 12주 · 게이트 G2</span></div>
-        <p class="goal">목표: 실제 업그레이드 요청 2~3건을 새 방식으로 처리하고, 기존 방식과 현장 체류 시간·결함을 비교합니다.</p>
-        <div class="table-wrap"><table>
-          <thead><tr><th>주체</th><th>할 일</th><th>산출물</th></tr></thead>
-          <tbody>
-            <tr><td><span class="who c-intek">인텍 TF</span></td><td>HAL 도입과 L1(가상 호스트·물류) 개발, 현재 상태 PRD 검수·확정, 도메인 스킬 작성, 파일럿 2~3건 수행·현장 설치</td><td>L1, 현재 상태 PRD, 파일럿 결과</td></tr>
-            <tr><td><span class="who c-bkit">bkit 저자</span></td><td>Check 단계에 시뮬레이터 결과 연동, Report를 추적표 양식으로</td><td>bkit-intek v2</td></tr>
-            <tr><td><span class="who c-bc">브레인크루</span></td><td>(G1 합격 시) 문서 입력 파이프라인, 지식베이스, 현재 상태 PRD 문서 초안</td><td>입력 파이프라인, 지식베이스</td></tr>
-            <tr><td><span class="who c-ai">AI 컨설턴트</span></td><td>harness로 에이전트 팀 생성 → 인텍 검토 → 고정, Workflow와 bkit 연결, 비용·1회 합격률 측정</td><td>에이전트 팀 v1, 운영 지표</td></tr>
-            <tr><td><span class="who c-pm">PM</span></td><td>파일럿 KPI 측정, 고객 승인 자료 검토, G2 평가</td><td>G2 보고서</td></tr>
-          </tbody>
-        </table></div>
-      </div>
-
-      <div class="phase">
-        <div class="phase-head"><h3>3단계 · 확산과 운영 이관</h3><span class="when">M7~M12 · 6개월 · 게이트 G3</span></div>
-        <p class="goal">목표: 주요 고객으로 넓히고, 외부 주체 없이 인텍 내부가 운영할 수 있게 넘깁니다.</p>
-        <div class="table-wrap"><table>
-          <thead><tr><th>주체</th><th>할 일</th><th>산출물</th></tr></thead>
-          <tbody>
-            <tr><td><span class="who c-intek">인텍 TF</span></td><td>주요 고객 확대, 검사 엔진 공통 모듈화, 신규 출하 장비 플랫폼 적용 검토, L3 랩, 망분리 반입 키트, 배포·롤백 체계 표준화</td><td>확산 고객 시뮬레이터, 공통 모듈, 반입 키트</td></tr>
-            <tr><td><span class="who c-bkit">bkit 저자</span></td><td>운영 지원(월 2~4일), 포크를 인텍 저장소로 이관</td><td>운영 문서</td></tr>
-            <tr><td><span class="who c-bc">브레인크루</span></td><td>망분리 고객 온프레미스 설치(M8~M10), 지식베이스 확대</td><td>망분리 설치본</td></tr>
-            <tr><td><span class="who c-ai">AI 컨설턴트</span></td><td>evolve로 에이전트·스킬 개선, 내부 AI 챔피언 2명 양성, 이관</td><td>이관 문서</td></tr>
-            <tr><td><span class="who c-pm">PM</span></td><td>확산 성과 측정, 차년도 계획, G3 평가</td><td>최종 보고서</td></tr>
-          </tbody>
-        </table></div>
-      </div>
-    </div>
-  </section>
 
   <!-- 08 Effort -->
   <section id="effort">
     <div class="wrap">
       <div class="sec-label">10 · 투입 공수</div>
-      <h2>주체별 투입 공수 (추정)</h2>
+      <h2>주체별 투입 공수 (24개월, 추정)</h2>
       <div class="table-wrap">
         <table>
           <thead><tr><th>주체</th><th>인원·투입률</th><th>기간</th><th class="num">공수 (MM)</th></tr></thead>
           <tbody>
-            <tr><td>인텍 시뮬레이터 전담</td><td>2명 · 100%</td><td>M1~M12</td><td class="num">24</td></tr>
-            <tr><td>인텍 TF 리더 + 핵심 개발자</td><td>3명 · 40~60%</td><td>M1~M12</td><td class="num">14~22</td></tr>
-            <tr><td>인텍 고객대응 엔지니어</td><td>2명 · 20~30%</td><td>M4~M12</td><td class="num">4~5</td></tr>
-            <tr><td>인텍 품질 엔지니어</td><td>1명 · 50%</td><td>M1~M12</td><td class="num">6</td></tr>
-            <tr class="sub"><td>인텍 내부 소계</td><td>8명</td><td></td><td class="num">48~57</td></tr>
-            <tr><td>bkit 저자</td><td>1~2명</td><td>M2~M6 집중, 이후 지원</td><td class="num">3~5</td></tr>
+            <tr><td>인텍 시뮬레이터 전담</td><td>2명 · 100%</td><td>M1~M24</td><td class="num">48</td></tr>
+            <tr><td>인텍 TF 리더 + 핵심 개발자</td><td>3명 · 40~60%</td><td>M1~M24</td><td class="num">29~43</td></tr>
+            <tr><td>인텍 고객대응 엔지니어</td><td>2명 · 20~30%</td><td>M7~M24</td><td class="num">7~11</td></tr>
+            <tr><td>인텍 품질 엔지니어</td><td>1명 · 50%</td><td>M1~M24</td><td class="num">12</td></tr>
+            <tr><td>신규 장비팀 (PRD·AI 방식 전환 추가분)</td><td>2명 · 30~50%</td><td>M4~M15</td><td class="num">7~12</td></tr>
+            <tr class="sub"><td>인텍 내부 소계</td><td>10명</td><td></td><td class="num">103~126</td></tr>
+            <tr><td>bkit 저자</td><td>1~2명</td><td>M2~M8 집중, 이후 지원</td><td class="num">4~7</td></tr>
             <tr><td>브레인크루</td><td>엔지니어 1~2명</td><td>PoC · 구축 · 망분리</td><td class="num">7~12</td></tr>
-            <tr><td>AI 컨설턴트</td><td>1명 · 40~60%</td><td>M1~M12</td><td class="num">5~7</td></tr>
-            <tr><td>PM</td><td>1명 · 주 1~2일</td><td>M1~M12</td><td class="num">2.5~5</td></tr>
-            <tr class="total"><td>합계</td><td></td><td></td><td class="num">66~86</td></tr>
+            <tr><td>AI 컨설턴트</td><td>1명 · 20~60%</td><td>M1~M24</td><td class="num">8~12</td></tr>
+            <tr><td>PM</td><td>1명 · 주 1~2일</td><td>M1~M24</td><td class="num">5~10</td></tr>
+            <tr class="total"><td>합계</td><td></td><td></td><td class="num">127~167</td></tr>
           </tbody>
         </table>
       </div>
       <div class="caution">
-        <p><b>산정 가정.</b> MM은 1명이 1개월 전일 투입한 양입니다. 인텍 소스 상태를 보기 전의 추정이므로 0단계 진단 후 다시 산정합니다. 브레인크루 공수는 PoC 이후 구축과 망분리 설치가 모두 진행될 때의 범위이며, 라이선스 비용과 외부 주체의 단가는 견적을 받아야 합니다. 경영진 시간은 공수에서 제외했습니다.</p>
+        <p><b>산정 가정.</b> MM은 1명이 1개월 전일 투입한 양입니다. 인텍 소스 상태를 보기 전의 추정이므로 단계 0 진단 후 다시 산정합니다. 신규 장비 본 개발 공수는 제외하고 PRD·AI 방식 전환의 추가분만 넣었습니다. 단계를 넘어가지 못하면 이후 공수는 집행하지 않으므로 실제 집행은 단계 판정에 따라 줄어듭니다. 브레인크루 공수는 PoC 이후 구축과 망분리 설치가 모두 진행될 때의 범위이며, 라이선스 비용과 외부 주체의 단가는 견적을 받아야 합니다. 경영진 시간은 공수에서 제외했습니다.</p>
         <p><b>가장 큰 변수.</b> 핵심 개발자가 기존 고객 대응에 끌려가 TF 투입률이 20% 이하로 떨어지면, 일정은 3~6개월 늘어날 수 있습니다.</p>
       </div>
     </div>
@@ -805,8 +786,8 @@ footer p+p{margin-top:8px}
       <div class="tracks">
         <div class="track"><div class="k">Track A · 전체 SW 엔지니어</div><h3>AI 코딩 기초와 안전 규칙</h3><dl><dt>대상</dt><dd>장비 SW 엔지니어 전원</dd><dt>방식</dt><dd>2일 집합 교육, 2회 차수</dd><dt>시기</dt><dd>M2~M3</dd><dt>강사</dt><dd>AI 컨설턴트</dd><dt>내용</dt><dd>AI 코딩 도구 사용법, 변경 지도와 AI 수정 금지 영역, 고객 데이터 규칙</dd></dl></div>
         <div class="track"><div class="k">Track B · TF 8명</div><h3>하네스 엔지니어링 실습</h3><dl><dt>대상</dt><dd>TF 전원</dd><dt>방식</dt><dd>주 1일 × 6주, 실제 과거 업그레이드 건으로 실습</dd><dt>시기</dt><dd>M2~M4</dd><dt>강사</dt><dd>PM(PRD), bkit 저자(bkit), AI 컨설턴트(harness·Workflow)</dd><dt>내용</dt><dd>PRD 작성, bkit 공정 운영, 에이전트 팀 운영, 시뮬레이터 연동</dd></dl></div>
-        <div class="track key"><div class="k">Track C · 시뮬레이터팀 + 핵심 개발자</div><h3>AI로 시뮬레이터 만들기</h3><dl><dt>대상</dt><dd>시뮬레이터 전담 2명, 핵심 개발자 3명</dd><dt>방식</dt><dd>실제 개발에 붙는 코칭, 주 1회</dd><dt>시기</dt><dd>M2~M7</dd><dt>코치</dt><dd>AI 컨설턴트</dd><dt>내용</dt><dd>AI로 레거시 소스 분석, HAL 리팩터링, 가상 장치·시나리오 코드 생성, 회귀 결과 판독 자동화</dd></dl></div>
-        <div class="track"><div class="k">Track D · 내부 AI 챔피언</div><h3>운영을 넘겨받을 사람</h3><dl><dt>대상</dt><dd>TF 중 2명</dd><dt>방식</dt><dd>외부 주체와 함께 일하며 인수</dd><dt>시기</dt><dd>M7~M12</dd><dt>코치</dt><dd>AI 컨설턴트, bkit 저자</dd><dt>내용</dt><dd>evolve 운영, bkit·에이전트 유지보수, 신규 엔지니어 교육</dd></dl></div>
+        <div class="track key"><div class="k">Track C · 시뮬레이터팀 + 핵심 개발자</div><h3>AI로 시뮬레이터 만들기</h3><dl><dt>대상</dt><dd>시뮬레이터 전담 2명, 핵심 개발자 3명</dd><dt>방식</dt><dd>실제 개발에 붙는 코칭, 주 1회</dd><dt>시기</dt><dd>M2~M8</dd><dt>코치</dt><dd>AI 컨설턴트</dd><dt>내용</dt><dd>AI로 레거시 소스 분석, HAL 리팩터링, 가상 장치·시나리오 코드 생성, 회귀 결과 판독 자동화</dd></dl></div>
+        <div class="track"><div class="k">Track D · 내부 AI 챔피언</div><h3>운영을 넘겨받을 사람</h3><dl><dt>대상</dt><dd>TF 중 2명</dd><dt>방식</dt><dd>외부 주체와 함께 일하며 인수</dd><dt>시기</dt><dd>M13~M24</dd><dt>코치</dt><dd>AI 컨설턴트, bkit 저자</dd><dt>내용</dt><dd>evolve 운영, bkit·에이전트 유지보수, 신규 엔지니어 교육</dd></dl></div>
       </div>
     </div>
   </section>
@@ -814,29 +795,23 @@ footer p+p{margin-top:8px}
   <!-- 10 Gates -->
   <section id="gates">
     <div class="wrap">
-      <div class="sec-label">12 · 게이트</div>
-      <h2>단계마다 진행 여부를 판정합니다</h2>
-      <div class="gates">
-        <div class="gate"><div class="g">G0 · M1 말</div><h3>착수 조건</h3><ul><li>TF 8명 확정, 시뮬레이터 전담 2명 차출</li><li>파일럿 고객 확정, 골든 이미지 사용 동의</li><li>외부 3주체 계약 범위 합의</li></ul><p class="dec">판정: 대표 · 보고: PM</p></div>
-        <div class="gate"><div class="g">G1 · M3 말</div><h3>기반 확인</h3><ul><li>L2 회귀가 파일럿 골든셋에서 동작, 판정 차이를 잡아냄</li><li>과거 업그레이드 재현 시험 결과로 변경 유형별 AI 자동화 범위 결정</li><li>브레인크루 PoC: GEM 추출 100% → 구축 진행/중단 결정</li></ul><p class="dec">판정: 대표 + PM · 근거: TF 리더 검수</p></div>
-        <div class="gate"><div class="g">G2 · M6 말</div><h3>파일럿 효과</h3><ul><li>실제 업그레이드 2~3건을 새 방식으로 완료</li><li>현장 체류 시간, 현장 발견 결함을 기존 방식과 비교</li><li>AI 증분의 시뮬레이터 1회 합격률 측정</li></ul><p class="dec">판정: 대표 · 확산 범위 결정</p></div>
-        <div class="gate"><div class="g">G3 · M12 말</div><h3>확산과 이관</h3><ul><li>주요 고객 확대 결과</li><li>내부 AI 챔피언이 외부 지원 없이 운영 가능</li><li>차년도 범위(플랫폼 전환, 신규 출하 적용)</li></ul><p class="dec">판정: 대표 · 최종 보고: PM</p></div>
-      </div>
-      <h3 class="sub">측정 지표</h3>
+      <div class="sec-label">12 · 측정 지표</div>
+      <h2>측정 지표는 단계마다 하나씩 쌓입니다</h2>
+      <div class="body"><p>단계를 넘어갈지는 대표님이 판정하고, 근거는 아래 측정값입니다. 각 지표는 해당 단계에서 처음 측정하고 이후 계속 추적합니다. 목표 수치는 단계 0에서 기준선을 측정한 뒤 TF와 함께 정합니다.</p></div>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>지표</th><th>정의</th><th>측정 주체</th></tr></thead>
+          <thead><tr><th>지표</th><th>정의</th><th>처음 측정</th><th>측정 주체</th></tr></thead>
           <tbody>
-            <tr><td>현장 체류 시간</td><td>업그레이드 1건당 클린룸 작업 시간</td><td>인텍 고객대응 → PM 집계</td></tr>
-            <tr><td>재방문율</td><td>설치 후 추가 방문이 필요한 비율</td><td>인텍 고객대응</td></tr>
-            <tr><td>현장 발견 결함</td><td>출장 후에야 발견된 결함 수</td><td>인텍 품질</td></tr>
-            <tr><td>리드타임</td><td>고객 요청부터 설치 완료까지</td><td>PM</td></tr>
-            <tr><td>핵심 개발자 투입</td><td>건당 핵심 개발자 작업 시간</td><td>TF 리더</td></tr>
-            <tr><td>1회 합격률</td><td>AI 증분이 재생성 없이 시뮬레이터를 통과한 비율</td><td>AI 컨설턴트</td></tr>
+            <tr><td>판정 일치율</td><td>골든셋에서 현장과 사무실 판정이 일치하는 비율</td><td>단계 1</td><td>인텍 품질</td></tr>
+            <tr><td>통신 재현율</td><td>로그 재생 시 메시지 순서·내용이 일치하는 비율</td><td>단계 2</td><td>시뮬레이터팀</td></tr>
+            <tr><td>1회 합격률</td><td>AI 증분이 재생성 없이 가상 팹을 통과한 비율</td><td>단계 3</td><td>AI 컨설턴트</td></tr>
+            <tr><td>첫 설치 셋업 시간</td><td>신규 장비 첫 설치의 현장 시간·수정 건수</td><td>단계 4</td><td>인텍 고객대응</td></tr>
+            <tr><td>현장 체류·재방문</td><td>업그레이드 1건당 클린룸 시간, 추가 방문 비율</td><td>단계 5</td><td>인텍 고객대응 → PM</td></tr>
+            <tr><td>고객 추가 공수</td><td>고객 1곳의 가상 팹 추가에 드는 공수</td><td>단계 6</td><td>PM</td></tr>
+            <tr><td>갈라진 소스 수</td><td>고객별로 분기된 소스 버전 수</td><td>단계 7</td><td>TF 리더</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="muted" style="margin-top:12px;font-size:14px">목표 수치는 0단계에서 기준선을 측정한 뒤 G1에서 정합니다.</p>
     </div>
   </section>
 
@@ -849,15 +824,16 @@ footer p+p{margin-top:8px}
         <table>
           <thead><tr><th>리스크</th><th>영향</th><th>대응</th><th>책임</th></tr></thead>
           <tbody>
-            <tr><td>핵심 개발자 시간 확보 실패</td><td>전체 일정 3~6개월 지연</td><td>G0에서 투입률 문서화, 기존 고객 대응 일부를 고객대응 엔지니어로 이관</td><td><span class="who c-exec">경영진</span></td></tr>
+            <tr><td>핵심 개발자 시간 확보 실패</td><td>전체 일정 3~6개월 지연</td><td>단계 0에서 투입률 문서화, 기존 고객 대응 일부를 고객대응 엔지니어로 이관</td><td><span class="who c-exec">경영진</span></td></tr>
             <tr><td>골든 이미지 확보 지연</td><td>L2 회귀 착수 지연</td><td>보안 등급 낮은 고객을 파일럿으로, 자체 시료 촬영 이미지로 먼저 시작</td><td><span class="who c-intek">인텍 TF</span></td></tr>
             <tr><td>bkit 저자 참여 불가</td><td>공정 도구 지연</td><td>AI 컨설턴트가 포크·커스터마이징 대행 (+4~6주)</td><td><span class="who c-pm">PM</span></td></tr>
-            <tr><td>브레인크루 PoC 불합격</td><td>문서 입력 자동화 지연</td><td>보안 등급 A·B는 AI 코딩 도구로 문서 입력 + 사람 검토, 등급 C는 3단계에서 재검토</td><td><span class="who c-pm">PM</span></td></tr>
+            <tr><td>브레인크루 PoC 불합격</td><td>문서 입력 자동화 지연</td><td>보안 등급 A·B는 AI 코딩 도구로 문서 입력 + 사람 검토, 등급 C는 단계 6에서 재검토</td><td><span class="who c-pm">PM</span></td></tr>
             <tr><td>재현 시험에서 증분 정확도 미달</td><td>AI 자동화 범위 축소</td><td>미달 유형은 사람 주도로 유지, 설정·데이터 중심 전환을 우선, 추적표·합격 기준 보강 후 재시험</td><td><span class="who c-intek">인텍 TF</span></td></tr>
-            <tr><td>HAL 도입 난이도 높음</td><td>L1 지연</td><td>L2(검사 엔진 단독)로 가치 먼저 확보, HAL 범위를 파일럿 기종으로 축소</td><td><span class="who c-intek">인텍 TF</span></td></tr>
+            <tr><td>신규 장비 일정 압박</td><td>단계 4 지연, 고객 일정 위험</td><td>위층만 AI 생성, 코어 재사용, 사람 리뷰 유지, 문제 시 기존 개발 방식으로 전환</td><td><span class="who c-intek">인텍 TF</span></td></tr>
+            <tr><td>HAL 도입 난이도 높음</td><td>단계 2 지연</td><td>통신 계층만 먼저 분리, 단계 1(검사 엔진 단독)의 가치는 유지</td><td><span class="who c-intek">인텍 TF</span></td></tr>
             <tr><td>도구 간 충돌 (bkit·harness)</td><td>파이프라인 불안정</td><td>오케스트레이터는 bkit 하나, harness 산출물은 검토 후 고정해 bkit 단계 안에서 호출</td><td><span class="who c-ai">AI 컨설턴트</span></td></tr>
             <tr><td>외부 주체 의존 고착</td><td>운영 비용 증가</td><td>모든 정본은 인텍 Git, 포크 이관, Track D로 내부 인수</td><td><span class="who c-pm">PM</span></td></tr>
-            <tr><td>망분리 고객 AI 사용 제약</td><td>등급 C 고객 적용 지연</td><td>등급 A·B 고객부터 적용, 등급 C는 반입 키트·온프레미스로 3단계에서</td><td><span class="who c-ai">AI 컨설턴트</span></td></tr>
+            <tr><td>망분리 고객 AI 사용 제약</td><td>등급 C 고객 적용 지연</td><td>등급 A·B 고객부터 적용, 등급 C는 반입 키트·온프레미스로 단계 6에서</td><td><span class="who c-ai">AI 컨설턴트</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -868,12 +844,12 @@ footer p+p{margin-top:8px}
   <section id="next">
     <div class="wrap">
       <div class="sec-label">14 · 즉시 착수</div>
-      <h2>승인 후 첫 4주</h2>
+      <h2>승인 후 4주 안에 단계 0을 마칩니다</h2>
       <div class="steps">
-        <div class="s"><div class="when">1주차</div><h3>대표 보고와 승인, TF 구성안 확정</h3><p><span class="who c-pm">PM</span> · <span class="who c-exec">경영진</span> — 결정 3가지(인력, 파일럿 고객, 외부 계약 범위)</p></div>
+        <div class="s"><div class="when">1주차</div><h3>대표 보고와 승인, TF 구성안·신규 장비 후보 확정</h3><p><span class="who c-pm">PM</span> · <span class="who c-exec">경영진</span> — 결정 3가지(인력, 파일럿 대상, 외부 계약 범위)</p></div>
         <div class="s"><div class="when">2주차</div><h3>외부 3주체 범위·견적 협의</h3><p><span class="who c-pm">PM</span> — bkit 저자 참여 의사 확인, 브레인크루 PoC 범위, AI 컨설턴트 계약</p></div>
         <div class="s"><div class="when">3주차</div><h3>변경 지도 워크숍 1차</h3><p><span class="who c-pm">PM</span> · <span class="who c-intek">인텍 핵심 개발자</span> — 제품군별(iPIS·iSIS·모듈/SSD) 고객 PRD·제품 PRD·PRD 제외 영역 확정</p></div>
-        <div class="s"><div class="when">4주차</div><h3>킥오프, 파일럿 고객·골든 데이터 협의 착수</h3><p><span class="who c-exec">경영진</span> · <span class="who c-intek">인텍 TF</span> — G0 판정</p></div>
+        <div class="s"><div class="when">4주차</div><h3>킥오프, 파일럿 고객·골든 데이터 협의 착수</h3><p><span class="who c-exec">경영진</span> · <span class="who c-intek">인텍 TF</span> — 단계 0 판정</p></div>
       </div>
     </div>
   </section>
@@ -882,6 +858,6 @@ footer p+p{margin-top:8px}
 <footer>
   <div class="wrap">
     <p>근거: 인텍플러스 홈페이지(회사·제품 정보), bkit(popup-studio-ai/bkit-claude-code), harness v2.1.0·harness-100(revfactory), 역생성 명세 관련 논문(arXiv 2605.18684, 2609.22719), 브레인크루 홈페이지의 공개 정보를 2026-10-09에 확인했습니다. 업그레이드 유형 비율(7:3), 고객별 소스 구조, 보안 조건은 대표 면담 내용이고, 브레인크루의 망분리·GEM 추출·Git 연동·제조 경험 항목은 장동인 PM의 확인 내용입니다.</p>
-    <p>공수, 기간, 투입률은 소스를 보기 전의 추정이며 0단계 진단 후 다시 산정합니다. bkit 저자와 AI 컨설턴트의 참여 조건, 외부 주체의 단가와 라이선스 비용은 협의 전입니다. 기술 상세는 <a href="https://claude.ai/artifact/HC6RLqjTnrJZh6YVEo4i5t" target="_blank" rel="noopener">기술 상세 문서</a>를 참고하십시오.</p>
+    <p>공수, 기간, 투입률은 소스를 보기 전의 추정이며 단계 0 진단 후 다시 산정합니다. bkit 저자와 AI 컨설턴트의 참여 조건, 외부 주체의 단가와 라이선스 비용은 협의 전입니다. 기술 상세는 <a href="https://claude.ai/artifact/HC6RLqjTnrJZh6YVEo4i5t" target="_blank" rel="noopener">기술 상세 문서</a>를 참고하십시오.</p>
   </div>
 </footer>
