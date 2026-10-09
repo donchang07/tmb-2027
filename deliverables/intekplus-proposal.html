@@ -211,16 +211,17 @@ footer p+p{margin-top:8px}
     <ol>
       <li><a href="#summary"><b>01</b>제안 요약</a></li>
       <li><a href="#solution"><b>02</b>해결 체계</a></li>
-      <li><a href="#principle"><b>03</b>수행 원칙</a></li>
-      <li><a href="#roles"><b>04</b>주체별 역할</a></li>
-      <li><a href="#raci"><b>05</b>업무 분장표</a></li>
-      <li><a href="#schedule"><b>06</b>추진 일정</a></li>
-      <li><a href="#phases"><b>07</b>단계별 업무</a></li>
-      <li><a href="#effort"><b>08</b>투입 공수</a></li>
-      <li><a href="#training"><b>09</b>AI 역량 전환</a></li>
-      <li><a href="#gates"><b>10</b>게이트</a></li>
-      <li><a href="#risks"><b>11</b>리스크</a></li>
-      <li><a href="#next"><b>12</b>즉시 착수</a></li>
+      <li><a href="#feasibility"><b>03</b>기술 타당성</a></li>
+      <li><a href="#principle"><b>04</b>수행 원칙</a></li>
+      <li><a href="#roles"><b>05</b>주체별 역할</a></li>
+      <li><a href="#raci"><b>06</b>업무 분장표</a></li>
+      <li><a href="#schedule"><b>07</b>추진 일정</a></li>
+      <li><a href="#phases"><b>08</b>단계별 업무</a></li>
+      <li><a href="#effort"><b>09</b>투입 공수</a></li>
+      <li><a href="#training"><b>10</b>AI 역량 전환</a></li>
+      <li><a href="#gates"><b>11</b>게이트</a></li>
+      <li><a href="#risks"><b>12</b>리스크</a></li>
+      <li><a href="#next"><b>13</b>즉시 착수</a></li>
     </ol>
   </div>
 </nav>
@@ -235,7 +236,7 @@ footer p+p{margin-top:8px}
         <div><div class="k">문제</div><h3>업그레이드 검증이 클린룸에서만 가능</h3><p>고객사별로 소스가 다르고, 업그레이드 요청(검사기능 7 : 호스트 연동 3)마다 핵심 개발자가 직접 수정한 뒤 현장에서 확인합니다. 고객별 지식은 180명 중 20명 안팎의 핵심 개발자에게 몰려 있습니다.</p></div>
         <div><div class="k">해법</div><h3>PRD → AI 증분 → 시뮬레이터 → 배포</h3><p>자주 바뀌는 영역만 PRD로 관리하고, AI가 PRD 변경분만큼 코드를 만들며, 가상 팹 시뮬레이터가 사무실에서 합격을 판정합니다. 합격본만 고객 장비에 설치합니다.</p></div>
         <div><div class="k">수행 체계</div><h3>내부 TF 8명 + 외부 3주체 + PM</h3><p>시뮬레이터·판정 기준·PRD 승인은 인텍플러스 TF가 맡습니다. bkit 저자는 공정 도구를, 브레인크루는 문서 입력을, AI 컨설턴트는 에이전트 설계와 교육을 맡습니다.</p></div>
-        <div><div class="k">일정</div><h3>12개월, 파일럿은 6개월 차에 판정</h3><p>3개월 차에 기반(골든 이미지 회귀, bkit v1, 브레인크루 PoC)을, 6개월 차에 실제 업그레이드 2~3건 결과를, 12개월 차에 확산과 운영 이관을 판정합니다.</p></div>
+        <div><div class="k">일정</div><h3>12개월, 파일럿은 6개월 차에 판정</h3><p>3개월 차에 기반(골든 이미지 회귀, 과거 업그레이드 재현 시험, bkit v1, 브레인크루 PoC)을, 6개월 차에 실제 업그레이드 2~3건 결과를, 12개월 차에 확산과 운영 이관을 판정합니다.</p></div>
       </div>
       <div class="callout">
         <p><strong>대표님께 요청드리는 결정은 세 가지입니다.</strong> ① 시뮬레이터 전담 엔지니어 2명과 핵심 개발자 3명의 시간(40~60%)을 TF로 확보, ② 파일럿 고객 1곳 선정과 골든 이미지 사용 협의, ③ 외부 3주체(bkit 저자, 브레인크루, AI 컨설턴트)와의 계약 범위 승인입니다. 이 중 ①이 성패를 가장 크게 좌우합니다.</p>
@@ -288,9 +289,55 @@ footer p+p{margin-top:8px}
   </section>
 
   <!-- 03 -->
+  <section id="feasibility">
+    <div class="wrap">
+      <div class="sec-label">03 · 기술 타당성</div>
+      <h2>역생성 PRD와 정확한 증분은 검증이 있어야 가능합니다</h2>
+      <div class="body">
+        <p>이 체계의 전제는 두 가지입니다. 고객별로 갈라진 현재 소스를 역으로 분석해 PRD로 만들 수 있어야 하고, PRD를 바꾸면 바뀐 만큼의 증분만 정확하게 만들어야 합니다. 결론은 <strong>가능하지만, AI가 정확하게 만드는 것이 아니라 정확한지를 기계적으로 검증할 수 있게 만드는 조건에서만 가능</strong>하다는 것입니다.</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>질문</th><th>판단</th><th>정확성을 확보하는 장치</th></tr></thead>
+          <tbody>
+            <tr><td>① 고객별 소스를 역으로 PRD화할 수 있는가</td><td><strong>부분적으로 가능.</strong> 코드에 드러난 동작은 복원하지만, 설계 이유·타이밍·고객별 임시 수정은 놓치거나 틀릴 수 있음</td><td>요구사항마다 근거 코드 위치와 신뢰도(확인됨·추정·빈칸) 표시. 시뮬레이터로 기록한 현재 동작과 대조해 맞는 것만 확정</td></tr>
+            <tr><td>② PRD를 바꾸면 증분만 정확히 만들 수 있는가</td><td><strong>조건부 가능.</strong> AI 생성은 같은 입력에도 결과가 조금씩 달라 그 자체로는 보장되지 않음</td><td>요구사항 ID ↔ 코드 영역 추적표로 범위 밖 수정 차단, 새 합격 기준 통과(의도한 변경), 기존 회귀 시험 전부 통과(의도하지 않은 변경 없음), 예상보다 큰 diff는 사람 검토</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="sub">역생성 난이도와 증분 정확도 (추정)</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>영역·변경 유형</th><th>역생성 난이도</th><th>증분 정확도 예상</th><th>이유</th></tr></thead>
+          <tbody>
+            <tr><td>판정 기준·레시피 값</td><td>쉬움~보통</td><td>매우 높음</td><td>코드가 아니라 설정 diff라 사실상 결정적</td></tr>
+            <tr><td>GEM 보고 항목·이벤트</td><td>쉬움</td><td>높음</td><td>코드 안의 표·상수로 존재, 구조화된 반복 패턴, 가상 호스트로 검증 쉬움</td></tr>
+            <tr><td>검사 항목 구성·물류 시퀀스</td><td>보통</td><td>보통~높음</td><td>골든 이미지셋·L1 시뮬레이터 품질에 좌우</td></tr>
+            <tr><td>판정 알고리즘 세부·타이밍</td><td>어려움</td><td>낮음</td><td>수치 처리의 미묘한 차이는 글로 옮기면 정보가 사라짐. 사람 주도(제품 PRD)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout">
+        <p><strong>설계 시사점.</strong> 정확도를 가장 크게 올리는 방법은 AI 성능이 아니라 자주 바뀌는 영역을 설정·데이터 중심으로 바꾸는 것입니다. PRD 변경이 코드 생성이 아니라 설정 변경으로 끝날수록 결과는 결정적이 됩니다.</p>
+      </div>
+
+      <h3 class="sub">과거 업그레이드 재현 시험: 의견이 아니라 데이터로 판정</h3>
+      <div class="body" style="margin-top:12px"><p>인텍플러스에는 정답지가 이미 있습니다. 과거 업그레이드 때 실제로 바뀐 소스가 버전 이력에 남아 있기 때문입니다. 1단계(M2~M3) 4~6주 동안 아래 두 실험을 하고, 결과를 G1 판정 기준에 넣습니다.</p></div>
+      <div class="summary">
+        <div><div class="k">실험 1 · 역생성 정확도</div><h3>고객 1곳의 GEM 모듈과 검사 항목을 AI로 PRD화</h3><p>핵심 개발자 검토와 시뮬레이터 동작 기록 대조. 측정: 개발자가 아는 동작 중 PRD에 담긴 비율, 틀린 기술 비율, 추정·빈칸 비율.</p></div>
+        <div><div class="k">실험 2 · 증분 정확도</div><h3>과거 업그레이드 5~10건을 AI로 재현</h3><p>업그레이드 이전 소스와 PRD 변경분만 주고 생성한 증분을 실제 사람이 한 수정과 비교. 측정: 새 합격 기준 통과, 범위 밖 수정 0건, 회귀 0건, 리뷰 수정량, 반복 생성 시 편차.</p></div>
+      </div>
+      <div class="caution">
+        <p><b>한계.</b> 검증은 시험이 덮는 범위까지만 증명합니다. 시험이 없는 동작의 변화는 잡지 못하므로 현장 최종 확인은 계속 필요합니다. 판정 기준 수치는 실험 전에 TF와 함께 정합니다. 실험 2는 고객별 소스의 과거 버전 이력이 업그레이드 단위로 남아 있어야 가능합니다.</p>
+        <p><b>근거.</b> 역생성 명세에는 근거·신뢰도·빈칸을 붙여야 하며, 실행 검증 전까지 신뢰하지 않는다는 것이 최근 연구의 공통 결론입니다 (arXiv 2605.18684 Reversa, arXiv 2609.22719, 2026). 후자는 단일 기업 사례로 완전성은 검증되지 않았다고 스스로 밝힙니다.</p>
+      </div>
+    </div>
+  </section>
+
   <section id="principle">
     <div class="wrap">
-      <div class="sec-label">03 · 수행 원칙</div>
+      <div class="sec-label">04 · 수행 원칙</div>
       <h2>외부는 도구와 방법을, 내부는 판단과 기준을</h2>
       <div class="body">
         <p>시뮬레이터의 핵심 업무는 검사 장비의 물리, 고객 공정, 고객 데이터를 모두 알아야 하므로 외부 인력이 대신할 수 없습니다. 또 이것은 인텍플러스가 앞으로 계속 쌓아 갈 기술 자산입니다. 그래서 외부 주체는 <strong>도구를 만들고, 방법을 가르치고, 옆에서 코칭</strong>하는 데까지만 맡고, <strong>판단과 합격 기준은 인텍플러스 엔지니어가 소유</strong>합니다.</p>
@@ -316,7 +363,7 @@ footer p+p{margin-top:8px}
   <!-- 04 -->
   <section id="roles">
     <div class="wrap">
-      <div class="sec-label">04 · 주체별 역할</div>
+      <div class="sec-label">05 · 주체별 역할</div>
       <h2>여섯 주체가 맡는 일</h2>
       <div class="roles">
 
@@ -478,7 +525,7 @@ footer p+p{margin-top:8px}
   <!-- 05 RACI -->
   <section id="raci">
     <div class="wrap">
-      <div class="sec-label">05 · 업무 분장표</div>
+      <div class="sec-label">06 · 업무 분장표</div>
       <h2>업무별 책임 (RACI)</h2>
       <div class="table-wrap">
         <table class="raci">
@@ -514,7 +561,7 @@ footer p+p{margin-top:8px}
   <!-- 06 Gantt -->
   <section id="schedule">
     <div class="wrap">
-      <div class="sec-label">06 · 추진 일정</div>
+      <div class="sec-label">07 · 추진 일정</div>
       <h2>12개월 일정</h2>
       <div class="body"><p>M1은 착수월입니다(2026년 11월 착수 시 M12는 2027년 10월). 빗금 막대는 앞 게이트 결과에 따라 진행 여부가 정해지는 조건부 업무입니다.</p></div>
       <div class="gantt-wrap">
@@ -532,6 +579,7 @@ footer p+p{margin-top:8px}
           <div class="g-row g-group"><span>인텍 내부 TF</span></div>
           <div class="g-row c-intek"><div class="g-label">진단·변경 지도 확정<span class="who c-intek">핵심 개발자</span></div><div class="g-track"></div><div class="g-bar" style="grid-column:2/3">진단</div></div>
           <div class="g-row c-intek"><div class="g-label">골든 이미지셋 구축<span class="who c-intek">품질 + 핵심 개발자</span></div><div class="g-track"></div><div class="g-bar" style="grid-column:2/6">골든셋</div></div>
+          <div class="g-row c-intek"><div class="g-label">과거 업그레이드 재현 시험<span class="who c-intek">핵심 개발자 + AI 컨설턴트</span></div><div class="g-track"></div><div class="g-bar" style="grid-column:3/5">재현 시험</div></div>
           <div class="g-row c-intek"><div class="g-label">L2 이미지 재생 회귀<span class="who c-intek">시뮬레이터팀</span></div><div class="g-track"></div><div class="g-bar" style="grid-column:3/5">L2 MVP</div></div>
           <div class="g-row c-intek"><div class="g-label">HAL + L1 가상 호스트·물류<span class="who c-intek">시뮬레이터팀</span></div><div class="g-track"></div><div class="g-bar" style="grid-column:4/9">HAL · L1</div></div>
           <div class="g-row c-intek"><div class="g-label">현재 상태 PRD 검수·확정<span class="who c-intek">핵심 개발자</span></div><div class="g-track"></div><div class="g-bar" style="grid-column:4/7">현재 상태 PRD</div></div>
@@ -562,7 +610,7 @@ footer p+p{margin-top:8px}
   <!-- 07 Phases -->
   <section id="phases">
     <div class="wrap">
-      <div class="sec-label">07 · 단계별 업무</div>
+      <div class="sec-label">08 · 단계별 업무</div>
       <h2>단계마다 누가 무엇을 내놓는가</h2>
 
       <div class="phase">
@@ -587,10 +635,10 @@ footer p+p{margin-top:8px}
         <div class="table-wrap"><table>
           <thead><tr><th>주체</th><th>할 일</th><th>산출물</th></tr></thead>
           <tbody>
-            <tr><td><span class="who c-intek">인텍 TF</span></td><td>검사 엔진을 떼어 L2 이미지 재생 회귀 MVP 구축(AI 코딩 도구 활용), 골든 이미지셋 1차, 시뮬레이터 결과 규격 확정, Track A·B·C 교육 이수</td><td>L2 MVP, 골든셋 v1, 결과 규격서</td></tr>
+            <tr><td><span class="who c-intek">인텍 TF</span></td><td>검사 엔진을 떼어 L2 이미지 재생 회귀 MVP 구축(AI 코딩 도구 활용), 골든 이미지셋 1차, 시뮬레이터 결과 규격 확정, <strong>과거 업그레이드 재현 시험</strong>(과거 5~10건 선정·판정), Track A·B·C 교육 이수</td><td>L2 MVP, 골든셋 v1, 결과 규격서, 재현 시험 결과</td></tr>
             <tr><td><span class="who c-bkit">bkit 저자</span></td><td>bkit-intek v1: PRD 템플릿, 문서 구조, 가드레일 훅, 승인 게이트</td><td>bkit-intek v1</td></tr>
             <tr><td><span class="who c-bc">브레인크루</span></td><td>PoC: GEM 사양서 추출, PRD 초안 5~10건 재현, Git 연동, 내부 LLM</td><td>PoC 결과 보고</td></tr>
-            <tr><td><span class="who c-ai">AI 컨설턴트</span></td><td>보안 등급별 아키텍처, 교육 진행, 시뮬레이터팀 주 1회 코칭</td><td>보안 아키텍처, 교육 자료</td></tr>
+            <tr><td><span class="who c-ai">AI 컨설턴트</span></td><td>보안 등급별 아키텍처, 교육 진행, 시뮬레이터팀 주 1회 코칭, 재현 시험의 역생성·증분 생성 실행 지원</td><td>보안 아키텍처, 교육 자료</td></tr>
             <tr><td><span class="who c-pm">PM</span></td><td>PRD 표준 확정, 규격 확정, G1 평가</td><td>PRD 표준, G1 보고서</td></tr>
           </tbody>
         </table></div>
@@ -631,7 +679,7 @@ footer p+p{margin-top:8px}
   <!-- 08 Effort -->
   <section id="effort">
     <div class="wrap">
-      <div class="sec-label">08 · 투입 공수</div>
+      <div class="sec-label">09 · 투입 공수</div>
       <h2>주체별 투입 공수 (추정)</h2>
       <div class="table-wrap">
         <table>
@@ -660,7 +708,7 @@ footer p+p{margin-top:8px}
   <!-- 09 Training -->
   <section id="training">
     <div class="wrap">
-      <div class="sec-label">09 · AI 역량 전환</div>
+      <div class="sec-label">10 · AI 역량 전환</div>
       <h2>인텍 엔지니어가 AI로 일하게 만드는 과정</h2>
       <div class="tracks">
         <div class="track"><div class="k">Track A · 전체 SW 엔지니어</div><h3>AI 코딩 기초와 안전 규칙</h3><dl><dt>대상</dt><dd>장비 SW 엔지니어 전원</dd><dt>방식</dt><dd>2일 집합 교육, 2회 차수</dd><dt>시기</dt><dd>M2~M3</dd><dt>강사</dt><dd>AI 컨설턴트</dd><dt>내용</dt><dd>AI 코딩 도구 사용법, 변경 지도와 AI 수정 금지 영역, 고객 데이터 규칙</dd></dl></div>
@@ -674,11 +722,11 @@ footer p+p{margin-top:8px}
   <!-- 10 Gates -->
   <section id="gates">
     <div class="wrap">
-      <div class="sec-label">10 · 게이트</div>
+      <div class="sec-label">11 · 게이트</div>
       <h2>단계마다 진행 여부를 판정합니다</h2>
       <div class="gates">
         <div class="gate"><div class="g">G0 · M1 말</div><h3>착수 조건</h3><ul><li>TF 8명 확정, 시뮬레이터 전담 2명 차출</li><li>파일럿 고객 확정, 골든 이미지 사용 동의</li><li>외부 3주체 계약 범위 합의</li></ul><p class="dec">판정: 대표 · 보고: PM</p></div>
-        <div class="gate"><div class="g">G1 · M3 말</div><h3>기반 확인</h3><ul><li>L2 회귀가 파일럿 골든셋에서 동작, 판정 차이를 잡아냄</li><li>bkit-intek v1로 PRD → 증분 생성</li><li>브레인크루 PoC: GEM 추출 100% → 구축 진행/중단 결정</li></ul><p class="dec">판정: 대표 + PM · 근거: TF 리더 검수</p></div>
+        <div class="gate"><div class="g">G1 · M3 말</div><h3>기반 확인</h3><ul><li>L2 회귀가 파일럿 골든셋에서 동작, 판정 차이를 잡아냄</li><li>과거 업그레이드 재현 시험 결과로 변경 유형별 AI 자동화 범위 결정</li><li>브레인크루 PoC: GEM 추출 100% → 구축 진행/중단 결정</li></ul><p class="dec">판정: 대표 + PM · 근거: TF 리더 검수</p></div>
         <div class="gate"><div class="g">G2 · M6 말</div><h3>파일럿 효과</h3><ul><li>실제 업그레이드 2~3건을 새 방식으로 완료</li><li>현장 체류 시간, 현장 발견 결함을 기존 방식과 비교</li><li>AI 증분의 시뮬레이터 1회 합격률 측정</li></ul><p class="dec">판정: 대표 · 확산 범위 결정</p></div>
         <div class="gate"><div class="g">G3 · M12 말</div><h3>확산과 이관</h3><ul><li>주요 고객 확대 결과</li><li>내부 AI 챔피언이 외부 지원 없이 운영 가능</li><li>차년도 범위(플랫폼 전환, 신규 출하 적용)</li></ul><p class="dec">판정: 대표 · 최종 보고: PM</p></div>
       </div>
@@ -703,7 +751,7 @@ footer p+p{margin-top:8px}
   <!-- 11 Risks -->
   <section id="risks">
     <div class="wrap">
-      <div class="sec-label">11 · 리스크</div>
+      <div class="sec-label">12 · 리스크</div>
       <h2>리스크와 대응</h2>
       <div class="table-wrap">
         <table>
@@ -713,6 +761,7 @@ footer p+p{margin-top:8px}
             <tr><td>골든 이미지 확보 지연</td><td>L2 회귀 착수 지연</td><td>보안 등급 낮은 고객을 파일럿으로, 자체 시료 촬영 이미지로 먼저 시작</td><td><span class="who c-intek">인텍 TF</span></td></tr>
             <tr><td>bkit 저자 참여 불가</td><td>공정 도구 지연</td><td>AI 컨설턴트가 포크·커스터마이징 대행 (+4~6주)</td><td><span class="who c-pm">PM</span></td></tr>
             <tr><td>브레인크루 PoC 불합격</td><td>문서 입력 자동화 지연</td><td>보안 등급 A·B는 AI 코딩 도구로 문서 입력 + 사람 검토, 등급 C는 3단계에서 재검토</td><td><span class="who c-pm">PM</span></td></tr>
+            <tr><td>재현 시험에서 증분 정확도 미달</td><td>AI 자동화 범위 축소</td><td>미달 유형은 사람 주도로 유지, 설정·데이터 중심 전환을 우선, 추적표·합격 기준 보강 후 재시험</td><td><span class="who c-intek">인텍 TF</span></td></tr>
             <tr><td>HAL 도입 난이도 높음</td><td>L1 지연</td><td>L2(검사 엔진 단독)로 가치 먼저 확보, HAL 범위를 파일럿 기종으로 축소</td><td><span class="who c-intek">인텍 TF</span></td></tr>
             <tr><td>도구 간 충돌 (bkit·harness)</td><td>파이프라인 불안정</td><td>오케스트레이터는 bkit 하나, harness 산출물은 검토 후 고정해 bkit 단계 안에서 호출</td><td><span class="who c-ai">AI 컨설턴트</span></td></tr>
             <tr><td>외부 주체 의존 고착</td><td>운영 비용 증가</td><td>모든 정본은 인텍 Git, 포크 이관, Track D로 내부 인수</td><td><span class="who c-pm">PM</span></td></tr>
@@ -726,7 +775,7 @@ footer p+p{margin-top:8px}
   <!-- 12 Next -->
   <section id="next">
     <div class="wrap">
-      <div class="sec-label">12 · 즉시 착수</div>
+      <div class="sec-label">13 · 즉시 착수</div>
       <h2>승인 후 첫 4주</h2>
       <div class="steps">
         <div class="s"><div class="when">1주차</div><h3>대표 보고와 승인, TF 구성안 확정</h3><p><span class="who c-pm">PM</span> · <span class="who c-exec">경영진</span> — 결정 3가지(인력, 파일럿 고객, 외부 계약 범위)</p></div>
@@ -740,7 +789,7 @@ footer p+p{margin-top:8px}
 
 <footer>
   <div class="wrap">
-    <p>근거: 인텍플러스 홈페이지(회사·제품 정보), bkit(popup-studio-ai/bkit-claude-code), harness v2.1.0·harness-100(revfactory), 브레인크루 홈페이지의 공개 정보를 2026-10-09에 확인했습니다. 업그레이드 유형 비율(7:3), 고객별 소스 구조, 보안 조건은 대표 면담 내용이고, 브레인크루의 망분리·GEM 추출·Git 연동·제조 경험 항목은 장동인 PM의 확인 내용입니다.</p>
+    <p>근거: 인텍플러스 홈페이지(회사·제품 정보), bkit(popup-studio-ai/bkit-claude-code), harness v2.1.0·harness-100(revfactory), 역생성 명세 관련 논문(arXiv 2605.18684, 2609.22719), 브레인크루 홈페이지의 공개 정보를 2026-10-09에 확인했습니다. 업그레이드 유형 비율(7:3), 고객별 소스 구조, 보안 조건은 대표 면담 내용이고, 브레인크루의 망분리·GEM 추출·Git 연동·제조 경험 항목은 장동인 PM의 확인 내용입니다.</p>
     <p>공수, 기간, 투입률은 소스를 보기 전의 추정이며 0단계 진단 후 다시 산정합니다. bkit 저자와 AI 컨설턴트의 참여 조건, 외부 주체의 단가와 라이선스 비용은 협의 전입니다. 기술 상세는 <a href="https://claude.ai/artifact/HC6RLqjTnrJZh6YVEo4i5t" target="_blank" rel="noopener">기술 상세 문서</a>를 참고하십시오.</p>
   </div>
 </footer>
